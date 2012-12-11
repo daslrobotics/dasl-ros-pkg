@@ -1,0 +1,18 @@
+<package>
+  <description brief="dasl_mocap">
+
+     mocap
+
+  </description>
+  <author>morsag</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/mocap</url>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="tf"/>
+	
+</package>
+
+

@@ -1,0 +1,12 @@
+Ubuntu, 64-bit, 12.04, ROS Fuerte
+~/ros/mocap
+
+All computers are on same switch connected to the Drexel network
+
+1. Cloned mocap.git
+2. Inside of MOCAPSocket.h
+	a. Changed My IP
+3. Created a launch file
+4. IP address of mocap changed.  Updated it Arena.
+5. On mocap machine, using ARdrone5 config, click "play", and "start streaming frames"
+
