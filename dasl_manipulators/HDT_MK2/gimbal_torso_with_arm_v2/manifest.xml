@@ -1,0 +1,6 @@
+<package>
+  <description brief="gimbal_torso_with_arm_v2">gimbal_torso_with_arm_v2</description>
+  <depend package="gazebo" />
+  <author>me</author>
+  <license>BSD</license>
+</package>

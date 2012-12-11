@@ -1,0 +1,9 @@
+<launch>
+    
+<!-- Load gantry controller node -->
+    <node pkg="quad_to_gantry_publisher" type="quad_to_gantry_publisher.py" name="quad_to_gantry_publisher" />
+
+<!--
+    <node pkg="gantry_controller" type="joint_states_publisher.py" name="joint_states_publisher_node" />
+-->
+</launch> 

@@ -1,0 +1,11 @@
+<KinBody name="peg">
+  <Body type="dynamic">
+    <Geom type="cylinder">
+    <RotationAxis>1 0 0 -90</RotationAxis>
+    <radius>0.08</radius>
+    <height>0.6</height>
+    <diffusecolor>1 0 0</diffusecolor>
+    <Translation> 0.2286 0.1397 -0.346</Translation>
+    </Geom>
+  </Body>
+</KinBody>

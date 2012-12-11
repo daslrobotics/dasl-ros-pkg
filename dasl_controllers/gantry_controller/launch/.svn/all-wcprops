@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1608/trunk/arrg/ua_apps/wubble_teleop/launch
+END
+wubble_logitech.launch
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1608/trunk/arrg/ua_apps/wubble_teleop/launch/wubble_logitech.launch
+END
+wubble_world_teleop.launch
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/659/trunk/arrg/ua_apps/wubble_teleop/launch/wubble_world_teleop.launch
+END

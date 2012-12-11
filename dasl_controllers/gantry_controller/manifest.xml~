@@ -1,0 +1,17 @@
+<package>
+  <description brief="gantry_controller">
+
+     gantry_controller
+
+  </description>
+  <author>dasl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/gantry_controllers</url>
+
+
+
+
+</package>
+
+

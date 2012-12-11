@@ -1,0 +1,573 @@
+<robot
+  name="gimbal_torso_with_arm_v2">
+  <link
+    name="gimbal_base_link">
+    <inertial>
+      <origin
+        xyz="-0.000134617115499375 8.84443727108885E-05 0.00824468702760838"
+        rpy="0 0 0" />
+      <mass
+        value="0.220004714037555" />
+      <inertia
+        ixx="0.000329104039004711"
+        ixy="1.0791927549981E-06"
+        ixz="1.84945148884471E-07"
+        iyy="0.000212205129514198"
+        iyz="-1.21510237523159E-07"
+        izz="0.000523626224123319" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/gimbal_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/gimbal_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="gimbal_yaw_link">
+    <inertial>
+      <origin
+        xyz="3.63692121861908E-09 0.0360027997375203 7.53548127025051E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.660465266051098" />
+      <inertia
+        ixx="0.00110828576180168"
+        ixy="5.24163679538012E-10"
+        ixz="1.72177646519637E-08"
+        iyy="0.00195590479811729"
+        iyz="6.59482665939489E-10"
+        izz="0.00216288436799051" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/gimbal_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/gimbal_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gimbal_yaw_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.016699"
+      rpy="1.5708 -1.7477E-19 -0.0028543" />
+    <parent
+      link="gimbal_base_link" />
+    <child
+      link="gimbal_yaw_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="gimbal_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.00188080077860001 -0.0394868539536669 2.30810626999092E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.222734001689271" />
+      <inertia
+        ixx="0.000530048376111897"
+        ixy="-1.87929491980254E-05"
+        ixz="-1.02534625143116E-08"
+        iyy="0.000487154238459728"
+        iyz="-2.55469568334203E-09"
+        izz="0.000673048826361283" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/gimbal_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/gimbal_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gimbal_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.1865 0"
+      rpy="3.1416 1.5708 3.1416" />
+    <parent
+      link="gimbal_yaw_link" />
+    <child
+      link="gimbal_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="gimbal_roll_link">
+    <inertial>
+      <origin
+        xyz="0.00106838223576286 0.258590113480123 -0.00794416862383205"
+        rpy="0 0 0" />
+      <mass
+        value="1.13132140282419" />
+      <inertia
+        ixx="0.0302486709111049"
+        ixy="0.000102874535803137"
+        ixz="8.28461579030784E-06"
+        iyy="0.00333181798814467"
+        iyz="-0.000943641323880079"
+        izz="0.0278575052741454" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/gimbal_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/gimbal_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gimbal_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="-3.1413 7.7717E-14 -3.1416" />
+    <parent
+      link="gimbal_pitch_link" />
+    <child
+      link="gimbal_roll_link" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="right_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="6.25478924209943E-09 -0.0318796832406486 0.00238461223068817"
+        rpy="0 0 0" />
+      <mass
+        value="0.125376974978242" />
+      <inertia
+        ixx="0.000185882524560888"
+        ixy="1.09036579863303E-11"
+        ixz="-4.53795762592269E-10"
+        iyy="0.000113208808305413"
+        iyz="-1.08649943703842E-05"
+        izz="0.000168032789336645" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.36378 -0.17192"
+      rpy="1.5708 -5.5949E-15 -1.5375" />
+    <parent
+      link="gimbal_roll_link" />
+    <child
+      link="right_shoulder_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="-9.94218518396428E-06 -0.230368486049706 -2.0744389619038E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.73190304018425" />
+      <inertia
+        ixx="0.0303249895740869"
+        ixy="-2.67921926701428E-06"
+        ixz="-3.90904281925668E-10"
+        iyy="0.00108480293835837"
+        iyz="-8.33739702745909E-06"
+        izz="0.0303485929216463" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.070228 0.00035"
+      rpy="3.1919E-16 1.5027E-16 1.5174" />
+    <parent
+      link="right_shoulder_pitch_link" />
+    <child
+      link="right_shoulder_roll_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_elbow_yaw_link">
+    <inertial>
+      <origin
+        xyz="3.04560456299008E-08 0.0383487289241179 0.0026048194183257"
+        rpy="0 0 0" />
+      <mass
+        value="0.125376473535097" />
+      <inertia
+        ixx="0.000185881976997219"
+        ixy="1.48633051667768E-11"
+        ixz="-5.86454335043705E-10"
+        iyy="0.000113208103578472"
+        iyz="-1.08648856516092E-05"
+        izz="0.000168032795897041" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_elbow_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_elbow_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow_yaw_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.51925 0.00021981"
+      rpy="-3.1416 0.041777 3.1416" />
+    <parent
+      link="right_shoulder_roll_link" />
+    <child
+      link="right_elbow_yaw_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_elbow_roll_link">
+    <inertial>
+      <origin
+        xyz="0.00901649665112278 -0.035256471374657 -0.00063307567322062"
+        rpy="0 0 0" />
+      <mass
+        value="0.296960652400396" />
+      <inertia
+        ixx="0.000843771360214524"
+        ixy="-0.000201223900946504"
+        ixz="-2.52668106930358E-07"
+        iyy="0.0002777920931224"
+        iyz="2.5283258730614E-07"
+        izz="0.000969676216324251" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_elbow_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_elbow_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="3.1416 3.1225E-16 1.1843" />
+    <parent
+      link="right_elbow_yaw_link" />
+    <child
+      link="right_elbow_roll_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_forearm_yaw_link">
+    <inertial>
+      <origin
+        xyz="1.30422309840839E-07 -0.025580028590634 0.00212591151109225"
+        rpy="0 0 0" />
+      <mass
+        value="0.0884408885643763" />
+      <inertia
+        ixx="0.000128898202356925"
+        ixy="-1.28469512290708E-10"
+        ixz="6.8362957954005E-09"
+        iyy="9.15657013846502E-05"
+        iyz="-3.91459066372815E-06"
+        izz="0.000110367427618238" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_forearm_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_forearm_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_forearm_yaw_joint"
+    type="continuous">
+    <origin
+      xyz="0.070682 -0.12626 -0.00062"
+      rpy="3.1416 3.8511E-05 -2.0944" />
+    <parent
+      link="right_elbow_roll_link" />
+    <child
+      link="right_forearm_yaw_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_wrist_roll_link">
+    <inertial>
+      <origin
+        xyz="0.000287843428113986 0.0378519085963548 4.73473327792795E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.363024664225341" />
+      <inertia
+        ixx="0.000675284852994684"
+        ixy="1.38669420739067E-06"
+        ixz="1.09697489221245E-08"
+        iyy="0.000175970017924314"
+        iyz="-1.39849685260843E-06"
+        izz="0.000675279879582797" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_wrist_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_wrist_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.05 0"
+      rpy="0.13393 -1.5708 0" />
+    <parent
+      link="right_forearm_yaw_link" />
+    <child
+      link="right_wrist_roll_link" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="right_wrist_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.00039939203048864 0.0242689551696685 0.00186785180182097"
+        rpy="0 0 0" />
+      <mass
+        value="0.0891089340502437" />
+      <inertia
+        ixx="0.000125406322184083"
+        ixy="1.02044322779947E-06"
+        ixz="-6.750267383796E-08"
+        iyy="9.26888664975339E-05"
+        iyz="-3.74051620191346E-06"
+        izz="0.00010777646831052" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_wrist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gimbal_torso_with_arm_v2/meshes/right_wrist_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0.00035 0.074902 0"
+      rpy="-1.4507E-16 4.6491E-15 -0.0017961" />
+    <parent
+      link="right_wrist_roll_link" />
+    <child
+      link="right_wrist_pitch_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>

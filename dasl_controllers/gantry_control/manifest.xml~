@@ -1,0 +1,14 @@
+<package>
+  <description brief="gantry_control">
+
+     gantry_control
+
+  </description>
+  <author>cmk325</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/gantry_control</url>
+
+</package>
+
+

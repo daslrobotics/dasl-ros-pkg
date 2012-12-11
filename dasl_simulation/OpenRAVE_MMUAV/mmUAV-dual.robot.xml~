@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- shows how to combine two schunk arms -->
+<Robot name="schunk-lwa3-dual">
+
+  <KinBody>
+    <body name="gantry">
+      <geom type="box">
+        <extents>0.1 0.1 0</extents>
+        <translation>2.8 -1.3 3.75</translation>
+      </geom>
+    </body>
+  </KinBody>
+
+  <KinBody>
+    <Body name="chest" type="dynamic">
+      <Translation>2.8 -1.3 3.75</Translation>        
+      <Geom  type="trimesh">
+        <render>z-axis.stl</render>
+      </Geom> 
+    </Body>
+  </KinBody>
+
+<!--
+      <Geom type="box" render = "false">
+        <extents>0.1 0.1 0.4</extents>
+      </Geom> 
+
+   <KinBody>
+    <body name="chest">
+      <geom type="box">
+        <extents>0.1 0.1 0.4</extents>
+        <translation>0 0 1.4</translation>
+      </geom>
+    </body>
+  </KinBody>
+-->
+
+  <KinBody prefix="l_" file="schunk_manip.kinbody.xml"/>
+  <KinBody prefix="r_" file="schunk_manip.kinbody.xml"/>
+
+  <!-- left arm -->
+  <Robot>
+    <Robot prefix="l_" file="schunk-lwa3.zae"></Robot>
+    <RotationAxis>1 0 0 90</RotationAxis>
+    <translation>2.8 -1.3605 0.8</translation>
+  </Robot>
+  <!-- right arm -->
+  <Robot>
+    <Robot prefix="r_" file="schunk-lwa3.zae"></Robot>
+    <RotationAxis>1 0 0 -90</RotationAxis>
+    <translation>2.8 -1.25 0.8</translation>
+  </Robot>
+
+  <Robot>
+    <!-- connect the two arms with dummy joints -->
+    <KinBody>
+      <joint name="leftdummy" type="hinge" enable="false">
+        <body>chest</body>
+        <body>l_base</body>
+        <limitsdeg>0 0</limitsdeg>
+      </joint>
+      <joint name="rightdummy" type="hinge" enable="false">
+        <body>chest</body>
+        <body>r_base</body>
+        <limitsdeg>0 0</limitsdeg>
+      </joint>
+      <!-- Gantry z-axis joint -->
+      <Joint name="z_j" type="slider" circular="false">
+        <Body>gantry</Body>
+        <Body>chest</Body> 
+        <offsetfrom>gantry</offsetfrom>
+        <limits>0 2.0 </limits>
+        <axis>0 0 1</axis>
+      </Joint>
+      <!-- Left gripper dummy joint -->
+      <body name="l_gripper_base">
+        <offsetfrom>l_link7</offsetfrom>
+      </body>
+      <joint name="l_dummyhand" type="hinge" enable="false">
+        <body>l_link7</body>
+        <body>l_gripper_base</body>
+        <axis>0 0 1</axis>
+        <limits>0 0</limits>
+      </joint>
+      <!-- Right gripper dummy joint -->
+      <body name="r_gripper_base">
+        <offsetfrom>r_link7</offsetfrom>
+      </body>
+      <joint name="r_dummyhand" type="hinge" enable="false">
+        <body>r_link7</body>
+        <body>r_gripper_base</body>
+        <axis>0 0 1</axis>
+        <limits>0 0</limits>
+      </joint>
+    </KinBody>
+
+    <Manipulator name="leftarm">
+      <base>l_base</base>
+      <effector>l_link7</effector>
+      <joints>l_jfinger_L</joints>
+      <closingdirection>-1</closingdirection>
+      <direction>0 0 1</direction>
+      <iksolver>ikfast_schunk_lwa3</iksolver>
+    </Manipulator>
+    <Manipulator name="rightarm">
+      <base>r_base</base>
+      <effector>r_link7</effector>
+      <joints>r_jfinger_L</joints>
+      <closingdirection>-1</closingdirection>
+      <direction>0 0 1</direction>
+      <iksolver>ikfast_schunk_lwa3</iksolver>
+    </Manipulator>
+
+  </Robot>
+</Robot>
+
+
+
+
