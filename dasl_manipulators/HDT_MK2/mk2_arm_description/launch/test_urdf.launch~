@@ -1,9 +1,9 @@
 <launch>
     <!-- Load the URDF/Xacro model of our robot -->
-	<param name="robot_description" command="$(find xacro)/xacro.py '$(find arm_description)/robots/Gimbal_torso.URDF'" />
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find mk2_arm_description)/robots/mk2_arm.URDF'" />
 	
     <!-- Launch Rviz -->
-	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find arm_description)/launch/arm.vcg"/>
+	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find mk2_arm_description)/launch/arm.vcg"/>
 
     <!-- Provide simulated control of the robot joint angles -->
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
@@ -15,5 +15,5 @@
 	</node>
  
     <!-- Publish a static transform between the robot base and the world frame -->
-    <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="3 3 1.5 0 0 0 /world /gantry_base_link 100" /> 
+    <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="3 3 1.5 0 0 0 /world /gimbal_base_link 100" /> 
 </launch>

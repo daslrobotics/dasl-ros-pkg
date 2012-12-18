@@ -1,7 +1,7 @@
 <package>
   <description brief="mk2_arm_description">
 
-     mk2_arm_description
+  mk2_arm_description
 
   </description>
   <author>cmk325</author>
@@ -13,5 +13,6 @@
   <depend package="rospy"/>
   <depend package="tf"/>
   <depend package="geometry_msgs"/>
+  <depend package="collada_urdf" />
 
 </package>
