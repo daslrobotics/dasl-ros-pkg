@@ -41,20 +41,20 @@
     </collision>
   </link>
   <link
-    name="gimbal_yaw_link">
+    name="gimbal_yaw_Link">
     <inertial>
       <origin
-        xyz="-1.06658591550189E-08 0.0521988822676796 2.53295709174067E-09"
+        xyz="-1.06659220129813E-08 0.0521988823069589 2.53297327694143E-09"
         rpy="0 0 0" />
       <mass
-        value="0.312439408831626" />
+        value="0.312439408979876" />
       <inertia
-        ixx="0.000737785386256232"
-        ixy="5.40554054117916E-11"
-        ixz="2.25109857523386E-10"
-        iyy="0.0015522503974774"
-        iyz="-1.81028783905346E-11"
-        izz="0.00179835096991255" />
+        ixx="0.000737785386772439"
+        ixy="5.40557038664525E-11"
+        ixz="2.24416223532064E-10"
+        iyy="0.00155225039793532"
+        iyz="-1.81030921677369E-11"
+        izz="0.00179835097064936" />
     </inertial>
     <visual>
       <origin
@@ -62,7 +62,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/gimbal_yaw_link.STL" />
+          filename="package://mk2_arm_description/meshes/gimbal_yaw_Link.STL" />
       </geometry>
       <material
         name="">
@@ -76,7 +76,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/gimbal_yaw_link.STL" />
+          filename="package://mk2_arm_description/meshes/gimbal_yaw_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -85,29 +85,29 @@
     type="continuous">
     <origin
       xyz="0 0 0.0207"
-      rpy="1.5707963267949 -7.62441236410402E-19 -0.0124523433757913" />
+      rpy="1.5707963267949 -7.94164081897E-19 -0.0129704757340406" />
     <parent
       link="gimbal_base_link" />
     <child
-      link="gimbal_yaw_link" />
+      link="gimbal_yaw_Link" />
     <axis
       xyz="0 -1 0" />
   </joint>
   <link
-    name="gimbal_pitch_link">
+    name="gimbal_pitch_Link">
     <inertial>
       <origin
-        xyz="3.70819773368937E-07 0.0385336079152639 -0.00216821658592113"
+        xyz="3.70789162107442E-07 0.0385336080022984 -0.00216821621311059"
         rpy="0 0 0" />
       <mass
-        value="0.214939205113631" />
+        value="0.214939219832887" />
       <inertia
-        ixx="0.000647224212222893"
-        ixy="4.13731189134004E-09"
-        ixz="3.35132670402338E-09"
-        iyy="0.000481992834339445"
-        iyz="-2.12337478633823E-05"
-        izz="0.00050820389492813" />
+        ixx="0.000647224206199649"
+        ixy="4.13773559667761E-09"
+        ixz="3.34508798182829E-09"
+        iyy="0.000481992846419197"
+        iyz="-2.12337471026162E-05"
+        izz="0.000508203893506485" />
     </inertial>
     <visual>
       <origin
@@ -115,7 +115,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/gimbal_pitch_link.STL" />
+          filename="package://mk2_arm_description/meshes/gimbal_pitch_Link.STL" />
       </geometry>
       <material
         name="">
@@ -129,7 +129,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/gimbal_pitch_link.STL" />
+          filename="package://mk2_arm_description/meshes/gimbal_pitch_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -138,29 +138,29 @@
     type="continuous">
     <origin
       xyz="0 0.1065 0"
-      rpy="-0.0107280632545701 -2.08166817117217E-17 0" />
+      rpy="-0.00759652588906983 -2.18575157973078E-16 2.71050543121376E-20" />
     <parent
-      link="gimbal_yaw_link" />
+      link="gimbal_yaw_Link" />
     <child
-      link="gimbal_pitch_link" />
+      link="gimbal_pitch_Link" />
     <axis
       xyz="-1 0 0" />
   </joint>
   <link
-    name="gimbal_roll_link">
+    name="gimbal_roll_Link">
     <inertial>
       <origin
-        xyz="7.23938379811571E-08 0.233960345311387 -0.00500671736741672"
+        xyz="7.95345848817082E-06 0.233960429689483 -0.00500681727281336"
         rpy="0 0 0" />
       <mass
-        value="0.293335680694463" />
+        value="0.293335683340013" />
       <inertia
-        ixx="0.00578530743048782"
-        ixy="-7.19346980738454E-10"
-        ixz="-1.76016068160304E-08"
-        iyy="0.000677304095565248"
-        iyz="-0.000219288884775163"
-        izz="0.00606444113867197" />
+        ixx="0.00578530750550248"
+        ixy="-7.467809540505E-10"
+        ixz="-1.76138919518162E-08"
+        iyy="0.00067730409556874"
+        iyz="-0.00021928884830813"
+        izz="0.00606444116962559" />
     </inertial>
     <visual>
       <origin
@@ -168,7 +168,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/gimbal_roll_link.STL" />
+          filename="package://mk2_arm_description/meshes/gimbal_roll_Link.STL" />
       </geometry>
       <material
         name="">
@@ -182,7 +182,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/gimbal_roll_link.STL" />
+          filename="package://mk2_arm_description/meshes/gimbal_roll_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -190,30 +190,30 @@
     name="gimbal_roll_joint"
     type="continuous">
     <origin
-      xyz="0 0.08 0"
-      rpy="3.29597460435593E-17 5.89805981832114E-17 -0.00720353270271086" />
+      xyz="0 0.0799999992233969 0"
+      rpy="-3.27862736959617E-16 -6.59194920871187E-17 -0.0104219206899189" />
     <parent
-      link="gimbal_pitch_link" />
+      link="gimbal_pitch_Link" />
     <child
-      link="gimbal_roll_link" />
+      link="gimbal_roll_Link" />
     <axis
       xyz="0 0 -1" />
   </joint>
   <link
-    name="right_shoulder_pitch_link">
+    name="right_shoulder_pitch_Link">
     <inertial>
       <origin
-        xyz="-0.000945706118405325 -5.75486716374307E-05 -0.110982391002059"
+        xyz="-0.000945957995384994 -5.75073413426885E-05 -0.111010170547544"
         rpy="0 0 0" />
       <mass
-        value="0.163443860246244" />
+        value="0.163444561598499" />
       <inertia
-        ixx="0.000541019079282424"
-        ixy="-1.61490628397893E-08"
-        ixz="9.49763154684831E-06"
-        iyy="0.000559986144944629"
-        iyz="1.83976331279934E-07"
-        izz="0.000176694491571909" />
+        ixx="0.000541016813326459"
+        ixy="-1.66391414029577E-08"
+        ixz="9.4978674936876E-06"
+        iyy="0.000559986807131274"
+        iyz="1.83791264110135E-07"
+        izz="0.000176694943761134" />
     </inertial>
     <visual>
       <origin
@@ -221,7 +221,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/right_shoulder_pitch_link.STL" />
+          filename="package://mk2_arm_description/meshes/right_shoulder_pitch_Link.STL" />
       </geometry>
       <material
         name="">
@@ -235,7 +235,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/right_shoulder_pitch_link.STL" />
+          filename="package://mk2_arm_description/meshes/right_shoulder_pitch_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -243,30 +243,30 @@
     name="right_shoulder_pitch_joint"
     type="continuous">
     <origin
-      xyz="-0.0745159451359152 0.36378233047 0"
-      rpy="-1.57079632679484 -1.5588414942257 -1.57079632679496" />
+      xyz="-0.0744803728234152 0.363782413385281 0"
+      rpy="1.57079632679489 -1.4781863977047 1.5707963267949" />
     <parent
-      link="gimbal_roll_link" />
+      link="gimbal_roll_Link" />
     <child
-      link="right_shoulder_pitch_link" />
+      link="right_shoulder_pitch_Link" />
     <axis
       xyz="0 0 -1" />
   </joint>
   <link
-    name="right_shoulder_roll_link">
+    name="right_shoulder_roll_Link">
     <inertial>
       <origin
-        xyz="-0.000393324019572594 -0.0428351305595071 -0.00178233712056754"
+        xyz="-0.000393309010737225 -0.0428351506707768 -0.00178237934408421"
         rpy="0 0 0" />
       <mass
-        value="0.0635014044087843" />
+        value="0.0635014734267768" />
       <inertia
-        ixx="9.22926698498334E-05"
-        ixy="7.99971727171826E-07"
-        ixz="-4.48582641839747E-08"
-        iyy="4.6466615979634E-05"
-        iyz="-5.63299392822718E-06"
-        izz="9.49758803930228E-05" />
+        ixx="9.2292649602227E-05"
+        ixy="8.00012530757056E-07"
+        ixz="-4.47995756803529E-08"
+        iyy="4.64665417500871E-05"
+        iyz="-5.63306326361995E-06"
+        izz="9.49757423265721E-05" />
     </inertial>
     <visual>
       <origin
@@ -274,7 +274,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/right_shoulder_roll_link.STL" />
+          filename="package://mk2_arm_description/meshes/right_shoulder_roll_Link.STL" />
       </geometry>
       <material
         name="">
@@ -288,7 +288,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/right_shoulder_roll_link.STL" />
+          filename="package://mk2_arm_description/meshes/right_shoulder_roll_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -296,30 +296,30 @@
     name="right_shoulder_roll_joint"
     type="continuous">
     <origin
-      xyz="0 0 -0.175004054864085"
-      rpy="-1.57079632679511 1.5680965801137 1.57079632679469" />
+      xyz="0 0 -0.175031746128161"
+      rpy="-1.57079632679491 1.53633681961858 1.57079632679488" />
     <parent
-      link="right_shoulder_pitch_link" />
+      link="right_shoulder_pitch_Link" />
     <child
-      link="right_shoulder_roll_link" />
+      link="right_shoulder_roll_Link" />
     <axis
       xyz="0 0 1" />
   </joint>
   <link
-    name="right_shoulder_yaw_link">
+    name="right_shoulder_yaw_Link">
     <inertial>
       <origin
-        xyz="-1.67616213951616E-06 0.00238859068134961 -0.167297239579258"
+        xyz="-1.70206885849455E-06 0.00238857676082541 -0.160970710547791"
         rpy="0 0 0" />
       <mass
-        value="0.234264205484046" />
+        value="0.234264117637169" />
       <inertia
-        ixx="0.00139590435682122"
-        ixy="8.43236762309945E-10"
-        ixz="-3.24330725215419E-08"
-        iyy="0.00128382870231813"
-        iyz="-4.30078442113598E-05"
-        izz="0.000332546471149826" />
+        ixx="0.00139590189883114"
+        ixy="6.6517309859509E-10"
+        ixz="-3.30051117137188E-08"
+        iyy="0.00128382600474984"
+        iyz="-4.30078819697236E-05"
+        izz="0.000332546476075076" />
     </inertial>
     <visual>
       <origin
@@ -327,7 +327,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/right_shoulder_yaw_link.STL" />
+          filename="package://mk2_arm_description/meshes/right_shoulder_yaw_Link.STL" />
       </geometry>
       <material
         name="">
@@ -341,7 +341,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/right_shoulder_yaw_link.STL" />
+          filename="package://mk2_arm_description/meshes/right_shoulder_yaw_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -349,30 +349,30 @@
     name="right_shoulder_yaw_joint"
     type="continuous">
     <origin
-      xyz="0 -0.0728206486484171 0"
-      rpy="1.57079632679491 1.48659895798722 -3.14159265358978" />
+      xyz="0 -0.0791471947236229 0"
+      rpy="-1.57079632679489 -0.37295399710194 3.20398189477444E-16" />
     <parent
-      link="right_shoulder_roll_link" />
+      link="right_shoulder_roll_Link" />
     <child
-      link="right_shoulder_yaw_link" />
+      link="right_shoulder_yaw_Link" />
     <axis
       xyz="0 0 -1" />
   </joint>
   <link
-    name="right_elbow_pitch_link">
+    name="right_elbow_pitch_Link">
     <inertial>
       <origin
-        xyz="-0.000360441218538843 -0.0408954080915278 -0.00105767029717724"
+        xyz="-0.000360441406612316 -0.0408954109892877 -0.00105767154228989"
         rpy="0 0 0" />
       <mass
-        value="0.0687829617534891" />
+        value="0.0687829528144863" />
       <inertia
-        ixx="0.000106324774780084"
-        ixy="8.44268708077868E-07"
-        ixz="-2.61080861900977E-08"
-        iyy="5.76141027005737E-05"
-        iyz="-2.77922824965849E-06"
-        izz="0.000105076946548717" />
+        ixx="0.000106324773131226"
+        ixy="8.44268598417257E-07"
+        ixz="-2.61106357697939E-08"
+        iyy="5.76140996321474E-05"
+        iyz="-2.77922809283027E-06"
+        izz="0.000105076943478705" />
     </inertial>
     <visual>
       <origin
@@ -380,7 +380,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/right_elbow_pitch_link.STL" />
+          filename="package://mk2_arm_description/meshes/right_elbow_pitch_Link.STL" />
       </geometry>
       <material
         name="">
@@ -394,7 +394,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/right_elbow_pitch_link.STL" />
+          filename="package://mk2_arm_description/meshes/right_elbow_pitch_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -402,30 +402,30 @@
     name="right_elbow_pitch_joint"
     type="continuous">
     <origin
-      xyz="0 0 -0.245154351351583"
-      rpy="-1.57079632679542 1.56342870700628 -5.24290930743869E-13" />
+      xyz="0 0 -0.238827805276381"
+      rpy="1.57079632679492 -1.49996318713234 3.14159265358977" />
     <parent
-      link="right_shoulder_yaw_link" />
+      link="right_shoulder_yaw_Link" />
     <child
-      link="right_elbow_pitch_link" />
+      link="right_elbow_pitch_Link" />
     <axis
       xyz="0 0 -1" />
   </joint>
   <link
-    name="right_wrist_yaw_link">
+    name="right_wrist_yaw_Link">
     <inertial>
       <origin
-        xyz="-4.53528605760534E-05 -0.00132925979523785 -0.0718241309377226"
+        xyz="-0.00124159935668548 -6.83801811680596E-05 -0.123697583732071"
         rpy="0 0 0" />
       <mass
-        value="0.143237868926312" />
+        value="0.143237840838415" />
       <inertia
-        ixx="0.000406963750992933"
-        ixy="2.74981450426412E-07"
-        ixz="1.16641021689584E-07"
-        iyy="0.000390512044832333"
-        iyz="8.98707830084602E-06"
-        izz="0.000156663380096342" />
+        ixx="0.000390076085319214"
+        ixy="-1.20574308284586E-08"
+        ixz="8.79393284758615E-06"
+        iyy="0.000407431579799367"
+        iyz="1.82629977119745E-07"
+        izz="0.000156695275148304" />
     </inertial>
     <visual>
       <origin
@@ -433,7 +433,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/right_wrist_yaw_link.STL" />
+          filename="package://mk2_arm_description/meshes/right_wrist_yaw_Link.STL" />
       </geometry>
       <material
         name="">
@@ -447,91 +447,38 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/right_wrist_yaw_link.STL" />
+          filename="package://mk2_arm_description/meshes/right_wrist_yaw_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="right_wrist_yaw_joint"
-    type="fixed">
-    <origin
-      xyz="0 -0.0999700000000001 0"
-      rpy="3.11921549796857 -1.57079631189374 1.59181711218594" />
-    <parent
-      link="right_elbow_pitch_link" />
-    <child
-      link="right_wrist_yaw_link" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="right_wrist_roll_link">
-    <inertial>
-      <origin
-        xyz="-0.000408944780249498 -0.0370500000683084 -0.000408944786089438"
-        rpy="0 0 0" />
-      <mass
-        value="0.0439051251849919" />
-      <inertia
-        ixx="7.67509583103477E-05"
-        ixy="1.01266459168484E-06"
-        ixz="-7.34251158671977E-09"
-        iyy="3.22048578541173E-05"
-        iyz="-1.0126645318785E-06"
-        izz="7.67509583337084E-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://mk2_arm_description/meshes/right_wrist_roll_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://mk2_arm_description/meshes/right_wrist_roll_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="right_wrist_roll_joint"
     type="continuous">
     <origin
-      xyz="0 0 -0.124475"
-      rpy="1.5707963267949 0.0155767413507828 -0.0165465548293445" />
+      xyz="0 -0.048096543584929 0"
+      rpy="1.57079632679489 -1.45958116646768 -3.14159265358979" />
     <parent
-      link="right_wrist_yaw_link" />
+      link="right_elbow_pitch_Link" />
     <child
-      link="right_wrist_roll_link" />
+      link="right_wrist_yaw_Link" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
   </joint>
   <link
-    name="right_wrist_pitch_link">
+    name="right_wrist_pitch_Link">
     <inertial>
       <origin
-        xyz="0.00215013276269063 -0.021967554708106 0.000617940614467904"
+        xyz="-0.000408944832468696 -0.037049999969651 -0.000408944802862396"
         rpy="0 0 0" />
       <mass
-        value="0.0825624334173131" />
+        value="0.0439051251849098" />
       <inertia
-        ixx="0.000108263418216049"
-        ixy="3.36877166704712E-06"
-        ixz="-1.09628848549562E-07"
-        iyy="9.54648193127676E-05"
-        iyz="-1.58400230428205E-06"
-        izz="0.000125428185859027" />
+        ixx="7.67509530051753E-05"
+        ixy="1.01266450021359E-06"
+        ixz="-7.34250983279078E-09"
+        iyy="3.22048578195342E-05"
+        iyz="-1.01266450373501E-06"
+        izz="7.67509529968662E-05" />
     </inertial>
     <visual>
       <origin
@@ -539,7 +486,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/right_wrist_pitch_link.STL" />
+          filename="package://mk2_arm_description/meshes/right_wrist_pitch_Link.STL" />
       </geometry>
       <material
         name="">
@@ -553,7 +500,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2_arm_description/meshes/right_wrist_pitch_link.STL" />
+          filename="package://mk2_arm_description/meshes/right_wrist_pitch_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -561,13 +508,278 @@
     name="right_wrist_pitch_joint"
     type="continuous">
     <origin
-      xyz="0 -0.0740999999999999 0"
-      rpy="-1.61133676385665 -1.16985414411186E-16 -8.95117313604032E-16" />
+      xyz="0 0 -0.176348456415071"
+      rpy="-1.57079632679489 1.51953810704376 1.57079632679491" />
     <parent
-      link="right_wrist_roll_link" />
+      link="right_wrist_yaw_Link" />
     <child
-      link="right_wrist_pitch_link" />
+      link="right_wrist_pitch_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_wrist_roll_Link">
+    <inertial>
+      <origin
+        xyz="0.00306065628323612 -0.119033681170768 8.99497192476256E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.366836124330785" />
+      <inertia
+        ixx="0.00185345445562771"
+        ixy="4.38533585724038E-05"
+        ixz="-4.93587753063786E-07"
+        iyy="0.000432433085203093"
+        iyz="1.3566348320176E-06"
+        izz="0.00203432446274109" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_arm_description/meshes/right_wrist_roll_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_arm_description/meshes/right_wrist_roll_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.074100000000003 0"
+      rpy="0.0362653907896615 1.66533453693773E-16 -1.45716771982052E-16" />
+    <parent
+      link="right_wrist_pitch_Link" />
+    <child
+      link="right_wrist_roll_Link" />
     <axis
       xyz="-1 0 0" />
+  </joint>
+  <link
+    name="right_thumb_roll_Link">
+    <inertial>
+      <origin
+        xyz="-0.000203230734927382 -0.0161010961608279 -0.0218617136291834"
+        rpy="0 0 0" />
+      <mass
+        value="0.0873521059346375" />
+      <inertia
+        ixx="5.84732983675469E-05"
+        ixy="7.64694581688529E-07"
+        ixz="7.66637732203461E-08"
+        iyy="4.01053902482225E-05"
+        iyz="2.75416313172845E-06"
+        izz="6.67240177139607E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_arm_description/meshes/right_thumb_roll_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_arm_description/meshes/right_thumb_roll_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_thumb_roll_joint"
+    type="continuous">
+    <origin
+      xyz="-0.015284999999999 -0.109781382156522 0"
+      rpy="-1.57079632679516 -1.55914211708858 2.67339782685593E-13" />
+    <parent
+      link="right_wrist_roll_Link" />
+    <child
+      link="right_thumb_roll_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_thumb_pitch_Link">
+    <inertial>
+      <origin
+        xyz="0.0514457848189979 -0.00764079597428796 -0.010265589682129"
+        rpy="0 0 0" />
+      <mass
+        value="0.019612487052281" />
+      <inertia
+        ixx="2.45628718448558E-06"
+        ixy="4.13177419586928E-10"
+        ixz="-1.17463669836362E-06"
+        iyy="1.51187111958208E-05"
+        iyz="-2.34827667674815E-10"
+        izz="1.55012602300676E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_arm_description/meshes/right_thumb_pitch_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_arm_description/meshes/right_thumb_pitch_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_thumb_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0569235000000001 -0.0258516178434754"
+      rpy="3.14159265358979 1.27445866924021 -1.5707963267949" />
+    <parent
+      link="right_thumb_roll_Link" />
+    <child
+      link="right_thumb_pitch_Link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="right_index_finger_pitch_Link">
+    <inertial>
+      <origin
+        xyz="0.051900449797014 0.00961256039913425 0.0326804763849731"
+        rpy="0 0 0" />
+      <mass
+        value="0.0194186234284368" />
+      <inertia
+        ixx="3.37058102581099E-06"
+        ixy="3.5484398654397E-06"
+        ixz="-4.62547385028269E-10"
+        iyy="1.42992729601445E-05"
+        iyz="6.89381124169279E-11"
+        izz="1.48696898890495E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_arm_description/meshes/right_index_finger_pitch_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_arm_description/meshes/right_index_finger_pitch_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_index_finger_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00196555449049784 -0.218573499999996 0"
+      rpy="1.5707963267949 -0.172649920415237 -1.5707963267949" />
+    <parent
+      link="right_wrist_roll_Link" />
+    <child
+      link="right_index_finger_pitch_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_middle_finger_pitch_Link">
+    <inertial>
+      <origin
+        xyz="0.588199602903963 -0.155551387350831 -0.0427638010797502"
+        rpy="0 0 0" />
+      <mass
+        value="0.0194186227284907" />
+      <inertia
+        ixx="3.37058101970423E-06"
+        ixy="3.54843950416901E-06"
+        ixz="-4.61843916238776E-10"
+        iyy="1.42992709740062E-05"
+        iyz="6.91363881258117E-11"
+        izz="1.48696875961401E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_arm_description/meshes/right_middle_finger_pitch_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_arm_description/meshes/right_middle_finger_pitch_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_middle_finger_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0233993322569385 0.334555337087318 0.0945748698744839"
+      rpy="1.5707963267949 -0.129408348093935 -1.5707963267949" />
+    <parent
+      link="right_wrist_roll_Link" />
+    <child
+      link="right_middle_finger_pitch_Link" />
+    <axis
+      xyz="0 0 1" />
   </joint>
 </robot>
