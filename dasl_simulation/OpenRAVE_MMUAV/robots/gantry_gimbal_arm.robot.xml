@@ -12,7 +12,7 @@
 
   <Robot file="mk2.dae">
     <RotationAxis>0 1 0 180</RotationAxis>
-    <RotationAxis>0 0 1 90</RotationAxis>
+    <RotationAxis>0 0 1 180</RotationAxis>
     <translation>-5.7912 0 2.5</translation>
   </Robot>
 
@@ -26,5 +26,14 @@
       </joint>
     </KinBody>
   </Robot>
+
+  <Manipulator name="rightarm">
+    <base>gimbal_roll_Link</base>
+    <effector>right_wrist_roll_Link</effector>
+<!--    <iksolver>ikfast_schunk_lwa3</iksolver> -->
+<!--    <joints>l_jfinger_L</joints> -->
+    <closingdirection>-1</closingdirection>
+    <direction>0 0 1</direction>
+  </Manipulator>
 
 </Robot>

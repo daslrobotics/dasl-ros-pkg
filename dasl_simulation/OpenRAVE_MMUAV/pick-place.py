@@ -30,39 +30,39 @@ def main(env,options):
     robot = env.GetRobots()[0]
 
     # select manipulator and IK model
-    manip = robot.SetActiveManipulator('leftarm') # set the manipulator to leftarm
-    ikmodel = databases.inversekinematics.InverseKinematicsModel(robot,iktype=IkParameterization.Type.Transform6D)
-    if not ikmodel.load():
-        ikmodel.autogenerate()
+    manip = robot.SetActiveManipulator('rightarm') # set the manipulator to rightarm
+    #ikmodel = databases.inversekinematics.InverseKinematicsModel(robot,iktype=IkParameterization.Type.Transform6D)
+    #if not ikmodel.load():
+    #    ikmodel.autogenerate()
 
     # create the interface for basic manipulation programs
     basemanip = interfaces.BaseManipulation(robot,plannername=options.planner)
     taskprob = interfaces.TaskManipulation(robot,plannername=options.planner)
 
-    print 'move arms to intial position'
-    target=env.GetKinBody('TibitsBox1')
-    with env:
-        jointnames = ['l_j0','l_j1','l_j2','l_j3','l_j4','l_j5','l_j6',
-                      'r_j0','r_j1','r_j2','r_j3','r_j4','r_j5','r_j6']
-        robot.SetActiveDOFs([robot.GetJoint(name).GetDOFIndex() for name in jointnames])
-        basemanip.MoveActiveJoints(goal=[-pi/4, pi/2, pi/2, -pi/2, 0, -pi/2, 0,
-                                          pi/4, pi/2, pi/2,  pi/2, 0,  pi/2, 0])
-    waitrobot(robot)
+    #print 'move arms to intial position'
+    #target=env.GetKinBody('TibitsBox1')
+    #with env:
+    #    jointnames = ['l_j0','l_j1','l_j2','l_j3','l_j4','l_j5','l_j6',
+    #                  'r_j0','r_j1','r_j2','r_j3','r_j4','r_j5','r_j6']
+    #    robot.SetActiveDOFs([robot.GetJoint(name).GetDOFIndex() for name in jointnames])
+    #    basemanip.MoveActiveJoints(goal=[-pi/4, pi/2, pi/2, -pi/2, 0, -pi/2, 0,
+    #                                      pi/4, pi/2, pi/2,  pi/2, 0,  pi/2, 0])
+    #waitrobot(robot)
 
     print 'move robot base to target'
     with env:
         #robot.SetActiveDOFs([],DOFAffine.X|DOFAffine.Y|DOFAffine.RotationAxis,[0,0,1])
         #basemanip.MoveActiveJoints(goal=[3.0,-1.6,0],maxiter=5000,steplength=0.15,maxtries=2)
-        jointnames = ['x_axis_joint','y_axis_joint','z_axis_joint']
+        jointnames = ['gantry_x_axis_joint','gantry_y_axis_joint','gantry_z_axis_joint']
         robot.SetActiveDOFs([robot.GetJoint(name).GetDOFIndex() for name in jointnames])
-        basemanip.MoveActiveJoints(goal=[8.7,-2.0,0.2])
+        basemanip.MoveActiveJoints(goal=[7.0,-1.3,-0.8])
     waitrobot(robot)
 
-    print 'release fingers'
-    taskprob.ReleaseFingers()
-    waitrobot(robot)
+    #print 'release fingers'
+    #taskprob.ReleaseFingers()
+    #waitrobot(robot)
 
-    #raw_input('press ENTER to continue...');
+    raw_input('press ENTER to continue...');
 
     #Tgoal = array([[0,-1,0,3.5],[-1,0,0,-1.3],[0,0,-1,0.842],[0,0,0,1]])
 

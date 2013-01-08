@@ -12,10 +12,9 @@
 
   <Robot file="mk2.dae">
     <RotationAxis>0 1 0 180</RotationAxis>
-    <RotationAxis>0 0 1 90</RotationAxis>
+    <RotationAxis>0 0 1 180</RotationAxis>
     <translation>-5.7912 0 2.5</translation>
   </Robot>
-
 
   <Robot>
     <!-- connect the the gimbal to gantry with a with dummy joint -->

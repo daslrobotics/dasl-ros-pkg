@@ -5,8 +5,8 @@
   <!-- right arm with gimbal -->
   <Robot>
     <Robot file="mk2.dae"></Robot>
-<!--     <RotationAxis>0 0 0 0</RotationAxis>
-    <translation>-5.7912 -0.29 1.115</translation> -->
+    <RotationAxis>0 0 0 0</RotationAxis>
+<!--    <translation>-5.7912 -0.29 1.115</translation> -->
   </Robot>
 
 </Robot>
