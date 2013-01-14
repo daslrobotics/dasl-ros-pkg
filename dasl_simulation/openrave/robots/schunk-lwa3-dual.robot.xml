@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- shows how to combine two schunk arms -->
+<Robot name="schunk-lwa3-dual">
+
+  <KinBody name="gantry" file="gimbal.kinbody.xml">
+  </KinBody>
+
+  <!-- left arm -->
+  <Robot>
+    <Robot prefix="l_" file="schunk-lwa3.zae"></Robot>
+    <RotationAxis>1 0 0 -90</RotationAxis>
+    <translation>-5.7912 0.29 1.115</translation>
+  </Robot>
+  <!-- right arm -->
+  <Robot>
+    <Robot prefix="r_" file="schunk-lwa3.zae"></Robot>
+    <RotationAxis>1 0 0 90</RotationAxis>
+    <translation>-5.7912 -0.29 1.115</translation>
+  </Robot>
+
+  <Robot>
+    <!-- connect the two arms with dummy joints -->
+    <KinBody>
+      <joint name="leftdummy" type="hinge" enable="false">
+        <body>yaw_link</body>
+        <body>l_base</body>
+        <limitsdeg>0 0</limitsdeg>
+      </joint>
+      <joint name="rightdummy" type="hinge" enable="false">
+        <body>yaw_link</body>
+        <body>r_base</body>
+        <limitsdeg>0 0</limitsdeg>
+      </joint>
+    </KinBody>
+
+    <!-- Left gripper dummy joint -->
+    <KinBody prefix="l_" file="schunk_manip.kinbody.xml">
+      <body name="l_gripper_base">
+        <offsetfrom>l_link7</offsetfrom>
+      </body>
+      <joint name="l_dummyhand" type="hinge" enable="false">
+        <body>l_link7</body>
+        <body>l_gripper_base</body>
+        <limits>0 0</limits>
+      </joint>
+    </KinBody>
+
+    <!-- Right gripper dummy joint -->
+    <KinBody prefix="r_" file="schunk_manip.kinbody.xml">
+      <body name="r_gripper_base">
+        <offsetfrom>r_link7</offsetfrom>
+      </body>
+      <joint name="r_dummyhand" type="hinge" enable="false">
+        <body>r_link7</body>
+        <body>r_gripper_base</body>
+        <limits>0 0</limits>
+      </joint>
+    </KinBody>
+
+    <Manipulator name="leftarm">
+      <base>l_base</base>
+      <effector>l_link7</effector>
+      <iksolver>ikfast_schunk_lwa3</iksolver>
+      <joints>l_jfinger_L</joints>
+      <closingdirection>-1</closingdirection>
+      <direction>0 0 1</direction>
+    </Manipulator>
+    <Manipulator name="rightarm">
+      <base>r_base</base>
+      <effector>r_link7</effector>
+      <iksolver>ikfast_schunk_lwa3</iksolver>
+      <joints>r_jfinger_L</joints>
+      <closingdirection>-1</closingdirection>
+      <direction>0 0 1</direction>
+    </Manipulator>
+
+  </Robot>
+</Robot>

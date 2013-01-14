@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- shows how to combine two schunk arms -->
+<Robot name="mk2_arm_with_gimbal">
+
+  <!-- right arm with gimbal -->
+  <Robot>
+    <Robot file="mk2.dae"></Robot>
+    <RotationAxis>0 0 0 0</RotationAxis>
+<!--    <translation>-5.7912 -0.29 1.115</translation> -->
+  </Robot>
+
+</Robot>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- shows how to combine two schunk arms -->
+<Robot name="gantry_gimbal_arm">
+
+  <!-- gantry -->
+  <Robot>
+    <KinBody name="gantry" file="gantry.kinbody.xml">
+    </KinBody>
+  </Robot>
+
+  <!-- right arm with gimbal -->
+
+  <Robot file="mk2.robot.xml">
+    <RotationAxis>0 1 0 180</RotationAxis>
+    <RotationAxis>0 0 1 90</RotationAxis>
+    <translation>-5.7912 0 2.5</translation>
+  </Robot>
+
+  <Robot>
+    <!-- connect the the gimbal to gantry with a with dummy joint -->
+    <KinBody>
+      <joint name="dummy" type="hinge" enable="false">
+        <body>gantry_z_axis_link</body>
+        <body>gimbal_base_link</body>
+        <limitsdeg>0 0</limitsdeg>
+      </joint>
+    </KinBody>
+  </Robot>
+
+<!--
+  <Manipulator name="leftarm">
+    <base>gimbal_roll_Link</base>
+    <effector>right_wrist_roll_Link</effector>
+    <iksolver>ikfast_schunk_lwa3</iksolver> 
+    <joints>right_thumb_roll_joint right_thumb_pitch_joint right_index_finger_pitch_joint right_middle_finger_pitch_joint</joints>
+    <closingdirection>1 1 1 1</closingdirection>
+    <direction>0 0 1</direction>
+  </Manipulator>
+-->
+
+</Robot>

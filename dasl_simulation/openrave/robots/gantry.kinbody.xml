@@ -1,0 +1,89 @@
+<Kinbody name = "gantry">
+
+    <body name="gantry_base_link">
+      <geom type="box">
+        <extents>0.0762 0.0762 2.25</extents>
+        <translation>-5.7912 -4.8768 2.25</translation>
+      </geom>
+      <geom type="box">
+        <extents>0.0762 0.0762 2.25</extents>
+        <translation>-5.7912 4.8768 2.25</translation>
+      </geom>
+      <geom type="box">
+        <extents>0.0762 0.0762 2.25</extents>
+        <translation>5.7912 -4.8768 2.25</translation>
+      </geom>
+      <geom type="box">
+        <extents>0.0762 0.0762 2.25</extents>
+        <translation>5.7912 4.8768 2.25</translation>
+      </geom>
+      <geom type="box">
+        <extents>5.7912 0.0762 0.0762</extents>
+        <translation>0 -4.8768 4.5</translation>
+      </geom>
+      <geom type="box">
+        <extents>5.7912 0.0762 0.0762</extents>
+        <translation>0 4.8768 4.5</translation>
+      </geom>
+    </body>
+
+    <body name="gantry_x_axis_link" type="dynamic">
+      <offsetfrom>gantry_base_link</offsetfrom>
+      <geom type="box">
+        <extents>0.0762 4.8768 0.0762</extents>
+        <Translation>-5.7912 0 4.5</Translation>
+      </geom>
+    </body>
+
+    <body name="gantry_y_axis_link" type="dynamic">
+      <offsetfrom>gantry_x_axis_link</offsetfrom>
+      <geom type="box">
+        <extents>0.08 0.08 0.08</extents>
+        <Translation>-5.7912 0 4.5</Translation>
+        <diffuseColor>1 0.05 0.05</diffuseColor>
+      </geom>
+    </body>
+
+    <body name="gantry_z_axis_link" type="dynamic">
+      <offsetfrom>gantry_y_axis_link</offsetfrom>
+      <geom type="box">
+        <extents>0.0762 0.0381 2.0</extents>
+        <translation>-5.7912 0 4.5</translation>
+      </geom>
+    </body>
+
+    <Joint circular="false" name="gantry_x_axis_joint" type="slider">
+      <Body>gantry_base_link</Body>
+      <Body>gantry_x_axis_link</Body>
+      <offsetfrom>gantry_base_link</offsetfrom>
+      <weight>4</weight>
+      <limits>11 1</limits>
+      <axis>1 0 0 </axis>
+      <maxvel>3</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+
+    <Joint circular="false" name="gantry_y_axis_joint" type="slider">
+      <Body>gantry_x_axis_link</Body>
+      <Body>gantry_y_axis_link</Body>
+      <offsetfrom>gantry_x_axis_link</offsetfrom>
+      <weight>4</weight>
+      <limits>4 -4</limits>
+      <axis>0 1 0</axis>
+      <maxvel>3</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+    
+    <Joint circular="false" name="gantry_z_axis_joint" type="slider">
+      <Body>gantry_y_axis_link</Body>
+      <Body>gantry_z_axis_link</Body>
+      <offsetfrom>gantry_y_axis_link</offsetfrom>
+      <weight>4</weight>
+      <limits>2.5 -1</limits>
+      <axis>0 0 1 </axis>
+      <maxvel>3</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+
+</Kinbody>
+

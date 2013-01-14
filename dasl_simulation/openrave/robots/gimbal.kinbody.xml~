@@ -1,0 +1,157 @@
+<Kinbody name = "gantry">
+
+    <body name="base_link">
+      <geom type="box">
+        <extents>0.0762 0.0762 2.25</extents>
+        <translation>-5.7912 -4.8768 2.25</translation>
+      </geom>
+      <geom type="box">
+        <extents>0.0762 0.0762 2.25</extents>
+        <translation>-5.7912 4.8768 2.25</translation>
+      </geom>
+      <geom type="box">
+        <extents>0.0762 0.0762 2.25</extents>
+        <translation>5.7912 -4.8768 2.25</translation>
+      </geom>
+      <geom type="box">
+        <extents>0.0762 0.0762 2.25</extents>
+        <translation>5.7912 4.8768 2.25</translation>
+      </geom>
+      <geom type="box">
+        <extents>5.7912 0.0762 0.0762</extents>
+        <translation>0 -4.8768 4.5</translation>
+      </geom>
+      <geom type="box">
+        <extents>5.7912 0.0762 0.0762</extents>
+        <translation>0 4.8768 4.5</translation>
+      </geom>
+    </body>
+
+    <body name="x_axis_link" type="dynamic">
+      <offsetfrom>base_link</offsetfrom>
+      <geom type="box">
+        <extents>0.0762 4.8768 0.0762</extents>
+        <Translation>-5.7912 0 4.5</Translation>
+      </geom>
+    </body>
+
+    <body name="y_axis_link" type="dynamic">
+      <offsetfrom>x_axis_link</offsetfrom>
+      <geom type="box">
+        <extents>0.08 0.08 0.08</extents>
+        <Translation>-5.7912 0 4.5</Translation>
+        <diffuseColor>1 0.05 0.05</diffuseColor>
+      </geom>
+    </body>
+
+    <body name="z_axis_link" type="dynamic">
+      <offsetfrom>y_axis_link</offsetfrom>
+      <geom type="box">
+        <extents>0.0762 0.0381 3.0</extents>
+        <translation>-5.7912 0 4.5</translation>
+      </geom>
+    </body>
+ 
+    <Body name="pitch_link" type="dynamic">
+      <offsetfrom>z_axis_link</offsetfrom>
+      <Translation>-5.7912 0 1.4238</Translation>
+      <Geom type="cylinder">
+        <rotationaxis>0 0 0 0</rotationaxis>
+        <diffuseColor>1 0.05 0.05</diffuseColor>
+        <radius>0.0762</radius>
+        <height>0.0762</height>
+      </Geom>
+    </Body>
+
+    <Body name="roll_link" type="dynamic">
+      <offsetfrom>pitch_link</offsetfrom>
+      <Translation>0 0 -0.1524</Translation>
+      <Geom type="cylinder">
+        <rotationaxis>0 0 1 90</rotationaxis>
+        <diffuseColor>1 0.05 0.05</diffuseColor>
+        <radius>0.0762</radius>
+        <height>0.0762</height>
+      </Geom>
+    </Body>
+
+    <Body name="yaw_link" type="dynamic">
+      <offsetfrom>roll_link</offsetfrom>
+      <Translation>0 0 -0.1524</Translation>
+      <Geom type="cylinder">
+        <rotationaxis>0 0 0 0</rotationaxis>
+        <diffuseColor>1 0.05 0.05</diffuseColor>
+        <radius>0.0762</radius>
+        <height>0.5</height>
+      </Geom>
+    </Body>
+
+    <Joint circular="false" name="x_axis_joint" type="slider">
+      <Body>base_link</Body>
+      <Body>x_axis_link</Body>
+      <offsetfrom>base_link</offsetfrom>
+      <weight>4</weight>
+      <limits>11 1</limits>
+      <axis>1 0 0 </axis>
+      <maxvel>3</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+
+    <Joint circular="false" name="y_axis_joint" type="slider">
+      <Body>x_axis_link</Body>
+      <Body>y_axis_link</Body>
+      <offsetfrom>x_axis_link</offsetfrom>
+      <weight>4</weight>
+      <limits>4 -4</limits>
+      <axis>0 1 0</axis>
+      <maxvel>3</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+    
+    <Joint circular="false" name="z_axis_joint" type="slider">
+      <Body>y_axis_link</Body>
+      <Body>z_axis_link</Body>
+      <offsetfrom>y_axis_link</offsetfrom>
+      <weight>4</weight>
+      <limits>2.5 -1</limits>
+      <axis>0 0 1 </axis>
+      <maxvel>3</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+
+    <Joint circular="true" name="pitch_joint" type="hinge">
+      <Body>z_axis_link</Body>
+      <Body>pitch_link</Body>
+      <offsetfrom>z_axis_link</offsetfrom>
+      <Anchor>-5.7912 0 1.4238</Anchor>
+      <weight>4</weight>
+      <limitsdeg>-180 180</limitsdeg>
+      <axis>0 1 0</axis>
+      <maxvel>3</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+
+    <Joint circular="true" name="roll_joint" type="hinge">
+      <Body>pitch_link</Body>
+      <Body>roll_link</Body>
+      <offsetfrom>pitch_link</offsetfrom>
+      <Anchor>0 0 -0.1524</Anchor>
+      <weight>4</weight>
+      <limitsdeg>-180 180</limitsdeg>
+      <axis>1 0 0</axis>
+      <maxvel>3</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+  
+    <Joint circular="true" name="yaw_joint" type="hinge">
+      <Body>roll_link</Body>
+      <Body>yaw_link</Body>
+      <offsetfrom>roll_link</offsetfrom>
+      <Anchor>0 0 -0.0762</Anchor>
+      <weight>4</weight>
+      <limitsdeg>-180 180</limitsdeg>
+      <axis>0 0 1</axis>
+      <maxvel>3</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+</Kinbody>
+

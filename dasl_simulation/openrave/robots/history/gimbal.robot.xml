@@ -1,0 +1,79 @@
+<Kinbody name = "gimbal">
+
+    <body name="z_axis_link">
+      <geom type="box">
+        <extents>0.0762 0.0381 0.4</extents>
+        <translation>0 0 0</translation>
+      </geom>
+    </body>
+ 
+    <Body name="pitch_link" type="dynamic">
+      <offsetfrom>z_axis_link</offsetfrom>
+      <Translation>0 0 -0.4762</Translation>
+      <Geom type="cylinder">
+        <rotationaxis>0 0 0 0</rotationaxis>
+        <diffuseColor>1 0.05 0.05</diffuseColor>
+        <radius>0.0762</radius>
+        <height>0.0762</height>
+      </Geom>
+    </Body>
+
+    <Body name="roll_link" type="dynamic">
+      <offsetfrom>pitch_link</offsetfrom>
+      <Translation>0 0 -0.1524</Translation>
+      <Geom type="cylinder">
+        <rotationaxis>0 0 1 90</rotationaxis>
+        <diffuseColor>1 0.05 0.05</diffuseColor>
+        <radius>0.0762</radius>
+        <height>0.0762</height>
+      </Geom>
+    </Body>
+
+    <Body name="yaw_link" type="dynamic">
+      <offsetfrom>roll_link</offsetfrom>
+      <Translation>0 0 -0.1524</Translation>
+      <Geom type="cylinder">
+        <rotationaxis>0 0 0 0</rotationaxis>
+        <diffuseColor>1 0.05 0.05</diffuseColor>
+        <radius>0.0762</radius>
+        <height>0.5</height>
+      </Geom>
+    </Body>
+    
+    <Joint circular="true" name="pitch_joint" type="hinge">
+      <Body>z_axis_link</Body>
+      <Body>pitch_link</Body>
+      <offsetfrom>z_axis_link</offsetfrom>
+      <Anchor>0 0 -0.4762</Anchor>
+      <weight>4</weight>
+      <limitsdeg>-180 180</limitsdeg>
+      <axis>0 1 0</axis>
+      <maxvel>3</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+
+    <Joint circular="true" name="roll_joint" type="hinge">
+      <Body>pitch_link</Body>
+      <Body>roll_link</Body>
+      <offsetfrom>pitch_link</offsetfrom>
+      <Anchor>0 0 -0.1524</Anchor>
+      <weight>4</weight>
+      <limitsdeg>-180 180</limitsdeg>
+      <axis>1 0 0</axis>
+      <maxvel>3</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+  
+    <Joint circular="true" name="yaw_joint" type="hinge">
+      <Body>roll_link</Body>
+      <Body>yaw_link</Body>
+      <offsetfrom>roll_link</offsetfrom>
+      <Anchor>0 0 -0.0762</Anchor>
+      <weight>4</weight>
+      <limitsdeg>-180 180</limitsdeg>
+      <axis>0 0 1</axis>
+      <maxvel>3</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+
+</Kinbody>

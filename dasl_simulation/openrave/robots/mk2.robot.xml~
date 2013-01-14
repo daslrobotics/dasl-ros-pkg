@@ -1,0 +1,6 @@
+<robot file="mk2.dae">
+  <manipulator name="rightarm">
+    <base>gimbal_roll_Link</base>
+    <effector>right_wrist_roll_Link</effector>
+  </manipulator>
+</robot>
