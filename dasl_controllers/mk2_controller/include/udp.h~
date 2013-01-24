@@ -1,0 +1,22 @@
+#ifndef MK2_UDP_H
+#define MK2_UDP_H
+
+#include "ros/ros.h"
+#include "stdafx.h"
+#include "gateway.h"
+#include "data_types.h"
+
+typedef unsigned int DWORD;  //<-- added
+typedef struct sockaddr * LPSOCKADDR; //<-- added
+typedef void * LPVOID; //<-- added
+
+void init_udp(int clientSock);
+
+namespace MK2
+{
+
+
+	//void send_via_udp(Message *msg);
+}
+
+#endif

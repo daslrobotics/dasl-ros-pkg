@@ -1,0 +1,16 @@
+<package>
+  <description brief="mk2_terminal">
+
+     mk2_terminal
+
+  </description>
+  <author>dasl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/mk2_terminal</url>
+
+  <depend package="roscpp"/>
+
+</package>
+
+

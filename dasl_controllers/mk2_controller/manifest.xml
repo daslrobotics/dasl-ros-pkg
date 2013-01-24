@@ -1,0 +1,26 @@
+<package>
+  <description brief="mk2_controller">
+
+     mk2_controller
+
+  </description>
+  <author>dasl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/mk2_controller</url>
+
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="sensor_msgs"/>
+  <depend package="std_msgs"/>
+  <depend package="urdf"/>
+  <depend package="pr2_controllers_msgs"/>
+  <depend package="diagnostic_updater"/>
+  <depend package="diagnostic_msgs"/>
+  <depend package="xacro"/>
+  <depend package="robot_state_publisher"/>
+  <depend package="actuator_array_driver"/>
+
+</package>
+
+

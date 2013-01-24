@@ -1,0 +1,12 @@
+<launch>
+
+    <include file="$(find wubble_environments)/launch/wubble_world.launch" />
+
+    <include file="$(find wubble_description)/launch/wubble_robot.launch" />
+
+    <include file="$(find wubble_teleop)/launch/wubble_logitech.launch" />
+
+    <node pkg="fake_localization" type="fake_localization" name="fake_localization" respawn="true" output="screen" >
+        <param name="odom_frame_id" value="odom"/>
+    </node>
+</launch>

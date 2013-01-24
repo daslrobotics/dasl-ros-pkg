@@ -1,0 +1,52 @@
+
+#include "stdafx.h"
+#include "udp.h"
+
+//using namespace MK2;
+
+void init_udp(int clientSock)
+{
+	int s;			
+	if((s=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP))==-1)		// <-------------- big change
+	//if(WSAStartup(MAKEWORD(2, 2),&wsaData) != 0) /*windows socket startup */
+	{
+		ROS_ERROR("WSAStartup Failed");
+		//system("PAUSE");
+		exit(1);
+	}
+	 
+	memset((char*)&clientAddr,0,sizeof(clientAddr));
+	clientAddr.sin_family=AF_INET; /*set client address protocol family*/
+	clientAddr.sin_addr.s_addr=INADDR_ANY;
+	clientAddr.sin_port=htons((u_short)GATEWAY_IP_PORT_NUM);  
+
+	serverAddr.sin_addr.s_addr=inet_addr(GATEWAY_IP_ADDRESS_STRING); 
+    	serverAddr.sin_family=AF_INET;
+	serverAddr.sin_port=htons((u_short)GATEWAY_IP_PORT_NUM);  
+	 
+
+	if (serverAddr.sin_addr.s_addr==INADDR_NONE)
+	{
+		ROS_ERROR("Unable to obtain Gateway IP (bad IP)");
+		//system("PAUSE");
+		exit(1);
+    	}
+	  
+	clientSock = socket(PF_INET,SOCK_DGRAM,0);/*create a socket*/
+
+	if (clientSock<0)
+	{
+		ROS_ERROR("Socket creation failed\n");
+		//system("PAUSE");
+		exit(1);
+	}
+
+	/*bind a client address and port*/
+	if (bind(clientSock,(LPSOCKADDR)&clientAddr,sizeof(struct sockaddr))<0)
+	{
+		ROS_ERROR("Socket bind failed\n");
+		//system("PAUSE");
+		exit(1);
+	}
+}
+

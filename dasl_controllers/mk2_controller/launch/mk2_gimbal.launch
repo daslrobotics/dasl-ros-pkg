@@ -1,0 +1,41 @@
+<launch>
+
+    <!-- Load the URDF/Xacro model of our robot -->
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find mk2_controller)/robots/mk2_gimbal_description.URDF'" />
+	
+    <!-- Launch Rviz -->
+	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find mk2_controller)/launch/mk2_gimbal.vcg"/>
+
+    <!-- Start the Example Driver -->
+    <node pkg="mk2_controller" type="mk2_controller" name="mk2_controller" output="screen" >
+        <rosparam command="load" file="$(find mk2_controller)/config/mk2_gimbal.yaml" />
+    </node>
+
+    <!-- Start the joystick node -->
+    <node respawn="true" pkg="joy" type="joy_node" name="joy" >
+        <param name="dev" type="string" value="/dev/input/js0" />
+        <param name="deadzone" value="0.12" />
+        <!-- <remap from="joy" to="logitech" /> -->
+    </node>
+
+    <!-- Load arm control node -->
+    <node pkg="mk2_controller" type="move_arm_joy.py" name="move_arm_joy" />
+
+    <!-- Start the manual control GUI 
+    <node pkg="actuator_array_gui" type="actuator_array_gui.py" name="MK2_GUI" respawn="false" output="screen">
+        <rosparam command="load" file="$(find actuator_array_example)/config/MK2_gimbal.yaml" />
+    </node> -->
+
+    <!-- Provide simulated control of the robot joint angles 
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+	<param name="/use_gui" value="True" /> -->
+    
+    <!-- Publish the robot state -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+	<param name="publish_frequency" value="20.0"/>
+	</node> 
+ 
+    <!-- Publish a static transform between the robot base and the world frame -->
+    <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="3 3 1.5 0 0 0 /world /gimbal_base_link 100" /> 
+
+</launch>
