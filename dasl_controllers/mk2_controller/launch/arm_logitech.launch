@@ -1,5 +1,8 @@
 <launch>
 
+    <!-- Load the URDF/Xacro model of our robot -->
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find mk2_controller)/robots/mk2_gimbal_description.URDF'" />
+
     <!-- Start the joystick node -->
     <node respawn="true" pkg="joy" type="joy_node" name="joy" >
         <param name="dev" type="string" value="/dev/input/js0" />

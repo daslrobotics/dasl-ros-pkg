@@ -1,5 +1,4 @@
 <launch>
-
     <!-- Start the joystick node -->
     <node respawn="true" pkg="joy" type="joy_node" name="joy" >
         <param name="dev" type="string" value="/dev/input/js0" />
@@ -7,11 +6,9 @@
         <!-- <remap from="joy" to="logitech" /> -->
     </node>
 
-    <!-- Load arm control node -->
-    <node pkg="mk2_controller" type="move_arm_joy.py" name="move_arm_joy" />
+    <!-- Load gantry control node -->
+    <node pkg="gantry_control" type="move_gantry_joy.py" name="move_gantry_joy" />
 
     <!-- Load gantry control node -->
-    <node pkg="mk2_controller" type="mk2_controller" name="mk2_controller" output="screen" >
-    </node>
-
+    <node pkg="gantry_controller" type="gantry_controller.py" name="gantry_controller" />
 </launch>

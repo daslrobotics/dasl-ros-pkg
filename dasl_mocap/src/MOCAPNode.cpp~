@@ -83,7 +83,7 @@ int main(int argc, char **argv)
 ///////////////////////////////////////////////////////////////////////////
 
   static tf::TransformBroadcaster br;
-dff
+
   int count = 0;
   //float thrust=1000;
   //float roll=0.0;

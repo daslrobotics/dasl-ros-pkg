@@ -99,7 +99,7 @@ void processMocapData( const char** mocap_model )
 
 	tf::Transform transform;
 	// Translate mocap data from mm --> m to be compatible with rviz
-f
+
 	// Change y and z due to mocap calibration
 
 	transform.setOrigin( tf::Vector3(-Socket.rigidBody[0].x / 1000.0f,Socket.rigidBody[0].z / 1000.0f,Socket.rigidBody[0].y / 1000.0f ) );
@@ -111,8 +111,8 @@ f
 	transform.setRotation(q.inverse());		// Handle 
 
 	int rigid_body_id = abs(Socket.rigidBody[0].ID);
-	const char* rigid_body_name = "OBJECT"; //mocap_model[rigid_body_id];
-	br.sendTransform(tf::StampedTransform(transform, timestamp, "base_link", std::string( rigid_body_name ) ));
+	const char* rigid_body_name = "gantry_gimbal_base_link"; //mocap_model[rigid_body_id];
+	br.sendTransform(tf::StampedTransform(transform, timestamp, "mocap_origin", std::string( rigid_body_name ) ));
 
       //}
     }

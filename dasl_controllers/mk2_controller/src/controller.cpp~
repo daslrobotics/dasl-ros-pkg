@@ -386,7 +386,7 @@ bool MK2Driver::read_(ros::Time ts)
     //joint_state_msg_.velocity[i] = actuators_[channel].getVelocity();
     //joint_state_msg_.effort[i]   = actuators_[channel].getMaxTorque();
 
-    joint_state_msg_.position[i] = Drives[channel].hs.position;
+    joint_state_msg_.position[i] = -1*Drives[channel].hs.position;
     joint_state_msg_.velocity[i] = Drives[channel].hs.velocity;
     joint_state_msg_.effort[i] = Drives[channel].hs.torque;
   }
@@ -412,7 +412,7 @@ bool MK2Driver::command_()
     //actuators_[channel].setPosition(command_msg_.position[i]);
 
     Drives[channel].control.velocity = command_msg_.velocity[i];
-    Drives[channel].control.position = command_msg_.position[i];
+    Drives[channel].control.position = -1*command_msg_.position[i];
   }
 
   return true;
@@ -520,8 +520,6 @@ int main(int argc, char** argv)
 	// Reset MK2 driver
 	set_reset_status_to_all_drives_();			//reset values in structures that hold drive data	
 	MK2::send_reset_cmd(MK2::NodeID::ALL_DEVICES);		//reset drive to a known state
-
-	controller.home_;
 
 	//a little hack for the send status request to send on both ports
 	Drives[15].port = 3;

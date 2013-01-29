@@ -1,39 +1,20 @@
 <robot
-  name="mk2_gimbal_description">
-
-  <link
-    name="gantry_link">
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://mk2_controller/meshes/gantry_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-  </link>
-
+  name="mk2_gimbal">
   <link
     name="gimbal_base_link">
     <inertial>
       <origin
-        xyz="-0.00031125 0.01103 -0.00018403"
+        xyz="-0.000184028061416037 0.000311245853605479 -0.0110303559280557"
         rpy="0 0 0" />
       <mass
-        value="0.13049" />
+        value="0.130487655760344" />
       <inertia
-        ixx="0.00032049"
-        ixy="3.1452E-07"
-        ixz="-1.2832E-06"
-        iyy="0.00049448"
-        iyz="1.9521E-07"
-        izz="0.00020587" />
+        ixx="0.000205865272154098"
+        ixy="1.28321175626756E-06"
+        ixz="-1.95212944651905E-07"
+        iyy="0.000320493942072279"
+        iyz="3.14521016025979E-07"
+        izz="0.000494477771891756" />
     </inertial>
     <visual>
       <origin
@@ -46,7 +27,7 @@
       <material
         name="">
         <color
-          rgba="0.79216 0.81961 0.93333 1" />
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
@@ -59,35 +40,20 @@
       </geometry>
     </collision>
   </link>
-
-  <joint
-    name="gantry_joint"
-    type="fixed">
-    <origin
-      xyz="0 0 0"
-      rpy="1.5708 0 1.5894" />
-    <parent
-      link="gantry_link" />
-    <child
-      link="gimbal_base_link" />
-    <axis
-      xyz="0 -1 0" />
-  </joint>
-
   <link
     name="gimbal_yaw_link">
     <inertial>
       <origin
-        xyz="0 0.052199 0"
+        xyz="-1.0664E-08 0.072899 2.5325E-09"
         rpy="0 0 0" />
       <mass
         value="0.31244" />
       <inertia
         ixx="0.00073779"
-        ixy="0"
-        ixz="0"
+        ixy="5.4047E-11"
+        ixz="2.4246E-10"
         iyy="0.0015523"
-        iyz="0"
+        iyz="-1.8097E-11"
         izz="0.0017984" />
     </inertial>
     <visual>
@@ -118,27 +84,27 @@
     name="gimbal_yaw_joint"
     type="continuous">
     <origin
-      xyz="0 0 0.0207"
-      rpy="1.5708 0 1.5894" />
+      xyz="0 0 0"
+      rpy="0 1.5708 0" />
     <parent
       link="gimbal_base_link" />
     <child
       link="gimbal_yaw_link" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 0 0" />
   </joint>
   <link
     name="gimbal_pitch_link">
     <inertial>
       <origin
-        xyz="3.7236E-07 0.038534 -0.0021682"
+        xyz="3.7154E-07 0.16573 -0.0021682"
         rpy="0 0 0" />
       <mass
         value="0.21494" />
       <inertia
         ixx="0.00064722"
-        ixy="4.1387E-09"
-        ixz="3.3453E-09"
+        ixy="4.1358E-09"
+        ixz="3.3545E-09"
         iyy="0.00048199"
         iyz="-2.1234E-05"
         izz="0.0005082" />
@@ -171,27 +137,27 @@
     name="gimbal_pitch_joint"
     type="continuous">
     <origin
-      xyz="0 0.1065 0"
-      rpy="0.015488 0 0" />
+      xyz="0 0 0"
+      rpy="0 2.2956E-49 0" />
     <parent
       link="gimbal_yaw_link" />
     <child
       link="gimbal_pitch_link" />
     <axis
-      xyz="1 0 0" />
+      xyz="0 0 0" />
   </joint>
   <link
     name="gimbal_roll_link">
     <inertial>
       <origin
-        xyz="7.9412E-08 0.23396 -0.0050067"
+        xyz="6.7525E-08 0.44116 -0.0050067"
         rpy="0 0 0" />
       <mass
         value="0.29334" />
       <inertia
         ixx="0.0057853"
-        ixy="0"
-        ixz="-1.7452E-08"
+        ixy="-7.3171E-10"
+        ixz="-1.7578E-08"
         iyy="0.0006773"
         iyz="-0.00021929"
         izz="0.0060644" />
@@ -224,13 +190,13 @@
     name="gimbal_roll_joint"
     type="continuous">
     <origin
-      xyz="0 0.08 0"
-      rpy="0 0 0.033714" />
+      xyz="0 0 0"
+      rpy="0 2.2956E-49 0" />
     <parent
       link="gimbal_pitch_link" />
     <child
       link="gimbal_roll_link" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 0" />
   </joint>
 </robot>

@@ -3,6 +3,7 @@
 	type="MOCAPnode" 
 	name="MOCAPnode" 
 	respawn="false"
+	required="true">
 	<rosparam file="$(find mocap)/config/mocap.yaml" command="load" />
   </node>
 </launch>
