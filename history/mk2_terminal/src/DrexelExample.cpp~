@@ -384,7 +384,7 @@ int main(int argc, char** argv)
 		}
 	}
 
-	drive_id = 56;
+	drive_id = 57;
 
 	//change state to NOS_CONTROL in order to accept motor control commands	
 	MK2::send_change_state_cmd(drive_id, MK2::SWStates::NOS_CONTROL);		

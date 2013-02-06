@@ -1,0 +1,64 @@
+#!/usr/bin/env python
+
+PKG = 'mk2_controller'
+
+import roslib; roslib.load_manifest(PKG)
+
+import time
+
+import rospy
+from sensor_msgs.msg import Joy
+from sensor_msgs.msg import JointState as JointState
+
+class MoveTorsoPS3():
+    def __init__(self):
+        rospy.init_node('move_torso_joy', anonymous=True)
+        self.step_size = 1.0 * 0.005113269
+        self.joy_data = None
+
+        self.position = [0,0,0] 
+
+        self.joint_states = {'torso_yaw_joint',
+                             'torso_pitch_joint',
+                             'torso_roll_joint'}
+
+        rospy.Subscriber('/joy', Joy, self.read_joystick_data)
+        self.joint_states_pub = rospy.Publisher('/command', JointState)
+
+        r = rospy.Rate(50)
+
+    	while not rospy.is_shutdown():
+            self.publish_joint_states()
+            r.sleep()
+
+    def read_joystick_data(self, data):
+        self.joy_data = data
+
+    def publish_joint_states(self):
+        # Construct message & publish joint states
+        msg = JointState()
+        if self.joy_data:
+            for joint in self.joint_states:
+	        msg.name.append(joint)
+                if joint == 'torso_yaw_joint':
+                    self.position[0] += -1 * self.joy_data.axes[0] * self.step_size
+                    msg.position.append(self.position[0])
+                elif joint == 'torso_pitch_joint':
+                    self.position[1] += -1 * self.joy_data.axes[1] * self.step_size
+                    msg.position.append(self.position[1])
+                elif joint == 'torso_roll_joint':
+                    self.position[2] += -1 * self.joy_data.axes[2] * self.step_size
+                    msg.position.append(self.position[2])
+                else:
+                    msg.position.append(0.0)
+                msg.velocity.append(0.2)
+                msg.effort.append(0.0)
+
+	    msg.header.stamp = rospy.Time.now()
+            self.joint_states_pub.publish(msg)
+
+if __name__ == '__main__':
+    try:
+        s = MoveTorsoPS3()
+        rospy.spin()
+    except rospy.ROSInterruptException: pass

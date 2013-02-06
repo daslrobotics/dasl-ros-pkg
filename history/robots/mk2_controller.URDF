@@ -1,0 +1,202 @@
+<robot
+  name="mk2_controller">
+  <link
+    name="gimbal_base_link">
+    <inertial>
+      <origin
+        xyz="-0.000184028061416036 0.0110303559280557 0.000311245853605478"
+        rpy="0 0 0" />
+      <mass
+        value="0.130487655760344" />
+      <inertia
+        ixx="0.000205865272154098"
+        ixy="1.95212944651905E-07"
+        ixz="1.28321175626756E-06"
+        iyy="0.000494477771891756"
+        iyz="-3.14521016025969E-07"
+        izz="0.000320493942072279" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_controller/meshes/gimbal_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_controller/meshes/gimbal_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="gimbal_yaw_link">
+    <inertial>
+      <origin
+        xyz="-1.06641135814058E-08 0.0521988812468705 2.53250616668288E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.312439405406118" />
+      <inertia
+        ixx="0.000737785373037655"
+        ixy="5.40470743958237E-11"
+        ixz="2.4245523691556E-10"
+        iyy="0.00155225038783166"
+        iyz="-1.80969159167285E-11"
+        izz="0.00179835095301137" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_controller/meshes/gimbal_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_controller/meshes/gimbal_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gimbal_yaw_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0207 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="gimbal_base_link" />
+    <child
+      link="gimbal_yaw_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="gimbal_pitch_link">
+    <inertial>
+      <origin
+        xyz="3.71536021859778E-07 0.0385336088285087 -0.00216821570459847"
+        rpy="0 0 0" />
+      <mass
+        value="0.214939253072605" />
+      <inertia
+        ixx="0.000647224222348535"
+        ixy="4.13577050133256E-09"
+        ixz="3.35454012485401E-09"
+        iyy="0.000481992877291182"
+        iyz="-2.12337487574032E-05"
+        izz="0.000508203919522507" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_controller/meshes/gimbal_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_controller/meshes/gimbal_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gimbal_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.1065 0"
+      rpy="-3.6978E-32 -4.1895E-65 -6.8423E-49" />
+    <parent
+      link="gimbal_yaw_link" />
+    <child
+      link="gimbal_pitch_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="gimbal_roll_link">
+    <inertial>
+      <origin
+        xyz="6.75249629936344E-08 0.233960353769092 -0.0050067279784306"
+        rpy="0 0 0" />
+      <mass
+        value="0.293335697547887" />
+      <inertia
+        ixx="0.00578530758836677"
+        ixy="-7.31707616798855E-10"
+        ixz="-1.75775564632831E-08"
+        iyy="0.000677304130480278"
+        iyz="-0.000219289414052928"
+        izz="0.00606444160061948" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_controller/meshes/gimbal_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_controller/meshes/gimbal_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gimbal_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.08 0"
+      rpy="-8.8818E-16 6.7033E-64 1.1632E-47" />
+    <parent
+      link="gimbal_pitch_link" />
+    <child
+      link="gimbal_roll_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+</robot>

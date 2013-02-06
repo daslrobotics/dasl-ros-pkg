@@ -15,8 +15,8 @@
 #define DEFAULTDEVIATION 0.01f//0.01f;
 
 
-#define BACK_FORTH_EXAMPLE
-//#define TERMINAL_EXAMPLE
+//#define BACK_FORTH_EXAMPLE
+#define TERMINAL_EXAMPLE
 #define GATEWAY_DUAL_PORT
 
 MK2::MK2Drive Drives[64];

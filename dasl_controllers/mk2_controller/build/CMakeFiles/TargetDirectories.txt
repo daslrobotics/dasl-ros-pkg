@@ -10,6 +10,7 @@
 /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles/rospack_genmsg_all.dir
 /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles/rospack_genmsg_libexe.dir
 /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles/rospack_gensrv.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles/rospack_gensrv_all.dir
 /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles/test.dir
 /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles/test-future.dir
 /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles/test-results.dir

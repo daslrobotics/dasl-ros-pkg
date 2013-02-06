@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find mk2_torso_arm_description_arm_navigation)/launch/move_mk2_right_arm.launch" />
+    <include file="$(find mk2_torso_arm_description_arm_navigation)/launch/move_right_end_effector.launch" />
+</launch>

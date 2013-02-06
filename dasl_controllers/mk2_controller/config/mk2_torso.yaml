@@ -1,0 +1,15 @@
+# YAML Configuration file that specifies additional properties about each joint by creating an array of structs
+
+joints:
+
+  - name: torso_yaw_joint
+    channel: 57      
+    home: 0.0
+
+  - name: torso_pitch_joint
+    channel: 16
+    home: 0.0
+
+  - name: torso_roll_joint
+    channel: 56     
+    home: 0.0

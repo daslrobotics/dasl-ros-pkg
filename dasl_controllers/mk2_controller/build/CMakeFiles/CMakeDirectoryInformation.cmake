@@ -33,6 +33,7 @@ SET(CMAKE_C_INCLUDE_PATH
   "/opt/ros/fuerte/stacks/geometry/tf_conversions/include"
   "/home/dasl/ros/gt-ros-pkg.humans/actuator_array/actuator_array_driver/include"
   "../msg_gen/cpp/include"
+  "../srv_gen/cpp/include"
   )
 SET(CMAKE_CXX_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})
 SET(CMAKE_Fortran_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})

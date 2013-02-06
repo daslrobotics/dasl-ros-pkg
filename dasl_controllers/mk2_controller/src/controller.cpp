@@ -11,14 +11,12 @@
  * \note
  *   Project name: mk2_controller
  * \note
- *   ROS stack name: ???
- * \note
- *   ROS package name: ???
+ *   ROS package name: dasl-ros-pkg
  *
  * \author
  *   Author: Christopher Korpela email: christopher.korpela@gmail.com
  * \author
- *   Supervised by: ???
+ *   Supervised by: Dr. Paul Oh
  *
  * \date Date of creation: Jan 2013
  *
@@ -75,22 +73,12 @@
 #include <pr2_controllers_msgs/JointTrajectoryControllerState.h>
 #include <diagnostic_msgs/DiagnosticArray.h>
 
-// ROS service includes
-//#include <cob_srvs/Trigger.h>
-//#include <cob_srvs/SetOperationMode.h>
-
 // HDT MK2 includes
 #include "stdafx.h"
 #include "messages.h"
 #include "gateway.h"
 #include "can_ifc.h"
 #include "controller.h"
-
-// Defines
-#define MILIHERTZ 1000
-#define DEFAULTPOSITION 1.0f  
-#define CONTROLVELOCITY 0.5f//0.2f
-#define DEFAULTDEVIATION 0.01f//0.01f;
 
 // Type definitions - convert Windows-specific variables
 typedef unsigned int DWORD;  
@@ -428,7 +416,12 @@ bool MK2Driver::stop_()
     int channel = joints_[command_msg_.name[i]].channel;
 
     // Tell the actuator to stop
-    actuators_[channel].stop();
+    //actuators_[channel].stop();
+
+	Drives[channel].control.inst_current_limit = 0;
+	Drives[channel].control.velocity = 0;
+	Drives[channel].control_enable = false;
+
   }
 
   return true;
@@ -444,7 +437,14 @@ bool MK2Driver::home_()
     int channel = joints_[command_msg_.name[i]].channel;
 
     // Tell the actuator to go to the home position
-    actuators_[channel].home();
+    //actuators_[channel].home();
+   
+    Drives[channel].control.position = 0;
+
+    if ((channel >= 49 && channel <= 52) || (channel >= 10 && channel <= 13))
+      Drives[channel].control.velocity = 0.2;
+    else
+      Drives[channel].control.velocity = 0.2;
   }
 
   return true;
@@ -472,6 +472,19 @@ void control_cmd_callback(const ros::TimerEvent& event)
 			}
 		}
 	}
+}
+
+/* ******************************************************** */
+void status_callback(const ros::TimerEvent& event)
+{
+	//MK2::MK2Drive *drive;
+
+	//MK2::send_status_req(MK2::NodeID::ALL_DEVICES);
+
+    ROS_INFO("Thumb yaw torque: %f", Drives[49].hs.torque);
+    ROS_INFO("Thumb pitch torque: %f", Drives[50].hs.torque);
+    ROS_INFO("Index finger torque: %f", Drives[51].hs.torque);
+    ROS_INFO("Middle finger torque: %f", Drives[52].hs.torque);
 }
 
 /* ******************************************************** */
@@ -503,23 +516,21 @@ int main(int argc, char** argv)
 	// Initialize ROS node
 	ros::init(argc, argv, "mk2_controller");
 	ros::Time::init();
+	ros::NodeHandle nh;
 	
-	// Create controller using MK2Controller class
-	MK2::MK2Driver controller;
-
-	//initialize udp socket to talk to the gateway
+	// Initialize udp socket to talk to the gateway
 	init_udp();
 
 	// Set callback to send commands over UDP
-	MK2::set_source_id(9);			//this id is sent to all drives, 9 is typically chosen as the controller
+	MK2::set_source_id(9);			    //this id is sent to all drives, 9 is typically chosen as the controller
 	MK2::set_output_cb(send_via_udp);	//all the send commands call the send_via_udp callback to output to udp
 
 	// Create thread to receive UDP messages
 	pthread_create(&recvThreadID, NULL, receive_via_udp, NULL);
 
 	// Reset MK2 driver
-	set_reset_status_to_all_drives_();			//reset values in structures that hold drive data	
-	MK2::send_reset_cmd(MK2::NodeID::ALL_DEVICES);		//reset drive to a known state
+	set_reset_status_to_all_drives_();			    //reset values in structures that hold drive data	
+	MK2::send_reset_cmd(MK2::NodeID::ALL_DEVICES);  //reset drive to a known state
 
 	//a little hack for the send status request to send on both ports
 	Drives[15].port = 3;
@@ -527,32 +538,55 @@ int main(int argc, char** argv)
 
 	ros::Duration(0.1).sleep();
 
-	//allow the console output to settle down
+	// Allow the console output to settle down
 	while(wait_some_more) 
 	{
 		wait_some_more = false;
 		ros::Duration(0.1).sleep();	
 	}
 
-	//Check all drives and change to NOS_CONTROL
+	// Check all drives and change to NOS_CONTROL
 	MK2::send_status_req(MK2::NodeID::ALL_DEVICES); //request all devices to report status		
 	ros::Duration(0.3).sleep();
+
 	for(int i = 0; i < 64; i++)
 	{
 		if(Drives[i].status.sw_state == MK2::SWStates::INIT)
 		{
 			MK2::send_change_state_cmd(i, MK2::SWStates::NOS_CONTROL);
-			while(Drives[i].status.sw_state != MK2::SWStates::NOS_CONTROL)
+
+			while ((Drives[i].status.sw_state != MK2::SWStates::NOS_CONTROL) &&
+		   	       (Drives[i].status.sw_state != MK2::SWStates::NOS_IDLE) &&  
+                   (Drives[i].status.sw_state != MK2::SWStates::NOS_SLEEP))
+			{
+				ROS_INFO("Waiting for NOS Status: ID:%d  ", i);
+				ROS_INFO("STATE:%s", MK2::GetSwStateString(Drives[i].status.sw_state));					
 				ros::Duration(0.1).sleep();
-			Drives[i].control.inst_current_limit = 8;
-			Drives[i].control_enable = true;
-			
+			}
+			Drives[i].control.inst_current_limit = 0;
+			Drives[i].control.velocity = 0;
+			Drives[i].control_enable = false;
 		}
 	}
 
-	ros::NodeHandle nh;
-	ros::Timer timer1 = nh.createTimer(ros::Duration(0.02), control_cmd_callback);
+	// Cycle through all drives and set to NOS control
+	// Do not enable drive 17
 
+	for(int i = 0; i < 64; i++)
+	{
+	    if ((i >= 49 && i <= 52) || (i >= 10 && i <= 13))
+			Drives[i].control.inst_current_limit = 3;
+		else
+			Drives[i].control.inst_current_limit = 8;
+		if (i != 17) Drives[i].control_enable = true;
+	}
+
+	// Create controller using MK2Controller class
+	MK2::MK2Driver controller;
+
+    ros::Timer timer1 = nh.createTimer(ros::Duration(0.02), control_cmd_callback);
+	ros::Timer timer2 = nh.createTimer(ros::Duration(0.5), status_callback);
+  
 	controller.spin();
 
 	ros::waitForShutdown();

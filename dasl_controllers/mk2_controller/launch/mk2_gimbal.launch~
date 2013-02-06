@@ -36,8 +36,7 @@
 	</node> 
 
     <!-- Publish a static transform between the robot base and the world frame -->
-    <node pkg="tf" type="static_transform_publisher" name="world_mocap_broadcaster" args="3 3 0 0 0 0 /world /mocap_origin 100" />
-
-    <node pkg="mk2_controller" type="dynamic_tf_broadcaster.py" name="mocap_gantry_broadcaster" />
-    
+    <node pkg="tf" type="static_transform_publisher" name="world_mocap_broadcaster" args="3 3 1.5 0 0 -1.57 /world /gimbal_base_link 100" />
+<!--    <node pkg="tf" type="static_transform_publisher" name="world_mocap_broadcaster" args="3 3 0 0 0 0 /world /mocap_origin 100" /> -->
+  
 </launch>

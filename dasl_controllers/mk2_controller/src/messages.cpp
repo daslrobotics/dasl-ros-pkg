@@ -78,7 +78,7 @@ void MK2::send_control_cmd(uint8_t destination, ControlCmd *cmd)
 	uint16_t pos_fp = (uint16_t)((cmd->position * pow(2.0f, 11.0f)) / MK2_PI);
 	uint16_t vel_fp = (uint16_t)((cmd->velocity * pow(2.0f, 11.0f)) / 8.0f);
 	uint16_t torque_fp = (uint16_t)((cmd->torque * pow(2.0f, 11.0f)) / 64.0f);
-	uint16_t inst_curr_fp = (uint16_t)((cmd->inst_current_limit * pow(2.0f, 11.0f)) / 32.0f);
+	uint16_t inst_curr_fp = (uint16_t)((cmd->inst_current_limit * pow(2.0f, 12.0f)) / 32.0f);
 
 	msg.data[0] = (uint8_t)((pos_fp >> 0) & 0xFF);
 	msg.data[1] = (uint8_t)((pos_fp >> 8) & 0xFF);
@@ -134,8 +134,6 @@ bool MK2::process_status_response(StatusReponse *resp, Message *msg)
 	
 	return true;
 }
-
-
 
 bool MK2::process_hs_telemetry(HSTelemetry *resp, Message *msg)
 {

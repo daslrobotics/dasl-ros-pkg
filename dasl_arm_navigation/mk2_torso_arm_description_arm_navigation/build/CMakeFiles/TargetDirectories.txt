@@ -1,0 +1,16 @@
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/ROSBUILD_gensrv_cpp.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/clean-test-results.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/mk2_torso_arm_description_kinematics_lib.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/rosbuild_precompile.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/rosbuild_premsgsrvgen.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/rospack_genmsg.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/rospack_genmsg_libexe.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/rospack_gensrv.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/test.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/test-future.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/test-results.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/test-results-run.dir
+/home/dasl/ros/dasl-ros-pkg/dasl_arm_navigation/mk2_torso_arm_description_arm_navigation/build/CMakeFiles/tests.dir

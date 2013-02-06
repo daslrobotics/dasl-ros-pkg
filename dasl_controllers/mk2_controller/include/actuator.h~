@@ -35,7 +35,7 @@
 #define MK2_ACTUATOR_H_
 
 #include <ros/ros.h>
-#include <actuator_array_example/MK2_messages.h>
+#include "messages.h"
 
 namespace MK2
 {

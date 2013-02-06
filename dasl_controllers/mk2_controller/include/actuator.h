@@ -84,8 +84,6 @@ public:
   void setPosition(double position);
   void setVelocity(double velocity);
 
-  //void send_control_cmd(uint8_t destination, ControlCmd *cmd);
-
   double getPosition();
   double getVelocity();
   double getMaxTorque();

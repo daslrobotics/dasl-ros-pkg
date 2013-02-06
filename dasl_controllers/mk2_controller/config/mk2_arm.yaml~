@@ -1,0 +1,62 @@
+# YAML Configuration file that specifies additional properties about each joint by creating an array of structs
+
+joints:
+
+  - name: torso_yaw_joint
+    channel: 57      
+    home: 0.0
+
+  - name: torso_pitch_joint
+    channel: 16
+    home: 0.0
+
+  - name: torso_roll_joint
+    channel: 56     
+    home: 0.0
+
+  - name: right_shoulder_pitch_joint
+    channel: 41 
+    home: 0.0
+
+  - name: right_shoulder_roll_joint
+    channel: 42
+    home: 0.0
+
+  - name: right_shoulder_yaw_joint
+    channel: 43
+    home: 0.0
+
+  - name: right_elbow_pitch_joint
+    channel: 44
+    home: 0.0
+
+  - name: right_wrist_yaw_joint
+    channel: 45
+    home: 0.0
+
+  - name: right_wrist_pitch_joint
+    channel: 46
+    home: 0.0
+
+  - name: right_wrist_roll_joint
+    channel: 47
+    home: 0.0
+
+  - name: right_thumb_yaw_joint
+    channel: 49
+    home: 0.0
+
+  - name: right_thumb_pitch_joint
+    channel: 50
+    home: 0.0
+
+  - name: right_index_finger_joint
+    channel: 52
+    home: 0.0
+
+  - name: right_middle_finger_joint
+    channel: 53
+    home: 0.0
+
+
+

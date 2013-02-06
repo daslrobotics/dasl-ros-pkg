@@ -1,0 +1,838 @@
+<robot
+  name="mk2_torso_arm_description">
+  <link
+    name="torso_base_link">
+    <inertial>
+      <origin
+        xyz="-0.000184028061416036 0.0110303559280557 0.000311245853605478"
+        rpy="0 0 0" />
+      <mass
+        value="0.130487655760344" />
+      <inertia
+        ixx="0.000205865272154098"
+        ixy="1.95212944651906E-07"
+        ixz="1.28321175626756E-06"
+        iyy="0.000494477771891756"
+        iyz="-3.14521016025969E-07"
+        izz="0.000320493942072279" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/torso_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/torso_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="torso_yaw_link">
+    <inertial>
+      <origin
+        xyz="-1.06641135855699E-08 0.0521988812468705 2.53250616668419E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.312439405406118" />
+      <inertia
+        ixx="0.000737785373037655"
+        ixy="5.40470742060883E-11"
+        ixz="2.42455236915617E-10"
+        iyy="0.00155225038783166"
+        iyz="-1.80969159165781E-11"
+        izz="0.00179835095301137" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/torso_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/torso_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="torso_yaw_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0207 0"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="torso_base_link" />
+    <child
+      link="torso_yaw_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="torso_pitch_link">
+    <inertial>
+      <origin
+        xyz="3.71536021861166E-07 0.0385336088285087 -0.00216821570459847"
+        rpy="0 0 0" />
+      <mass
+        value="0.214939253072605" />
+      <inertia
+        ixx="0.000647224222348535"
+        ixy="4.13577050134103E-09"
+        ixz="3.35454012486476E-09"
+        iyy="0.000481992877291182"
+        iyz="-2.12337487574032E-05"
+        izz="0.000508203919522507" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/torso_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/torso_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="torso_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.1065 0"
+      rpy="-3.69778549322349E-32 -4.18954834720144E-65 -6.84227765783602E-49" />
+    <parent
+      link="torso_yaw_link" />
+    <child
+      link="torso_pitch_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="torso_roll_link">
+    <inertial>
+      <origin
+        xyz="6.75249629951128E-08 0.233960353769092 -0.00500672797843061"
+        rpy="0 0 0" />
+      <mass
+        value="0.293335697547887" />
+      <inertia
+        ixx="0.00578530758836677"
+        ixy="-7.31707616778526E-10"
+        ixz="-1.75775564632822E-08"
+        iyy="0.000677304130480278"
+        iyz="-0.000219289414052929"
+        izz="0.00606444160061948" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/torso_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/torso_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="torso_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.08 0"
+      rpy="-8.88178419700125E-16 6.7032773555223E-64 1.16318720183212E-47" />
+    <parent
+      link="torso_pitch_link" />
+    <child
+      link="torso_roll_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.000945948298331556 -5.75072025050805E-05 -0.110098423885002"
+        rpy="0 0 0" />
+      <mass
+        value="0.163444580136653" />
+      <inertia
+        ixx="0.000541016922352317"
+        ixy="-1.66419170619125E-08"
+        ixz="9.49780157845319E-06"
+        iyy="0.000559986943079526"
+        iyz="1.83786565441807E-07"
+        izz="0.000176694976709399" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0.0754000000000001 0.36378233047 0"
+      rpy="1.5707963267949 -0.785398163397438 -1.5707963267949" />
+    <parent
+      link="torso_roll_link" />
+    <child
+      link="right_shoulder_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.000393157986916692 -0.0428353046858301 -0.00178229597334556"
+        rpy="0 0 0" />
+      <mass
+        value="0.06350154648576" />
+      <inertia
+        ixx="9.22926342944636E-05"
+        ixy="8.00220283028157E-07"
+        ixz="-4.48039926521836E-08"
+        iyy="4.64662632662718E-05"
+        iyz="-5.63303014108136E-06"
+        izz="9.4975043580336E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.17412"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="right_shoulder_pitch_link" />
+    <child
+      link="right_shoulder_roll_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_shoulder_yaw_link">
+    <inertial>
+      <origin
+        xyz="-1.69111243020215E-06 -0.00238859037608072 0.163017880496158"
+        rpy="0 0 0" />
+      <mass
+        value="0.234264054149216" />
+      <inertia
+        ixx="0.00139590152452386"
+        ixy="-7.8615509147457E-10"
+        ixz="3.30189031292428E-08"
+        iyy="0.00128382616407803"
+        iyz="-4.30079765216234E-05"
+        izz="0.000332546093322767" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_shoulder_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_shoulder_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_yaw_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0771000000000001 0"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent
+      link="right_shoulder_roll_link" />
+    <child
+      link="right_shoulder_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_elbow_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.000360451248369087 -0.0408954363571529 -0.00105767781267496"
+        rpy="0 0 0" />
+      <mass
+        value="0.0687828771498907" />
+      <inertia
+        ixx="0.000106324760883846"
+        ixy="8.44270635884772E-07"
+        ixz="-2.61510220764308E-08"
+        iyy="5.76140513861841E-05"
+        iyz="-2.77922188790448E-06"
+        izz="0.000105076883527727" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_elbow_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_elbow_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.240875000000002"
+      rpy="-1.5707963267949 -1.55431223447522E-15 -3.14159265358979" />
+    <parent
+      link="right_shoulder_yaw_link" />
+    <child
+      link="right_elbow_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_wrist_yaw_link">
+    <inertial>
+      <origin
+        xyz="6.83783539963678E-05 -0.0852941287502067 0.00124159593854725"
+        rpy="0 0 0" />
+      <mass
+        value="0.143237863550737" />
+      <inertia
+        ixx="0.0004074315719633"
+        ixy="-1.8262371045435E-07"
+        ixz="-1.20668808997294E-08"
+        iyy="0.000156695288448545"
+        iyz="-8.79392094805729E-06"
+        izz="0.000390076099648707" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_wrist_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_wrist_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_yaw_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0865 0"
+      rpy="3.14159265358977 -4.194039120977E-14 3.14159265358978" />
+    <parent
+      link="right_elbow_pitch_link" />
+    <child
+      link="right_wrist_yaw_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_wrist_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.000408944920548382 -0.0397225001034508 -0.000408944678625511"
+        rpy="0 0 0" />
+      <mass
+        value="0.043905125184904" />
+      <inertia
+        ixx="7.6750953667011E-05"
+        ixy="1.01266450543688E-06"
+        ixz="-7.34251089201894E-09"
+        iyy="3.22048574176903E-05"
+        iyz="-1.01266454236567E-06"
+        izz="7.67509532438511E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_wrist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_wrist_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.135272499999998 0"
+      rpy="2.57661586350871E-14 -4.19403912097699E-14 -8.65973959207622E-15" />
+    <parent
+      link="right_wrist_yaw_link" />
+    <child
+      link="right_wrist_pitch_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_wrist_roll_link">
+    <inertial>
+      <origin
+        xyz="0.0021501325892751 -0.0219675538632369 0.000617938619513703"
+        rpy="0 0 0" />
+      <mass
+        value="0.0825624059282088" />
+      <inertia
+        ixx="0.000108263421642252"
+        ixy="3.36877248647211E-06"
+        ixz="-1.09627878630348E-07"
+        iyy="9.54647991022298E-05"
+        iyz="-1.58400027461194E-06"
+        izz="0.000125428171500999" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_wrist_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_wrist_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0767725000000019 0"
+      rpy="-3.94430452610506E-31 3.94430452610506E-31 0" />
+    <parent
+      link="right_wrist_pitch_link" />
+    <child
+      link="right_wrist_roll_link" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="right_palm_link">
+    <inertial>
+      <origin
+        xyz="0.00332506465456084 6.34004005508337E-05 0.00171526833893454"
+        rpy="0 0 0" />
+      <mass
+        value="0.284272027706117" />
+      <inertia
+        ixx="0.000741345716226683"
+        ixy="3.32700155979978E-07"
+        ixz="4.99010081563968E-05"
+        iyy="0.000904992385966519"
+        iyz="2.51964057110494E-06"
+        izz="0.000336848741897897" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_palm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_palm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_palm_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.14894 0"
+      rpy="1.57079632679491 7.85046229341883E-15 3.14159265358979" />
+    <parent
+      link="right_wrist_roll_link" />
+    <child
+      link="right_palm_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_thumb_yaw_link">
+    <inertial>
+      <origin
+        xyz="-0.000203222633167299 -0.0161010992458105 0.0172969140565711"
+        rpy="0 0 0" />
+      <mass
+        value="0.0873522216482925" />
+      <inertia
+        ixx="5.84733128581669E-05"
+        ixy="7.64732043246541E-07"
+        ixz="7.66872730997647E-08"
+        iyy="4.01053899935746E-05"
+        iyz="2.75416847894258E-06"
+        izz="6.67241286078526E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_thumb_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_thumb_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_thumb_yaw_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0152849999999952 0 0"
+      rpy="-1.49880108324396E-15 -3.1641356201817E-15 -0.647790030020296" />
+    <parent
+      link="right_palm_link" />
+    <child
+      link="right_thumb_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_thumb_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.0507250639228998 0.00923484217464599 0.00764091511989945"
+        rpy="0 0 0" />
+      <mass
+        value="0.0183440286639755" />
+      <inertia
+        ixx="3.20131397320294E-06"
+        ixy="3.27750758218702E-06"
+        ixz="-4.37462617870222E-10"
+        iyy="1.33638340163967E-05"
+        iyz="4.99001672942597E-11"
+        izz="1.3862455506261E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_thumb_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_thumb_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_thumb_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0569235000000001 0.0133070000000015"
+      rpy="-1.5707963267949 0.666030049530836 -1.5707963267949" />
+    <parent
+      link="right_thumb_yaw_link" />
+    <child
+      link="right_thumb_pitch_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_index_finger_link">
+    <inertial>
+      <origin
+        xyz="0.0507250594663731 0.00923483836851247 0.0655130354582071"
+        rpy="0 0 0" />
+      <mass
+        value="0.0183440299862948" />
+      <inertia
+        ixx="3.20131511267355E-06"
+        ixy="3.27750923203025E-06"
+        ixz="-4.35152674015733E-10"
+        iyy="1.33638388797819E-05"
+        iyz="4.94005250608458E-11"
+        izz="1.38624582875589E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_index_finger_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_index_finger_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_index_finger_joint"
+    type="continuous">
+    <origin
+      xyz="0.0308668695096923 0 -0.0696334999999972"
+      rpy="1.5707963267949 1.32421982650264 -1.57079632679489" />
+    <parent
+      link="right_palm_link" />
+    <child
+      link="right_index_finger_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_middle_finger_link">
+    <inertial>
+      <origin
+        xyz="0.0507250649118351 0.00923484035671995 -0.0193643340528504"
+        rpy="0 0 0" />
+      <mass
+        value="0.0183440266807747" />
+      <inertia
+        ixx="3.20131430292625E-06"
+        ixy="3.27750817776069E-06"
+        ixz="-4.3518620066187E-10"
+        iyy="1.33638353177755E-05"
+        iyz="4.94772404108327E-11"
+        izz="1.38624556595705E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_middle_finger_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2_torso_arm_description/meshes/right_middle_finger_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_middle_finger_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.0696335000000021"
+      rpy="1.57079632679489 1.1757539104985 -1.57079632679491" />
+    <parent
+      link="right_palm_link" />
+    <child
+      link="right_middle_finger_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+</robot>

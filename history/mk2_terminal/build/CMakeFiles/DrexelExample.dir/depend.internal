@@ -13,12 +13,10 @@ CMakeFiles/DrexelExample.dir/src/can_ifc.o
  ../include/data_types.h
  ../include/messages.h
  ../include/stdafx.h
- ../include/targetver.h
  /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_terminal/src/can_ifc.cpp
 CMakeFiles/DrexelExample.dir/src/data_types.o
  ../include/data_types.h
  ../include/stdafx.h
- ../include/targetver.h
  /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_terminal/src/data_types.cpp
 CMakeFiles/DrexelExample.dir/src/gateway.o
  ../include/can_ifc.h
@@ -26,11 +24,9 @@ CMakeFiles/DrexelExample.dir/src/gateway.o
  ../include/gateway.h
  ../include/messages.h
  ../include/stdafx.h
- ../include/targetver.h
  /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_terminal/src/gateway.cpp
 CMakeFiles/DrexelExample.dir/src/messages.o
  ../include/data_types.h
  ../include/messages.h
  ../include/stdafx.h
- ../include/targetver.h
  /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_terminal/src/messages.cpp

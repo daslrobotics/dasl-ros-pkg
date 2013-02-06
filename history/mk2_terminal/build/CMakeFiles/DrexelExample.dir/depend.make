@@ -12,12 +12,10 @@ CMakeFiles/DrexelExample.dir/src/can_ifc.o: ../include/can_ifc.h
 CMakeFiles/DrexelExample.dir/src/can_ifc.o: ../include/data_types.h
 CMakeFiles/DrexelExample.dir/src/can_ifc.o: ../include/messages.h
 CMakeFiles/DrexelExample.dir/src/can_ifc.o: ../include/stdafx.h
-CMakeFiles/DrexelExample.dir/src/can_ifc.o: ../include/targetver.h
 CMakeFiles/DrexelExample.dir/src/can_ifc.o: ../src/can_ifc.cpp
 
 CMakeFiles/DrexelExample.dir/src/data_types.o: ../include/data_types.h
 CMakeFiles/DrexelExample.dir/src/data_types.o: ../include/stdafx.h
-CMakeFiles/DrexelExample.dir/src/data_types.o: ../include/targetver.h
 CMakeFiles/DrexelExample.dir/src/data_types.o: ../src/data_types.cpp
 
 CMakeFiles/DrexelExample.dir/src/gateway.o: ../include/can_ifc.h
@@ -25,12 +23,10 @@ CMakeFiles/DrexelExample.dir/src/gateway.o: ../include/data_types.h
 CMakeFiles/DrexelExample.dir/src/gateway.o: ../include/gateway.h
 CMakeFiles/DrexelExample.dir/src/gateway.o: ../include/messages.h
 CMakeFiles/DrexelExample.dir/src/gateway.o: ../include/stdafx.h
-CMakeFiles/DrexelExample.dir/src/gateway.o: ../include/targetver.h
 CMakeFiles/DrexelExample.dir/src/gateway.o: ../src/gateway.cpp
 
 CMakeFiles/DrexelExample.dir/src/messages.o: ../include/data_types.h
 CMakeFiles/DrexelExample.dir/src/messages.o: ../include/messages.h
 CMakeFiles/DrexelExample.dir/src/messages.o: ../include/stdafx.h
-CMakeFiles/DrexelExample.dir/src/messages.o: ../include/targetver.h
 CMakeFiles/DrexelExample.dir/src/messages.o: ../src/messages.cpp
 
