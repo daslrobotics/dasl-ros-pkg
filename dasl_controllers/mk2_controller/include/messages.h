@@ -115,7 +115,7 @@ void send_reset_cmd(uint8_t destination);
 void send_status_req(uint8_t destination);
 void send_change_state_cmd(uint8_t destination, uint8_t new_state);
 void send_control_cmd(uint8_t destination, ControlCmd *cmd);
-void send_impedance_cmd(uint8_t destination, ImpedanceCmd cmd);
+void send_impedance_cmd(uint8_t destination, ImpedanceCmd *cmd);
 
 bool process_status_response(StatusReponse *resp, Message *msg);
 bool process_hs_telemetry(HSTelemetry *resp, Message *msg);

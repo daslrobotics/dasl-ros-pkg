@@ -1,4 +1,0 @@
-<launch>
-    <param name="robot_description" textfile="$(find mk2_torso_arm_description)/robots/mk2_torso_arm_description.URDF" />
-    <rosparam command="load" ns="robot_description_planning" file="$(find mk2_torso_arm_description_arm_navigation)/config/mk2_torso_arm_description_planning_description.yaml" />
-</launch>

@@ -9,6 +9,7 @@ import time
 import rospy
 from sensor_msgs.msg import Joy
 from sensor_msgs.msg import JointState as JointState
+from std_srvs.srv import *
 
 class MoveTorsoPS3():
     def __init__(self):
@@ -22,8 +23,13 @@ class MoveTorsoPS3():
                              'torso_pitch_joint',
                              'torso_roll_joint'}
 
-        rospy.Subscriber('/joy', Joy, self.read_joystick_data)
+        rospy.Subscriber('/joy_torso', Joy, self.read_joystick_data)
         self.joint_states_pub = rospy.Publisher('/command', JointState)
+
+
+        self.srv_home = rospy.ServiceProxy('/home', Empty)
+        self.srv_stop = rospy.ServiceProxy('/stop', Empty)
+
 
         r = rospy.Rate(50)
 
@@ -38,21 +44,34 @@ class MoveTorsoPS3():
         # Construct message & publish joint states
         msg = JointState()
         if self.joy_data:
-            for joint in self.joint_states:
-	        msg.name.append(joint)
-                if joint == 'torso_yaw_joint':
-                    self.position[0] += -1 * self.joy_data.axes[0] * self.step_size
-                    msg.position.append(self.position[0])
-                elif joint == 'torso_pitch_joint':
-                    self.position[1] += -1 * self.joy_data.axes[1] * self.step_size
-                    msg.position.append(self.position[1])
-                elif joint == 'torso_roll_joint':
-                    self.position[2] += -1 * self.joy_data.axes[2] * self.step_size
-                    msg.position.append(self.position[2])
-                else:
-                    msg.position.append(0.0)
-                msg.velocity.append(0.2)
-                msg.effort.append(0.0)
+            if self.joy_data.buttons[10]:
+                rospy.wait_for_service('home')
+                resp = self.srv_home()
+                self.joy_data = None
+                self.position = [0,0,0,0,0,0,0,0,0,0,0]
+
+            elif self.joy_data.buttons[11]:
+                rospy.wait_for_service('stop')
+                resp = self.srv_stop()
+                self.joy_data = None
+                msg.velocity.append(0)
+
+            else:
+                for joint in self.joint_states:
+	            msg.name.append(joint)
+                    if joint == 'torso_yaw_joint':
+                        self.position[0] += -1 * self.joy_data.axes[0] * self.step_size
+                        msg.position.append(self.position[0])
+                    elif joint == 'torso_pitch_joint':
+                        self.position[1] += -1 * self.joy_data.axes[1] * self.step_size
+                        msg.position.append(self.position[1])
+                    elif joint == 'torso_roll_joint':
+                        self.position[2] += -1 * self.joy_data.axes[2] * self.step_size
+                        msg.position.append(self.position[2])
+                    else:
+                        msg.position.append(0.0)
+                    msg.velocity.append(0.2)
+                    msg.effort.append(0.0)
 
 	    msg.header.stamp = rospy.Time.now()
             self.joint_states_pub.publish(msg)

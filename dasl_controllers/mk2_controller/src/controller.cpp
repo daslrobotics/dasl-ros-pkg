@@ -401,6 +401,7 @@ bool MK2Driver::command_()
 
     Drives[channel].control.velocity = command_msg_.velocity[i];
     Drives[channel].control.position = command_msg_.position[i];
+    Drives[channel].control.torque = command_msg_.effort[i];
   }
 
   return true;
@@ -421,7 +422,6 @@ bool MK2Driver::stop_()
 	Drives[channel].control.inst_current_limit = 0;
 	Drives[channel].control.velocity = 0;
 	Drives[channel].control_enable = false;
-
   }
 
   return true;
@@ -477,14 +477,14 @@ void control_cmd_callback(const ros::TimerEvent& event)
 /* ******************************************************** */
 void status_callback(const ros::TimerEvent& event)
 {
-	//MK2::MK2Drive *drive;
+	MK2::send_status_req(MK2::NodeID::ALL_DEVICES);
 
-	//MK2::send_status_req(MK2::NodeID::ALL_DEVICES);
+    // Use this area for periodic display of information
 
-    ROS_INFO("Thumb yaw torque: %f", Drives[49].hs.torque);
-    ROS_INFO("Thumb pitch torque: %f", Drives[50].hs.torque);
-    ROS_INFO("Index finger torque: %f", Drives[51].hs.torque);
-    ROS_INFO("Middle finger torque: %f", Drives[52].hs.torque);
+    //ROS_INFO("Thumb yaw torque: %f", Drives[49].hs.torque);
+    //ROS_INFO("Thumb pitch torque: %f", Drives[50].hs.torque);
+    //ROS_INFO("Index finger torque: %f", Drives[51].hs.torque);
+    //ROS_INFO("Middle finger torque: %f", Drives[52].hs.torque);
 }
 
 /* ******************************************************** */
@@ -580,6 +580,35 @@ int main(int argc, char** argv)
 			Drives[i].control.inst_current_limit = 8;
 		if (i != 17) Drives[i].control_enable = true;
 	}
+
+    // ------------------------------------ IMPEDANCE TEST BED -------------------------
+    /*
+
+    // Enable impedance control on shoulder pitch joint (41) for testing
+
+    // Elbow pitch
+
+
+    int i=44;
+
+    Drives[i].impedance.inertia = 1;//1;
+    Drives[i].impedance.damping = 3;//3;
+    Drives[i].impedance.stiffness = 30;//20;
+
+	MK2::send_impedance_cmd(i, &Drives[i].impedance);
+
+    // Wirst pitch
+
+    i=46;
+
+    Drives[i].impedance.inertia = 1;//1;
+    Drives[i].impedance.damping = 3;//3;
+    Drives[i].impedance.stiffness = 10;//20;
+
+	MK2::send_impedance_cmd(i, &Drives[i].impedance);
+
+    */
+    // ------------------------------------ IMPEDANCE TEST BED ------------------------- END
 
 	// Create controller using MK2Controller class
 	MK2::MK2Driver controller;

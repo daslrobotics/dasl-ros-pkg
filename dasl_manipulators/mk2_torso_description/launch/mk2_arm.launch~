@@ -1,6 +1,0 @@
-<launch>
-
-    <!-- send the erratic robot XML to param server -->
-    <param name="robot_description" command="$(find xacro)/xacro.py '$(find arm_description)/robots/base_link.URDF'" />
-
-</launch>

@@ -135,8 +135,6 @@ bool MK2::process_status_response(StatusReponse *resp, Message *msg)
 	return true;
 }
 
-
-
 bool MK2::process_hs_telemetry(HSTelemetry *resp, Message *msg)
 {
 	if(msg->message_id != MK2::MessageNumberEnum::HIGH_SPEED_TLM && msg->data_size != 8)

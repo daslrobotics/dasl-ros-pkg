@@ -12,9 +12,10 @@
     </node>
 
     <!-- Start the joystick node -->
-    <node respawn="true" pkg="joy" type="joy_node" name="joy" >
-        <param name="dev" type="string" value="/dev/input/js0" />
+    <node respawn="true" pkg="joy" type="joy_node" name="joy_torso" >
+        <param name="dev" type="string" value="/dev/input/js1" />
         <param name="deadzone" value="0.12" />
+
     </node>
 
     <!-- Load arm control node -->

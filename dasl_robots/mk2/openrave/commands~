@@ -1,0 +1,17 @@
+$ python `openrave-config --python-dir`/openravepy/_openravepy_/ikfast.py --robot=mk2.dae ii-iktype=transform6d --baselink=3 --eelink=10 --freeindex=6 --savefile=output_ikfast61.cpp
+
+$ openrave-robot.py mk2.dae --info links
+
+$ python `openrave-config --python-dir`/openravepy/_openravepy_/ikfast.py --version
+
+--> copy over ikfast.h into the same directory
+
+$ g++ ikfastdemo.cpp -lstdc++ -llapack -o compute -lrt
+
+$ roslaunch planning_environment planning_description_configuration_wizard.launch urdf_package:=mk2_torso_arm_description urdf_path:=robots/mk2.URDF
+
+
+ rosrun arm_kinematics_tools create_ikfast_plugin.py mk2_torso_arm_description
+
+
+

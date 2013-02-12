@@ -31,7 +31,7 @@ def main(env,options):
     robot = env.GetRobots()[0]
 
     # select manipulator and IK model
-    manip = robot.SetActiveManipulator('leftarm') # set the manipulator to rightarm
+    manip = robot.SetActiveManipulator('rightarm') # set the manipulator to rightarm
     ikmodel = databases.inversekinematics.InverseKinematicsModel(robot,iktype=IkParameterization.Type.Transform6D)
     if not ikmodel.load():
         ikmodel.autogenerate()
