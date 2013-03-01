@@ -12,7 +12,7 @@
 
   <Robot file="mk2.robot.xml">
 	<RotationAxis>1 0 0 -90</RotationAxis>
-<!--    <RotationAxis>0 1 0 180</RotationAxis> -->
+       <RotationAxis>0 0 1 -90</RotationAxis>
 <!--    <RotationAxis>0 0 1 90</RotationAxis> -->
     <translation>-5.7912 0 2.5</translation>
   </Robot>
@@ -22,7 +22,7 @@
     <KinBody>
       <joint name="dummy" type="hinge" enable="false">
         <body>gantry_z_axis_link</body>
-        <body>torso_base_link</body>
+        <body>torso_roll_link</body>
         <limitsdeg>0 0</limitsdeg>
       </joint>
     </KinBody>

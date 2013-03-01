@@ -30,9 +30,16 @@ def main(env,options):
     # 2) assign it to the variable named 'robot'
     robot = env.GetRobots()[0]
 
+    RaveLoadPlugin('lib/libmk2_kinematics_lib')
+
+    raw_input('press ENTER to continue...');
+
     # select manipulator and IK model
     manip = robot.SetActiveManipulator('mk2_arm') # set the manipulator to rightarm
-    ikmodel = databases.inversekinematics.InverseKinematicsModel(robot,iktype=IkParameterization.Type.Transform6D)
+    #mk2_manipulator_kinematics::IKFastKinematicsPlugin
+    ikmodel = databases.inversekinematics.InverseKinematicsModel(robot,iktype=mk2_manipulator_kinematics)
+
+    #ikmodel = databases.inversekinematics.InverseKinematicsModel(robot,iktype=IkParameterization.Type.Transform6D)
     if not ikmodel.load():
         ikmodel.autogenerate()
 

@@ -1,0 +1,258 @@
+<robot
+  name="mk2">
+  <link
+    name="torso_roll_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2/meshes/torso_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link
+    name="right_shoulder_pitch_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57 -1.57 1.57" />
+      <geometry>
+        <mesh
+          filename="package://mk2/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="right_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0754 0.36378 0"
+      rpy="0 0 0" />
+    <parent
+      link="torso_roll_link" />
+    <child
+      link="right_shoulder_pitch_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit 
+      effort="30" velocity="1.0" lower="-1.57" upper="1.57" />
+  </joint>
+
+  <link
+    name="right_shoulder_roll_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2/meshes/right_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="right_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="-0.17412 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_shoulder_pitch_link" />
+    <child
+      link="right_shoulder_roll_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit 
+      effort="30" velocity="1.0" lower="-0.4" upper="3.14" />
+  </joint>
+
+  <link
+    name="right_shoulder_yaw_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 1.57 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2/meshes/right_shoulder_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="right_shoulder_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.073 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_shoulder_roll_link" />
+    <child
+      link="right_shoulder_yaw_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit 
+      effort="30" velocity="1.0" lower="-1.57" upper="1.57" />
+  </joint>
+
+  <link
+    name="right_elbow_pitch_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.57 3.14" />
+      <geometry>
+        <mesh
+          filename="package://mk2/meshes/right_elbow_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="right_elbow_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.24462 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_shoulder_yaw_link" />
+    <child
+      link="right_elbow_pitch_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit 
+      effort="30" velocity="1.0" lower="-1.57" upper="1.57" />
+  </joint>
+
+  <link
+    name="right_wrist_yaw_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.57 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2/meshes/right_wrist_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="right_wrist_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.0732 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_elbow_pitch_link" />
+    <child
+      link="right_wrist_yaw_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit 
+      effort="30" velocity="1.0" lower="-1.57" upper="1.57" />
+  </joint>
+
+  <link
+    name="right_wrist_pitch_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.57 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2/meshes/right_wrist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="right_wrist_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.15124 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_wrist_yaw_link" />
+    <child
+      link="right_wrist_pitch_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit 
+      effort="30" velocity="1.0" lower="-1.57" upper="1.57" />
+  </joint>
+
+  <link
+    name="right_wrist_roll_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.57 0" />
+      <geometry>
+        <mesh
+          filename="package://mk2/meshes/right_wrist_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="right_wrist_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.07 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_wrist_pitch_link" />
+    <child
+      link="right_wrist_roll_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit 
+      effort="30" velocity="1.0" lower="-1.57" upper="1.57" />
+  </joint>
+</robot>

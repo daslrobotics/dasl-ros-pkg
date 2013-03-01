@@ -1,0 +1,12 @@
+<Environment>
+
+<plugin>libmk2_kinematics_lib</plugin>
+
+<robot file="mk2.dae">
+  <manipulator name="mk2_arm">
+    <base>torso_roll_link</base>
+    <effector>right_wrist_roll_link</effector>
+  </manipulator>
+</robot>
+
+</Environment>

@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cmk325/fuerte_workspace/dasl-ros-pkg/dasl_robots/mk2/openrave/ikfast.h
+vector
+-
+list
+-
+stdexcept
+-
+
+/home/cmk325/fuerte_workspace/dasl-ros-pkg/dasl_robots/mk2/openrave/output_ikfast61.cpp
+ikfast.h
+/home/cmk325/fuerte_workspace/dasl-ros-pkg/dasl_robots/mk2/openrave/ikfast.h
+cmath
+-
+vector
+-
+limits
+-
+algorithm
+-
+complex
+-
+stdexcept
+-
+sstream
+-
+iostream
+-
+stdio.h
+-
+stdlib.h
+-
+

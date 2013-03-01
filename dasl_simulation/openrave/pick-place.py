@@ -30,10 +30,10 @@ def main(env,options):
     robot = env.GetRobots()[0]
 
     # select manipulator and IK model
-    manip = robot.SetActiveManipulator('rightarm') # set the manipulator to rightarm
-    #ikmodel = databases.inversekinematics.InverseKinematicsModel(robot,iktype=IkParameterization.Type.Transform6D)
-    #if not ikmodel.load():
-    #    ikmodel.autogenerate()
+    manip = robot.SetActiveManipulator('mk2_manipulator') # set the manipulator to rightarm
+    ikmodel = databases.inversekinematics.InverseKinematicsModel(robot,iktype=IkParameterization.Type.Transform6D)
+    if not ikmodel.load():
+        ikmodel.autogenerate()
 
     # create the interface for basic manipulation programs
     basemanip = interfaces.BaseManipulation(robot,plannername=options.planner)
@@ -67,14 +67,18 @@ def main(env,options):
     #Tgoal = array([[0,-1,0,3.5],[-1,0,0,-1.3],[0,0,-1,0.842],[0,0,0,1]])
 
     print 'move the arm to the target'
-    #with env:
-        #jointnames = ['l_j0','l_j1','l_j2','l_j3','l_j4','l_j5','l_j6','x_axis_joint','y_axis_joint','z_axis_joint']
-        #robot.SetActiveDOFs([robot.GetJoint(name).GetDOFIndex() for name in jointnames])
-    Tgoal = array([[0,-1,0,3.485],[-1,0,0,-1.3],[0,0,-1,1.1],[0,0,0,1]])
+    with env:
+        jointnames = ['right_shoulder_pitch_joint','right_shoulder_roll_joint','right_shoulder_yaw_joint',
+                      'right_elbow_pitch_joint',
+                      'right_wrist_yaw_joint','right_wrist_pitch_joint','right_wrist_roll_joint'] 
+        robot.SetActiveDOFs([robot.GetJoint(name).GetDOFIndex() for name in jointnames])
+    Tgoal = array([[0,-1,0,1.6],[-1,0,0,-1],[0,0,-1,1],[0,0,0,1]])
+    #Tgoal = array([[0,-1,0,1.4],[-1,0,0,-1],[0,0,-1,1.8],[0,0,0,1]])  -- good
+    #Tgoal = array([[0,-1,0,8.7],[-1,0,0,-1.3],[0,0,-1,1.24],[0,0,0,1]])
     res = basemanip.MoveToHandPosition(matrices=[Tgoal],seedik=10)
     waitrobot(robot)
 
-    #raw_input('press ENTER to continue...');
+    raw_input('press ENTER to continue...');
 
     print 'close fingers until collision'
     taskprob.CloseFingers()

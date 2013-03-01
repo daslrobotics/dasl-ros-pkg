@@ -1,6 +1,7 @@
 <robot file="mk2.dae">
-  <manipulator name="mk2_arm">
+  <manipulator name="mk2_manipulator">
     <base>torso_roll_link</base>
     <effector>right_wrist_roll_link</effector>
   </manipulator>
 </robot>
+

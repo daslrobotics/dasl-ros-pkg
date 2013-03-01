@@ -1,11 +1,10 @@
-<?xml version='1.0' encoding='ASCII'?>
 <package>
   <description brief="mk2_arm_navigation">
 
      mk2_arm_navigation
 
   </description>
-  <author>dasl</author>
+  <author>Christopher Korpela</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/mk2_arm_navigation</url>
@@ -16,7 +15,7 @@
   <depend package="trajectory_filter_server"/>
   <depend package="constraint_aware_spline_smoother"/>
   <depend package="move_arm"/>
-  <export>
-    <kinematics_base plugin="${prefix}/kinematics_plugins.xml"/>
-  </export>
+
 </package>
+
+

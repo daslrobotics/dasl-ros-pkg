@@ -1,9 +1,6 @@
 <robot file="mk2.dae">
-  <manipulator name="mk2_arm">
+  <manipulator name="mk2_manipulator">
     <base>torso_roll_link</base>
     <effector>right_wrist_roll_link</effector>
-    <joints>right_thumb_yaw_joint right_thumb_pitch_joint right_index_finger_joint right_middle_finger_joint</joints>
-    <closingdirection>1 1 1 1</closingdirection>
-    <direction>0 0 1</direction>
   </manipulator>
 </robot>

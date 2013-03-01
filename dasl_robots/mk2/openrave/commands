@@ -1,4 +1,6 @@
-$ python `openrave-config --python-dir`/openravepy/_openravepy_/ikfast.py --robot=mk2.dae ii-iktype=transform6d --baselink=3 --eelink=10 --freeindex=6 --savefile=output_ikfast61.cpp
+$ openrave.py --database inversekinematics --robot=mk2.robot.xml --freejoint=right_wrist_yaw_joint --iktests=100
+
+$  --robot=mk2.dae --iktype=transform6d --baselink=3 --eelink=10 --freeindex=6 --savefile=output_ikfast61.cpp
 
 $ openrave-robot.py mk2.dae --info links
 
@@ -13,5 +15,7 @@ $ roslaunch planning_environment planning_description_configuration_wizard.launc
 
  rosrun arm_kinematics_tools create_ikfast_plugin.py mk2_torso_arm_description
 
+openrave.py --database inversekinematics --robot=robots/pr2-beta-static.zae --manipname=rightarm  --freejoint=r_shoulder_pan_joint --freeinc=0.01
 
 
+$ python `openrave-config --python-dir`/openravepy/_openravepy_/ikfast.py --robot=mk2.robot.xml --iktype=transform6d --baselink=0 --eelink=7 --freeindex=5 --savefile=output_ikfast61.cpp

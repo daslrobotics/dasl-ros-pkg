@@ -1,7 +1,7 @@
 Background\ ColorR=0
 Background\ ColorG=0
 Background\ ColorB=0
-Fixed\ Frame=torso_base_link
+Fixed\ Frame=torso_roll_link
 Target\ Frame=<Fixed Frame>
 Grid.Alpha=0.5
 Grid.Cell\ Size=1

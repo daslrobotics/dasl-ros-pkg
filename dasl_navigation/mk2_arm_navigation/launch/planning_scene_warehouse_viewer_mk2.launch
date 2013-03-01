@@ -38,17 +38,17 @@
   <!-- Called when right arm executes trajectory using controllers -->
   <param name="execute_right_trajectory" value="none" />
   <!-- Called to get left arm inverse kinematics with collision checking -->
-  <param name="left_ik_name" value="/mk2_manipulator_kinematics/get_constraint_aware_ik" />
+  <param name="left_ik_name" value="/mk2_arm_kinematics/get_constraint_aware_ik" />
   <!-- Called to get right arm inverse kinematics with collision checking -->
-  <param name="right_ik_name" value="/mk2_none_kinematics/get_constraint_aware_ik" />
+  <param name="right_ik_name" value="/mk2_manipulator_kinematics/get_constraint_aware_ik" />
   <!-- Called to get left arm inverse kinematics without collision checking -->
-  <param name="non_coll_left_ik_name" value="/mk2_manipulator_kinematics/get_ik" />
+  <param name="non_coll_left_ik_name" value="/mk2_arm_kinematics/get_ik" />
   <!-- Called to get right arm inverse kinematics without collision checking -->
-  <param name="non_coll_right_ik_name" value="/mk2_none_kinematics/get_ik" />
+  <param name="non_coll_right_ik_name" value="/mk2_manipulator_kinematics/get_ik" />
   <!-- Kinematic chain group name representing the left arm -->
-  <param name="left_arm_group" value="manipulator" />
+  <param name="left_arm_group" value="arm" />
   <!-- Kinematic chain group name representing the right arm -->
-  <param name="right_arm_group" value="none" />
+  <param name="right_arm_group" value="manipulator" />
   <!-- Degree of freedom representing inverse kinematics redundancy on the left arm -->
   <param name="left_redundancy" value="none" />
   <!-- Degree of freedom representing inverse kinematics redundancy on the right arm -->
@@ -56,13 +56,13 @@
   <!-- Link on the left arm to perform inverse kinematics for -->
   <param name="left_ik_link" value="right_wrist_roll_link" />
   <!-- Link on the right arm to perform inverse kinematics for -->
-  <param name="right_ik_link" value="none" />
+  <param name="right_ik_link" value="right_wrist_roll_link" />
   <!-- Called to plan trajectories given motion plan requests -->
   <param name="planner_service_name" value="/ompl_planning/plan_kinematic_path" />
   <!-- Interpolates between end effector positions for the left arm -->
-  <param name="left_interpolate_service_name" value="none" />
+  <param name="left_interpolate_service_name" value="/l_interpolated_ik_motion_plan" />
   <!-- Interpolates between end effector positions for the right arm -->
-  <param name="right_interpolate_service_name" value="none" />
+  <param name="right_interpolate_service_name" value="/r_interpolated_ik_motion_plan" />
   <!-- Called to smooth and optimize a planner trajectory -->
   <param name="trajectory_filter_service_name" value="/trajectory_filter_server/filter_trajectory_with_constraints" />
   <!-- Called to get the proximity space -->
