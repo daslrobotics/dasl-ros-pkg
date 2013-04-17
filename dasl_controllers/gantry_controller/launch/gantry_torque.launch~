@@ -1,0 +1,9 @@
+<launch>
+
+    <!-- Load gantry control node -->
+    <node pkg="gantry_controller" type="move_gantry_torque.py" name="move_gantry_torque" />
+
+    <!-- Load gantry control node -->
+    <node pkg="gantry_controller" type="gantry_controller.py" name="gantry_controller" />
+
+</launch>

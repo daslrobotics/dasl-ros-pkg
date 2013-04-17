@@ -6,7 +6,7 @@ CMakeFiles/mk2_controller.dir/src/actuator.o
  ../include/data_types.h
  ../include/messages.h
  ../include/stdafx.h
- /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp
+ /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp
  /opt/ros/fuerte/include/XmlRpcDecl.h
  /opt/ros/fuerte/include/XmlRpcValue.h
  /opt/ros/fuerte/include/ros/advertise_options.h
@@ -65,7 +65,7 @@ CMakeFiles/mk2_controller.dir/src/can_ifc.o
  ../include/data_types.h
  ../include/messages.h
  ../include/stdafx.h
- /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp
+ /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp
  /opt/ros/fuerte/include/XmlRpcDecl.h
  /opt/ros/fuerte/include/XmlRpcValue.h
  /opt/ros/fuerte/include/ros/advertise_options.h
@@ -127,9 +127,9 @@ CMakeFiles/mk2_controller.dir/src/controller.o
  ../include/gateway.h
  ../include/messages.h
  ../include/stdafx.h
- /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp
- /home/dasl/ros/gt-ros-pkg.humans/actuator_array/actuator_array_driver/include/actuator_array_driver/actuator_array_driver.h
- /home/dasl/ros/gt-ros-pkg.humans/actuator_array/actuator_array_driver/include/actuator_array_driver/actuator_array_driver_impl.h
+ /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp
+ /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/include/actuator_array_driver/actuator_array_driver.h
+ /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/include/actuator_array_driver/actuator_array_driver_impl.h
  /opt/ros/fuerte/include/XmlRpcDecl.h
  /opt/ros/fuerte/include/XmlRpcValue.h
  /opt/ros/fuerte/include/diagnostic_msgs/DiagnosticArray.h
@@ -195,26 +195,29 @@ CMakeFiles/mk2_controller.dir/src/controller.o
  /opt/ros/fuerte/include/std_srvs/EmptyResponse.h
  /opt/ros/fuerte/include/trajectory_msgs/JointTrajectory.h
  /opt/ros/fuerte/include/trajectory_msgs/JointTrajectoryPoint.h
+ /opt/ros/fuerte/include/urdf_exception/exception.h
+ /opt/ros/fuerte/include/urdf_model/color.h
+ /opt/ros/fuerte/include/urdf_model/joint.h
+ /opt/ros/fuerte/include/urdf_model/link.h
+ /opt/ros/fuerte/include/urdf_model/model.h
+ /opt/ros/fuerte/include/urdf_model/pose.h
+ /opt/ros/fuerte/include/urdf_parser/urdf_parser.h
  /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/cpp/include/pr2_controllers_msgs/JointTrajectoryControllerState.h
  /opt/ros/fuerte/stacks/robot_model/collada_parser/include/collada_parser/collada_parser.h
  /opt/ros/fuerte/stacks/robot_model/urdf/include/urdf/model.h
- /opt/ros/fuerte/stacks/robot_model/urdf_interface/include/urdf_interface/color.h
- /opt/ros/fuerte/stacks/robot_model/urdf_interface/include/urdf_interface/joint.h
  /opt/ros/fuerte/stacks/robot_model/urdf_interface/include/urdf_interface/link.h
  /opt/ros/fuerte/stacks/robot_model/urdf_interface/include/urdf_interface/model.h
- /opt/ros/fuerte/stacks/robot_model/urdf_interface/include/urdf_interface/pose.h
- /opt/ros/fuerte/stacks/robot_model/urdf_parser/include/urdf_parser/urdf_parser.h
 CMakeFiles/mk2_controller.dir/src/data_types.o
  ../include/data_types.h
  ../include/stdafx.h
- /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp
+ /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp
 CMakeFiles/mk2_controller.dir/src/gateway.o
  ../include/can_ifc.h
  ../include/data_types.h
  ../include/gateway.h
  ../include/messages.h
  ../include/stdafx.h
- /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp
+ /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp
  /opt/ros/fuerte/include/XmlRpcDecl.h
  /opt/ros/fuerte/include/XmlRpcValue.h
  /opt/ros/fuerte/include/ros/advertise_options.h
@@ -272,7 +275,7 @@ CMakeFiles/mk2_controller.dir/src/messages.o
  ../include/data_types.h
  ../include/messages.h
  ../include/stdafx.h
- /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp
+ /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp
  /opt/ros/fuerte/include/XmlRpcDecl.h
  /opt/ros/fuerte/include/XmlRpcValue.h
  /opt/ros/fuerte/include/ros/advertise_options.h

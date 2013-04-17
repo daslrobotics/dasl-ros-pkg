@@ -23,7 +23,7 @@ class MoveTorsoPS3():
                              'torso_pitch_joint',
                              'torso_roll_joint'}
 
-        rospy.Subscriber('/joy_torso', Joy, self.read_joystick_data)
+        rospy.Subscriber('/joy', Joy, self.read_joystick_data)
         self.joint_states_pub = rospy.Publisher('/command', JointState)
 
 
@@ -60,13 +60,13 @@ class MoveTorsoPS3():
                 for joint in self.joint_states:
 	            msg.name.append(joint)
                     if joint == 'torso_yaw_joint':
-                        self.position[0] += -1 * self.joy_data.axes[0] * self.step_size
+                        self.position[0] += -1 * self.joy_data.axes[2] * self.step_size
                         msg.position.append(self.position[0])
                     elif joint == 'torso_pitch_joint':
                         self.position[1] += -1 * self.joy_data.axes[1] * self.step_size
                         msg.position.append(self.position[1])
                     elif joint == 'torso_roll_joint':
-                        self.position[2] += -1 * self.joy_data.axes[2] * self.step_size
+                        self.position[2] += -1 * self.joy_data.axes[0] * self.step_size
                         msg.position.append(self.position[2])
                     else:
                         msg.position.append(0.0)

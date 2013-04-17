@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/ros/dasl-ros-pkg/dasl_mocap
+CMAKE_SOURCE_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build
+CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build
 
 # Utility rule file for ROSBUILD_genmsg_py.
 
@@ -45,12 +45,13 @@ include CMakeFiles/ROSBUILD_genmsg_py.dir/progress.make
 CMakeFiles/ROSBUILD_genmsg_py: ../src/dasl_mocap/msg/__init__.py
 
 ../src/dasl_mocap/msg/__init__.py: ../src/dasl_mocap/msg/_quadcopter2pc.py
+../src/dasl_mocap/msg/__init__.py: ../src/dasl_mocap/msg/_Velocity.py
 ../src/dasl_mocap/msg/__init__.py: ../src/dasl_mocap/msg/_pc2quadcopter.py
-../src/dasl_mocap/msg/__init__.py: ../src/dasl_mocap/msg/_Vector3F.py
 ../src/dasl_mocap/msg/__init__.py: ../src/dasl_mocap/msg/_RigidBody.py
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_1)
+../src/dasl_mocap/msg/__init__.py: ../src/dasl_mocap/msg/_Vector3F.py
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/dasl_mocap/msg/__init__.py"
-	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --initpy /home/dasl/ros/dasl-ros-pkg/dasl_mocap/msg/quadcopter2pc.msg /home/dasl/ros/dasl-ros-pkg/dasl_mocap/msg/pc2quadcopter.msg /home/dasl/ros/dasl-ros-pkg/dasl_mocap/msg/Vector3F.msg /home/dasl/ros/dasl-ros-pkg/dasl_mocap/msg/RigidBody.msg
+	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --initpy /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/quadcopter2pc.msg /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/Velocity.msg /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/pc2quadcopter.msg /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/RigidBody.msg /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/Vector3F.msg
 
 ../src/dasl_mocap/msg/_quadcopter2pc.py: ../msg/quadcopter2pc.msg
 ../src/dasl_mocap/msg/_quadcopter2pc.py: /opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py
@@ -69,11 +70,36 @@ CMakeFiles/ROSBUILD_genmsg_py: ../src/dasl_mocap/msg/__init__.py
 ../src/dasl_mocap/msg/_quadcopter2pc.py: /opt/ros/fuerte/share/roswtf/manifest.xml
 ../src/dasl_mocap/msg/_quadcopter2pc.py: /opt/ros/fuerte/share/message_filters/manifest.xml
 ../src/dasl_mocap/msg/_quadcopter2pc.py: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+../src/dasl_mocap/msg/_quadcopter2pc.py: /opt/ros/fuerte/share/std_srvs/manifest.xml
 ../src/dasl_mocap/msg/_quadcopter2pc.py: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 ../src/dasl_mocap/msg/_quadcopter2pc.py: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/dasl_mocap/msg/_quadcopter2pc.py"
-	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --noinitpy /home/dasl/ros/dasl-ros-pkg/dasl_mocap/msg/quadcopter2pc.msg
+	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --noinitpy /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/quadcopter2pc.msg
+
+../src/dasl_mocap/msg/_Velocity.py: ../msg/Velocity.msg
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/share/roslib/bin/gendeps
+../src/dasl_mocap/msg/_Velocity.py: ../manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/share/roslang/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/share/roscpp/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/share/std_msgs/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/stacks/bullet/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/share/rosconsole/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/share/rospy/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/share/rostest/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/share/roswtf/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/share/message_filters/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/share/std_srvs/manifest.xml
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
+../src/dasl_mocap/msg/_Velocity.py: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/dasl_mocap/msg/_Velocity.py"
+	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --noinitpy /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/Velocity.msg
 
 ../src/dasl_mocap/msg/_pc2quadcopter.py: ../msg/pc2quadcopter.msg
 ../src/dasl_mocap/msg/_pc2quadcopter.py: /opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py
@@ -93,34 +119,12 @@ CMakeFiles/ROSBUILD_genmsg_py: ../src/dasl_mocap/msg/__init__.py
 ../src/dasl_mocap/msg/_pc2quadcopter.py: /opt/ros/fuerte/share/roswtf/manifest.xml
 ../src/dasl_mocap/msg/_pc2quadcopter.py: /opt/ros/fuerte/share/message_filters/manifest.xml
 ../src/dasl_mocap/msg/_pc2quadcopter.py: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+../src/dasl_mocap/msg/_pc2quadcopter.py: /opt/ros/fuerte/share/std_srvs/manifest.xml
 ../src/dasl_mocap/msg/_pc2quadcopter.py: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 ../src/dasl_mocap/msg/_pc2quadcopter.py: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/dasl_mocap/msg/_pc2quadcopter.py"
-	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --noinitpy /home/dasl/ros/dasl-ros-pkg/dasl_mocap/msg/pc2quadcopter.msg
-
-../src/dasl_mocap/msg/_Vector3F.py: ../msg/Vector3F.msg
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/roslib/bin/gendeps
-../src/dasl_mocap/msg/_Vector3F.py: ../manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/roslang/manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/roscpp/manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/stacks/bullet/manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/rosconsole/manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/rospy/manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/rostest/manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/roswtf/manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/message_filters/manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/dasl_mocap/msg/_Vector3F.py"
-	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --noinitpy /home/dasl/ros/dasl-ros-pkg/dasl_mocap/msg/Vector3F.msg
+	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --noinitpy /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/pc2quadcopter.msg
 
 ../src/dasl_mocap/msg/_RigidBody.py: ../msg/RigidBody.msg
 ../src/dasl_mocap/msg/_RigidBody.py: /opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py
@@ -139,18 +143,44 @@ CMakeFiles/ROSBUILD_genmsg_py: ../src/dasl_mocap/msg/__init__.py
 ../src/dasl_mocap/msg/_RigidBody.py: /opt/ros/fuerte/share/roswtf/manifest.xml
 ../src/dasl_mocap/msg/_RigidBody.py: /opt/ros/fuerte/share/message_filters/manifest.xml
 ../src/dasl_mocap/msg/_RigidBody.py: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+../src/dasl_mocap/msg/_RigidBody.py: /opt/ros/fuerte/share/std_srvs/manifest.xml
 ../src/dasl_mocap/msg/_RigidBody.py: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 ../src/dasl_mocap/msg/_RigidBody.py: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/dasl_mocap/msg/_RigidBody.py"
-	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --noinitpy /home/dasl/ros/dasl-ros-pkg/dasl_mocap/msg/RigidBody.msg
+	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --noinitpy /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/RigidBody.msg
+
+../src/dasl_mocap/msg/_Vector3F.py: ../msg/Vector3F.msg
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/roslib/bin/gendeps
+../src/dasl_mocap/msg/_Vector3F.py: ../manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/roslang/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/roscpp/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/std_msgs/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/stacks/bullet/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/rosconsole/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/rospy/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/rostest/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/roswtf/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/message_filters/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/share/std_srvs/manifest.xml
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
+../src/dasl_mocap/msg/_Vector3F.py: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/dasl_mocap/msg/_Vector3F.py"
+	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --noinitpy /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/Vector3F.msg
 
 ROSBUILD_genmsg_py: CMakeFiles/ROSBUILD_genmsg_py
 ROSBUILD_genmsg_py: ../src/dasl_mocap/msg/__init__.py
 ROSBUILD_genmsg_py: ../src/dasl_mocap/msg/_quadcopter2pc.py
+ROSBUILD_genmsg_py: ../src/dasl_mocap/msg/_Velocity.py
 ROSBUILD_genmsg_py: ../src/dasl_mocap/msg/_pc2quadcopter.py
-ROSBUILD_genmsg_py: ../src/dasl_mocap/msg/_Vector3F.py
 ROSBUILD_genmsg_py: ../src/dasl_mocap/msg/_RigidBody.py
+ROSBUILD_genmsg_py: ../src/dasl_mocap/msg/_Vector3F.py
 ROSBUILD_genmsg_py: CMakeFiles/ROSBUILD_genmsg_py.dir/build.make
 .PHONY : ROSBUILD_genmsg_py
 
@@ -163,6 +193,6 @@ CMakeFiles/ROSBUILD_genmsg_py.dir/clean:
 .PHONY : CMakeFiles/ROSBUILD_genmsg_py.dir/clean
 
 CMakeFiles/ROSBUILD_genmsg_py.dir/depend:
-	cd /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/ros/dasl-ros-pkg/dasl_mocap /home/dasl/ros/dasl-ros-pkg/dasl_mocap /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles/ROSBUILD_genmsg_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles/ROSBUILD_genmsg_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ROSBUILD_genmsg_py.dir/depend
 

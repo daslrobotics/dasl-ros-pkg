@@ -1,8 +1,14 @@
 FILE(REMOVE_RECURSE
   "../msg_gen"
+  "../srv_gen"
   "../src/dasl_mocap/msg"
+  "../src/dasl_mocap/srv"
   "../msg_gen"
+  "../srv_gen"
   "CMakeFiles/ROSBUILD_gensrv_lisp"
+  "../srv_gen/lisp/Spawn.lisp"
+  "../srv_gen/lisp/_package.lisp"
+  "../srv_gen/lisp/_package_Spawn.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

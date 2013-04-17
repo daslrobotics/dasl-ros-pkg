@@ -16,7 +16,8 @@ using namespace std;
 #define MULTICAST_ADDRESS	"239.255.42.99"
 //#define MY_ADDRESS		"129.25.20.204"
 //#define MY_ADDRESS		"192.168.0.187"
-#define MY_ADDRESS		"129.25.35.173"
+//#define MY_ADDRESS		"129.25.35.173"
+#define MY_ADDRESS		"129.25.16.43"
 #define PORT_COMMAND		1510
 #define PORT_DATA		1511
 #define SOCKET_ERROR		(-1)

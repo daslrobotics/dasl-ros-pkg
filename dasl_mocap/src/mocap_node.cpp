@@ -111,7 +111,7 @@ void processMocapData( const char** mocap_model )
 	transform.setRotation(q.inverse());		// Handle 
 
 	int rigid_body_id = abs(Socket.rigidBody[0].ID);
-	const char* rigid_body_name = "gantry_gimbal_base_link"; //mocap_model[rigid_body_id];
+	const char* rigid_body_name = "gantry_base"; //mocap_model[rigid_body_id];
 	br.sendTransform(tf::StampedTransform(transform, timestamp, "mocap_origin", std::string( rigid_body_name ) ));
 
       //}

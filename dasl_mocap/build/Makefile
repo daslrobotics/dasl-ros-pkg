@@ -36,10 +36,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/ros/dasl-ros-pkg/dasl_mocap
+CMAKE_SOURCE_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build
+CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -66,9 +66,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -185,6 +185,19 @@ ROSBUILD_gensrv_lisp: cmake_check_build_system
 ROSBUILD_gensrv_lisp/fast:
 	$(MAKE) -f CMakeFiles/ROSBUILD_gensrv_lisp.dir/build.make CMakeFiles/ROSBUILD_gensrv_lisp.dir/build
 .PHONY : ROSBUILD_gensrv_lisp/fast
+
+#=============================================================================
+# Target rules for targets named ROSBUILD_gensrv_py
+
+# Build rule for target.
+ROSBUILD_gensrv_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ROSBUILD_gensrv_py
+.PHONY : ROSBUILD_gensrv_py
+
+# fast build rule for target.
+ROSBUILD_gensrv_py/fast:
+	$(MAKE) -f CMakeFiles/ROSBUILD_gensrv_py.dir/build.make CMakeFiles/ROSBUILD_gensrv_py.dir/build
+.PHONY : ROSBUILD_gensrv_py/fast
 
 #=============================================================================
 # Target rules for targets named clean-test-results
@@ -385,6 +398,7 @@ help:
 	@echo "... ROSBUILD_genmsg_py"
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
+	@echo "... ROSBUILD_gensrv_py"
 	@echo "... clean-test-results"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"

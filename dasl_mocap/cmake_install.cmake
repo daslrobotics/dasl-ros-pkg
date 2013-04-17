@@ -1,4 +1,4 @@
-# Install script for directory: /home/morsag/ros_workspace/mocap
+# Install script for directory: /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/morsag/ros_workspace/mocap/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/morsag/ros_workspace/mocap/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

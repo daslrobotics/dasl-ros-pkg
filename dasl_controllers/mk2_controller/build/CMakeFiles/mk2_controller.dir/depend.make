@@ -127,8 +127,8 @@ CMakeFiles/mk2_controller.dir/src/controller.o: ../include/gateway.h
 CMakeFiles/mk2_controller.dir/src/controller.o: ../include/messages.h
 CMakeFiles/mk2_controller.dir/src/controller.o: ../include/stdafx.h
 CMakeFiles/mk2_controller.dir/src/controller.o: ../src/controller.cpp
-CMakeFiles/mk2_controller.dir/src/controller.o: /home/dasl/ros/gt-ros-pkg.humans/actuator_array/actuator_array_driver/include/actuator_array_driver/actuator_array_driver.h
-CMakeFiles/mk2_controller.dir/src/controller.o: /home/dasl/ros/gt-ros-pkg.humans/actuator_array/actuator_array_driver/include/actuator_array_driver/actuator_array_driver_impl.h
+CMakeFiles/mk2_controller.dir/src/controller.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/include/actuator_array_driver/actuator_array_driver.h
+CMakeFiles/mk2_controller.dir/src/controller.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/include/actuator_array_driver/actuator_array_driver_impl.h
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/XmlRpcDecl.h
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/XmlRpcValue.h
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/diagnostic_msgs/DiagnosticArray.h
@@ -194,15 +194,18 @@ CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/std_srvs
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/std_srvs/EmptyResponse.h
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/trajectory_msgs/JointTrajectory.h
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/trajectory_msgs/JointTrajectoryPoint.h
+CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/urdf_exception/exception.h
+CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/urdf_model/color.h
+CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/urdf_model/joint.h
+CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/urdf_model/link.h
+CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/urdf_model/model.h
+CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/urdf_model/pose.h
+CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/include/urdf_parser/urdf_parser.h
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/cpp/include/pr2_controllers_msgs/JointTrajectoryControllerState.h
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/collada_parser/include/collada_parser/collada_parser.h
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/urdf/include/urdf/model.h
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/urdf_interface/include/urdf_interface/color.h
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/urdf_interface/include/urdf_interface/joint.h
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/urdf_interface/include/urdf_interface/link.h
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/urdf_interface/include/urdf_interface/model.h
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/urdf_interface/include/urdf_interface/pose.h
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/urdf_parser/include/urdf_parser/urdf_parser.h
 
 CMakeFiles/mk2_controller.dir/src/data_types.o: ../include/data_types.h
 CMakeFiles/mk2_controller.dir/src/data_types.o: ../include/stdafx.h

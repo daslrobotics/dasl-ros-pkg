@@ -8,6 +8,24 @@
         </node>
 
     <!-- Publish a static transform between the robot base and the world frame -->
-    <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="3 3 0 0 0 /world /mocap_origin 100" />
+    <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="3 3 0 0 0 0 /world /mocap_origin 100" />
+
+
+
+    <!-- Load arm control node -->
+    <node pkg="dasl_mocap" type="mocap_frame_creator.py" name="move_gantry_frame_creator" />
+
+
+
+
+<node pkg="dasl_mocap" type="mocap_frame_listener_trailer.py" name="mocap_frame_TRAILER" />
+
+
+    <node pkg="dasl_mocap" type="mocap_frame_listener.py" name="mocap_frame_listener" />
+
+<node name="mocap_tf_broadcaster" pkg="dasl_mocap" type="mocap_frame_broadcaster.py" respawn="false" output="screen" >
+      <param name="turtle" type="string" value="turtle1" />
+    </node>
+
 
 </launch>

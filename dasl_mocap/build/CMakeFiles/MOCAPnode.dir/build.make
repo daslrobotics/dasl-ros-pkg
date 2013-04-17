@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/ros/dasl-ros-pkg/dasl_mocap
+CMAKE_SOURCE_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build
+CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MOCAPnode.dir/depend.make
@@ -62,19 +62,20 @@ CMakeFiles/MOCAPnode.dir/src/mocap_node.o: /opt/ros/fuerte/share/rostest/manifes
 CMakeFiles/MOCAPnode.dir/src/mocap_node.o: /opt/ros/fuerte/share/roswtf/manifest.xml
 CMakeFiles/MOCAPnode.dir/src/mocap_node.o: /opt/ros/fuerte/share/message_filters/manifest.xml
 CMakeFiles/MOCAPnode.dir/src/mocap_node.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+CMakeFiles/MOCAPnode.dir/src/mocap_node.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
 CMakeFiles/MOCAPnode.dir/src/mocap_node.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/MOCAPnode.dir/src/mocap_node.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/MOCAPnode.dir/src/mocap_node.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/MOCAPnode.dir/src/mocap_node.o -c /home/dasl/ros/dasl-ros-pkg/dasl_mocap/src/mocap_node.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/MOCAPnode.dir/src/mocap_node.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/mocap_node.cpp
 
 CMakeFiles/MOCAPnode.dir/src/mocap_node.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MOCAPnode.dir/src/mocap_node.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/ros/dasl-ros-pkg/dasl_mocap/src/mocap_node.cpp > CMakeFiles/MOCAPnode.dir/src/mocap_node.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/mocap_node.cpp > CMakeFiles/MOCAPnode.dir/src/mocap_node.i
 
 CMakeFiles/MOCAPnode.dir/src/mocap_node.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MOCAPnode.dir/src/mocap_node.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/ros/dasl-ros-pkg/dasl_mocap/src/mocap_node.cpp -o CMakeFiles/MOCAPnode.dir/src/mocap_node.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/mocap_node.cpp -o CMakeFiles/MOCAPnode.dir/src/mocap_node.s
 
 CMakeFiles/MOCAPnode.dir/src/mocap_node.o.requires:
 .PHONY : CMakeFiles/MOCAPnode.dir/src/mocap_node.o.requires
@@ -111,6 +112,6 @@ CMakeFiles/MOCAPnode.dir/clean:
 .PHONY : CMakeFiles/MOCAPnode.dir/clean
 
 CMakeFiles/MOCAPnode.dir/depend:
-	cd /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/ros/dasl-ros-pkg/dasl_mocap /home/dasl/ros/dasl-ros-pkg/dasl_mocap /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles/MOCAPnode.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles/MOCAPnode.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/MOCAPnode.dir/depend
 

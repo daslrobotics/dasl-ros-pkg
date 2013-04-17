@@ -137,28 +137,29 @@ bool MK2::process_status_response(StatusReponse *resp, Message *msg)
 
 bool MK2::process_hs_telemetry(HSTelemetry *resp, Message *msg)
 {
-	if(msg->message_id != MK2::MessageNumberEnum::HIGH_SPEED_TLM && msg->data_size != 8)
-	{
-		return false;
-	}
-	//12 bit fixed point data from telemetry
-	int16_t pos_fp = (msg->data[0] | ((msg->data[1] & 0x0F) << 8) | ((msg->data[3] & 0x0F) << 12)) & 0xFFFF;
-	int16_t vel_fp = ((msg->data[1] >> 4) | msg->data[2] << 4) & 0xFFF;
-	int16_t trq_fp = ((msg->data[4] >> 4) | msg->data[5] << 4) & 0xFFF;
-	int16_t curr_fp = (msg->data[6] | msg->data[7] << 8) & 0xFFF;
+       if(msg->message_id != MK2::MessageNumberEnum::HIGH_SPEED_TLM && msg->data_size != 8)
+       {
+              return false;
+       }
+       //12 bit fixed point data from telemetry
+       int16_t pos_fp = (msg->data[0] | ((msg->data[1] & 0x0F) << 8) | ((msg->data[3] & 0x0F) << 12)) & 0xFFFF;
+       int16_t vel_fp = ((msg->data[1] >> 4) | msg->data[2] << 4) & 0xFFF;
+       int16_t trq_fp = ((msg->data[4] >> 4) | msg->data[5] << 4) & 0xFFF;
+       int16_t curr_fp = (msg->data[6] | msg->data[7] << 8) & 0xFFF;
 
-	if((vel_fp & 0xF00) == 0xF00) vel_fp |= 0xFF00;
-    	if((trq_fp & 0xF00) == 0xF00) trq_fp |= 0xFF00;
-    	if((curr_fp & 0xF00) == 0xF00) curr_fp |= 0xFF00;
-	 
-	resp->position = (pos_fp * (float)MK2_PI) / (float)pow(2.0f, 11.0f);
-	resp->velocity = (vel_fp * 8) / (float)pow(2.0f, 11.0f);
-	resp->torque = (vel_fp * 64) / (float)pow(2.0f, 11.0f);
-	resp->inst_current = (vel_fp * 32) / (float)pow(2.0f, 11.0f);
-	resp->position_limit = (msg->data[7] >> 4) & 0xF;
+       if((vel_fp & 0x800) == 0x800) vel_fp |= 0xF800;
+       if((trq_fp & 0x800) == 0x800) trq_fp |= 0xF800;
+       if((curr_fp & 0x800) == 0x800) curr_fp |= 0xF800;
 
-	return true;
+       resp->position = (pos_fp * (float)MK2_PI) / (float)pow(2.0f, 11.0f);
+       resp->velocity = (vel_fp * 8) / (float)pow(2.0f, 11.0f);
+       resp->torque = (trq_fp * 64) / (float)pow(2.0f, 11.0f);
+       resp->inst_current = (curr_fp * 32) / (float)pow(2.0f, 11.0f);
+       resp->position_limit = (msg->data[7] >> 4) & 0xF;
+
+       return true;
 }
+
 bool MK2::process_ms_telemetry(MSTelemetry *resp, Message *msg)
 {
 	if(msg->message_id != MK2::MessageNumberEnum::MED_SPEED_TLM && msg->data_size != 8)

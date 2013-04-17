@@ -1,0 +1,16 @@
+<launch>
+
+    <!-- Launch Rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find dasl_mocap)/launch/mocap_test.vcg"/>
+
+    <node pkg="dasl_mocap" type="MOCAPnode" name="MOCAPnode" respawn="false" required="true">
+    <rosparam file="$(find dasl_mocap)/config/mocap.yaml" command="load" />
+    </node>
+
+    <!-- Publish a static transform between the robot base and the world frame -->
+    <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="3 3 0 0 0 0 /world /mocap_origin 100" />
+
+    <!-- Launch mocap frame listener -->
+    <node pkg="dasl_mocap" type="mocap_frame_listener.py" name="mocap_frame_listener" output="screen" />
+
+</launch>

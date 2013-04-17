@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/ros/dasl-ros-pkg/dasl_mocap
+CMAKE_SOURCE_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build
+CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build
 
 # Utility rule file for ROSBUILD_genmsg_lisp.
 
@@ -45,15 +45,18 @@ include CMakeFiles/ROSBUILD_genmsg_lisp.dir/progress.make
 CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/quadcopter2pc.lisp
 CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package.lisp
 CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_quadcopter2pc.lisp
+CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/Velocity.lisp
+CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package.lisp
+CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_Velocity.lisp
 CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/pc2quadcopter.lisp
 CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package.lisp
 CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_pc2quadcopter.lisp
-CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/Vector3F.lisp
-CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package.lisp
-CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_Vector3F.lisp
 CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/RigidBody.lisp
 CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package.lisp
 CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_RigidBody.lisp
+CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/Vector3F.lisp
+CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package.lisp
+CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_Vector3F.lisp
 
 ../msg_gen/lisp/quadcopter2pc.lisp: ../msg/quadcopter2pc.msg
 ../msg_gen/lisp/quadcopter2pc.lisp: /opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py
@@ -72,15 +75,44 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_RigidBody.lisp
 ../msg_gen/lisp/quadcopter2pc.lisp: /opt/ros/fuerte/share/roswtf/manifest.xml
 ../msg_gen/lisp/quadcopter2pc.lisp: /opt/ros/fuerte/share/message_filters/manifest.xml
 ../msg_gen/lisp/quadcopter2pc.lisp: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+../msg_gen/lisp/quadcopter2pc.lisp: /opt/ros/fuerte/share/std_srvs/manifest.xml
 ../msg_gen/lisp/quadcopter2pc.lisp: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 ../msg_gen/lisp/quadcopter2pc.lisp: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/lisp/quadcopter2pc.lisp, ../msg_gen/lisp/_package.lisp, ../msg_gen/lisp/_package_quadcopter2pc.lisp"
-	/opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/dasl/ros/dasl-ros-pkg/dasl_mocap/msg/quadcopter2pc.msg
+	/opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/quadcopter2pc.msg
 
 ../msg_gen/lisp/_package.lisp: ../msg_gen/lisp/quadcopter2pc.lisp
 
 ../msg_gen/lisp/_package_quadcopter2pc.lisp: ../msg_gen/lisp/quadcopter2pc.lisp
+
+../msg_gen/lisp/Velocity.lisp: ../msg/Velocity.msg
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/share/roslib/bin/gendeps
+../msg_gen/lisp/Velocity.lisp: ../manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/share/roslang/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/share/roscpp/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/share/std_msgs/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/stacks/bullet/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/share/rosconsole/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/share/rospy/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/share/rostest/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/share/roswtf/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/share/message_filters/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/share/std_srvs/manifest.xml
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
+../msg_gen/lisp/Velocity.lisp: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/lisp/Velocity.lisp, ../msg_gen/lisp/_package.lisp, ../msg_gen/lisp/_package_Velocity.lisp"
+	/opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/Velocity.msg
+
+../msg_gen/lisp/_package.lisp: ../msg_gen/lisp/Velocity.lisp
+
+../msg_gen/lisp/_package_Velocity.lisp: ../msg_gen/lisp/Velocity.lisp
 
 ../msg_gen/lisp/pc2quadcopter.lisp: ../msg/pc2quadcopter.msg
 ../msg_gen/lisp/pc2quadcopter.lisp: /opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py
@@ -100,42 +132,16 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_RigidBody.lisp
 ../msg_gen/lisp/pc2quadcopter.lisp: /opt/ros/fuerte/share/roswtf/manifest.xml
 ../msg_gen/lisp/pc2quadcopter.lisp: /opt/ros/fuerte/share/message_filters/manifest.xml
 ../msg_gen/lisp/pc2quadcopter.lisp: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+../msg_gen/lisp/pc2quadcopter.lisp: /opt/ros/fuerte/share/std_srvs/manifest.xml
 ../msg_gen/lisp/pc2quadcopter.lisp: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 ../msg_gen/lisp/pc2quadcopter.lisp: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/lisp/pc2quadcopter.lisp, ../msg_gen/lisp/_package.lisp, ../msg_gen/lisp/_package_pc2quadcopter.lisp"
-	/opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/dasl/ros/dasl-ros-pkg/dasl_mocap/msg/pc2quadcopter.msg
+	/opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/pc2quadcopter.msg
 
 ../msg_gen/lisp/_package.lisp: ../msg_gen/lisp/pc2quadcopter.lisp
 
 ../msg_gen/lisp/_package_pc2quadcopter.lisp: ../msg_gen/lisp/pc2quadcopter.lisp
-
-../msg_gen/lisp/Vector3F.lisp: ../msg/Vector3F.msg
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/roslib/bin/gendeps
-../msg_gen/lisp/Vector3F.lisp: ../manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/roslang/manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/roscpp/manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/stacks/bullet/manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/rosconsole/manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/rospy/manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/rostest/manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/roswtf/manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/message_filters/manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/lisp/Vector3F.lisp, ../msg_gen/lisp/_package.lisp, ../msg_gen/lisp/_package_Vector3F.lisp"
-	/opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/dasl/ros/dasl-ros-pkg/dasl_mocap/msg/Vector3F.msg
-
-../msg_gen/lisp/_package.lisp: ../msg_gen/lisp/Vector3F.lisp
-
-../msg_gen/lisp/_package_Vector3F.lisp: ../msg_gen/lisp/Vector3F.lisp
 
 ../msg_gen/lisp/RigidBody.lisp: ../msg/RigidBody.msg
 ../msg_gen/lisp/RigidBody.lisp: /opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py
@@ -154,29 +160,61 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_RigidBody.lisp
 ../msg_gen/lisp/RigidBody.lisp: /opt/ros/fuerte/share/roswtf/manifest.xml
 ../msg_gen/lisp/RigidBody.lisp: /opt/ros/fuerte/share/message_filters/manifest.xml
 ../msg_gen/lisp/RigidBody.lisp: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+../msg_gen/lisp/RigidBody.lisp: /opt/ros/fuerte/share/std_srvs/manifest.xml
 ../msg_gen/lisp/RigidBody.lisp: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 ../msg_gen/lisp/RigidBody.lisp: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/lisp/RigidBody.lisp, ../msg_gen/lisp/_package.lisp, ../msg_gen/lisp/_package_RigidBody.lisp"
-	/opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/dasl/ros/dasl-ros-pkg/dasl_mocap/msg/RigidBody.msg
+	/opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/RigidBody.msg
 
 ../msg_gen/lisp/_package.lisp: ../msg_gen/lisp/RigidBody.lisp
 
 ../msg_gen/lisp/_package_RigidBody.lisp: ../msg_gen/lisp/RigidBody.lisp
 
+../msg_gen/lisp/Vector3F.lisp: ../msg/Vector3F.msg
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/roslib/bin/gendeps
+../msg_gen/lisp/Vector3F.lisp: ../manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/roslang/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/roscpp/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/std_msgs/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/stacks/bullet/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/rosconsole/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/rospy/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/rostest/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/roswtf/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/message_filters/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/share/std_srvs/manifest.xml
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
+../msg_gen/lisp/Vector3F.lisp: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/lisp/Vector3F.lisp, ../msg_gen/lisp/_package.lisp, ../msg_gen/lisp/_package_Vector3F.lisp"
+	/opt/ros/fuerte/share/roslisp/rosbuild/scripts/genmsg_lisp.py /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/Vector3F.msg
+
+../msg_gen/lisp/_package.lisp: ../msg_gen/lisp/Vector3F.lisp
+
+../msg_gen/lisp/_package_Vector3F.lisp: ../msg_gen/lisp/Vector3F.lisp
+
 ROSBUILD_genmsg_lisp: CMakeFiles/ROSBUILD_genmsg_lisp
 ROSBUILD_genmsg_lisp: ../msg_gen/lisp/quadcopter2pc.lisp
 ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package.lisp
 ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_quadcopter2pc.lisp
+ROSBUILD_genmsg_lisp: ../msg_gen/lisp/Velocity.lisp
+ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package.lisp
+ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_Velocity.lisp
 ROSBUILD_genmsg_lisp: ../msg_gen/lisp/pc2quadcopter.lisp
 ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package.lisp
 ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_pc2quadcopter.lisp
-ROSBUILD_genmsg_lisp: ../msg_gen/lisp/Vector3F.lisp
-ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package.lisp
-ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_Vector3F.lisp
 ROSBUILD_genmsg_lisp: ../msg_gen/lisp/RigidBody.lisp
 ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package.lisp
 ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_RigidBody.lisp
+ROSBUILD_genmsg_lisp: ../msg_gen/lisp/Vector3F.lisp
+ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package.lisp
+ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_Vector3F.lisp
 ROSBUILD_genmsg_lisp: CMakeFiles/ROSBUILD_genmsg_lisp.dir/build.make
 .PHONY : ROSBUILD_genmsg_lisp
 
@@ -189,6 +227,6 @@ CMakeFiles/ROSBUILD_genmsg_lisp.dir/clean:
 .PHONY : CMakeFiles/ROSBUILD_genmsg_lisp.dir/clean
 
 CMakeFiles/ROSBUILD_genmsg_lisp.dir/depend:
-	cd /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/ros/dasl-ros-pkg/dasl_mocap /home/dasl/ros/dasl-ros-pkg/dasl_mocap /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build /home/dasl/ros/dasl-ros-pkg/dasl_mocap/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ROSBUILD_genmsg_lisp.dir/depend
 

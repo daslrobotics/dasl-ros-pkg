@@ -95,7 +95,7 @@ void MK2::send_control_cmd(uint8_t destination, ControlCmd *cmd)
 	}
 }
 
-void MK2::send_impedance_cmd(uint8_t destination, ImpedanceCmd cmd)
+void MK2::send_impedance_cmd(uint8_t destination, ImpedanceCmd *cmd)
 {
 	Message msg;
  
@@ -104,9 +104,9 @@ void MK2::send_impedance_cmd(uint8_t destination, ImpedanceCmd cmd)
 	msg.source = this_source;
 	msg.data_size = 6;
 	
-	uint16_t inertia_fp = (uint16_t)(cmd.inertia * 1000.0);
-	uint16_t damping_fp = (uint16_t)((cmd.damping * pow(2.0f, 16.0f)) / 64.0f);
-	uint16_t stiffness_fp = (uint16_t)((cmd.stiffness * pow(2.0f, 16.0f)) / 4096.0f);
+	uint16_t inertia_fp = (uint16_t)(cmd->inertia * 1000.0);
+	uint16_t damping_fp = (uint16_t)((cmd->damping * pow(2.0f, 16.0f)) / 64.0f);
+	uint16_t stiffness_fp = (uint16_t)((cmd->stiffness * pow(2.0f, 16.0f)) / 4096.0f);
 	
 	msg.data[0] = (uint8_t)((inertia_fp >> 0) & 0xFF);
 	msg.data[1] = (uint8_t)((inertia_fp >> 8) & 0xFF);

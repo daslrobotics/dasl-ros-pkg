@@ -1,0 +1,6 @@
+<launch>
+    
+    <!-- Load gantry odom node -->
+    <node pkg="gantry_odom" type="gantry_odom" name="gantry_odom_node" />
+
+</launch>

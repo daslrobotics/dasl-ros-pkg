@@ -30,7 +30,7 @@ ros/macros.h
 ros/assert.h
 ../msg_gen/cpp/include/mocap/ros/assert.h
 
-/home/dasl/ros/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.h
+/home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.h
 iostream
 -
 sys/types.h
@@ -60,13 +60,13 @@ math.h
 arpa/inet.h
 -
 
-/home/dasl/ros/dasl-ros-pkg/dasl_mocap/src/mocap_node.cpp
+/home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/mocap_node.cpp
 MOCAPSocket.h
-/home/dasl/ros/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.h
+/home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.h
 mocap/RigidBody.h
-/home/dasl/ros/dasl-ros-pkg/dasl_mocap/src/mocap/RigidBody.h
+/home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/mocap/RigidBody.h
 skeletons.h
-/home/dasl/ros/dasl-ros-pkg/dasl_mocap/src/skeletons.h
+/home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/skeletons.h
 ros/ros.h
 -
 tf/transform_broadcaster.h

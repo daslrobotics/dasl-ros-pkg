@@ -1,4 +1,4 @@
-# Install script for directory: /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller
+# Install script for directory: /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

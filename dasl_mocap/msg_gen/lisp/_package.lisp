@@ -3,11 +3,15 @@
   (:export
    "<QUADCOPTER2PC>"
    "QUADCOPTER2PC"
+   "<VELOCITY>"
+   "VELOCITY"
    "<PC2QUADCOPTER>"
    "PC2QUADCOPTER"
-   "<VECTOR3F>"
-   "VECTOR3F"
    "<RIGIDBODY>"
    "RIGIDBODY"
+   "<VECTOR3F>"
+   "VECTOR3F"
+   "<POSE>"
+   "POSE"
   ))
 

@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller
+CMAKE_SOURCE_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build
+CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/mk2_controller.dir/depend.make
@@ -81,22 +81,22 @@ CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/geometry/
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/geometry/tf_conversions/manifest.xml
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/robot_state_publisher/manifest.xml
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /home/dasl/ros/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
+CMakeFiles/mk2_controller.dir/src/controller.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/controller.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/controller.o -c /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/controller.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp
 
 CMakeFiles/mk2_controller.dir/src/controller.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/controller.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp > CMakeFiles/mk2_controller.dir/src/controller.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp > CMakeFiles/mk2_controller.dir/src/controller.i
 
 CMakeFiles/mk2_controller.dir/src/controller.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/controller.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp -o CMakeFiles/mk2_controller.dir/src/controller.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp -o CMakeFiles/mk2_controller.dir/src/controller.s
 
 CMakeFiles/mk2_controller.dir/src/controller.o.requires:
 .PHONY : CMakeFiles/mk2_controller.dir/src/controller.o.requires
@@ -142,22 +142,22 @@ CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/geometry/tf
 CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/geometry/tf_conversions/manifest.xml
 CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/robot_model/robot_state_publisher/manifest.xml
 CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /home/dasl/ros/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
+CMakeFiles/mk2_controller.dir/src/messages.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
 CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
 CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
 CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/messages.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/messages.o -c /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/messages.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp
 
 CMakeFiles/mk2_controller.dir/src/messages.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/messages.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp > CMakeFiles/mk2_controller.dir/src/messages.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp > CMakeFiles/mk2_controller.dir/src/messages.i
 
 CMakeFiles/mk2_controller.dir/src/messages.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/messages.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp -o CMakeFiles/mk2_controller.dir/src/messages.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp -o CMakeFiles/mk2_controller.dir/src/messages.s
 
 CMakeFiles/mk2_controller.dir/src/messages.o.requires:
 .PHONY : CMakeFiles/mk2_controller.dir/src/messages.o.requires
@@ -203,22 +203,22 @@ CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/geometry/tf/
 CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/geometry/tf_conversions/manifest.xml
 CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/robot_model/robot_state_publisher/manifest.xml
 CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /home/dasl/ros/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
 CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
 CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
 CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/can_ifc.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/can_ifc.o -c /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/can_ifc.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp
 
 CMakeFiles/mk2_controller.dir/src/can_ifc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/can_ifc.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp > CMakeFiles/mk2_controller.dir/src/can_ifc.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp > CMakeFiles/mk2_controller.dir/src/can_ifc.i
 
 CMakeFiles/mk2_controller.dir/src/can_ifc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/can_ifc.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp -o CMakeFiles/mk2_controller.dir/src/can_ifc.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp -o CMakeFiles/mk2_controller.dir/src/can_ifc.s
 
 CMakeFiles/mk2_controller.dir/src/can_ifc.o.requires:
 .PHONY : CMakeFiles/mk2_controller.dir/src/can_ifc.o.requires
@@ -264,22 +264,22 @@ CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/geometry/tf/
 CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/geometry/tf_conversions/manifest.xml
 CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/robot_model/robot_state_publisher/manifest.xml
 CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /home/dasl/ros/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
+CMakeFiles/mk2_controller.dir/src/gateway.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
 CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
 CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
 CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/gateway.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/gateway.o -c /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/gateway.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp
 
 CMakeFiles/mk2_controller.dir/src/gateway.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/gateway.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp > CMakeFiles/mk2_controller.dir/src/gateway.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp > CMakeFiles/mk2_controller.dir/src/gateway.i
 
 CMakeFiles/mk2_controller.dir/src/gateway.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/gateway.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp -o CMakeFiles/mk2_controller.dir/src/gateway.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp -o CMakeFiles/mk2_controller.dir/src/gateway.s
 
 CMakeFiles/mk2_controller.dir/src/gateway.o.requires:
 .PHONY : CMakeFiles/mk2_controller.dir/src/gateway.o.requires
@@ -325,22 +325,22 @@ CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/geometry/
 CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/geometry/tf_conversions/manifest.xml
 CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/robot_model/robot_state_publisher/manifest.xml
 CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /home/dasl/ros/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
+CMakeFiles/mk2_controller.dir/src/data_types.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
 CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
 CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
 CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/data_types.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/data_types.o -c /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/data_types.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp
 
 CMakeFiles/mk2_controller.dir/src/data_types.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/data_types.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp > CMakeFiles/mk2_controller.dir/src/data_types.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp > CMakeFiles/mk2_controller.dir/src/data_types.i
 
 CMakeFiles/mk2_controller.dir/src/data_types.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/data_types.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp -o CMakeFiles/mk2_controller.dir/src/data_types.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp -o CMakeFiles/mk2_controller.dir/src/data_types.s
 
 CMakeFiles/mk2_controller.dir/src/data_types.o.requires:
 .PHONY : CMakeFiles/mk2_controller.dir/src/data_types.o.requires
@@ -386,22 +386,22 @@ CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/geometry/tf
 CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/geometry/tf_conversions/manifest.xml
 CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/robot_model/robot_state_publisher/manifest.xml
 CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /home/dasl/ros/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
+CMakeFiles/mk2_controller.dir/src/actuator.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
 CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
 CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
 CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/actuator.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/actuator.o -c /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/actuator.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp
 
 CMakeFiles/mk2_controller.dir/src/actuator.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/actuator.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp > CMakeFiles/mk2_controller.dir/src/actuator.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp > CMakeFiles/mk2_controller.dir/src/actuator.i
 
 CMakeFiles/mk2_controller.dir/src/actuator.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/actuator.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp -o CMakeFiles/mk2_controller.dir/src/actuator.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp -o CMakeFiles/mk2_controller.dir/src/actuator.s
 
 CMakeFiles/mk2_controller.dir/src/actuator.o.requires:
 .PHONY : CMakeFiles/mk2_controller.dir/src/actuator.o.requires
@@ -452,6 +452,6 @@ CMakeFiles/mk2_controller.dir/clean:
 .PHONY : CMakeFiles/mk2_controller.dir/clean
 
 CMakeFiles/mk2_controller.dir/depend:
-	cd /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build /home/dasl/ros/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles/mk2_controller.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles/mk2_controller.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/mk2_controller.dir/depend
 

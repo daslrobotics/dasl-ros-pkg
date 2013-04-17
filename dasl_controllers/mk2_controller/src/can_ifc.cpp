@@ -1,8 +1,9 @@
 
-
 #include "stdafx.h"
 #include "can_ifc.h"
+#include "messages.h"
 
+extern MK2::MK2Drive Drives[64];
 
 int16_t MK2::convertMsg2Can(CanPacket packets[], uint16_t packets_count, Message *msg)
 {
@@ -25,7 +26,8 @@ int16_t MK2::convertMsg2Can(CanPacket packets[], uint16_t packets_count, Message
 		}
 
 		packets[0].data_size= (uint8_t)msg->data_size;
-		packets[0].port = msg->destination < 32 ? 0 : 1;
+		packets[0].port = Drives[msg->destination].port & 0x01;
+		//packets[0].port = msg->destination < 32 ? 0 : 1;
 		return 1;
 
 	}else

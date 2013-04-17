@@ -1,0 +1,19 @@
+<launch>
+
+    <node pkg="dasl_mocap" type="MOCAPnode" name="MOCAPnode" respawn="false" required="true">
+    <rosparam file="$(find dasl_mocap)/config/mocap.yaml" command="load" />
+    </node>
+
+    <!-- Start the joystick node -->
+    <node respawn="true" pkg="joy" type="joy_gantry" name="joy_gantry" >
+        <param name="dev" type="string" value="/dev/input/js1" />
+        <param name="deadzone" value="0.12" />
+    </node> 
+
+    <!-- Load arm control node -->
+    <node pkg="gantry_controller" type="move_gantry_pid.py" name="move_gantry_pid" output="screen" />
+
+    <!-- Load gantry control node -->
+    <node pkg="gantry_controller" type="gantry_controller.py" name="gantry_controller" />
+
+</launch>

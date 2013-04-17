@@ -158,7 +158,7 @@ void send_via_udp(MK2::Message *msg)
 	//convert the can packets into a udp message
 	for(int i = 0; i < packets; i++)
 	{		
-		if(Drives[msg->destination].port == 3)
+		if (Drives[msg->destination].port == 3)
 		{
 			//send to both ports
 			OutPackets[i].port = 0;
@@ -438,8 +438,11 @@ bool MK2Driver::home_()
 
     // Tell the actuator to go to the home position
     //actuators_[channel].home();
-   
-    Drives[channel].control.position = 0;
+
+    if (channel == 2)
+      Drives[channel].control.position = 0;
+    else
+      Drives[channel].control.position = 0;
 
     if ((channel >= 49 && channel <= 52) || (channel >= 10 && channel <= 13))
       Drives[channel].control.velocity = 0.2;
@@ -477,9 +480,14 @@ void control_cmd_callback(const ros::TimerEvent& event)
 /* ******************************************************** */
 void status_callback(const ros::TimerEvent& event)
 {
-	MK2::send_status_req(MK2::NodeID::ALL_DEVICES);
+    MK2::send_status_req(MK2::NodeID::ALL_DEVICES);
 
     // Use this area for periodic display of information
+
+    //ROS_INFO("Rigth shoulder roll position: %f", Drives[2].hs.position);
+
+    //ROS_INFO("Torso roll torque: %f", Drives[56].hs.torque);
+    //ROS_INFO("Torso pitch torque: %f", Drives[16].hs.torque);
 
     //ROS_INFO("Thumb yaw torque: %f", Drives[49].hs.torque);
     //ROS_INFO("Thumb pitch torque: %f", Drives[50].hs.torque);
@@ -522,19 +530,25 @@ int main(int argc, char** argv)
 	init_udp();
 
 	// Set callback to send commands over UDP
-	MK2::set_source_id(9);			    //this id is sent to all drives, 9 is typically chosen as the controller
+	MK2::set_source_id(9);			//this id is sent to all drives, 9 is typically chosen as the controller
 	MK2::set_output_cb(send_via_udp);	//all the send commands call the send_via_udp callback to output to udp
 
 	// Create thread to receive UDP messages
 	pthread_create(&recvThreadID, NULL, receive_via_udp, NULL);
 
 	// Reset MK2 driver
-	set_reset_status_to_all_drives_();			    //reset values in structures that hold drive data	
+	set_reset_status_to_all_drives_();		//reset values in structures that hold drive data	
 	MK2::send_reset_cmd(MK2::NodeID::ALL_DEVICES);  //reset drive to a known state
 
 	//a little hack for the send status request to send on both ports
+	for(int i = 0; i < 64; i++)
+	{
+		Drives[i].port = 1;
+	}
 	Drives[15].port = 3;
 	Drives[14].port = 3;
+	Drives[16].port = 0;
+	Drives[17].port = 0;
 
 	ros::Duration(0.1).sleep();
 
@@ -610,17 +624,17 @@ int main(int argc, char** argv)
     */
     // ------------------------------------ IMPEDANCE TEST BED ------------------------- END
 
-	// Create controller using MK2Controller class
-	MK2::MK2Driver controller;
+    // Create controller using MK2Controller class
+    MK2::MK2Driver controller;
 
     ros::Timer timer1 = nh.createTimer(ros::Duration(0.02), control_cmd_callback);
-	ros::Timer timer2 = nh.createTimer(ros::Duration(0.5), status_callback);
+    ros::Timer timer2 = nh.createTimer(ros::Duration(0.5), status_callback);
   
-	controller.spin();
+    controller.spin();
 
-	ros::waitForShutdown();
+    ros::waitForShutdown();
 
-	close(clientSock);
+    close(clientSock);
 
-	return 0;
+    return 0;
 }

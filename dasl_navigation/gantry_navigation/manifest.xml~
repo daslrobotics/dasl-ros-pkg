@@ -1,0 +1,17 @@
+<package>
+  <description brief="gantry_navigation">
+
+     gantry_navigation
+
+  </description>
+  <author>dasl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/gantry_navigation</url>
+
+  <depend package="nav_msgs"/>
+  <depend package="tf"/>
+
+</package>
+
+
