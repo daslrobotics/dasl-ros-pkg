@@ -1,0 +1,6 @@
+<launch>
+
+    <!-- Start the Simple Trajectory -->
+    <node pkg="mk2_controller" type="simple_trajectory" name="simple_trajectory" output="screen" \>
+  
+</launch>

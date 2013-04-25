@@ -1,0 +1,24 @@
+<launch>
+
+ <param name="robot_description" textfile="$(find mk2)/robots/mk2.URDF" />
+ 
+ <include file="$(find industrial_robot_simulator)/launch/robot_interface_simulator.launch" />
+ 
+ <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+ <rosparam param="controller_joint_names">['torso_pitch_joint', 'torso_roll_joint', 
+ 'right_shoulder_pitch_joint', 'right_shoulder_roll_joint', 'right_shoulder_yaw_joint',  
+ 'right_elbow_pitch_joint', 'right_wrist_roll_joint', 'right_wrist_pitch_joint', 'right_wrist_yaw_joint',
+ 'right_thumb_roll_joint', 'right_thumb_pitch_joint', 'right_index_yaw_joint',   
+ 'right_ring_yaw_joint']</rosparam>
+
+ <include file="$(find mk2_moveit_config)/launch/move_group.launch">
+  <arg name="publish_monitored_planning_scene" value="true" />
+ </include>
+
+ <include file="$(find mk2_moveit_config)/launch/moveit_rviz.launch"/>
+
+ <!-- Publish a static transform between the robot base and the world frame  -->
+ <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_base_link 100" /> 
+
+</launch>

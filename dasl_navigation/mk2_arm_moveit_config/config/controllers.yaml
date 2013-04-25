@@ -1,0 +1,15 @@
+controller_manager_ns: pr2_controller_manager
+controller_list:
+  - name: ""
+    ns: joint_trajectory_action
+    default: true
+    joints:
+      - torso_roll_joint
+      - right_shoulder_pitch_joint
+      - right_shoulder_roll_joint
+      - right_shoulder_yaw_joint
+      - right_elbow_pitch_joint
+      - right_wrist_roll_joint
+      - right_wrist_pitch_joint
+      - right_wrist_yaw_joint
+

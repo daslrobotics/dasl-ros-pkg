@@ -4,7 +4,7 @@
 	<param name="robot_description" command="$(find xacro)/xacro.py '$(find mk2)/robots/mk2.URDF'" />
 	
     <!-- Launch Rviz -->
-	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find mk2_controller)/launch/mk2.vcg"/>
+	<node pkg="rviz" type="rviz" name="rviz" />
 
     <!-- Start the Example Driver -->
     <node pkg="mk2_controller" type="mk2_controller" name="mk2_controller" output="screen" >
@@ -31,7 +31,7 @@
 	</node> 
 
     <!-- Publish a static transform between the robot base and the world frame -->
-    <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="3 3 1.5 0 0 -1.57 /world /torso_base_link 100" />
+    <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_base_link 100" />
     <!-- <node pkg="tf" type="static_transform_publisher" name="world_mocap_broadcaster" args="3 3 0 0 0 0 /world /mocap_origin 100" /> -->
   
 </launch>

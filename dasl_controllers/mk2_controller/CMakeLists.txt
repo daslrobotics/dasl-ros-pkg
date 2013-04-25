@@ -28,5 +28,5 @@ rosbuild_gensrv()
 #rosbuild_link_boost(${PROJECT_NAME} thread)
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
-
 rosbuild_add_executable(mk2_controller src/controller.cpp src/messages.cpp src/can_ifc.cpp src/gateway.cpp src/data_types.cpp src/actuator.cpp)
+rosbuild_add_executable(simple_trajectory src/simple_trajectory.cpp)

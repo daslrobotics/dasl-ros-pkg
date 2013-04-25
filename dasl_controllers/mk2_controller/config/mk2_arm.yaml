@@ -1,0 +1,31 @@
+# YAML Configuration file that specifies additional properties about each joint by creating an array of structs
+
+joints:
+
+  - name: right_shoulder_pitch_joint
+    channel: 1 
+    home: 0.0
+
+  - name: right_shoulder_roll_joint
+    channel: 2
+    home: 0.0
+
+  - name: right_shoulder_yaw_joint
+    channel: 3
+    home: 0.0
+
+  - name: right_elbow_pitch_joint
+    channel: 4
+    home: 0.0
+
+  - name: right_wrist_roll_joint
+    channel: 5
+    home: 0.0
+
+  - name: right_wrist_pitch_joint
+    channel: 6
+    home: 0.0
+
+  - name: right_wrist_yaw_joint
+    channel: 7
+    home: 0.0

@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller
+CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build
+CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/mk2_controller.dir/depend.make
@@ -46,390 +46,498 @@ include CMakeFiles/mk2_controller.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/mk2_controller.dir/flags.make
 
-CMakeFiles/mk2_controller.dir/src/controller.o: CMakeFiles/mk2_controller.dir/flags.make
-CMakeFiles/mk2_controller.dir/src/controller.o: ../src/controller.cpp
-CMakeFiles/mk2_controller.dir/src/controller.o: ../manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/roslang/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/roscpp/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/rospy/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/colladadom/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/urdf_interface/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/urdf_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/collada_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/urdf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/actionlib_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/trajectory_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/diagnostic_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/diagnostics/diagnostic_updater/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/rostest/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/xacro/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/orocos_kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/python_orocos_kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/kdl_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/roswtf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/message_filters/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/geometry/tf_conversions/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/robot_model/robot_state_publisher/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-CMakeFiles/mk2_controller.dir/src/controller.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/controller.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/controller.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: CMakeFiles/mk2_controller.dir/flags.make
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: ../src/controller.cpp
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: ../manifest.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/cpp_common/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rostime/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/roscpp_traits/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/roscpp_serialization/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/genmsg/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/genpy/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/message_runtime/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rosconsole/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/std_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/xmlrpcpp/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/roscpp/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rosgraph/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/catkin/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rospack/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/roslib/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rospy/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/geometry_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/sensor_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/console_bridge/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/urdfdom_headers/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/collada_parser/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rosconsole_bridge/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/urdfdom/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/urdf/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/gencpp/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/genlisp/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/message_generation/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/actionlib_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/trajectory_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/diagnostic_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/diagnostic_updater/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rosclean/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rosmaster/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rosout/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rosparam/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/roslaunch/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rosunit/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rostest/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/rosbuild/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/stacks/xacro/manifest.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/orocos_kdl/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/kdl_parser/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/message_filters/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/tf/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/kdl_conversions/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/tf_conversions/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/robot_state_publisher/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/std_srvs/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /home/dasl/rosbuild_ws/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/control_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/share/actionlib/package.xml
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/controller.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/controller.cpp.o -c /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp
 
-CMakeFiles/mk2_controller.dir/src/controller.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/controller.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp > CMakeFiles/mk2_controller.dir/src/controller.i
+CMakeFiles/mk2_controller.dir/src/controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/controller.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp > CMakeFiles/mk2_controller.dir/src/controller.cpp.i
 
-CMakeFiles/mk2_controller.dir/src/controller.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/controller.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp -o CMakeFiles/mk2_controller.dir/src/controller.s
+CMakeFiles/mk2_controller.dir/src/controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/controller.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/controller.cpp -o CMakeFiles/mk2_controller.dir/src/controller.cpp.s
 
-CMakeFiles/mk2_controller.dir/src/controller.o.requires:
-.PHONY : CMakeFiles/mk2_controller.dir/src/controller.o.requires
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o.requires:
+.PHONY : CMakeFiles/mk2_controller.dir/src/controller.cpp.o.requires
 
-CMakeFiles/mk2_controller.dir/src/controller.o.provides: CMakeFiles/mk2_controller.dir/src/controller.o.requires
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/controller.o.provides.build
-.PHONY : CMakeFiles/mk2_controller.dir/src/controller.o.provides
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o.provides: CMakeFiles/mk2_controller.dir/src/controller.cpp.o.requires
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/controller.cpp.o.provides.build
+.PHONY : CMakeFiles/mk2_controller.dir/src/controller.cpp.o.provides
 
-CMakeFiles/mk2_controller.dir/src/controller.o.provides.build: CMakeFiles/mk2_controller.dir/src/controller.o
+CMakeFiles/mk2_controller.dir/src/controller.cpp.o.provides.build: CMakeFiles/mk2_controller.dir/src/controller.cpp.o
 
-CMakeFiles/mk2_controller.dir/src/messages.o: CMakeFiles/mk2_controller.dir/flags.make
-CMakeFiles/mk2_controller.dir/src/messages.o: ../src/messages.cpp
-CMakeFiles/mk2_controller.dir/src/messages.o: ../manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/roslang/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/roscpp/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/rospy/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/robot_model/colladadom/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/robot_model/urdf_interface/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/robot_model/urdf_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/robot_model/collada_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/robot_model/urdf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/actionlib_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/trajectory_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/diagnostic_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/diagnostics/diagnostic_updater/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/rostest/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/xacro/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/orocos_kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/python_orocos_kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/robot_model/kdl_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/roswtf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/message_filters/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/geometry/tf_conversions/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/robot_model/robot_state_publisher/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-CMakeFiles/mk2_controller.dir/src/messages.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/messages.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/messages.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: CMakeFiles/mk2_controller.dir/flags.make
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: ../src/messages.cpp
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: ../manifest.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/cpp_common/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rostime/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/roscpp_traits/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/roscpp_serialization/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/genmsg/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/genpy/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/message_runtime/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rosconsole/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/std_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/xmlrpcpp/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/roscpp/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rosgraph/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/catkin/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rospack/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/roslib/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rospy/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/geometry_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/sensor_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/console_bridge/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/urdfdom_headers/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/collada_parser/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rosconsole_bridge/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/urdfdom/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/urdf/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/gencpp/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/genlisp/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/message_generation/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/actionlib_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/trajectory_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/diagnostic_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/diagnostic_updater/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rosclean/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rosmaster/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rosout/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rosparam/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/roslaunch/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rosunit/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rostest/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/rosbuild/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/stacks/xacro/manifest.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/orocos_kdl/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/kdl_parser/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/message_filters/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/tf/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/kdl_conversions/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/tf_conversions/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/robot_state_publisher/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/std_srvs/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /home/dasl/rosbuild_ws/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/control_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/share/actionlib/package.xml
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/messages.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/messages.cpp.o -c /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp
 
-CMakeFiles/mk2_controller.dir/src/messages.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/messages.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp > CMakeFiles/mk2_controller.dir/src/messages.i
+CMakeFiles/mk2_controller.dir/src/messages.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/messages.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp > CMakeFiles/mk2_controller.dir/src/messages.cpp.i
 
-CMakeFiles/mk2_controller.dir/src/messages.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/messages.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp -o CMakeFiles/mk2_controller.dir/src/messages.s
+CMakeFiles/mk2_controller.dir/src/messages.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/messages.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/messages.cpp -o CMakeFiles/mk2_controller.dir/src/messages.cpp.s
 
-CMakeFiles/mk2_controller.dir/src/messages.o.requires:
-.PHONY : CMakeFiles/mk2_controller.dir/src/messages.o.requires
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o.requires:
+.PHONY : CMakeFiles/mk2_controller.dir/src/messages.cpp.o.requires
 
-CMakeFiles/mk2_controller.dir/src/messages.o.provides: CMakeFiles/mk2_controller.dir/src/messages.o.requires
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/messages.o.provides.build
-.PHONY : CMakeFiles/mk2_controller.dir/src/messages.o.provides
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o.provides: CMakeFiles/mk2_controller.dir/src/messages.cpp.o.requires
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/messages.cpp.o.provides.build
+.PHONY : CMakeFiles/mk2_controller.dir/src/messages.cpp.o.provides
 
-CMakeFiles/mk2_controller.dir/src/messages.o.provides.build: CMakeFiles/mk2_controller.dir/src/messages.o
+CMakeFiles/mk2_controller.dir/src/messages.cpp.o.provides.build: CMakeFiles/mk2_controller.dir/src/messages.cpp.o
 
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: CMakeFiles/mk2_controller.dir/flags.make
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: ../src/can_ifc.cpp
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: ../manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/roslang/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/roscpp/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/rospy/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/robot_model/colladadom/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/robot_model/urdf_interface/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/robot_model/urdf_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/robot_model/collada_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/robot_model/urdf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/actionlib_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/trajectory_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/diagnostic_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/diagnostics/diagnostic_updater/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/rostest/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/xacro/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/orocos_kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/python_orocos_kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/robot_model/kdl_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/roswtf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/message_filters/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/geometry/tf_conversions/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/robot_model/robot_state_publisher/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-CMakeFiles/mk2_controller.dir/src/can_ifc.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/can_ifc.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/can_ifc.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: CMakeFiles/mk2_controller.dir/flags.make
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: ../src/can_ifc.cpp
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: ../manifest.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/cpp_common/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rostime/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/roscpp_traits/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/roscpp_serialization/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/genmsg/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/genpy/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/message_runtime/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rosconsole/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/std_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/xmlrpcpp/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/roscpp/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rosgraph/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/catkin/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rospack/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/roslib/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rospy/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/geometry_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/sensor_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/console_bridge/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/urdfdom_headers/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/collada_parser/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rosconsole_bridge/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/urdfdom/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/urdf/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/gencpp/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/genlisp/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/message_generation/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/actionlib_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/trajectory_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/diagnostic_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/diagnostic_updater/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rosclean/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rosmaster/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rosout/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rosparam/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/roslaunch/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rosunit/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rostest/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/rosbuild/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/stacks/xacro/manifest.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/orocos_kdl/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/kdl_parser/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/message_filters/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/tf/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/kdl_conversions/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/tf_conversions/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/robot_state_publisher/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/std_srvs/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /home/dasl/rosbuild_ws/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/control_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/share/actionlib/package.xml
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o -c /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp
 
-CMakeFiles/mk2_controller.dir/src/can_ifc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/can_ifc.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp > CMakeFiles/mk2_controller.dir/src/can_ifc.i
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp > CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.i
 
-CMakeFiles/mk2_controller.dir/src/can_ifc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/can_ifc.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp -o CMakeFiles/mk2_controller.dir/src/can_ifc.s
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/can_ifc.cpp -o CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.s
 
-CMakeFiles/mk2_controller.dir/src/can_ifc.o.requires:
-.PHONY : CMakeFiles/mk2_controller.dir/src/can_ifc.o.requires
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o.requires:
+.PHONY : CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o.requires
 
-CMakeFiles/mk2_controller.dir/src/can_ifc.o.provides: CMakeFiles/mk2_controller.dir/src/can_ifc.o.requires
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/can_ifc.o.provides.build
-.PHONY : CMakeFiles/mk2_controller.dir/src/can_ifc.o.provides
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o.provides: CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o.requires
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o.provides.build
+.PHONY : CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o.provides
 
-CMakeFiles/mk2_controller.dir/src/can_ifc.o.provides.build: CMakeFiles/mk2_controller.dir/src/can_ifc.o
+CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o.provides.build: CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o
 
-CMakeFiles/mk2_controller.dir/src/gateway.o: CMakeFiles/mk2_controller.dir/flags.make
-CMakeFiles/mk2_controller.dir/src/gateway.o: ../src/gateway.cpp
-CMakeFiles/mk2_controller.dir/src/gateway.o: ../manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/roslang/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/roscpp/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/rospy/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/robot_model/colladadom/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/robot_model/urdf_interface/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/robot_model/urdf_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/robot_model/collada_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/robot_model/urdf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/actionlib_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/trajectory_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/diagnostic_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/diagnostics/diagnostic_updater/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/rostest/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/xacro/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/orocos_kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/python_orocos_kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/robot_model/kdl_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/roswtf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/message_filters/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/geometry/tf_conversions/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/robot_model/robot_state_publisher/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-CMakeFiles/mk2_controller.dir/src/gateway.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/gateway.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/gateway.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: CMakeFiles/mk2_controller.dir/flags.make
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: ../src/gateway.cpp
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: ../manifest.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/cpp_common/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rostime/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/roscpp_traits/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/roscpp_serialization/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/genmsg/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/genpy/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/message_runtime/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rosconsole/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/std_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/xmlrpcpp/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/roscpp/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rosgraph/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/catkin/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rospack/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/roslib/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rospy/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/geometry_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/sensor_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/console_bridge/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/urdfdom_headers/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/collada_parser/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rosconsole_bridge/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/urdfdom/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/urdf/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/gencpp/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/genlisp/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/message_generation/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/actionlib_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/trajectory_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/diagnostic_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/diagnostic_updater/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rosclean/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rosmaster/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rosout/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rosparam/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/roslaunch/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rosunit/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rostest/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/rosbuild/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/stacks/xacro/manifest.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/orocos_kdl/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/kdl_parser/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/message_filters/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/tf/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/kdl_conversions/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/tf_conversions/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/robot_state_publisher/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/std_srvs/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /home/dasl/rosbuild_ws/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/control_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/share/actionlib/package.xml
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/gateway.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/gateway.cpp.o -c /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp
 
-CMakeFiles/mk2_controller.dir/src/gateway.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/gateway.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp > CMakeFiles/mk2_controller.dir/src/gateway.i
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/gateway.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp > CMakeFiles/mk2_controller.dir/src/gateway.cpp.i
 
-CMakeFiles/mk2_controller.dir/src/gateway.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/gateway.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp -o CMakeFiles/mk2_controller.dir/src/gateway.s
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/gateway.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/gateway.cpp -o CMakeFiles/mk2_controller.dir/src/gateway.cpp.s
 
-CMakeFiles/mk2_controller.dir/src/gateway.o.requires:
-.PHONY : CMakeFiles/mk2_controller.dir/src/gateway.o.requires
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o.requires:
+.PHONY : CMakeFiles/mk2_controller.dir/src/gateway.cpp.o.requires
 
-CMakeFiles/mk2_controller.dir/src/gateway.o.provides: CMakeFiles/mk2_controller.dir/src/gateway.o.requires
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/gateway.o.provides.build
-.PHONY : CMakeFiles/mk2_controller.dir/src/gateway.o.provides
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o.provides: CMakeFiles/mk2_controller.dir/src/gateway.cpp.o.requires
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/gateway.cpp.o.provides.build
+.PHONY : CMakeFiles/mk2_controller.dir/src/gateway.cpp.o.provides
 
-CMakeFiles/mk2_controller.dir/src/gateway.o.provides.build: CMakeFiles/mk2_controller.dir/src/gateway.o
+CMakeFiles/mk2_controller.dir/src/gateway.cpp.o.provides.build: CMakeFiles/mk2_controller.dir/src/gateway.cpp.o
 
-CMakeFiles/mk2_controller.dir/src/data_types.o: CMakeFiles/mk2_controller.dir/flags.make
-CMakeFiles/mk2_controller.dir/src/data_types.o: ../src/data_types.cpp
-CMakeFiles/mk2_controller.dir/src/data_types.o: ../manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/roslang/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/roscpp/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/rospy/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/robot_model/colladadom/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/robot_model/urdf_interface/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/robot_model/urdf_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/robot_model/collada_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/robot_model/urdf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/actionlib_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/trajectory_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/diagnostic_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/diagnostics/diagnostic_updater/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/rostest/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/xacro/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/orocos_kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/python_orocos_kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/robot_model/kdl_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/roswtf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/message_filters/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/geometry/tf_conversions/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/robot_model/robot_state_publisher/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-CMakeFiles/mk2_controller.dir/src/data_types.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_5)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/data_types.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/data_types.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: CMakeFiles/mk2_controller.dir/flags.make
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: ../src/data_types.cpp
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: ../manifest.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/cpp_common/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rostime/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/roscpp_traits/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/roscpp_serialization/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/genmsg/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/genpy/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/message_runtime/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rosconsole/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/std_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/xmlrpcpp/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/roscpp/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rosgraph/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/catkin/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rospack/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/roslib/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rospy/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/geometry_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/sensor_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/console_bridge/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/urdfdom_headers/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/collada_parser/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rosconsole_bridge/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/urdfdom/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/urdf/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/gencpp/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/genlisp/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/message_generation/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/actionlib_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/trajectory_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/diagnostic_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/diagnostic_updater/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rosclean/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rosmaster/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rosout/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rosparam/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/roslaunch/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rosunit/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rostest/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/rosbuild/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/stacks/xacro/manifest.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/orocos_kdl/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/kdl_parser/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/message_filters/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/tf/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/kdl_conversions/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/tf_conversions/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/robot_state_publisher/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/std_srvs/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /home/dasl/rosbuild_ws/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/control_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/share/actionlib/package.xml
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/data_types.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/data_types.cpp.o -c /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp
 
-CMakeFiles/mk2_controller.dir/src/data_types.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/data_types.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp > CMakeFiles/mk2_controller.dir/src/data_types.i
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/data_types.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp > CMakeFiles/mk2_controller.dir/src/data_types.cpp.i
 
-CMakeFiles/mk2_controller.dir/src/data_types.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/data_types.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp -o CMakeFiles/mk2_controller.dir/src/data_types.s
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/data_types.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/data_types.cpp -o CMakeFiles/mk2_controller.dir/src/data_types.cpp.s
 
-CMakeFiles/mk2_controller.dir/src/data_types.o.requires:
-.PHONY : CMakeFiles/mk2_controller.dir/src/data_types.o.requires
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o.requires:
+.PHONY : CMakeFiles/mk2_controller.dir/src/data_types.cpp.o.requires
 
-CMakeFiles/mk2_controller.dir/src/data_types.o.provides: CMakeFiles/mk2_controller.dir/src/data_types.o.requires
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/data_types.o.provides.build
-.PHONY : CMakeFiles/mk2_controller.dir/src/data_types.o.provides
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o.provides: CMakeFiles/mk2_controller.dir/src/data_types.cpp.o.requires
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/data_types.cpp.o.provides.build
+.PHONY : CMakeFiles/mk2_controller.dir/src/data_types.cpp.o.provides
 
-CMakeFiles/mk2_controller.dir/src/data_types.o.provides.build: CMakeFiles/mk2_controller.dir/src/data_types.o
+CMakeFiles/mk2_controller.dir/src/data_types.cpp.o.provides.build: CMakeFiles/mk2_controller.dir/src/data_types.cpp.o
 
-CMakeFiles/mk2_controller.dir/src/actuator.o: CMakeFiles/mk2_controller.dir/flags.make
-CMakeFiles/mk2_controller.dir/src/actuator.o: ../src/actuator.cpp
-CMakeFiles/mk2_controller.dir/src/actuator.o: ../manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/roslang/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/roscpp/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/rospy/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/robot_model/colladadom/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/robot_model/urdf_interface/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/robot_model/urdf_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/robot_model/collada_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/robot_model/urdf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/actionlib_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/trajectory_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/diagnostic_msgs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/diagnostics/diagnostic_updater/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/rostest/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/xacro/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/orocos_kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/python_orocos_kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/orocos_kinematics_dynamics/kdl/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/robot_model/kdl_parser/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/roswtf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/message_filters/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/geometry/tf_conversions/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/robot_model/robot_state_publisher/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /home/dasl/fuerte_workspace/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-CMakeFiles/mk2_controller.dir/src/actuator.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_6)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/actuator.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/actuator.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: CMakeFiles/mk2_controller.dir/flags.make
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: ../src/actuator.cpp
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: ../manifest.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/cpp_common/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rostime/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/roscpp_traits/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/roscpp_serialization/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/genmsg/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/genpy/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/message_runtime/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rosconsole/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/std_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/xmlrpcpp/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/roscpp/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rosgraph/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/catkin/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rospack/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/roslib/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rospy/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/geometry_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/sensor_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/console_bridge/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/urdfdom_headers/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/collada_parser/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rosconsole_bridge/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/urdfdom/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/urdf/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/gencpp/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/genlisp/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/message_generation/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/actionlib_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/trajectory_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/diagnostic_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/diagnostic_updater/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rosclean/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rosmaster/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rosout/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rosparam/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/roslaunch/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rosunit/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rostest/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/rosbuild/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/stacks/xacro/manifest.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/orocos_kdl/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/kdl_parser/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/message_filters/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/tf/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/kdl_conversions/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/tf_conversions/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/robot_state_publisher/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/std_srvs/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /home/dasl/rosbuild_ws/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/control_msgs/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/share/actionlib/package.xml
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mk2_controller.dir/src/actuator.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mk2_controller.dir/src/actuator.cpp.o -c /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp
 
-CMakeFiles/mk2_controller.dir/src/actuator.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/actuator.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp > CMakeFiles/mk2_controller.dir/src/actuator.i
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mk2_controller.dir/src/actuator.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp > CMakeFiles/mk2_controller.dir/src/actuator.cpp.i
 
-CMakeFiles/mk2_controller.dir/src/actuator.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/actuator.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp -o CMakeFiles/mk2_controller.dir/src/actuator.s
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mk2_controller.dir/src/actuator.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/actuator.cpp -o CMakeFiles/mk2_controller.dir/src/actuator.cpp.s
 
-CMakeFiles/mk2_controller.dir/src/actuator.o.requires:
-.PHONY : CMakeFiles/mk2_controller.dir/src/actuator.o.requires
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o.requires:
+.PHONY : CMakeFiles/mk2_controller.dir/src/actuator.cpp.o.requires
 
-CMakeFiles/mk2_controller.dir/src/actuator.o.provides: CMakeFiles/mk2_controller.dir/src/actuator.o.requires
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/actuator.o.provides.build
-.PHONY : CMakeFiles/mk2_controller.dir/src/actuator.o.provides
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o.provides: CMakeFiles/mk2_controller.dir/src/actuator.cpp.o.requires
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/actuator.cpp.o.provides.build
+.PHONY : CMakeFiles/mk2_controller.dir/src/actuator.cpp.o.provides
 
-CMakeFiles/mk2_controller.dir/src/actuator.o.provides.build: CMakeFiles/mk2_controller.dir/src/actuator.o
+CMakeFiles/mk2_controller.dir/src/actuator.cpp.o.provides.build: CMakeFiles/mk2_controller.dir/src/actuator.cpp.o
 
 # Object files for target mk2_controller
 mk2_controller_OBJECTS = \
-"CMakeFiles/mk2_controller.dir/src/controller.o" \
-"CMakeFiles/mk2_controller.dir/src/messages.o" \
-"CMakeFiles/mk2_controller.dir/src/can_ifc.o" \
-"CMakeFiles/mk2_controller.dir/src/gateway.o" \
-"CMakeFiles/mk2_controller.dir/src/data_types.o" \
-"CMakeFiles/mk2_controller.dir/src/actuator.o"
+"CMakeFiles/mk2_controller.dir/src/controller.cpp.o" \
+"CMakeFiles/mk2_controller.dir/src/messages.cpp.o" \
+"CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o" \
+"CMakeFiles/mk2_controller.dir/src/gateway.cpp.o" \
+"CMakeFiles/mk2_controller.dir/src/data_types.cpp.o" \
+"CMakeFiles/mk2_controller.dir/src/actuator.cpp.o"
 
 # External object files for target mk2_controller
 mk2_controller_EXTERNAL_OBJECTS =
 
-../bin/mk2_controller: CMakeFiles/mk2_controller.dir/src/controller.o
-../bin/mk2_controller: CMakeFiles/mk2_controller.dir/src/messages.o
-../bin/mk2_controller: CMakeFiles/mk2_controller.dir/src/can_ifc.o
-../bin/mk2_controller: CMakeFiles/mk2_controller.dir/src/gateway.o
-../bin/mk2_controller: CMakeFiles/mk2_controller.dir/src/data_types.o
-../bin/mk2_controller: CMakeFiles/mk2_controller.dir/src/actuator.o
+../bin/mk2_controller: CMakeFiles/mk2_controller.dir/src/controller.cpp.o
+../bin/mk2_controller: CMakeFiles/mk2_controller.dir/src/messages.cpp.o
+../bin/mk2_controller: CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o
+../bin/mk2_controller: CMakeFiles/mk2_controller.dir/src/gateway.cpp.o
+../bin/mk2_controller: CMakeFiles/mk2_controller.dir/src/data_types.cpp.o
+../bin/mk2_controller: CMakeFiles/mk2_controller.dir/src/actuator.cpp.o
 ../bin/mk2_controller: CMakeFiles/mk2_controller.dir/build.make
 ../bin/mk2_controller: CMakeFiles/mk2_controller.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/mk2_controller"
@@ -439,12 +547,12 @@ mk2_controller_EXTERNAL_OBJECTS =
 CMakeFiles/mk2_controller.dir/build: ../bin/mk2_controller
 .PHONY : CMakeFiles/mk2_controller.dir/build
 
-CMakeFiles/mk2_controller.dir/requires: CMakeFiles/mk2_controller.dir/src/controller.o.requires
-CMakeFiles/mk2_controller.dir/requires: CMakeFiles/mk2_controller.dir/src/messages.o.requires
-CMakeFiles/mk2_controller.dir/requires: CMakeFiles/mk2_controller.dir/src/can_ifc.o.requires
-CMakeFiles/mk2_controller.dir/requires: CMakeFiles/mk2_controller.dir/src/gateway.o.requires
-CMakeFiles/mk2_controller.dir/requires: CMakeFiles/mk2_controller.dir/src/data_types.o.requires
-CMakeFiles/mk2_controller.dir/requires: CMakeFiles/mk2_controller.dir/src/actuator.o.requires
+CMakeFiles/mk2_controller.dir/requires: CMakeFiles/mk2_controller.dir/src/controller.cpp.o.requires
+CMakeFiles/mk2_controller.dir/requires: CMakeFiles/mk2_controller.dir/src/messages.cpp.o.requires
+CMakeFiles/mk2_controller.dir/requires: CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o.requires
+CMakeFiles/mk2_controller.dir/requires: CMakeFiles/mk2_controller.dir/src/gateway.cpp.o.requires
+CMakeFiles/mk2_controller.dir/requires: CMakeFiles/mk2_controller.dir/src/data_types.cpp.o.requires
+CMakeFiles/mk2_controller.dir/requires: CMakeFiles/mk2_controller.dir/src/actuator.cpp.o.requires
 .PHONY : CMakeFiles/mk2_controller.dir/requires
 
 CMakeFiles/mk2_controller.dir/clean:
@@ -452,6 +560,6 @@ CMakeFiles/mk2_controller.dir/clean:
 .PHONY : CMakeFiles/mk2_controller.dir/clean
 
 CMakeFiles/mk2_controller.dir/depend:
-	cd /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles/mk2_controller.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles/mk2_controller.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/mk2_controller.dir/depend
 

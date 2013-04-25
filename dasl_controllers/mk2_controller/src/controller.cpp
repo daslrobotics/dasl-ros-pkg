@@ -73,6 +73,9 @@
 #include <pr2_controllers_msgs/JointTrajectoryControllerState.h>
 #include <diagnostic_msgs/DiagnosticArray.h>
 
+#include <std_msgs/String.h>
+
+
 // HDT MK2 includes
 #include "stdafx.h"
 #include "messages.h"
@@ -222,8 +225,8 @@ void *receive_via_udp(void *ptr)
 			case MK2::MessageNumberEnum::HIGH_SPEED_TLM:
 				if(MK2::process_hs_telemetry(&drive->hs, &msg) && req_hs_tlm[msg.source])
 				{
-					ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
-					ROS_INFO("POS:%.2f VEL:%.2f TRQ:%.2f I:%.2f L:%d", drive->hs.position, drive->hs.velocity, drive->hs.torque, drive->hs.inst_current, drive->hs.position_limit);	
+					//ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
+					//ROS_INFO("POS:%.2f VEL:%.2f TRQ:%.2f I:%.2f L:%d", drive->hs.position, drive->hs.velocity, drive->hs.torque, drive->hs.inst_current, drive->hs.position_limit);	
 					req_hs_tlm[msg.source] = false;
 				}
 				break;
@@ -231,8 +234,8 @@ void *receive_via_udp(void *ptr)
 			case MK2::MessageNumberEnum::MED_SPEED_TLM:
 				if(MK2::process_ms_telemetry(&drive->ms, &msg) && req_ms_tlm[msg.source])
 				{
-					ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
-					ROS_INFO("V1:%d V2:%d V3:%d V4:%d",  drive->ms.var1, drive->ms.var2, drive->ms.var3, drive->ms.var4);	
+					//ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
+					//ROS_INFO("V1:%d V2:%d V3:%d V4:%d",  drive->ms.var1, drive->ms.var2, drive->ms.var3, drive->ms.var4);	
 					req_ms_tlm[msg.source] = false;
 				}
 				break;
@@ -240,8 +243,8 @@ void *receive_via_udp(void *ptr)
 			case MK2::MessageNumberEnum::LOW_SPEED_TLM:
 				if(MK2::process_ls_telemetry(&drive->ls, &msg) && req_ls_tlm[msg.source])
 				{
-					ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
-					ROS_INFO("SW:%d FOC:%d V:%dV I:%dA T:%dC",  drive->ls.sw_state, drive->ls.foc_state, (int)drive->ls.bus_voltage, (int)drive->ls.bus_current, (int)drive->ls.temperature);
+					//ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
+					//ROS_INFO("SW:%d FOC:%d V:%dV I:%dA T:%dC",  drive->ls.sw_state, drive->ls.foc_state, (int)drive->ls.bus_voltage, (int)drive->ls.bus_current, (int)drive->ls.temperature);
 				req_ls_tlm[msg.source] = false;
 				}
 				break;
@@ -250,10 +253,10 @@ void *receive_via_udp(void *ptr)
 
 				if(MK2::process_bit_response(&drive->bit, &msg))
 				{
-					ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
+					//ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
 					drive->status.sw_state = MK2::SWStates::FS; //should send status request, but state is already FS due to BIT
 					drive->ls.sw_state = MK2::SWStates::FS;
-					ROS_INFO("STATE:%s", MK2::GetSwStateString(drive->status.sw_state));					
+					//ROS_INFO("STATE:%s", MK2::GetSwStateString(drive->status.sw_state));					
 					wait_some_more = true;
 				}
 				break;
@@ -261,16 +264,16 @@ void *receive_via_udp(void *ptr)
 			case MK2::MessageNumberEnum::STATUS_TLM:
 				if(MK2::process_status_response(&drive->status, &msg))
 				{
-					ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
-					ROS_INFO("STATE:%s", MK2::GetSwStateString(drive->status.sw_state));
+					//ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
+					//ROS_INFO("STATE:%s", MK2::GetSwStateString(drive->status.sw_state));
 					wait_some_more = true;
 				}
 				break;
 			case MK2::MessageNumberEnum::CMD_ACK_TLM:
 				if(MK2::process_cmd_ack(&drive->ack, &msg))
 				{
-					ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
-					ROS_INFO("MSG:%s", MK2::GetMessageNameString(drive->ack.msg_id));
+					//ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
+					//ROS_INFO("MSG:%s", MK2::GetMessageNameString(drive->ack.msg_id));
 					if(drive->ack.msg_id == MK2::MessageNumberEnum::CHANGE_STATE_CMD) //see what the new state is
 					{
 						MK2::send_status_req(msg.source);
@@ -281,8 +284,8 @@ void *receive_via_udp(void *ptr)
 			case MK2::MessageNumberEnum::CMD_NACK_TLM:
 				if(MK2::process_cmd_nack(&drive->nack, &msg))
 				{
-					ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
-					ROS_INFO("MSG:%s ERROR:%x",  MK2::GetMessageNameString(drive->nack.msg_id), drive->nack.error_code);
+					//ROS_INFO("%s ID:%d  ",MK2::GetMessageNameString(msg.message_id), msg.source);
+					//ROS_INFO("MSG:%s ERROR:%x",  MK2::GetMessageNameString(drive->nack.msg_id), drive->nack.error_code);
 					wait_some_more = true;
 				}
 				break;
@@ -496,6 +499,14 @@ void status_callback(const ros::TimerEvent& event)
 }
 
 /* ******************************************************** */
+void joint_path_callback(const std_msgs::StringConstPtr& str)
+{
+
+	ROS_INFO("^^^^^^^^^^^^^^^^^: %s", str->data.c_str());
+
+}
+
+/* ******************************************************** */
 void req_all_tlm_(bool req[])
 {
 	for(int i = 0; i < 64; i++)
@@ -573,8 +584,8 @@ int main(int argc, char** argv)
 		   	       (Drives[i].status.sw_state != MK2::SWStates::NOS_IDLE) &&  
                    (Drives[i].status.sw_state != MK2::SWStates::NOS_SLEEP))
 			{
-				ROS_INFO("Waiting for NOS Status: ID:%d  ", i);
-				ROS_INFO("STATE:%s", MK2::GetSwStateString(Drives[i].status.sw_state));					
+				//ROS_INFO("Waiting for NOS Status: ID:%d  ", i);
+				//ROS_INFO("STATE:%s", MK2::GetSwStateString(Drives[i].status.sw_state));					
 				ros::Duration(0.1).sleep();
 			}
 			Drives[i].control.inst_current_limit = 0;
@@ -629,7 +640,14 @@ int main(int argc, char** argv)
 
     ros::Timer timer1 = nh.createTimer(ros::Duration(0.02), control_cmd_callback);
     ros::Timer timer2 = nh.createTimer(ros::Duration(0.5), status_callback);
+
+//ROS_INFO("^^^^^^^^^^^^^^^^^:1");
+    //ros::Subscriber sub = nh.subscribe("joint_path_command", 1, joint_path_callback);
+//ROS_INFO("^^^^^^^^^^^^^^^^^:2");
+    //ros::Subscriber sub_trajectory_state_ = nh.subscribe("feedback_states", 1, &JointTrajectoryAction::controllerStateCB, this);
   
+    //joint_path subscriver callback here
+
     controller.spin();
 
     ros::waitForShutdown();

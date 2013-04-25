@@ -1,0 +1,6 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ""
+    relative_path: /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_robots/mk2/robots/mk2.URDF
+  SRDF:
+    relative_path: config/mk2.srdf

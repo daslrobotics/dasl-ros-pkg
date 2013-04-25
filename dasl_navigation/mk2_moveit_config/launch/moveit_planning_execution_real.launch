@@ -1,0 +1,37 @@
+<launch>
+
+ <param name="robot_description" textfile="$(find mk2)/robots/mk2.URDF" />
+ 
+ <node pkg="mk2_controller" type="joint_trajectory_handler.py" name="joint_trajectory_handler" output="screen" />
+
+ <!-- joint_trajectory_action: provides actionlib interface for high-level robot control -->
+ <node pkg="industrial_robot_client" type="joint_trajectory_action" name="joint_trajectory_action"/>
+
+ <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+ <rosparam param="controller_joint_names">['torso_yaw_joint', 'torso_pitch_joint', 'torso_roll_joint', 
+ 'right_shoulder_pitch_joint', 'right_shoulder_roll_joint', 'right_shoulder_yaw_joint',  
+ 'right_elbow_pitch_joint', 'right_wrist_roll_joint', 'right_wrist_pitch_joint', 'right_wrist_yaw_joint',
+ 'right_thumb_roll_joint', 'right_thumb_pitch_joint', 'right_index_yaw_joint',   
+ 'right_ring_yaw_joint']</rosparam>
+
+<!--
+ <rosparam param="controller_joint_names">['right_shoulder_pitch_joint', 'right_shoulder_roll_joint', 'right_shoulder_yaw_joint',  
+ 'right_elbow_pitch_joint', 'right_wrist_roll_joint', 'right_wrist_pitch_joint', 'right_wrist_yaw_joint']</rosparam>
+-->
+
+ <include file="$(find mk2_moveit_config)/launch/move_group.launch">
+  <arg name="publish_monitored_planning_scene" value="true" />
+ </include>
+
+ <include file="$(find mk2_moveit_config)/launch/moveit_rviz.launch"/>
+
+ <!-- Start the Example Driver -->
+ <node pkg="mk2_controller" type="mk2_controller" name="mk2_controller" output="screen" >
+   <rosparam command="load" file="$(find mk2_controller)/config/mk2.yaml" />
+ </node>
+
+ <!-- Publish a static transform between the robot base and the world frame  -->
+ <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 0 0 0 0 /world /torso_base_link 100" /> 
+
+</launch>

@@ -106,12 +106,12 @@ void processMocapData( const char** mocap_model )
 
 	// Change y and z due to mocap calibration
 			    
-	tf::Quaternion q( Socket.rigidBody[0].qx, Socket.rigidBody[0].qz, Socket.rigidBody[0].qy, Socket.rigidBody[0].qw ) ;
+	tf::Quaternion q( Socket.rigidBody[0].qx, -Socket.rigidBody[0].qz, Socket.rigidBody[0].qy, Socket.rigidBody[0].qw ) ;
 			    
 	transform.setRotation(q.inverse());		// Handle 
 
 	int rigid_body_id = abs(Socket.rigidBody[0].ID);
-	const char* rigid_body_name = "gantry_link"; //mocap_model[rigid_body_id];
+	const char* rigid_body_name = "gantry_base"; //mocap_model[rigid_body_id];
 	br.sendTransform(tf::StampedTransform(transform, timestamp, "mocap_origin", std::string( rigid_body_name ) ));
 
       //}

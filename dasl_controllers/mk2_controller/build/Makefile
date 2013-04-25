@@ -36,10 +36,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller
+CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build
+CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -54,6 +54,47 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -66,9 +107,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -109,19 +150,6 @@ ROSBUILD_genmsg_cpp/fast:
 .PHONY : ROSBUILD_genmsg_cpp/fast
 
 #=============================================================================
-# Target rules for targets named ROSBUILD_genmsg_lisp
-
-# Build rule for target.
-ROSBUILD_genmsg_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ROSBUILD_genmsg_lisp
-.PHONY : ROSBUILD_genmsg_lisp
-
-# fast build rule for target.
-ROSBUILD_genmsg_lisp/fast:
-	$(MAKE) -f CMakeFiles/ROSBUILD_genmsg_lisp.dir/build.make CMakeFiles/ROSBUILD_genmsg_lisp.dir/build
-.PHONY : ROSBUILD_genmsg_lisp/fast
-
-#=============================================================================
 # Target rules for targets named ROSBUILD_gensrv_cpp
 
 # Build rule for target.
@@ -135,30 +163,30 @@ ROSBUILD_gensrv_cpp/fast:
 .PHONY : ROSBUILD_gensrv_cpp/fast
 
 #=============================================================================
-# Target rules for targets named ROSBUILD_gensrv_lisp
+# Target rules for targets named clean_test_results
 
 # Build rule for target.
-ROSBUILD_gensrv_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ROSBUILD_gensrv_lisp
-.PHONY : ROSBUILD_gensrv_lisp
+clean_test_results: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results
+.PHONY : clean_test_results
 
 # fast build rule for target.
-ROSBUILD_gensrv_lisp/fast:
-	$(MAKE) -f CMakeFiles/ROSBUILD_gensrv_lisp.dir/build.make CMakeFiles/ROSBUILD_gensrv_lisp.dir/build
-.PHONY : ROSBUILD_gensrv_lisp/fast
+clean_test_results/fast:
+	$(MAKE) -f CMakeFiles/clean_test_results.dir/build.make CMakeFiles/clean_test_results.dir/build
+.PHONY : clean_test_results/fast
 
 #=============================================================================
-# Target rules for targets named clean-test-results
+# Target rules for targets named doxygen
 
 # Build rule for target.
-clean-test-results: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clean-test-results
-.PHONY : clean-test-results
+doxygen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 doxygen
+.PHONY : doxygen
 
 # fast build rule for target.
-clean-test-results/fast:
-	$(MAKE) -f CMakeFiles/clean-test-results.dir/build.make CMakeFiles/clean-test-results.dir/build
-.PHONY : clean-test-results/fast
+doxygen/fast:
+	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/build
+.PHONY : doxygen/fast
 
 #=============================================================================
 # Target rules for targets named mk2_controller
@@ -172,6 +200,19 @@ mk2_controller: cmake_check_build_system
 mk2_controller/fast:
 	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/build
 .PHONY : mk2_controller/fast
+
+#=============================================================================
+# Target rules for targets named rosbuild_clean-test-results
+
+# Build rule for target.
+rosbuild_clean-test-results: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosbuild_clean-test-results
+.PHONY : rosbuild_clean-test-results
+
+# fast build rule for target.
+rosbuild_clean-test-results/fast:
+	$(MAKE) -f CMakeFiles/rosbuild_clean-test-results.dir/build.make CMakeFiles/rosbuild_clean-test-results.dir/build
+.PHONY : rosbuild_clean-test-results/fast
 
 #=============================================================================
 # Target rules for targets named rosbuild_precompile
@@ -265,6 +306,32 @@ rospack_gensrv_all/fast:
 .PHONY : rospack_gensrv_all/fast
 
 #=============================================================================
+# Target rules for targets named run_tests
+
+# Build rule for target.
+run_tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests
+.PHONY : run_tests
+
+# fast build rule for target.
+run_tests/fast:
+	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
+.PHONY : run_tests/fast
+
+#=============================================================================
+# Target rules for targets named simple_trajectory
+
+# Build rule for target.
+simple_trajectory: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simple_trajectory
+.PHONY : simple_trajectory
+
+# fast build rule for target.
+simple_trajectory/fast:
+	$(MAKE) -f CMakeFiles/simple_trajectory.dir/build.make CMakeFiles/simple_trajectory.dir/build
+.PHONY : simple_trajectory/fast
+
+#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -329,95 +396,199 @@ tests/fast:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
-# target to build an object file
-src/actuator.o:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/actuator.o
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+src/actuator.o: src/actuator.cpp.o
 .PHONY : src/actuator.o
 
-# target to preprocess a source file
-src/actuator.i:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/actuator.i
+# target to build an object file
+src/actuator.cpp.o:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/actuator.cpp.o
+.PHONY : src/actuator.cpp.o
+
+src/actuator.i: src/actuator.cpp.i
 .PHONY : src/actuator.i
 
-# target to generate assembly for a file
-src/actuator.s:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/actuator.s
+# target to preprocess a source file
+src/actuator.cpp.i:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/actuator.cpp.i
+.PHONY : src/actuator.cpp.i
+
+src/actuator.s: src/actuator.cpp.s
 .PHONY : src/actuator.s
 
-# target to build an object file
-src/can_ifc.o:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/can_ifc.o
+# target to generate assembly for a file
+src/actuator.cpp.s:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/actuator.cpp.s
+.PHONY : src/actuator.cpp.s
+
+src/can_ifc.o: src/can_ifc.cpp.o
 .PHONY : src/can_ifc.o
 
-# target to preprocess a source file
-src/can_ifc.i:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/can_ifc.i
+# target to build an object file
+src/can_ifc.cpp.o:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.o
+.PHONY : src/can_ifc.cpp.o
+
+src/can_ifc.i: src/can_ifc.cpp.i
 .PHONY : src/can_ifc.i
 
-# target to generate assembly for a file
-src/can_ifc.s:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/can_ifc.s
+# target to preprocess a source file
+src/can_ifc.cpp.i:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.i
+.PHONY : src/can_ifc.cpp.i
+
+src/can_ifc.s: src/can_ifc.cpp.s
 .PHONY : src/can_ifc.s
 
-# target to build an object file
-src/controller.o:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/controller.o
+# target to generate assembly for a file
+src/can_ifc.cpp.s:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/can_ifc.cpp.s
+.PHONY : src/can_ifc.cpp.s
+
+src/controller.o: src/controller.cpp.o
 .PHONY : src/controller.o
 
-# target to preprocess a source file
-src/controller.i:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/controller.i
+# target to build an object file
+src/controller.cpp.o:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/controller.cpp.o
+.PHONY : src/controller.cpp.o
+
+src/controller.i: src/controller.cpp.i
 .PHONY : src/controller.i
 
-# target to generate assembly for a file
-src/controller.s:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/controller.s
+# target to preprocess a source file
+src/controller.cpp.i:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/controller.cpp.i
+.PHONY : src/controller.cpp.i
+
+src/controller.s: src/controller.cpp.s
 .PHONY : src/controller.s
 
-# target to build an object file
-src/data_types.o:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/data_types.o
+# target to generate assembly for a file
+src/controller.cpp.s:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/controller.cpp.s
+.PHONY : src/controller.cpp.s
+
+src/data_types.o: src/data_types.cpp.o
 .PHONY : src/data_types.o
 
-# target to preprocess a source file
-src/data_types.i:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/data_types.i
+# target to build an object file
+src/data_types.cpp.o:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/data_types.cpp.o
+.PHONY : src/data_types.cpp.o
+
+src/data_types.i: src/data_types.cpp.i
 .PHONY : src/data_types.i
 
-# target to generate assembly for a file
-src/data_types.s:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/data_types.s
+# target to preprocess a source file
+src/data_types.cpp.i:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/data_types.cpp.i
+.PHONY : src/data_types.cpp.i
+
+src/data_types.s: src/data_types.cpp.s
 .PHONY : src/data_types.s
 
-# target to build an object file
-src/gateway.o:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/gateway.o
+# target to generate assembly for a file
+src/data_types.cpp.s:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/data_types.cpp.s
+.PHONY : src/data_types.cpp.s
+
+src/gateway.o: src/gateway.cpp.o
 .PHONY : src/gateway.o
 
-# target to preprocess a source file
-src/gateway.i:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/gateway.i
+# target to build an object file
+src/gateway.cpp.o:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/gateway.cpp.o
+.PHONY : src/gateway.cpp.o
+
+src/gateway.i: src/gateway.cpp.i
 .PHONY : src/gateway.i
 
-# target to generate assembly for a file
-src/gateway.s:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/gateway.s
+# target to preprocess a source file
+src/gateway.cpp.i:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/gateway.cpp.i
+.PHONY : src/gateway.cpp.i
+
+src/gateway.s: src/gateway.cpp.s
 .PHONY : src/gateway.s
 
-# target to build an object file
-src/messages.o:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/messages.o
+# target to generate assembly for a file
+src/gateway.cpp.s:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/gateway.cpp.s
+.PHONY : src/gateway.cpp.s
+
+src/messages.o: src/messages.cpp.o
 .PHONY : src/messages.o
 
-# target to preprocess a source file
-src/messages.i:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/messages.i
+# target to build an object file
+src/messages.cpp.o:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/messages.cpp.o
+.PHONY : src/messages.cpp.o
+
+src/messages.i: src/messages.cpp.i
 .PHONY : src/messages.i
 
-# target to generate assembly for a file
-src/messages.s:
-	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/messages.s
+# target to preprocess a source file
+src/messages.cpp.i:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/messages.cpp.i
+.PHONY : src/messages.cpp.i
+
+src/messages.s: src/messages.cpp.s
 .PHONY : src/messages.s
+
+# target to generate assembly for a file
+src/messages.cpp.s:
+	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/messages.cpp.s
+.PHONY : src/messages.cpp.s
+
+src/simple_trajectory.o: src/simple_trajectory.cpp.o
+.PHONY : src/simple_trajectory.o
+
+# target to build an object file
+src/simple_trajectory.cpp.o:
+	$(MAKE) -f CMakeFiles/simple_trajectory.dir/build.make CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o
+.PHONY : src/simple_trajectory.cpp.o
+
+src/simple_trajectory.i: src/simple_trajectory.cpp.i
+.PHONY : src/simple_trajectory.i
+
+# target to preprocess a source file
+src/simple_trajectory.cpp.i:
+	$(MAKE) -f CMakeFiles/simple_trajectory.dir/build.make CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.i
+.PHONY : src/simple_trajectory.cpp.i
+
+src/simple_trajectory.s: src/simple_trajectory.cpp.s
+.PHONY : src/simple_trajectory.s
+
+# target to generate assembly for a file
+src/simple_trajectory.cpp.s:
+	$(MAKE) -f CMakeFiles/simple_trajectory.dir/build.make CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.s
+.PHONY : src/simple_trajectory.cpp.s
 
 # Help Target
 help:
@@ -426,13 +597,17 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... ROSBUILD_genmsg_cpp"
-	@echo "... ROSBUILD_genmsg_lisp"
 	@echo "... ROSBUILD_gensrv_cpp"
-	@echo "... ROSBUILD_gensrv_lisp"
-	@echo "... clean-test-results"
+	@echo "... clean_test_results"
+	@echo "... doxygen"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... mk2_controller"
 	@echo "... rebuild_cache"
+	@echo "... rosbuild_clean-test-results"
 	@echo "... rosbuild_precompile"
 	@echo "... rosbuild_premsgsrvgen"
 	@echo "... rospack_genmsg"
@@ -440,11 +615,15 @@ help:
 	@echo "... rospack_genmsg_libexe"
 	@echo "... rospack_gensrv"
 	@echo "... rospack_gensrv_all"
+	@echo "... run_tests"
+	@echo "... simple_trajectory"
 	@echo "... test"
 	@echo "... test-future"
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
+	@echo "... gtest"
+	@echo "... gtest_main"
 	@echo "... src/actuator.o"
 	@echo "... src/actuator.i"
 	@echo "... src/actuator.s"
@@ -463,6 +642,9 @@ help:
 	@echo "... src/messages.o"
 	@echo "... src/messages.i"
 	@echo "... src/messages.s"
+	@echo "... src/simple_trajectory.o"
+	@echo "... src/simple_trajectory.i"
+	@echo "... src/simple_trajectory.s"
 .PHONY : help
 
 

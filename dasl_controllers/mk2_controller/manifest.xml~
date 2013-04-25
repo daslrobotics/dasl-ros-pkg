@@ -17,6 +17,12 @@
   <depend package="pr2_controllers_msgs"/>
   <depend package="diagnostic_updater"/>
   <depend package="diagnostic_msgs"/>
+  <depend package="xacro"/>
+  <depend package="robot_state_publisher"/>
+  <depend package="actuator_array_driver"/>
+  <depend package="control_msgs"/>
+  <depend package="actionlib"/>
+  <depend package="trajectory_msgs"/>
 
 </package>
 

@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cmk325/fuerte_workspace/dasl-ros-pkg/dasl_robots/mk2
+CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_robots/mk2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cmk325/fuerte_workspace/dasl-ros-pkg/dasl_robots/mk2/build
+CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_robots/mk2/build
 
 # Utility rule file for test-results.
 
@@ -43,7 +43,7 @@ CMAKE_BINARY_DIR = /home/cmk325/fuerte_workspace/dasl-ros-pkg/dasl_robots/mk2/bu
 include CMakeFiles/test-results.dir/progress.make
 
 CMakeFiles/test-results:
-	/opt/ros/fuerte/share/rosunit/bin/summarize_results.py --nodeps mk2
+	/opt/ros/groovy/share/rosunit/scripts/summarize_results.py --nodeps mk2
 
 test-results: CMakeFiles/test-results
 test-results: CMakeFiles/test-results.dir/build.make
@@ -58,6 +58,6 @@ CMakeFiles/test-results.dir/clean:
 .PHONY : CMakeFiles/test-results.dir/clean
 
 CMakeFiles/test-results.dir/depend:
-	cd /home/cmk325/fuerte_workspace/dasl-ros-pkg/dasl_robots/mk2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cmk325/fuerte_workspace/dasl-ros-pkg/dasl_robots/mk2 /home/cmk325/fuerte_workspace/dasl-ros-pkg/dasl_robots/mk2 /home/cmk325/fuerte_workspace/dasl-ros-pkg/dasl_robots/mk2/build /home/cmk325/fuerte_workspace/dasl-ros-pkg/dasl_robots/mk2/build /home/cmk325/fuerte_workspace/dasl-ros-pkg/dasl_robots/mk2/build/CMakeFiles/test-results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_robots/mk2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_robots/mk2 /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_robots/mk2 /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_robots/mk2/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_robots/mk2/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_robots/mk2/build/CMakeFiles/test-results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test-results.dir/depend
 

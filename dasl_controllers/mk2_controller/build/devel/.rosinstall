@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build/devel/setup.sh
