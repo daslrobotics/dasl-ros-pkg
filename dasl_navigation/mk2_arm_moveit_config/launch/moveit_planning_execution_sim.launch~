@@ -2,8 +2,14 @@
 
  <param name="robot_description" textfile="$(find mk2)/robots/mk2_arm.URDF" />
  
+ <!--
  <include file="$(find industrial_robot_simulator)/launch/robot_interface_simulator.launch" />
- 
+ --> 
+
+  <!-- joint_trajectory_action: provides actionlib interface for high-level robot control -->
+  <node pkg="industrial_robot_client" type="joint_trajectory_action" name="joint_trajectory_action"/>
+
+
  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
  <rosparam param="controller_joint_names">[ 'right_shoulder_pitch_joint', 'right_shoulder_roll_joint', 'right_shoulder_yaw_joint',  

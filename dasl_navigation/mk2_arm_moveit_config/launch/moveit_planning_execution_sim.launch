@@ -2,13 +2,7 @@
 
  <param name="robot_description" textfile="$(find mk2)/robots/mk2_arm.URDF" />
  
- <!--
  <include file="$(find industrial_robot_simulator)/launch/robot_interface_simulator.launch" />
- --> 
-
-  <!-- joint_trajectory_action: provides actionlib interface for high-level robot control -->
-  <node pkg="industrial_robot_client" type="joint_trajectory_action" name="joint_trajectory_action"/>
-
 
  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
@@ -20,12 +14,6 @@
  </include>
 
  <include file="$(find mk2_arm_moveit_config)/launch/moveit_rviz.launch"/>
-
-    <!-- Start the Example Driver -->
-    <node pkg="mk2_controller" type="mk2_controller" name="mk2_controller" output="screen" >
-        <rosparam command="load" file="$(find mk2_controller)/config/mk2.yaml" />
-    </node>
-
 
  <!-- Publish a static transform between the robot base and the world frame  -->
  <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_roll_link 100" /> 
