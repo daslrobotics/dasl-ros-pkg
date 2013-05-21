@@ -1,0 +1,14 @@
+<package>
+  <description brief="hdt_common">
+
+     hdt_common
+
+  </description>
+  <author>dasl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/hdt_common</url>
+
+</package>
+
+

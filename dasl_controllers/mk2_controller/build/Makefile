@@ -202,6 +202,19 @@ mk2_controller/fast:
 .PHONY : mk2_controller/fast
 
 #=============================================================================
+# Target rules for targets named mk2_move_group
+
+# Build rule for target.
+mk2_move_group: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mk2_move_group
+.PHONY : mk2_move_group
+
+# fast build rule for target.
+mk2_move_group/fast:
+	$(MAKE) -f CMakeFiles/mk2_move_group.dir/build.make CMakeFiles/mk2_move_group.dir/build
+.PHONY : mk2_move_group/fast
+
+#=============================================================================
 # Target rules for targets named rosbuild_clean-test-results
 
 # Build rule for target.
@@ -566,6 +579,30 @@ src/messages.cpp.s:
 	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/messages.cpp.s
 .PHONY : src/messages.cpp.s
 
+src/mk2_move_group.o: src/mk2_move_group.cpp.o
+.PHONY : src/mk2_move_group.o
+
+# target to build an object file
+src/mk2_move_group.cpp.o:
+	$(MAKE) -f CMakeFiles/mk2_move_group.dir/build.make CMakeFiles/mk2_move_group.dir/src/mk2_move_group.cpp.o
+.PHONY : src/mk2_move_group.cpp.o
+
+src/mk2_move_group.i: src/mk2_move_group.cpp.i
+.PHONY : src/mk2_move_group.i
+
+# target to preprocess a source file
+src/mk2_move_group.cpp.i:
+	$(MAKE) -f CMakeFiles/mk2_move_group.dir/build.make CMakeFiles/mk2_move_group.dir/src/mk2_move_group.cpp.i
+.PHONY : src/mk2_move_group.cpp.i
+
+src/mk2_move_group.s: src/mk2_move_group.cpp.s
+.PHONY : src/mk2_move_group.s
+
+# target to generate assembly for a file
+src/mk2_move_group.cpp.s:
+	$(MAKE) -f CMakeFiles/mk2_move_group.dir/build.make CMakeFiles/mk2_move_group.dir/src/mk2_move_group.cpp.s
+.PHONY : src/mk2_move_group.cpp.s
+
 src/simple_trajectory.o: src/simple_trajectory.cpp.o
 .PHONY : src/simple_trajectory.o
 
@@ -606,6 +643,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... mk2_controller"
+	@echo "... mk2_move_group"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_clean-test-results"
 	@echo "... rosbuild_precompile"
@@ -642,6 +680,9 @@ help:
 	@echo "... src/messages.o"
 	@echo "... src/messages.i"
 	@echo "... src/messages.s"
+	@echo "... src/mk2_move_group.o"
+	@echo "... src/mk2_move_group.i"
+	@echo "... src/mk2_move_group.s"
 	@echo "... src/simple_trajectory.o"
 	@echo "... src/simple_trajectory.i"
 	@echo "... src/simple_trajectory.s"

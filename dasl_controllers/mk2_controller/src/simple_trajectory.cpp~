@@ -20,7 +20,7 @@ public:
   RobotArm() 
   {
     // tell the action client that we want to spin a thread by default
-    traj_client_ = new TrajClient("r_arm_controller/joint_trajectory_action", true);
+    traj_client_ = new TrajClient("joint_trajectory_action", true);
 
     // wait for action server to come up
     while(!traj_client_->waitForServer(ros::Duration(5.0))){
@@ -54,13 +54,13 @@ public:
     pr2_controllers_msgs::JointTrajectoryGoal goal;
 
     // First, the joint names, which apply to all waypoints
-    goal.trajectory.joint_names.push_back("r_shoulder_pan_joint");
-    goal.trajectory.joint_names.push_back("r_shoulder_lift_joint");
-    goal.trajectory.joint_names.push_back("r_upper_arm_roll_joint");
-    goal.trajectory.joint_names.push_back("r_elbow_flex_joint");
-    goal.trajectory.joint_names.push_back("r_forearm_roll_joint");
-    goal.trajectory.joint_names.push_back("r_wrist_flex_joint");
-    goal.trajectory.joint_names.push_back("r_wrist_roll_joint");
+    goal.trajectory.joint_names.push_back("right_shoulder_pitch_joint");
+    goal.trajectory.joint_names.push_back("right_shoulder_roll_joint");
+    goal.trajectory.joint_names.push_back("right_shoulder_yaw_joint");
+    goal.trajectory.joint_names.push_back("right_elbow_pitch_joint");
+    goal.trajectory.joint_names.push_back("right_wrist_roll_joint");
+    goal.trajectory.joint_names.push_back("right_wrist_pitch_joint");
+    goal.trajectory.joint_names.push_back("right_wrist_yaw_joint");
 
     // We will have two waypoints in this goal trajectory
     goal.trajectory.points.resize(2);

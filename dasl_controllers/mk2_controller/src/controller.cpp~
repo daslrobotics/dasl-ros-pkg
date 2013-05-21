@@ -607,32 +607,32 @@ int main(int argc, char** argv)
 	}
 
     // ------------------------------------ IMPEDANCE TEST BED -------------------------
-    /*
+   
 
     // Enable impedance control on shoulder pitch joint (41) for testing
 
     // Elbow pitch
 
 
-    int i=44;
+    int i=4;
 
-    Drives[i].impedance.inertia = 1;//1;
-    Drives[i].impedance.damping = 3;//3;
-    Drives[i].impedance.stiffness = 30;//20;
+    Drives[i].impedance.inertia = 0.35;
+    Drives[i].impedance.damping = 7.790;
+    Drives[i].impedance.stiffness = 30;
 
-	MK2::send_impedance_cmd(i, &Drives[i].impedance);
+    //MK2::send_impedance_cmd(i, &Drives[i].impedance);
 
     // Wirst pitch
 
-    i=46;
+    i=6;
 
-    Drives[i].impedance.inertia = 1;//1;
-    Drives[i].impedance.damping = 3;//3;
-    Drives[i].impedance.stiffness = 10;//20;
+    Drives[i].impedance.inertia = 0.2; //1;
+    Drives[i].impedance.damping = 4.164; //3;
+    Drives[i].impedance.stiffness = 30; //20;
 
-	MK2::send_impedance_cmd(i, &Drives[i].impedance);
+    //MK2::send_impedance_cmd(i, &Drives[i].impedance);
 
-    */
+
     // ------------------------------------ IMPEDANCE TEST BED ------------------------- END
 
     // Create controller using MK2Controller class
@@ -640,14 +640,6 @@ int main(int argc, char** argv)
 
     ros::Timer timer1 = nh.createTimer(ros::Duration(0.02), control_cmd_callback);
     ros::Timer timer2 = nh.createTimer(ros::Duration(0.5), status_callback);
-
-//ROS_INFO("^^^^^^^^^^^^^^^^^:1");
-    ros::Subscriber sub = nh.subscribe("joint_path_command", 1, joint_path_callback);
-//ROS_INFO("^^^^^^^^^^^^^^^^^:2");
-    //ros::Subscriber sub_trajectory_state_ = nh.subscribe("feedback_states", 1, &JointTrajectoryAction::controllerStateCB, this);
-  
-    //joint_path subscriver callback here
-
 
     controller.spin();
 

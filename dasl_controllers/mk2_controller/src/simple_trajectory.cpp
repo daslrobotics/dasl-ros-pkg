@@ -54,13 +54,13 @@ public:
     pr2_controllers_msgs::JointTrajectoryGoal goal;
 
     // First, the joint names, which apply to all waypoints
-    goal.trajectory.joint_names.push_back("right_shoulder_pitch_joint");
-    goal.trajectory.joint_names.push_back("right_shoulder_roll_joint");
-    goal.trajectory.joint_names.push_back("right_shoulder_yaw_joint");
-    goal.trajectory.joint_names.push_back("right_elbow_pitch_joint");
-    goal.trajectory.joint_names.push_back("right_wrist_roll_joint");
-    goal.trajectory.joint_names.push_back("right_wrist_pitch_joint");
-    goal.trajectory.joint_names.push_back("right_wrist_yaw_joint");
+    goal.trajectory.joint_names.push_back("joint_1");
+    goal.trajectory.joint_names.push_back("joint_2");
+    goal.trajectory.joint_names.push_back("joint_3");
+    goal.trajectory.joint_names.push_back("joint_4");
+    goal.trajectory.joint_names.push_back("joint_5");
+    goal.trajectory.joint_names.push_back("joint_6");
+    goal.trajectory.joint_names.push_back("joint_7");
 
     // We will have two waypoints in this goal trajectory
     goal.trajectory.points.resize(2);

@@ -1,4 +1,0 @@
-<launch>
-    <include file="$(find mk2_arm_navigation)/launch/move_arm.launch" />
-    <include file="$(find mk2_arm_navigation)/launch/move_manipulator.launch" />
-</launch>

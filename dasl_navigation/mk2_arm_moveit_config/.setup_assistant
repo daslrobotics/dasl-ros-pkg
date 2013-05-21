@@ -4,3 +4,5 @@ moveit_setup_assistant_config:
     relative_path: /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_robots/mk2/robots/mk2_arm.URDF
   SRDF:
     relative_path: config/mk2_arm.srdf
+  CONFIG:
+    generated_timestamp: 1368570240

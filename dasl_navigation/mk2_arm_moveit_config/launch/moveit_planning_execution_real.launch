@@ -9,8 +9,8 @@
 
  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
- <rosparam param="controller_joint_names">[ 'right_shoulder_pitch_joint', 'right_shoulder_roll_joint', 'right_shoulder_yaw_joint',  
- 'right_elbow_pitch_joint', 'right_wrist_roll_joint', 'right_wrist_pitch_joint', 'right_wrist_yaw_joint']</rosparam>
+ <rosparam param="controller_joint_names">[ 'joint_1', 'joint_2', 'joint_3',  
+ 'joint_4', 'joint_5', 'joint_6', 'joint_7']</rosparam>
 
  <include file="$(find mk2_arm_moveit_config)/launch/move_group.launch">
   <arg name="publish_monitored_planning_scene" value="true" />
@@ -23,13 +23,25 @@
    <rosparam command="load" file="$(find mk2_controller)/config/mk2_arm.yaml" />
  </node>
 
+ <!-- Start the Simple Trajectory 
+ <node pkg="mk2_controller" type="simple_trajectory" name="simple_trajectory" output="screen" />
+ -->
+
  <!-- Publish a static transform between the robot base and the world frame
  <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_roll_link 100" />
  <node pkg="tf" type="static_transform_publisher" name="world_mocap_broadcaster" args="0 0 0 0 0 0 /world /mocap_origin 100" />
  <node pkg="tf" type="static_transform_publisher" name="mocap_gantry_broadcaster" args="0 0 0 0 0 0 /gantry_base /torso_roll_link 100" />
- -->
  <node pkg="tf" type="static_transform_publisher" name="world_mocap_broadcaster" args="0 0 0 0 0 0 /world /mocap_origin 100" />
-
  <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_roll_link 100" />
+ -->
+
+ <!-- Start the joystick node  -->
+ <node respawn="true" pkg="joy" type="joy_node" name="joy" >
+     <param name="dev" type="string" value="/dev/input/js0" />
+     <param name="deadzone" value="0.12" />
+ </node> 
+
+ <!-- Load arm control node -->
+ <node pkg="mk2_controller" type="move_gripper_joy.py" name="move_gripper_joy" output="screen" />
 
 </launch>

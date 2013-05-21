@@ -1,4 +1,0 @@
-<launch>
-    <param name="robot_description" textfile="$(find mk2)/robots/mk2.URDF" />
-    <rosparam command="load" ns="robot_description_planning" file="$(find mk2_arm_navigation)/config/mk2_planning_description.yaml" />
-</launch>

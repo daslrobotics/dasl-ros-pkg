@@ -295,7 +295,7 @@ class IndustrialRobotSimulatorNode():
                 joint_fb_msg.joint_names = self.joint_names
                 joint_fb_msg.actual.positions = self.motion_ctrl.get_joint_positions()
                 
-                self.joint_feedback_pub.publish(joint_fb_msg)
+                #self.joint_feedback_pub.publish(joint_fb_msg)
                          
         except Exception as e:
             rospy.logerr('Unexpected exception in joint state publisher: %s', e)

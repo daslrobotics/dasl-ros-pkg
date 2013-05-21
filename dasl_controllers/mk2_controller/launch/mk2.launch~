@@ -4,7 +4,7 @@
 	<param name="robot_description" command="$(find xacro)/xacro.py '$(find mk2)/robots/mk2.URDF'" />
 	
     <!-- Launch Rviz -->
-	<node pkg="rviz" type="rviz" name="rviz" />
+	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find mk2_controller)/launch/mk2.rviz" />
 
     <!-- Start the Example Driver -->
     <node pkg="mk2_controller" type="mk2_controller" name="mk2_controller" output="screen" >

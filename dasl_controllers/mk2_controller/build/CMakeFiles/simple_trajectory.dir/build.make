@@ -102,19 +102,68 @@ CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/sh
 CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /home/dasl/rosbuild_ws/gt-ros-pkg.humans/actuator_array/actuator_array_driver/manifest.xml
 CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/control_msgs/package.xml
 CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/actionlib/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /home/dasl/rosbuild_ws/swri-ros-pkg/industrial_core/industrial_msgs/manifest.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /home/dasl/rosbuild_ws/swri-ros-pkg/industrial_core/simple_message/manifest.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /home/dasl/rosbuild_ws/swri-ros-pkg/industrial_core/industrial_utils/manifest.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /home/dasl/rosbuild_ws/swri-ros-pkg/industrial_core/industrial_robot_client/manifest.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/random_numbers/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/visualization_msgs/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/shape_tools/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/octomap/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/srdfdom/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/libccd/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/fcl/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/eigen_stl_containers/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/eigen_conversions/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/shape_msgs/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/resource_retriever/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/geometric_shapes/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/octomap_msgs/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/object_recognition_msgs/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/household_objects_database_msgs/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/manipulation_msgs/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/moveit_msgs/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/moveit_core/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/topic_tools/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/rosbag/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/interactive_markers/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/rosmsg/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/rosservice/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/dynamic_reconfigure/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/bond/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/smclib/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/bondcpp/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/nodelet/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/class_loader/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/pluginlib/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/nodelet_topic_tools/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/flann/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/pcl_msgs/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/pcl/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/pcl_ros/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/moveit_ros_perception/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/angles/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/moveit_ros_planning/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/warehouse_ros/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/moveit_ros_warehouse/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/moveit_ros_move_group/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/moveit_ros_manipulation/package.xml
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/share/moveit_ros_planning_interface/package.xml
 CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
 CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /home/dasl/rosbuild_ws/swri-ros-pkg/industrial_core/industrial_msgs/msg_gen/generated
+CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o: /home/dasl/rosbuild_ws/swri-ros-pkg/industrial_core/industrial_msgs/srv_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o -c /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/simple_trajectory.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DROS=1 -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o -c /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/simple_trajectory.cpp
 
 CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/simple_trajectory.cpp > CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DROS=1 -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/simple_trajectory.cpp > CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.i
 
 CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/simple_trajectory.cpp -o CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DROS=1 -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/src/simple_trajectory.cpp -o CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.s
 
 CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o.requires:
 .PHONY : CMakeFiles/simple_trajectory.dir/src/simple_trajectory.cpp.o.requires

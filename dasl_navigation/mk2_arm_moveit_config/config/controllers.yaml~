@@ -4,9 +4,6 @@ controller_list:
     ns: joint_trajectory_action
     default: true
     joints:
-      - torso_yaw_joint
-      - torso_pitch_joint
-      - torso_roll_joint
       - right_shoulder_pitch_joint
       - right_shoulder_roll_joint
       - right_shoulder_yaw_joint
@@ -14,8 +11,4 @@ controller_list:
       - right_wrist_roll_joint
       - right_wrist_pitch_joint
       - right_wrist_yaw_joint
-      - right_thumb_roll_joint
-      - right_thumb_pitch_joint
-      - right_index_yaw_joint
-      - right_ring_yaw_joint
 
