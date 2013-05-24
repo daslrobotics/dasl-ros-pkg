@@ -18,9 +18,12 @@ class MoveArmPS3():
         self.joy_data = None
         self.one_time = True
 
-        self.position = [0,0,0,0]
+        self.position = [0,0,0,0,0,0,0,0]
 
-        self.joint_states = {'right_thumb_roll_joint',
+        self.joint_states = {'torso_yaw_joint',
+                             'torso_pitch_joint',
+                             'torso_roll_joint',
+                             'right_thumb_roll_joint',
                              'right_thumb_pitch_joint',
                              'right_index_yaw_joint',
                              'right_ring_yaw_joint'}
@@ -43,10 +46,13 @@ class MoveArmPS3():
 
     def read_joint_state_data(self, msg):
         if self.one_time:
-            self.position[0] = msg.position[7]
-            self.position[1] = msg.position[8]
-            self.position[2] = msg.position[9]
-            self.position[3] = msg.position[10]
+            self.position[0] = msg.position[10]
+            self.position[1] = msg.position[11]
+            self.position[2] = msg.position[12]
+            self.position[3] = msg.position[13]
+            self.position[4] = msg.position[0]
+            self.position[5] = msg.position[1]
+            self.position[6] = msg.position[2]
 
     def publish_joint_states(self):
         # Construct message & publish joint states
@@ -86,6 +92,21 @@ class MoveArmPS3():
                         elif self.joy_data.buttons[5]:
                             self.position[3] += 1 * self.step_size
                         msg.position.append(self.position[3])
+                        msg.velocity.append(0.2)
+
+                    elif joint == 'torso_yaw_joint':
+                        self.position[4] += -1 * self.joy_data.axes[2] * self.step_size
+                        msg.position.append(self.position[4])
+                        msg.velocity.append(0.2)
+
+                    elif joint == 'torso_pitch_joint':
+                        self.position[5] += -1 * self.joy_data.axes[1] * self.step_size
+                        msg.position.append(self.position[5])
+                        msg.velocity.append(0.2)
+
+                    elif joint == 'torso_roll_joint':
+                        self.position[6] += -1 * self.joy_data.axes[0] * self.step_size
+                        msg.position.append(self.position[6])
                         msg.velocity.append(0.2)
 
                     else:

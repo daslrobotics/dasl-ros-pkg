@@ -32,6 +32,8 @@ const char ** DEFAULT_MOCAP_MODEL = OBJECT;
 
 const int LOCAL_PORT = 1001;
 
+const char * MOCAP_CHILD[] = {"gantry_base", "target"};
+
 ////////////////////////////////////////////////////////////////////////
 
 void processMocapData( const char** mocap_model )
@@ -95,26 +97,30 @@ void processMocapData( const char** mocap_model )
       ros::Time timestamp( ros::Time::now() );
 			
       //for( int i = 0; i < format.model[0].numRigidBodies; i++ )
-      //{
+      for( int i = 0; i < 2; i++ )
+      {
 
 	tf::Transform transform;
 	// Translate mocap data from mm --> m to be compatible with rviz
 
 	// Change y and z due to mocap calibration
 
-	transform.setOrigin( tf::Vector3(Socket.rigidBody[0].x / 1000.0f,-Socket.rigidBody[0].z / 1000.0f,Socket.rigidBody[0].y / 1000.0f ) );
+	transform.setOrigin( tf::Vector3(Socket.rigidBody[i].x / 1000.0f,-Socket.rigidBody[i].z / 1000.0f,Socket.rigidBody[i].y / 1000.0f ) );
 
 	// Change y and z due to mocap calibration
 			    
-	tf::Quaternion q( Socket.rigidBody[0].qx, -Socket.rigidBody[0].qz, Socket.rigidBody[0].qy, Socket.rigidBody[0].qw ) ;
+	tf::Quaternion q( Socket.rigidBody[i].qx, Socket.rigidBody[i].qz, Socket.rigidBody[i].qy, Socket.rigidBody[i].qw ) ;
 			    
 	transform.setRotation(q.inverse());		// Handle 
 
-	int rigid_body_id = abs(Socket.rigidBody[0].ID);
-	const char* rigid_body_name = "gantry_base"; //mocap_model[rigid_body_id];
+	int rigid_body_id = abs(Socket.rigidBody[i].ID);
+
+	const char* rigid_body_name = MOCAP_CHILD[i]; //"gantry_base"; //mocap_model[rigid_body_id];
 	br.sendTransform(tf::StampedTransform(transform, timestamp, "mocap_origin", std::string( rigid_body_name ) ));
 
-      //}
+	printf("Rigid body id and name: %x %s \n", rigid_body_id, rigid_body_name);
+
+      }
     }
   }
 }

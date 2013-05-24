@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.cpp
+/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.cpp
 MOCAPSocket.h
-/home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.h
+/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.h
 
-/home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.h
+/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.h
 iostream
 -
 sys/types.h

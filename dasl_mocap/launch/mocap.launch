@@ -3,6 +3,7 @@
 	type="MOCAPnode" 
 	name="MOCAPnode" 
 	respawn="false"
+        output="screen"
 	required="true">
 	<rosparam file="$(find dasl_mocap)/config/mocap.yaml" command="load" />
   </node>

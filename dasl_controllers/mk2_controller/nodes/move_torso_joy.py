@@ -26,10 +26,8 @@ class MoveTorsoPS3():
         rospy.Subscriber('/joy', Joy, self.read_joystick_data)
         self.joint_states_pub = rospy.Publisher('/command', JointState)
 
-
         self.srv_home = rospy.ServiceProxy('/home', Empty)
         self.srv_stop = rospy.ServiceProxy('/stop', Empty)
-
 
         r = rospy.Rate(50)
 

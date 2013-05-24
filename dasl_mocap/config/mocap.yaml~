@@ -1,2 +1,3 @@
 
-mocap_model: 'gantry_z_axis'
+mocap_model: 'OBJECT'
+mocap_model: 'PUMP'

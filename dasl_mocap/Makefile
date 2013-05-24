@@ -36,10 +36,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap
+CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap
+CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -54,6 +54,47 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -66,9 +107,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -135,19 +176,6 @@ ROSBUILD_genmsg_cpp/fast:
 .PHONY : ROSBUILD_genmsg_cpp/fast
 
 #=============================================================================
-# Target rules for targets named ROSBUILD_genmsg_lisp
-
-# Build rule for target.
-ROSBUILD_genmsg_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ROSBUILD_genmsg_lisp
-.PHONY : ROSBUILD_genmsg_lisp
-
-# fast build rule for target.
-ROSBUILD_genmsg_lisp/fast:
-	$(MAKE) -f CMakeFiles/ROSBUILD_genmsg_lisp.dir/build.make CMakeFiles/ROSBUILD_genmsg_lisp.dir/build
-.PHONY : ROSBUILD_genmsg_lisp/fast
-
-#=============================================================================
 # Target rules for targets named ROSBUILD_genmsg_py
 
 # Build rule for target.
@@ -174,19 +202,6 @@ ROSBUILD_gensrv_cpp/fast:
 .PHONY : ROSBUILD_gensrv_cpp/fast
 
 #=============================================================================
-# Target rules for targets named ROSBUILD_gensrv_lisp
-
-# Build rule for target.
-ROSBUILD_gensrv_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ROSBUILD_gensrv_lisp
-.PHONY : ROSBUILD_gensrv_lisp
-
-# fast build rule for target.
-ROSBUILD_gensrv_lisp/fast:
-	$(MAKE) -f CMakeFiles/ROSBUILD_gensrv_lisp.dir/build.make CMakeFiles/ROSBUILD_gensrv_lisp.dir/build
-.PHONY : ROSBUILD_gensrv_lisp/fast
-
-#=============================================================================
 # Target rules for targets named ROSBUILD_gensrv_py
 
 # Build rule for target.
@@ -200,17 +215,43 @@ ROSBUILD_gensrv_py/fast:
 .PHONY : ROSBUILD_gensrv_py/fast
 
 #=============================================================================
-# Target rules for targets named clean-test-results
+# Target rules for targets named clean_test_results
 
 # Build rule for target.
-clean-test-results: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clean-test-results
-.PHONY : clean-test-results
+clean_test_results: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results
+.PHONY : clean_test_results
 
 # fast build rule for target.
-clean-test-results/fast:
-	$(MAKE) -f CMakeFiles/clean-test-results.dir/build.make CMakeFiles/clean-test-results.dir/build
-.PHONY : clean-test-results/fast
+clean_test_results/fast:
+	$(MAKE) -f CMakeFiles/clean_test_results.dir/build.make CMakeFiles/clean_test_results.dir/build
+.PHONY : clean_test_results/fast
+
+#=============================================================================
+# Target rules for targets named doxygen
+
+# Build rule for target.
+doxygen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 doxygen
+.PHONY : doxygen
+
+# fast build rule for target.
+doxygen/fast:
+	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/build
+.PHONY : doxygen/fast
+
+#=============================================================================
+# Target rules for targets named rosbuild_clean-test-results
+
+# Build rule for target.
+rosbuild_clean-test-results: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosbuild_clean-test-results
+.PHONY : rosbuild_clean-test-results
+
+# fast build rule for target.
+rosbuild_clean-test-results/fast:
+	$(MAKE) -f CMakeFiles/rosbuild_clean-test-results.dir/build.make CMakeFiles/rosbuild_clean-test-results.dir/build
+.PHONY : rosbuild_clean-test-results/fast
 
 #=============================================================================
 # Target rules for targets named rosbuild_precompile
@@ -291,6 +332,19 @@ rospack_gensrv/fast:
 .PHONY : rospack_gensrv/fast
 
 #=============================================================================
+# Target rules for targets named run_tests
+
+# Build rule for target.
+run_tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests
+.PHONY : run_tests
+
+# fast build rule for target.
+run_tests/fast:
+	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
+.PHONY : run_tests/fast
+
+#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -355,35 +409,79 @@ tests/fast:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
-# target to build an object file
-src/MOCAPSocket.o:
-	$(MAKE) -f CMakeFiles/MS.dir/build.make CMakeFiles/MS.dir/src/MOCAPSocket.o
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+src/MOCAPSocket.o: src/MOCAPSocket.cpp.o
 .PHONY : src/MOCAPSocket.o
 
-# target to preprocess a source file
-src/MOCAPSocket.i:
-	$(MAKE) -f CMakeFiles/MS.dir/build.make CMakeFiles/MS.dir/src/MOCAPSocket.i
+# target to build an object file
+src/MOCAPSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/MS.dir/build.make CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o
+.PHONY : src/MOCAPSocket.cpp.o
+
+src/MOCAPSocket.i: src/MOCAPSocket.cpp.i
 .PHONY : src/MOCAPSocket.i
 
-# target to generate assembly for a file
-src/MOCAPSocket.s:
-	$(MAKE) -f CMakeFiles/MS.dir/build.make CMakeFiles/MS.dir/src/MOCAPSocket.s
+# target to preprocess a source file
+src/MOCAPSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/MS.dir/build.make CMakeFiles/MS.dir/src/MOCAPSocket.cpp.i
+.PHONY : src/MOCAPSocket.cpp.i
+
+src/MOCAPSocket.s: src/MOCAPSocket.cpp.s
 .PHONY : src/MOCAPSocket.s
 
-# target to build an object file
-src/mocap_node.o:
-	$(MAKE) -f CMakeFiles/MOCAPnode.dir/build.make CMakeFiles/MOCAPnode.dir/src/mocap_node.o
+# target to generate assembly for a file
+src/MOCAPSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/MS.dir/build.make CMakeFiles/MS.dir/src/MOCAPSocket.cpp.s
+.PHONY : src/MOCAPSocket.cpp.s
+
+src/mocap_node.o: src/mocap_node.cpp.o
 .PHONY : src/mocap_node.o
 
-# target to preprocess a source file
-src/mocap_node.i:
-	$(MAKE) -f CMakeFiles/MOCAPnode.dir/build.make CMakeFiles/MOCAPnode.dir/src/mocap_node.i
+# target to build an object file
+src/mocap_node.cpp.o:
+	$(MAKE) -f CMakeFiles/MOCAPnode.dir/build.make CMakeFiles/MOCAPnode.dir/src/mocap_node.cpp.o
+.PHONY : src/mocap_node.cpp.o
+
+src/mocap_node.i: src/mocap_node.cpp.i
 .PHONY : src/mocap_node.i
 
-# target to generate assembly for a file
-src/mocap_node.s:
-	$(MAKE) -f CMakeFiles/MOCAPnode.dir/build.make CMakeFiles/MOCAPnode.dir/src/mocap_node.s
+# target to preprocess a source file
+src/mocap_node.cpp.i:
+	$(MAKE) -f CMakeFiles/MOCAPnode.dir/build.make CMakeFiles/MOCAPnode.dir/src/mocap_node.cpp.i
+.PHONY : src/mocap_node.cpp.i
+
+src/mocap_node.s: src/mocap_node.cpp.s
 .PHONY : src/mocap_node.s
+
+# target to generate assembly for a file
+src/mocap_node.cpp.s:
+	$(MAKE) -f CMakeFiles/MOCAPnode.dir/build.make CMakeFiles/MOCAPnode.dir/src/mocap_node.cpp.s
+.PHONY : src/mocap_node.cpp.s
 
 # Help Target
 help:
@@ -394,25 +492,32 @@ help:
 	@echo "... MOCAPnode"
 	@echo "... MS"
 	@echo "... ROSBUILD_genmsg_cpp"
-	@echo "... ROSBUILD_genmsg_lisp"
 	@echo "... ROSBUILD_genmsg_py"
 	@echo "... ROSBUILD_gensrv_cpp"
-	@echo "... ROSBUILD_gensrv_lisp"
 	@echo "... ROSBUILD_gensrv_py"
-	@echo "... clean-test-results"
+	@echo "... clean_test_results"
+	@echo "... doxygen"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... rosbuild_clean-test-results"
 	@echo "... rosbuild_precompile"
 	@echo "... rosbuild_premsgsrvgen"
 	@echo "... rospack_genmsg"
 	@echo "... rospack_genmsg_all"
 	@echo "... rospack_genmsg_libexe"
 	@echo "... rospack_gensrv"
+	@echo "... run_tests"
 	@echo "... test"
 	@echo "... test-future"
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
+	@echo "... gtest"
+	@echo "... gtest_main"
 	@echo "... src/MOCAPSocket.o"
 	@echo "... src/MOCAPSocket.i"
 	@echo "... src/MOCAPSocket.s"

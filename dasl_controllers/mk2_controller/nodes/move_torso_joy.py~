@@ -66,7 +66,7 @@ class MoveTorsoPS3():
                         self.position[1] += -1 * self.joy_data.axes[1] * self.step_size
                         msg.position.append(self.position[1])
                     elif joint == 'torso_roll_joint':
-                        self.position[2] += 1 * self.joy_data.axes[0] * self.step_size
+                        self.position[2] += -1 * self.joy_data.axes[0] * self.step_size
                         msg.position.append(self.position[2])
                     else:
                         msg.position.append(0.0)

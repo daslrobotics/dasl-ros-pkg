@@ -3,8 +3,6 @@ FILE(REMOVE_RECURSE
   "srv_gen"
   "src/dasl_mocap/msg"
   "src/dasl_mocap/srv"
-  "msg_gen"
-  "srv_gen"
   "CMakeFiles/ROSBUILD_genmsg_cpp"
   "msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h"
   "msg_gen/cpp/include/dasl_mocap/Velocity.h"

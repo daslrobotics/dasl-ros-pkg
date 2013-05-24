@@ -1,5 +1,5 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/gantry_odom.dir/src/gantry_odom.o"
+  "CMakeFiles/gantry_odom.dir/src/gantry_odom.cpp.o"
   "../bin/gantry_odom.pdb"
   "../bin/gantry_odom"
 )

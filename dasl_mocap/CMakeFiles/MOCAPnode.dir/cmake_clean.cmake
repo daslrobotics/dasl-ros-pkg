@@ -3,9 +3,7 @@ FILE(REMOVE_RECURSE
   "srv_gen"
   "src/dasl_mocap/msg"
   "src/dasl_mocap/srv"
-  "msg_gen"
-  "srv_gen"
-  "CMakeFiles/MOCAPnode.dir/src/mocap_node.o"
+  "CMakeFiles/MOCAPnode.dir/src/mocap_node.cpp.o"
   "bin/MOCAPnode.pdb"
   "bin/MOCAPnode"
 )

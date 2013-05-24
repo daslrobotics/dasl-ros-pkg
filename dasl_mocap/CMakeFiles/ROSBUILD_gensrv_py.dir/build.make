@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap
+CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap
+CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap
 
 # Utility rule file for ROSBUILD_gensrv_py.
 
@@ -45,33 +45,40 @@ include CMakeFiles/ROSBUILD_gensrv_py.dir/progress.make
 CMakeFiles/ROSBUILD_gensrv_py: src/dasl_mocap/srv/__init__.py
 
 src/dasl_mocap/srv/__init__.py: src/dasl_mocap/srv/_Spawn.py
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/dasl_mocap/srv/__init__.py"
-	/opt/ros/fuerte/share/rospy/rosbuild/scripts/gensrv_py.py --initpy /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/srv/Spawn.srv
+	/opt/ros/groovy/share/rospy/rosbuild/scripts/gensrv_py.py --initpy /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/srv/Spawn.srv
 
 src/dasl_mocap/srv/_Spawn.py: srv/Spawn.srv
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/share/rospy/rosbuild/scripts/gensrv_py.py
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/share/roslib/bin/gendeps
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/rospy/rosbuild/scripts/gensrv_py.py
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/lib/roslib/gendeps
 src/dasl_mocap/srv/_Spawn.py: manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/share/roslang/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/share/roscpp/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/share/std_msgs/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/stacks/bullet/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/share/rosconsole/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/share/rospy/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/share/rostest/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/share/roswtf/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/share/message_filters/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/share/std_srvs/manifest.xml
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-src/dasl_mocap/srv/_Spawn.py: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_2)
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/cpp_common/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/rostime/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/roscpp_traits/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/roscpp_serialization/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/genmsg/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/genpy/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/message_runtime/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/rosconsole/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/std_msgs/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/xmlrpcpp/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/roscpp/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/rosgraph/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/catkin/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/rospack/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/roslib/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/rospy/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/std_srvs/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/turtlesim/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/geometry_msgs/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/message_filters/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/sensor_msgs/package.xml
+src/dasl_mocap/srv/_Spawn.py: /opt/ros/groovy/share/tf/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/dasl_mocap/srv/_Spawn.py"
-	/opt/ros/fuerte/share/rospy/rosbuild/scripts/gensrv_py.py --noinitpy /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/srv/Spawn.srv
+	/opt/ros/groovy/share/rospy/rosbuild/scripts/gensrv_py.py --noinitpy /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/srv/Spawn.srv
 
 ROSBUILD_gensrv_py: CMakeFiles/ROSBUILD_gensrv_py
 ROSBUILD_gensrv_py: src/dasl_mocap/srv/__init__.py
@@ -88,6 +95,6 @@ CMakeFiles/ROSBUILD_gensrv_py.dir/clean:
 .PHONY : CMakeFiles/ROSBUILD_gensrv_py.dir/clean
 
 CMakeFiles/ROSBUILD_gensrv_py.dir/depend:
-	cd /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles/ROSBUILD_gensrv_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles/ROSBUILD_gensrv_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ROSBUILD_gensrv_py.dir/depend
 

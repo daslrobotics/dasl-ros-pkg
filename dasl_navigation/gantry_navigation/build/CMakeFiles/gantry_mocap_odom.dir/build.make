@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation
+CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/build
+CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/gantry_mocap_odom.dir/depend.make
@@ -46,54 +46,60 @@ include CMakeFiles/gantry_mocap_odom.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/gantry_mocap_odom.dir/flags.make
 
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: CMakeFiles/gantry_mocap_odom.dir/flags.make
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: ../src/gantry_mocap_odom.cpp
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: ../manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/share/nav_msgs/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/share/roslang/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/share/roscpp/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/share/rospy/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/share/rostest/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/share/roswtf/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/share/message_filters/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/src/gantry_mocap_odom.cpp
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: CMakeFiles/gantry_mocap_odom.dir/flags.make
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: ../src/gantry_mocap_odom.cpp
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: ../manifest.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/cpp_common/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/rostime/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/roscpp_traits/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/roscpp_serialization/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/genmsg/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/genpy/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/message_runtime/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/std_msgs/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/geometry_msgs/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/nav_msgs/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/rosconsole/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/xmlrpcpp/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/roscpp/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/message_filters/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/sensor_msgs/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/tf/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/rosgraph/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/catkin/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/rospack/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/roslib/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/rospy/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o -c /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/src/gantry_mocap_odom.cpp
 
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/src/gantry_mocap_odom.cpp > CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.i
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/src/gantry_mocap_odom.cpp > CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.i
 
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/src/gantry_mocap_odom.cpp -o CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.s
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/src/gantry_mocap_odom.cpp -o CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.s
 
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o.requires:
-.PHONY : CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o.requires
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o.requires:
+.PHONY : CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o.requires
 
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o.provides: CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o.requires
-	$(MAKE) -f CMakeFiles/gantry_mocap_odom.dir/build.make CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o.provides.build
-.PHONY : CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o.provides
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o.provides: CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o.requires
+	$(MAKE) -f CMakeFiles/gantry_mocap_odom.dir/build.make CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o.provides.build
+.PHONY : CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o.provides
 
-CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o.provides.build: CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o.provides.build: CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o
 
 # Object files for target gantry_mocap_odom
 gantry_mocap_odom_OBJECTS = \
-"CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o"
+"CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o"
 
 # External object files for target gantry_mocap_odom
 gantry_mocap_odom_EXTERNAL_OBJECTS =
 
-../bin/gantry_mocap_odom: CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o
+../bin/gantry_mocap_odom: CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o
 ../bin/gantry_mocap_odom: CMakeFiles/gantry_mocap_odom.dir/build.make
 ../bin/gantry_mocap_odom: CMakeFiles/gantry_mocap_odom.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/gantry_mocap_odom"
@@ -103,7 +109,7 @@ gantry_mocap_odom_EXTERNAL_OBJECTS =
 CMakeFiles/gantry_mocap_odom.dir/build: ../bin/gantry_mocap_odom
 .PHONY : CMakeFiles/gantry_mocap_odom.dir/build
 
-CMakeFiles/gantry_mocap_odom.dir/requires: CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.o.requires
+CMakeFiles/gantry_mocap_odom.dir/requires: CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o.requires
 .PHONY : CMakeFiles/gantry_mocap_odom.dir/requires
 
 CMakeFiles/gantry_mocap_odom.dir/clean:
@@ -111,6 +117,6 @@ CMakeFiles/gantry_mocap_odom.dir/clean:
 .PHONY : CMakeFiles/gantry_mocap_odom.dir/clean
 
 CMakeFiles/gantry_mocap_odom.dir/depend:
-	cd /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/build/CMakeFiles/gantry_mocap_odom.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build/CMakeFiles/gantry_mocap_odom.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/gantry_mocap_odom.dir/depend
 

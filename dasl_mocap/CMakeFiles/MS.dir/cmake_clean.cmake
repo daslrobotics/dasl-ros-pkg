@@ -3,9 +3,7 @@ FILE(REMOVE_RECURSE
   "srv_gen"
   "src/dasl_mocap/msg"
   "src/dasl_mocap/srv"
-  "msg_gen"
-  "srv_gen"
-  "CMakeFiles/MS.dir/src/MOCAPSocket.o"
+  "CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o"
   "lib/libMS.pdb"
   "lib/libMS.so"
 )

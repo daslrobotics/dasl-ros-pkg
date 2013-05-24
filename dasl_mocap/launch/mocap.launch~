@@ -1,9 +1,9 @@
 <launch> 
-  <node pkg="mocap" 
+  <node pkg="dasl_mocap" 
 	type="MOCAPnode" 
 	name="MOCAPnode" 
 	respawn="false"
 	required="true">
-	<rosparam file="$(find mocap)/config/mocap.yaml" command="load" />
+	<rosparam file="$(find dasl_mocap)/config/mocap.yaml" command="load" />
   </node>
 </launch>

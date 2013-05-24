@@ -40,11 +40,11 @@ int main(int argc, char** argv){
     geometry_msgs::TransformStamped odom_trans;
     odom_trans.header.stamp = current_time;
     odom_trans.header.frame_id = "odom";
-    odom_trans.child_frame_id = "gantry_base";
+    odom_trans.child_frame_id = "torso_base_link";
 
-    odom_trans.transform.translation.x = transform.getOrigin().x();
-    odom_trans.transform.translation.y = transform.getOrigin().y();
-    odom_trans.transform.translation.z = transform.getOrigin().z();
+    odom_trans.transform.translation.x = transform.getOrigin().x() - 0.076;
+    odom_trans.transform.translation.y = transform.getOrigin().y(); - 0.05;  // account for placement of marker
+    odom_trans.transform.translation.z = transform.getOrigin().z() + 0.1;  // account for placement of marker
     odom_trans.transform.rotation.x = transform.getRotation().x();
     odom_trans.transform.rotation.y = transform.getRotation().y();
     odom_trans.transform.rotation.z = transform.getRotation().z();
@@ -59,16 +59,16 @@ int main(int argc, char** argv){
     odom.header.frame_id = "odom";
 
     //set the position
-    odom.pose.pose.position.x = transform.getOrigin().x();
-    odom.pose.pose.position.y = transform.getOrigin().y();
-    odom.pose.pose.position.z = transform.getOrigin().z();
+    odom.pose.pose.position.x = transform.getOrigin().x() - 0.076;
+    odom.pose.pose.position.y = transform.getOrigin().y(); - 0.05;  // account for placement of marker
+    odom.pose.pose.position.z = transform.getOrigin().z(); + 0.1;  // account for placement of marker
     odom.pose.pose.orientation.x = transform.getRotation().x();
     odom.pose.pose.orientation.y = transform.getRotation().y();
     odom.pose.pose.orientation.z = transform.getRotation().z();
     odom.pose.pose.orientation.w = transform.getRotation().w();
 
     //set the velocity
-    odom.child_frame_id = "gantry_base";
+    odom.child_frame_id = "torso_base_link";
     odom.twist.twist.linear.x = -vel_msg.linear.x;
     odom.twist.twist.linear.y = -vel_msg.linear.y;
     odom.twist.twist.linear.z = -vel_msg.linear.z;

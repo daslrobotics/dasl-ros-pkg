@@ -27,6 +27,24 @@
  <node pkg="mk2_controller" type="simple_trajectory" name="simple_trajectory" output="screen" />
  -->
 
+ <node pkg="dasl_mocap" type="MOCAPnode" name="MOCAPnode" respawn="false" required="true">
+   <rosparam file="$(find dasl_mocap)/config/mocap.yaml" command="load" />
+ </node>
+
+ <node pkg="gantry_navigation" type="gantry_mocap_odom" name="gantry_mocap_odom" />
+
+ <node pkg="gantry_navigation" type="add_cylinder" name="add_cylinder" />
+
+ <node pkg="tf" type="static_transform_publisher" name="odom_mocap_broadcaster" args="0 0 0 0 0 0 /odom /mocap_origin 100" />
+
+<!--
+ <node pkg="tf" type="static_transform_publisher" name="mocap_gantry_broadcaster" args="0 0 0 0 0 0 /gantry_base /torso_base_link 100" />
+
+ <node pkg="gantry_navigation" type="gantry_mocap_odom" name="gantry_mocap_odom" />
+ <node pkg="tf" type="static_transform_publisher" name="world_mocap_broadcaster" args="0 0 0 0 0 0 /world /mocap_origin 100" />
+ <node pkg="tf" type="static_transform_publisher" name="mocap_gantry_broadcaster" args="0 0 0 0 0 0 /gantry_base /torso_base_link 100" />
+-->
+
  <!-- Publish a static transform between the robot base and the world frame
  <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_roll_link 100" />
  <node pkg="tf" type="static_transform_publisher" name="world_mocap_broadcaster" args="0 0 0 0 0 0 /world /mocap_origin 100" />
@@ -35,14 +53,13 @@
  <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_roll_link 100" />
  -->
 
- <!-- Start the joystick node
+ <!-- Start the joystick node  -->
  <node respawn="true" pkg="joy" type="joy_node" name="joy" >
      <param name="dev" type="string" value="/dev/input/js0" />
      <param name="deadzone" value="0.12" />
  </node> 
- -->
 
- <!-- Load arm control node -->
+ <!-- Load arm control node  -->
  <node pkg="mk2_controller" type="move_gripper_joy.py" name="move_gripper_joy" output="screen" />
 
 </launch>

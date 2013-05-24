@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap
+CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap
+CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap
 
 # Utility rule file for ROSBUILD_genmsg_cpp.
 
@@ -50,149 +50,191 @@ CMakeFiles/ROSBUILD_genmsg_cpp: msg_gen/cpp/include/dasl_mocap/Vector3F.h
 CMakeFiles/ROSBUILD_genmsg_cpp: msg_gen/cpp/include/dasl_mocap/Pose.h
 
 msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: msg/quadcopter2pc.msg
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/share/roslib/bin/gendeps
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/lib/roslib/gendeps
 msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/share/roslang/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/stacks/bullet/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/share/rosconsole/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/share/rospy/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/share/rostest/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/share/roswtf/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/share/message_filters/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/share/std_srvs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_1)
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/cpp_common/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/rostime/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/roscpp_traits/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/roscpp_serialization/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/genmsg/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/genpy/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/message_runtime/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/rosconsole/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/std_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/xmlrpcpp/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/roscpp/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/rosgraph/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/catkin/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/rospack/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/roslib/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/rospy/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/std_srvs/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/turtlesim/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/geometry_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/message_filters/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/sensor_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h: /opt/ros/groovy/share/tf/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/quadcopter2pc.msg
+	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/msg/quadcopter2pc.msg
 
 msg_gen/cpp/include/dasl_mocap/Velocity.h: msg/Velocity.msg
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/share/roslib/bin/gendeps
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/lib/roslib/gendeps
 msg_gen/cpp/include/dasl_mocap/Velocity.h: manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/share/roslang/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/stacks/bullet/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/share/rosconsole/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/share/rospy/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/share/rostest/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/share/roswtf/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/share/message_filters/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/share/std_srvs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_2)
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/cpp_common/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/rostime/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/roscpp_traits/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/roscpp_serialization/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/genmsg/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/genpy/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/message_runtime/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/rosconsole/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/std_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/xmlrpcpp/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/roscpp/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/rosgraph/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/catkin/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/rospack/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/roslib/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/rospy/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/std_srvs/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/turtlesim/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/geometry_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/message_filters/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/sensor_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/Velocity.h: /opt/ros/groovy/share/tf/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating msg_gen/cpp/include/dasl_mocap/Velocity.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/Velocity.msg
+	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/msg/Velocity.msg
 
 msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: msg/pc2quadcopter.msg
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/share/roslib/bin/gendeps
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/lib/roslib/gendeps
 msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: msg/Vector3F.msg
 msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/share/roslang/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/stacks/bullet/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/share/rosconsole/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/share/rospy/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/share/rostest/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/share/roswtf/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/share/message_filters/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/share/std_srvs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_3)
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/cpp_common/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/rostime/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/roscpp_traits/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/roscpp_serialization/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/genmsg/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/genpy/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/message_runtime/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/rosconsole/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/std_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/xmlrpcpp/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/roscpp/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/rosgraph/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/catkin/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/rospack/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/roslib/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/rospy/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/std_srvs/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/turtlesim/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/geometry_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/message_filters/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/sensor_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h: /opt/ros/groovy/share/tf/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating msg_gen/cpp/include/dasl_mocap/pc2quadcopter.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/pc2quadcopter.msg
+	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/msg/pc2quadcopter.msg
 
 msg_gen/cpp/include/dasl_mocap/RigidBody.h: msg/RigidBody.msg
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/share/roslib/bin/gendeps
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/lib/roslib/gendeps
 msg_gen/cpp/include/dasl_mocap/RigidBody.h: manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/share/roslang/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/stacks/bullet/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/share/rosconsole/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/share/rospy/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/share/rostest/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/share/roswtf/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/share/message_filters/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/share/std_srvs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_4)
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/cpp_common/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/rostime/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/roscpp_traits/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/roscpp_serialization/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/genmsg/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/genpy/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/message_runtime/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/rosconsole/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/std_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/xmlrpcpp/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/roscpp/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/rosgraph/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/catkin/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/rospack/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/roslib/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/rospy/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/std_srvs/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/turtlesim/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/geometry_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/message_filters/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/sensor_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/RigidBody.h: /opt/ros/groovy/share/tf/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating msg_gen/cpp/include/dasl_mocap/RigidBody.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/RigidBody.msg
+	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/msg/RigidBody.msg
 
 msg_gen/cpp/include/dasl_mocap/Vector3F.h: msg/Vector3F.msg
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/share/roslib/bin/gendeps
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/lib/roslib/gendeps
 msg_gen/cpp/include/dasl_mocap/Vector3F.h: manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/share/roslang/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/stacks/bullet/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/share/rosconsole/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/share/rospy/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/share/rostest/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/share/roswtf/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/share/message_filters/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/share/std_srvs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_5)
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/cpp_common/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/rostime/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/roscpp_traits/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/roscpp_serialization/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/genmsg/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/genpy/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/message_runtime/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/rosconsole/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/std_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/xmlrpcpp/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/roscpp/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/rosgraph/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/catkin/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/rospack/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/roslib/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/rospy/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/std_srvs/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/turtlesim/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/geometry_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/message_filters/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/sensor_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/Vector3F.h: /opt/ros/groovy/share/tf/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating msg_gen/cpp/include/dasl_mocap/Vector3F.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/Vector3F.msg
+	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/msg/Vector3F.msg
 
 msg_gen/cpp/include/dasl_mocap/Pose.h: msg/Pose.msg
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/share/roslib/bin/gendeps
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/lib/roslib/gendeps
 msg_gen/cpp/include/dasl_mocap/Pose.h: manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/share/roslang/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/stacks/bullet/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/share/rosconsole/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/share/rospy/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/share/rostest/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/share/roswtf/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/share/message_filters/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/share/std_srvs/manifest.xml
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_6)
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/cpp_common/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/rostime/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/roscpp_traits/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/roscpp_serialization/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/genmsg/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/genpy/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/message_runtime/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/rosconsole/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/std_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/xmlrpcpp/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/roscpp/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/rosgraph/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/catkin/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/rospack/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/roslib/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/rospy/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/std_srvs/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/turtlesim/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/geometry_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/message_filters/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/sensor_msgs/package.xml
+msg_gen/cpp/include/dasl_mocap/Pose.h: /opt/ros/groovy/share/tf/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating msg_gen/cpp/include/dasl_mocap/Pose.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/msg/Pose.msg
+	/opt/ros/groovy/share/roscpp/rosbuild/scripts/genmsg_cpp.py /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/msg/Pose.msg
 
 ROSBUILD_genmsg_cpp: CMakeFiles/ROSBUILD_genmsg_cpp
 ROSBUILD_genmsg_cpp: msg_gen/cpp/include/dasl_mocap/quadcopter2pc.h
@@ -213,6 +255,6 @@ CMakeFiles/ROSBUILD_genmsg_cpp.dir/clean:
 .PHONY : CMakeFiles/ROSBUILD_genmsg_cpp.dir/clean
 
 CMakeFiles/ROSBUILD_genmsg_cpp.dir/depend:
-	cd /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles/ROSBUILD_genmsg_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles/ROSBUILD_genmsg_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ROSBUILD_genmsg_cpp.dir/depend
 

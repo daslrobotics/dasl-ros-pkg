@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation
+CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/build
+CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build
 
 # Utility rule file for test-results.
 
@@ -43,7 +43,7 @@ CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gant
 include CMakeFiles/test-results.dir/progress.make
 
 CMakeFiles/test-results:
-	/opt/ros/fuerte/share/rosunit/bin/summarize_results.py --nodeps gantry_navigation
+	/opt/ros/groovy/share/rosunit/scripts/summarize_results.py --nodeps gantry_navigation
 
 test-results: CMakeFiles/test-results
 test-results: CMakeFiles/test-results.dir/build.make
@@ -58,6 +58,6 @@ CMakeFiles/test-results.dir/clean:
 .PHONY : CMakeFiles/test-results.dir/clean
 
 CMakeFiles/test-results.dir/depend:
-	cd /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/build /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_navigation/gantry_navigation/build/CMakeFiles/test-results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build/CMakeFiles/test-results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test-results.dir/depend
 

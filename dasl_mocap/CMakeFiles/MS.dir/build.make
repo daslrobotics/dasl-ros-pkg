@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap
+CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap
+CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MS.dir/depend.make
@@ -46,54 +46,61 @@ include CMakeFiles/MS.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/MS.dir/flags.make
 
-CMakeFiles/MS.dir/src/MOCAPSocket.o: CMakeFiles/MS.dir/flags.make
-CMakeFiles/MS.dir/src/MOCAPSocket.o: src/MOCAPSocket.cpp
-CMakeFiles/MS.dir/src/MOCAPSocket.o: manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/share/roslang/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/share/roscpp/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/share/rospy/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/share/rostest/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/share/roswtf/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/share/message_filters/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-CMakeFiles/MS.dir/src/MOCAPSocket.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/MS.dir/src/MOCAPSocket.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/MS.dir/src/MOCAPSocket.o -c /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.cpp
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: CMakeFiles/MS.dir/flags.make
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: src/MOCAPSocket.cpp
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: manifest.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/cpp_common/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/rostime/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/roscpp_traits/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/roscpp_serialization/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/genmsg/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/genpy/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/message_runtime/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/rosconsole/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/std_msgs/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/rosgraph_msgs/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/xmlrpcpp/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/roscpp/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/rosgraph/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/catkin/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/rospack/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/roslib/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/rospy/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/std_srvs/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/turtlesim/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/geometry_msgs/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/message_filters/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/sensor_msgs/package.xml
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o: /opt/ros/groovy/share/tf/package.xml
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o -c /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.cpp
 
-CMakeFiles/MS.dir/src/MOCAPSocket.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MS.dir/src/MOCAPSocket.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.cpp > CMakeFiles/MS.dir/src/MOCAPSocket.i
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MS.dir/src/MOCAPSocket.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.cpp > CMakeFiles/MS.dir/src/MOCAPSocket.cpp.i
 
-CMakeFiles/MS.dir/src/MOCAPSocket.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MS.dir/src/MOCAPSocket.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.cpp -o CMakeFiles/MS.dir/src/MOCAPSocket.s
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MS.dir/src/MOCAPSocket.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/src/MOCAPSocket.cpp -o CMakeFiles/MS.dir/src/MOCAPSocket.cpp.s
 
-CMakeFiles/MS.dir/src/MOCAPSocket.o.requires:
-.PHONY : CMakeFiles/MS.dir/src/MOCAPSocket.o.requires
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o.requires:
+.PHONY : CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o.requires
 
-CMakeFiles/MS.dir/src/MOCAPSocket.o.provides: CMakeFiles/MS.dir/src/MOCAPSocket.o.requires
-	$(MAKE) -f CMakeFiles/MS.dir/build.make CMakeFiles/MS.dir/src/MOCAPSocket.o.provides.build
-.PHONY : CMakeFiles/MS.dir/src/MOCAPSocket.o.provides
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o.provides: CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o.requires
+	$(MAKE) -f CMakeFiles/MS.dir/build.make CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o.provides.build
+.PHONY : CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o.provides
 
-CMakeFiles/MS.dir/src/MOCAPSocket.o.provides.build: CMakeFiles/MS.dir/src/MOCAPSocket.o
+CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o.provides.build: CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o
 
 # Object files for target MS
 MS_OBJECTS = \
-"CMakeFiles/MS.dir/src/MOCAPSocket.o"
+"CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o"
 
 # External object files for target MS
 MS_EXTERNAL_OBJECTS =
 
-lib/libMS.so: CMakeFiles/MS.dir/src/MOCAPSocket.o
+lib/libMS.so: CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o
 lib/libMS.so: CMakeFiles/MS.dir/build.make
 lib/libMS.so: CMakeFiles/MS.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library lib/libMS.so"
@@ -103,7 +110,7 @@ lib/libMS.so: CMakeFiles/MS.dir/link.txt
 CMakeFiles/MS.dir/build: lib/libMS.so
 .PHONY : CMakeFiles/MS.dir/build
 
-CMakeFiles/MS.dir/requires: CMakeFiles/MS.dir/src/MOCAPSocket.o.requires
+CMakeFiles/MS.dir/requires: CMakeFiles/MS.dir/src/MOCAPSocket.cpp.o.requires
 .PHONY : CMakeFiles/MS.dir/requires
 
 CMakeFiles/MS.dir/clean:
@@ -111,6 +118,6 @@ CMakeFiles/MS.dir/clean:
 .PHONY : CMakeFiles/MS.dir/clean
 
 CMakeFiles/MS.dir/depend:
-	cd /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap /home/dasl/fuerte_workspace/dasl-ros-pkg/dasl_mocap/CMakeFiles/MS.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_mocap/CMakeFiles/MS.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/MS.dir/depend
 

@@ -2,6 +2,18 @@
 
 joints:
 
+  - name: torso_yaw_joint
+    channel: 57      
+    home: 0.0
+
+  - name: torso_pitch_joint
+    channel: 16
+    home: 0.0
+
+  - name: torso_roll_joint
+    channel: 56     
+    home: 0.0
+
   - name: joint_1
     channel: 1 
     home: 0.0
@@ -29,3 +41,20 @@ joints:
   - name: joint_7
     channel: 7
     home: 0.0
+
+  - name: right_thumb_roll_joint
+    channel: 10
+    home: 0.0
+
+  - name: right_thumb_pitch_joint
+    channel: 11
+    home: 0.0
+
+  - name: right_index_yaw_joint
+    channel: 12
+    home: 0.0
+
+  - name: right_ring_yaw_joint
+    channel: 13
+    home: 0.0
+
