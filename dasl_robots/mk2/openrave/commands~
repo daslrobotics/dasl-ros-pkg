@@ -18,4 +18,4 @@ $ roslaunch planning_environment planning_description_configuration_wizard.launc
 openrave.py --database inversekinematics --robot=robots/pr2-beta-static.zae --manipname=rightarm  --freejoint=r_shoulder_pan_joint --freeinc=0.01
 
 
-$ python `openrave-config --python-dir`/openravepy/_openravepy_/ikfast.py --robot=mk2.robot.xml --iktype=transform6d --baselink=0 --eelink=7 --freeindex=3 --savefile=output_ikfast61.cpp
+$ python `openrave-config --python-dir`/openravepy/_openravepy_/ikfast.py --robot=mk2.robot.xml --iktype=transform6d --baselink=0 --eelink=7 --freeindex=5 --savefile=output_ikfast61.cpp

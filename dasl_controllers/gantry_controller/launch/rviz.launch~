@@ -1,0 +1,9 @@
+<launch>
+
+  <node name="rviz" pkg="rviz" type="rviz" respawn="false" />
+
+    <!-- Launch Rviz
+	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find gantry_controller)/launch/gantry.rviz" />
+    -->
+
+</launch>

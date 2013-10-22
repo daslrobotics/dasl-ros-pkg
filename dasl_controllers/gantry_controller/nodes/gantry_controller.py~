@@ -30,8 +30,7 @@ class GantryController():
 	self.gantry_cmd_vel[4] = msg.angular.y
 	self.gantry_cmd_vel[5] = msg.angular.z
 	self.sock.sendto(str(self.gantry_cmd_vel), (UDP_IP, UDP_PORT))
-	rospy.loginfo("there")	
-	time.sleep(0.1)
+	time.sleep(0.02)
 
 if __name__ == '__main__':
     try:

@@ -1,0 +1,13 @@
+<launch>
+
+ <node pkg="mk2_controller" type="joint_trajectory_handler.py" name="joint_trajectory_handler" output="screen" />
+
+ <!-- joint_trajectory_action: provides actionlib interface for high-level robot control -->
+ <node pkg="industrial_robot_client" type="joint_trajectory_action" name="joint_trajectory_action"/>
+
+ <!-- Start the mk2 Driver -->
+ <node pkg="mk2_controller" type="mk2_controller" name="mk2_controller" output="screen" >
+   <rosparam command="load" file="$(find mk2_controller)/config/mk2.yaml" />
+ </node>
+
+</launch>

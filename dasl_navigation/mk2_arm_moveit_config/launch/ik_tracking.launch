@@ -1,0 +1,83 @@
+<launch>
+
+ <param name="robot_description" textfile="$(find mk2)/robots/mk2_arm.URDF" />
+
+ <rosparam command="load" file="$(find mk2_arm_moveit_config)/config/kinematics.yaml"/>
+ 
+ <node pkg="mk2_controller" type="joint_trajectory_handler.py" name="joint_trajectory_handler" output="screen" />
+
+ <!-- joint_trajectory_action: provides actionlib interface for high-level robot control -->
+ <node pkg="industrial_robot_client" type="joint_trajectory_action" name="joint_trajectory_action"/>
+
+ <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+ <rosparam param="controller_joint_names">[ 'joint_1', 'joint_2', 'joint_3',  
+ 'joint_4', 'joint_5', 'joint_6', 'joint_7']</rosparam>
+
+ <!-- 
+ <include file="$(find mk2_arm_moveit_config)/launch/move_group.launch">
+  <arg name="publish_monitored_planning_scene" value="true" />
+ </include>
+ -->
+
+ <!-- 
+ <include file="$(find mk2_arm_moveit_config)/launch/moveit_rviz.launch"/>
+ -->
+
+ <!-- Start the mk2 Driver -->
+ <node pkg="mk2_controller" type="mk2_controller" name="mk2_controller" output="screen" >
+   <rosparam command="load" file="$(find mk2_controller)/config/mk2_arm.yaml" />
+ </node>
+
+ <!-- Start the Simple Trajectory 
+ <node pkg="mk2_controller" type="simple_trajectory" name="simple_trajectory" output="screen" />
+ -->
+
+ <node pkg="dasl_mocap" type="MOCAPnode" name="MOCAPnode" respawn="false" required="true">
+   <rosparam file="$(find dasl_mocap)/config/mocap.yaml" command="load" />
+ </node>
+
+ <!--  -->
+ <node pkg="gantry_navigation" type="gantry_mocap_odom" name="gantry_mocap_odom" />
+
+ <node pkg="gantry_navigation" type="target_mocap_odom" name="target_mocap_odom" />
+
+ <node pkg="gantry_navigation" type="add_cylinder" name="add_cylinder" />
+
+ <!--  -->
+ <node pkg="tf" type="static_transform_publisher" name="odom_mocap_broadcaster" args="0 0 0 0 0 0 /odom /mocap_origin 100" />
+
+  <!-- Load gantry PID controller node 
+  <node pkg="gantry_controller" type="move_gantry_x_axis.py" name="move_gantry_x_axis" output="screen" />
+  -->
+
+  <!-- Load UDP gantry interface node 
+  <node pkg="gantry_controller" type="gantry_controller.py" name="gantry_controller" />
+  -->
+
+<!--
+ <node pkg="tf" type="static_transform_publisher" name="mocap_gantry_broadcaster" args="0 0 0 0 0 0 /gantry_base /torso_base_link 100" />
+
+ <node pkg="gantry_navigation" type="gantry_mocap_odom" name="gantry_mocap_odom" />
+ <node pkg="tf" type="static_transform_publisher" name="world_mocap_broadcaster" args="0 0 0 0 0 0 /world /mocap_origin 100" />
+ <node pkg="tf" type="static_transform_publisher" name="mocap_gantry_broadcaster" args="0 0 0 0 0 0 /gantry_base /torso_base_link 100" />
+-->
+
+ <!-- Publish a static transform between the robot base and the world frame
+ <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_roll_link 100" />
+ <node pkg="tf" type="static_transform_publisher" name="world_mocap_broadcaster" args="0 0 0 0 0 0 /world /mocap_origin 100" />
+ <node pkg="tf" type="static_transform_publisher" name="mocap_gantry_broadcaster" args="0 0 0 0 0 0 /gantry_base /torso_roll_link 100" />
+ <node pkg="tf" type="static_transform_publisher" name="world_mocap_broadcaster" args="0 0 0 0 0 0 /world /mocap_origin 100" />
+ <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_roll_link 100" />
+ -->
+
+ <!-- Start the joystick node
+ <node respawn="true" pkg="joy" type="joy_node" name="joy" >
+     <param name="dev" type="string" value="/dev/input/js0" />
+     <param name="deadzone" value="0.12" />
+ </node> 
+
+ <node pkg="mk2_controller" type="move_gripper_joy.py" name="move_gripper_joy" output="screen" />
+ -->  
+
+</launch>

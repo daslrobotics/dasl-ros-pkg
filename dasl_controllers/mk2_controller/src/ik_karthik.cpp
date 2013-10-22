@@ -1,0 +1,126 @@
+#include <moveit/move_group_interface/move_group.h>
+
+#include <ros/ros.h>
+#include <nav_msgs/Odometry.h>
+#include <geometry_msgs/Pose.h>
+#include <geometry_msgs/Point.h>
+#include <moveit/robot_state/conversions.h>
+#include <moveit_msgs/DisplayRobotState.h>
+#include<tf/tf.h>
+// Kinematics
+#include <moveit_msgs/GetPositionIK.h>
+// MoveIt!
+#include <moveit/robot_model_loader/robot_model_loader.h>
+#include <moveit/robot_model/robot_model.h>
+#include <moveit/robot_state/robot_state.h>
+#include <moveit/robot_state/joint_state_group.h>
+#include <eigen_conversions/eigen_msg.h>  
+int main(int argc, char **argv)
+{
+  ros::init (argc, argv, "right_arm_kinematics");
+  ros::AsyncSpinner spinner(1);
+  spinner.start();
+  nav_msgs::Odometry enter_coor;
+
+
+  robot_model_loader::RobotModelLoader robot_model_loader("robot_description"); 
+  robot_model::RobotModelPtr kinematic_model = robot_model_loader.getModel();
+  ROS_INFO("Model frame: %s", kinematic_model->getModelFrame().c_str());  
+
+  robot_state::RobotStatePtr kinematic_state(new robot_state::RobotState(kinematic_model));
+  kinematic_state->setToDefaultValues();  
+  robot_state::JointStateGroup* joint_state_group = kinematic_state->getJointStateGroup("manipulator");  
+
+  joint_state_group->setToRandomValues();
+  const Eigen::Affine3d &end_effector_state = joint_state_group->getKinematicState()->getLinkState("link_7")->getGlobalLinkTransform(); 
+
+  /* Load the robot model */
+  //robot_model_loader::RobotModelLoader robot_model_loader("robot_description"); 
+
+  /* Get a shared pointer to the model */
+  //robot_model::RobotModelPtr kinematic_model = robot_model_loader.getModel();
+
+  /* Get and print the name of the coordinate frame in which the transforms for this model are computed*/
+  //ROS_INFO("Model frame: %s", kinematic_model->getModelFrame().c_str());  
+  
+  /* WORKING WITH THE KINEMATIC STATE */
+  /* Create a kinematic state - this represents the configuration for the robot represented by kinematic_model */
+  //robot_state::RobotStatePtr kinematic_state(new robot_state::RobotState(kinematic_model));
+
+  /* Set all joints in this state to their default values */
+  //kinematic_state->setToDefaultValues();  
+
+  /* Get the configuration for the joints in the right arm of the PR2*/
+  //robot_state::JointStateGroup* joint_state_group = kinematic_state->getJointStateGroup("manipulator");
+
+  /* Get the names of the joints in the right_arm*/
+  //const std::vector<std::string> &joint_names = joint_state_group->getJointModelGroup()->getJointModelNames();
+  
+  /* Compute FK for a set of random joint values*/
+  //joint_state_group->setToRandomValues();
+  //const Eigen::Affine3d &end_effector_state = joint_state_group->getKinematicState()->getLinkState("link_7")->getGlobalLinkTransform();  
+
+  /* Get the joint states for the right arm*/
+  //std::vector<double> joint_values;
+  //joint_state_group->getVariableValues(joint_values);
+
+  //bool found_ik = joint_state_group->setFromIK(end_effector_state, 10, 0.1);
+/*
+if(found_ik)
+{
+  joint_state_group->getVariableValues(joint_values);
+  for(std::size_t i=0; i < joint_names.size(); ++i)
+  {
+    ROS_INFO("Joint %s: %f", joint_names[i].c_str(), joint_values[i]);
+  }
+}
+else
+{
+  ROS_INFO("Did not find IK solution");
+}
+
+*/
+  /* Print joint names and values */
+ // for(std::size_t i = 0; i < joint_names.size(); ++i)
+ // {
+ //   ROS_INFO("Joint %s: %f", joint_names[i].c_str(), joint_values[i]);
+ // }
+ 
+ // const Eigen::Affine3d &end_effector_state = joint_state_group->getRobotState()->getLinkState("link_7")->getGlobalLinkTransform();        
+  /*
+ enter_coor.pose.pose.position.x = 0.48;
+ enter_coor.pose.pose.position.y = 0.909;
+ enter_coor.pose.pose.position.z = 1.04;
+ enter_coor.pose.pose.orientation.x= 0.0;
+ enter_coor.pose.pose.orientation.y= 0.0;
+ enter_coor.pose.pose.orientation.z= 0.0;
+ enter_coor.pose.pose.orientation.w= 1.0;
+ */
+//const Eigen::Affine3d &end_effector_state = joint_state_group->getKinematicState()->getLinkState("r_wrist_roll_link")->getGlobalLinkTransform();  
+
+ //Eigen::Affine3d end_effector_state;
+
+ // tf::poseMsgToEigen(enter_coor.pose.pose,end_effector_state);
+/*
+ROS_INFO("before");
+  bool found_ik = joint_state_group->setFromIK(end_effector_state, 10, 0.1);
+ROS_INFO("after");  
+ 
+  if (found_ik)
+  {
+ROS_INFO("IK FOUND!!");
+    joint_state_group->getVariableValues(joint_values);
+    for(std::size_t i=0; i < joint_names.size(); ++i)
+    {
+      ROS_INFO("Joint %s: %f", joint_names[i].c_str(), joint_values[i]);
+    }
+  }
+  else
+  {
+    ROS_INFO("Did not find IK solution");
+  }
+*/
+  
+  ros::shutdown();  
+  return 0;
+}

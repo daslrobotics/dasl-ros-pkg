@@ -1,0 +1,19 @@
+<launch>
+
+ <!-- robot_ip: IP-address of the robot's socket-messaging server -->
+ <arg name="robot_ip" default="192.168.0.10" />
+
+ <!-- copy the specified arguments to the Parameter Server, for use by nodes below -->
+ <param name="robot_ip_address" type="str" value="$(arg robot_ip)"/>
+
+ <node pkg="mk2_controller" type="joint_trajectory_handler.py" name="joint_trajectory_handler" output="screen" />
+
+ <!-- joint_trajectory_action: provides actionlib interface for high-level robot control -->
+ <node pkg="industrial_robot_client" type="joint_trajectory_action" name="joint_trajectory_action"/>
+
+ <!-- Start the mk2 Driver -->
+ <node pkg="mk2_controller" type="mk2_controller" name="mk2_controller" output="screen" >
+   <rosparam command="load" file="$(find mk2_controller)/config/mk2.yaml" />
+ </node>
+
+</launch>

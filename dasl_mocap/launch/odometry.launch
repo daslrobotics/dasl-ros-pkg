@@ -1,0 +1,17 @@
+<launch>
+
+ <node pkg="dasl_mocap" type="MOCAPnode" name="MOCAPnode" respawn="false" required="true">
+   <rosparam file="$(find dasl_mocap)/config/mocap.yaml" command="load" />
+ </node>
+
+ <node pkg="gantry_navigation" type="gantry_mocap_odom" name="gantry_mocap_odom" />
+
+ <node pkg="gantry_navigation" type="target_mocap_odom" name="target_mocap_odom" />
+
+ <node pkg="gantry_navigation" type="add_cylinder" name="add_cylinder" />
+
+ <node pkg="tf" type="static_transform_publisher" name="odom_mocap_broadcaster" args="0 0 0 0 0 0 /odom /mocap_origin 100" />
+
+ <node pkg="tf" type="static_transform_publisher" name="odom_mk2_broadcaster" args="0 0 0 0 0 0 /odom /gantry_base_link 100" />
+
+</launch>

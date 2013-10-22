@@ -487,7 +487,9 @@ void status_callback(const ros::TimerEvent& event)
 
     // Use this area for periodic display of information
 
-    //ROS_INFO("Rigth shoulder roll position: %f", Drives[2].hs.position);
+    //ROS_INFO("Right shoulder POS VEL EFFORT: %f %f %f", Drives[1].hs.position, Drives[1].hs.velocity, Drives[1].hs.torque);
+    //ROS_INFO("Rigth elbow    POS VEL EFFORT: %f %f %f", Drives[4].hs.position, Drives[4].hs.velocity, Drives[4].hs.torque);
+    //ROS_INFO("Rigth wrist    POS VEL EFFORT: %f %f %f", Drives[6].hs.position, Drives[6].hs.velocity, Drives[6].hs.torque);
 
     //ROS_INFO("Torso roll torque: %f", Drives[56].hs.torque);
     //ROS_INFO("Torso pitch torque: %f", Drives[16].hs.torque);
@@ -496,14 +498,6 @@ void status_callback(const ros::TimerEvent& event)
     //ROS_INFO("Thumb pitch torque: %f", Drives[50].hs.torque);
     //ROS_INFO("Index finger torque: %f", Drives[51].hs.torque);
     //ROS_INFO("Middle finger torque: %f", Drives[52].hs.torque);
-}
-
-/* ******************************************************** */
-void joint_path_callback(const std_msgs::StringConstPtr& str)
-{
-
-	ROS_INFO("^^^^^^^^^^^^^^^^^: %s", str->data.c_str());
-
 }
 
 /* ******************************************************** */
@@ -611,26 +605,35 @@ int main(int argc, char** argv)
 
     // Enable impedance control on shoulder pitch joint (41) for testing
 
+    // Shoulder pitch
+
+    int i=1;
+
+    Drives[i].impedance.inertia = 0;//0.35;//1;
+    Drives[i].impedance.damping = 7.79; //13.44;//3;
+    Drives[i].impedance.stiffness = 30; //10;
+
+    MK2::send_impedance_cmd(i, &Drives[i].impedance);
+
     // Elbow pitch
 
+    i=4;
 
-    int i=4;
+    Drives[i].impedance.inertia = 0; //0.35;
+    Drives[i].impedance.damping = 7.79;//4.5;
+    Drives[i].impedance.stiffness = 60;//10;
 
-    Drives[i].impedance.inertia = 0.35;
-    Drives[i].impedance.damping = 7.790;
-    Drives[i].impedance.stiffness = 30;
+    MK2::send_impedance_cmd(i, &Drives[i].impedance);
 
-    //MK2::send_impedance_cmd(i, &Drives[i].impedance);
-
-    // Wirst pitch
+    // Wrist pitch
 
     i=6;
 
-    Drives[i].impedance.inertia = 0.2; //1;
-    Drives[i].impedance.damping = 4.164; //3;
-    Drives[i].impedance.stiffness = 30; //20;
+    Drives[i].impedance.inertia = 0.2;//1;
+    Drives[i].impedance.damping = 4.164;//4.5;
+    Drives[i].impedance.stiffness = 30;//10;
 
-    //MK2::send_impedance_cmd(i, &Drives[i].impedance);
+    MK2::send_impedance_cmd(i, &Drives[i].impedance);
 
 
     // ------------------------------------ IMPEDANCE TEST BED ------------------------- END
@@ -641,7 +644,13 @@ int main(int argc, char** argv)
     ros::Timer timer1 = nh.createTimer(ros::Duration(0.02), control_cmd_callback);
     ros::Timer timer2 = nh.createTimer(ros::Duration(0.5), status_callback);
 
-    controller.spin();
+    //ros::Rate loop_rate(50);
+
+    //while (ros::ok())
+    //{
+        controller.spin();
+        //loop_rate.sleep();
+    //}
 
     ros::waitForShutdown();
 

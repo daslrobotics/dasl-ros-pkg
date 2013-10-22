@@ -5,4 +5,4 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/mk2_arm.srdf
   CONFIG:
-    generated_timestamp: 1369335197
+    generated_timestamp: 1372713027

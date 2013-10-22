@@ -32,7 +32,8 @@ const char ** DEFAULT_MOCAP_MODEL = OBJECT;
 
 const int LOCAL_PORT = 1001;
 
-const char * MOCAP_CHILD[] = {"gantry_base", "target"};
+const char * MOCAP_CHILD[] = {"quadrotor"};
+//const char * MOCAP_CHILD[] = {"gantry_base", "target"};
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -97,7 +98,8 @@ void processMocapData( const char** mocap_model )
       ros::Time timestamp( ros::Time::now() );
 			
       //for( int i = 0; i < format.model[0].numRigidBodies; i++ )
-      for( int i = 0; i < 2; i++ )
+      //for( int i = 0; i < 2; i++ )
+      for( int i = 0; i < 1; i++ )
       {
 
 	tf::Transform transform;

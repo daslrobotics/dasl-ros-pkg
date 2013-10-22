@@ -12,27 +12,75 @@
 #include <moveit/robot_state/robot_state.h>
 #include <moveit/robot_state/conversions.h>
 
+// Visualization marker
+#include <visualization_msgs/Marker.h>
+
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "move_group_interface_demo", ros::init_options::AnonymousName);
+
   // start a ROS spinning thread
   ros::AsyncSpinner spinner(1);
   spinner.start();
 
+  //visualization_msgs::Marker msg = ros::topic::waitForMessage<visualization_msgs::Marker("target");
+
   // this connecs to a running instance of the move_group node
   move_group_interface::MoveGroup group("manipulator");
+
   // specify that our target will be a random one
   //group.setRandomTarget();
   // plan the motion and then move the group to the sampled target 
 
   /* POSE 1 - just below target */
   group.setEndEffectorLink("link_7");
-  group.setPositionTarget (1.0781,-1.032,0.9774,"link_7");
-  group.setOrientationTarget(0,0,0,1,"link_7");
+
+  //print ("Marker: %.2f", msg.pose.position.x);
+  geometry_msgs::PoseStamped target;
+  //geometry_msgs::PoseStamped orientation;
+  target=group.getCurrentPose("link_7");
+
+  target=group.getCurrentPose("link_7");
+
+  ROS_INFO ("Position: %f %f %f", target.pose.position.x, target.pose.position.y, target.pose.position.z);
+  ROS_INFO ("Oreitation: %f %f %f %f", target.pose.orientation.x, target.pose.orientation.y, target.pose.orientation.z, target.pose.orientation.w);
+
+// peg
+//Position: 0.743636 -0.705599 0.875935
+//[ INFO] [1371084037.902594813]: Oreitation: 0.002842 0.050485 -0.006812 0.998698
+
+
+// 0.493841 -0.239720 -0.891920
+
+//-0.108846 -0.251392 -0.8901130113
+
+//0.000006 -0.000767 0.008437 0.999964
+
+  //group.setPositionTarget(0.493841, -0.239720, -0.891920, "link_7");
+
+//int x;
+
+//  for (x=1; x< 10; x++)
+//{
+
+  //group.setPositionTarget(target.pose.position.x,target.pose.position.y,target.pose.position.z-0.2,"link_7");
+
+  group.setPositionTarget (1.262997, -0.735834, 1.082077, "link_7");
+
+  //group.setOrientationTarget(target.pose.orientation.x,target.pose.orientation.y,target.pose.orientation.z,target.pose.orientation.w,"link_7");
+
+//Position: 1.157269 -0.754943 1.074188
+//[ INFO] [1371089848.423164964]: Oreitation: -0.008948 0.699914 -0.018302 0.713937
+
+
+  group.setOrientationTarget(0.023642, 0.730377, 0.011604, 0.682537, "link_7");
+
+  //group.setRandomTarget();
+  //group
   group.move();
 
-  ros::Duration(2.0).sleep(); // sleep for 3 a second
-
+  ros::Duration(3).sleep(); // sleep for 3 a second
+//}
 
 // x: 1.07812095206
   //      y: -1.03221465572

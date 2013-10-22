@@ -42,6 +42,7 @@ class MotionControllerSimulator():
         
         # Initialize joint position
         self.joint_positions = [0]*num_joints
+        self.joint_velocities = [0.2]*num_joints
         #self.joint_names = name_joints
                 
         # Initialize motion buffer (contains joint position lists)
@@ -120,17 +121,18 @@ class MotionControllerSimulator():
         with self.lock:
             if not self.sig_stop:
                 self.joint_positions = point.positions[:]
+		self.joint_velocities = point.velocities[:]
 
-                msg.name = ['right_shoulder_pitch_joint',
-                            'right_shoulder_roll_joint',
-                            'right_shoulder_yaw_joint',
-                            'right_elbow_pitch_joint',
-                            'right_wrist_roll_joint',
-                            'right_wrist_pitch_joint',
-                            'right_wrist_yaw_joint']
+                msg.name = ['joint_1',
+                            'joint_2',
+                            'joint_3',
+                            'joint_4',
+                            'joint_5',
+                            'joint_6',
+                            'joint_7']
 		#msg.name = self.joint_names
 		msg.position = self.joint_positions
-		msg.velocity = [0.2]*7
+		msg.velocity = self.joint_velocities #[0.2]*7
                 msg.header.stamp = rospy.Time.now()
 
                 self.joint_command_pub.publish(msg)

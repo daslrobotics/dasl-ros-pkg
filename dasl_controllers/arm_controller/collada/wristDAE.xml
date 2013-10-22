@@ -1,0 +1,117 @@
+<Robot name="3DOFWrist">
+  <KinBody>
+    <!-- Create the base body, it should never move-->
+    <!-- Note that all translations and rotations are with respect to this base-->
+    <!-- For example, the robot at the identity transformation is equivalent to the identity transformation of the first body.-->
+    <Body name="Base" type="dynamic">
+      <Translation>0 0 0</Translation>	
+      <Geom type="trimesh">
+	<Render>Collada/link1_base.dae 0.0254</Render>
+	<collision>Collada/link1_base.dae 0.0254</collision>
+        <rotationaxis>1 0 0 0</rotationaxis>
+      </Geom>
+    </Body>
+
+    <!-- the L11 movable link-->
+    <Body name="L11" type="dynamic">
+      <offsetfrom>Base</offsetfrom>
+      <Translation>0 -0.088 0</Translation>
+      <Geom type="trimesh">
+	<Render>Collada/link7.dae 0.0254</Render>
+	<collision>Collada/link7.dae 0.0254</collision>
+        <rotationaxis>1 0 0 0</rotationaxis>>
+      </Geom>
+    </Body>
+    <!-- declare a circular hinge joint (circular joints have no limits) -->
+    <Joint circular="true" name="L11" type="hinge">
+      <Body>Base</Body>
+      <Body>L11</Body>
+      <offsetfrom>L11</offsetfrom>
+      <Translation>0 0 0</Translation>
+      <weight>3</weight>
+      <limitsdeg>-90 90</limitsdeg>
+      <axis>1 0 0</axis>
+      <maxvel>3</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+    <!-- the L12 movable link-->
+    <Body name="L12" type="dynamic">
+      <offsetfrom>L11</offsetfrom>
+      <Translation>0 -0.0775 0</Translation>
+      <Geom type="trimesh">
+	<Render>Collada/link8.dae 0.0254</Render>
+	<collision>Collada/link8.dae 0.0254</collision>
+        <rotationaxis>1 0 0 0</rotationaxis>
+      </Geom>
+    </Body>
+    <!-- declare a circular hinge joint (circular joints have no limits) -->
+    <Joint circular="true" name="L12" type="hinge">
+      <Body>L11</Body>
+      <Body>L12</Body>
+      <offsetfrom>L12</offsetfrom>
+      <Translation>0 0 0</Translation>
+      <weight>3</weight>
+      <limitsdeg>-90 90</limitsdeg>
+      <axis>0 1 0</axis>
+      <maxvel>3</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+    <!-- the L13 movable link-->
+    <Body name="L13" type="dynamic">
+      <offsetfrom>L12</offsetfrom>
+      <Translation>0 -0.0418 0</Translation>
+      <Geom type="trimesh">
+	<Render>Collada/link9.dae 0.0254</Render>
+	<collision>Collada/link9.dae 0.0254</collision>
+        <rotationaxis>1 0 0 0</rotationaxis>
+      </Geom>
+    </Body>
+    <!-- declare a circular hinge joint (circular joints have no limits) -->
+    <Joint circular="true" name="L13" type="hinge">
+      <Body>L12</Body>
+      <Body>L13</Body>
+      <offsetfrom>L13</offsetfrom>
+      <Translation>0 0 0</Translation>
+      <weight>3</weight>
+      <limitsdeg>-90 90</limitsdeg>
+      <axis>1 0 0</axis>
+      <maxvel>3</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+    <!-- the palm movable link-->
+    <Body name="Palm" type="dynamic">
+      <offsetfrom>L13</offsetfrom>
+      <Translation>0 -0.0715 0</Translation>
+      <Geom type="trimesh">
+	<Render>Collada/gripper.dae 0.0254</Render>
+	<collision>Collada/gripper.dae 0.0254</collision>
+        <rotationaxis>1 0 0 0</rotationaxis>
+      </Geom>
+    </Body>
+    <!-- declare a circular hinge joint (circular joints have no limits) -->
+    <Joint circular="true" name="Wrist" type="hinge">
+      <Body>L13</Body>
+      <Body>Palm</Body>
+      <offsetfrom>Palm</offsetfrom>
+      <Translation>0 0 0</Translation>
+      <weight>3</weight>
+      <limitsdeg>-180 180</limitsdeg>
+      <axis>0 1 0</axis>
+      <maxvel>3</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+
+    <!-- set the transparency of every geometry in the KinBody-->
+    <transparency>0.7</transparency>
+  </KinBody>
+ 
+  <!-- Specifying the manipulator structure-->
+  <Manipulator name="arm">
+    <effector>Palm</effector>   <!-- last link where end effector is attached-->
+    <base>Base</base>           <!-- base link-->
+  </Manipulator>
+</Robot>

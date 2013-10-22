@@ -1,0 +1,12 @@
+<launch>
+    <!-- Start arm joint controller -->
+    <rosparam file="$(find arm_controller)/config/arm.yaml" command="load"/>
+    <node name="arm_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port arm_port
+                shoulder_pitch_controller
+                elbow_pitch_controller
+                wrist_pitch_controller
+		gripper_controller"
+          output="screen"/>
+</launch>

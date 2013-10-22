@@ -7,12 +7,13 @@ import roslib; roslib.load_manifest(PKG)
 import time
 from threading import Thread
 import math
-#from pid import PID
+from pid import PID
 
 import rospy
 from sensor_msgs.msg import Joy
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import JointState
+from nav_msgs.msg import Odometry
 import tf
 
 class MoveGantryPID():
@@ -20,103 +21,131 @@ class MoveGantryPID():
 
         self.is_running = True
         self.step_size = 0.05
+	self.torque_gain = 0.5
 	self.gantry_cmd_vel = Twist()
         self.joint_states = None
         self.joy_data = None
-       
-        #self.pid_x = PID (2.0, 0.0, 1.2)
-        #self.pid_y = PID (2.0, 0.0, 1.2)
-        self.K_P = 2.0
-        self.K_I = 0.0
-        self.K_D = 1.0
-        self.Derivator_x = 0
-        self.Derivator_y = 0
+	self.odom_data = None
+
+        # Set PID Gains
+        self.pid_x = PID (2.0, 0, 0)
+        self.pid_y = PID (2.0, 0, 0)
+        self.pid_z = PID (2.0, 0, 0)
 
         rospy.init_node('move_gantry_pid', anonymous=True)
-        rospy.Subscriber('/joy_gantry', Joy, self.read_joystick_data)
-        rospy.Subscriber('/joint_states', JointState, self.joint_state_handler)
+        rospy.Subscriber('joy', Joy, self.read_joystick_data)
+        rospy.Subscriber('joint_states', JointState, self.joint_state_handler)
+        rospy.Subscriber('odom', Odometry, self.read_odom_data)
+        self.joint_states_pub = rospy.Publisher('/command', JointState)
 	self.gantry_cmd_vel_pub = rospy.Publisher('cmd_vel', Twist)
 
     def joint_state_handler(self, msg):
 	self.joint_states = msg
 
-    def read_joystick_data(self, data):
-        self.joy_data = data
+    def read_joystick_data(self, msg):
+        self.joy_data = msg
+
+    def read_odom_data(self, msg):
+        self.odom_data = msg
 
     def update_gantry_velocity(self):
 
-        listener = tf.TransformListener()
-        listener.waitForTransform("/mocap_origin", "/gantry_base", rospy.Time(), rospy.Duration(4.0))
-        (trans,rot) = listener.lookupTransform('/mocap_origin', '/gantry_base', rospy.Time())
+	# Wait for mocap, tf, and odom to become available
+        rospy.sleep(3)
 
-	self.x_pos_des = trans[0]
-	self.y_pos_des = trans[1]
-	self.z_pos_des = trans[2]
+        # Intialize desired position with first odom position
+	self.x_pos_des = self.odom_data.pose.pose.position.x
+	#self.y_pos_des = self.odom_data.pose.pose.position.y
+	#self.z_pos_des = self.odom_data.pose.pose.position.z
+
+        # Get static torque values
+        #self.static_torque_roll = self.joint_states.effort[2]
+        self.static_torque_pitch = self.joint_states.effort[1]
+        #self.static_torque_yaw = self.joint_states.effort[0]
+
+        r = rospy.Rate(10)
 
         while self.is_running:
 
-            now = rospy.Time.now()
-            listener.waitForTransform("/mocap_origin", "/gantry_base", now, rospy.Duration(4.0))
-            (trans,rot) = listener.lookupTransform('/mocap_origin', '/gantry_base', now)
-
-            if self.joy_data:
-                self.x_pos_des += -1 * self.joy_data.axes[1] * self.step_size
-                self.y_pos_des += -1 * self.joy_data.axes[0] * self.step_size
-                self.z_pos_des += 1 * self.joy_data.axes[2] * self.step_size
-
+            # Update PID with new setpoint
             #self.pid_x.setPoint(self.x_pos_des)
             #self.pid_y.setPoint(self.y_pos_des)
+            #self.pid_z.setPoint(self.z_pos_des)
 
-            self.x_error = self.x_pos_des - trans[0]
-            self.y_error = self.y_pos_des - trans[1]
-            
-            self.Px_value = self.K_P * self.x_error
-            self.Dx_value = self.K_D * (self.x_error - self.Derivator_x)
-            self.Derivator_x = self.x_error
-            self.PID_x = self.Px_value + self.Dx_value
+            # Update PID with new measurement 
+            #self.gantry_cmd_vel.linear.x = self.pid_x.update(self.odom_data.pose.pose.position.x)
+            #self.gantry_cmd_vel.linear.y = self.pid_y.update(self.odom_data.pose.pose.position.y)
+            #self.gantry_cmd_vel.linear.z = self.pid_z.update(self.odom_data.pose.pose.position.z)
 
-            self.Py_value = self.K_P * self.y_error
-            self.Dy_value = self.K_D * (self.y_error - self.Derivator_y)
-            self.Derivator_y = self.y_error
-            self.PID_y = self.Py_value + self.Dy_value
+            # Get setpoint from joystick
+            if self.joy_data:
+                #self.x_pos_des += -1 * self.joy_data.axes[1] * self.step_size
+                #self.y_pos_des += -1 * self.joy_data.axes[0] * self.step_size
+                #self.z_pos_des += 1 * self.joy_data.axes[2] * self.step_size
 
-            self.gantry_cmd_vel.linear.x = self.PID_x #self.K_P * self.x_error
-            self.gantry_cmd_vel.linear.y = self.PID_y #self.K_P * self.y_error
+                self.gantry_cmd_vel.linear.x = 1 * self.joy_data.axes[1] #* self.step_size
 
-            #print "Y_des: %.2f Y_act: %.2f PID_Y: %.2f" % (self.y_pos_des, trans[1], self.y_error)
-            #print "X_des: %.2f X_act: %.2f PID_X: %.2f" % (self.x_pos_des, trans[0], self.x_error)
 
-            if self.joint_states:
-                torque_yaw = round(self.joint_states.effort[0],0)
-                torque_pitch = round(self.joint_states.effort[1],0) + 6.6
-                torque_roll = round(self.joint_states.effort[2],0) + 7.6
 
-                if ((torque_pitch > 1) or (torque_pitch < -1)):
-                    #self.x_pos_des -= torque_pitch * 0.01
-                    self.gantry_cmd_vel.linear.x -= 1 * torque_pitch * 0.1
 
-                if (torque_roll > 1) or (torque_roll < -1):
-                    self.gantry_cmd_vel.linear.y += torque_roll * 0.1
+if self.joy_data.buttons[0]:
 
-                #if (torque_roll > 1):
-                #    self.gantry_cmd_vel.linear.y += 0.3 #torque_roll * 0.1
-                #elif (torque_roll < -1):
-                    #self.y_pos_des += torque_roll * 0.01
-                #    self.gantry_cmd_vel.linear.y -= 0.3 #torque_roll * 0.1
 
-                #print "torque_roll: %.2f torque_pitch: %.2f" % (torque_roll, torque_pitch)
 
+
+            #Command torso pitch		
+
+            msg = JointState()
+            msg.name = 'torso_pitch_joint'
+            msg.position = 
+            msg.velocity = 
+	    msg.header.stamp = rospy.Time.now()
+            self.joint_states_pub.publish(msg)
+
+
+
+
+
+
+
+
+
+            print "X pos: %.5f  X vel: %.5f" % (self.odom_data.pose.pose.position.x, self.odom_data.twist.twist.linear.x)
+	    #print "X des: %.5f  Y des: %.5f  Z des: %.5f" % (self.x_pos_des, self.y_pos_des, self.z_pos_des)
+
+            # Introduce dynamic torque as a disturbance
+	    if self.joint_states:
+
+                # Calculate dynamic torques
+		#self.dynamic_torque_roll = self.joint_states.effort[2] - self.static_torque_roll
+		self.dynamic_torque_pitch = self.joint_states.effort[1] - self.static_torque_pitch 
+
+		self.pitch_angle_actual = self.joint_states.position[1] 
+
+		#self.pitch_angle_desired
+
+                print "Pitch angle: %.2f   Pitch torque: %.2f" % (self.pitch_angle_actual, self.dynamic_torque_pitch)
+
+                # Add as disturbance
+                #self.gantry_cmd_vel.linear.x += 1 * self.dynamic_torque_pitch * self.torque_gain
+                #self.gantry_cmd_vel.linear.y += 1 * self.dynamic_torque_roll * self.torque_gain
+          
+            # Scale gantry velocities
 	    if (self.gantry_cmd_vel.linear.x > 0.25):
                 self.gantry_cmd_vel.linear.x = 0.25
 	    elif (self.gantry_cmd_vel.linear.x < -0.25):
                 self.gantry_cmd_vel.linear.x = -0.25
 	    if (self.gantry_cmd_vel.linear.y > 0.25):
                 self.gantry_cmd_vel.linear.y = 0.25
-	    elif (self.gantry_cmd_vel.linear.y < -0.25):
-                self.gantry_cmd_vel.linear.y = -0.25
+	    if (self.gantry_cmd_vel.linear.z > 0.25):
+                self.gantry_cmd_vel.linear.z = 0.25
+	    elif (self.gantry_cmd_vel.linear.z < -0.25):
+                self.gantry_cmd_vel.linear.z = 0.25
 
+            # Publish gantry velocity
             self.gantry_cmd_vel_pub.publish(self.gantry_cmd_vel)
-            time.sleep(0.1)
+            r.sleep()
+            #time.sleep(0.02)
 
 if __name__ == '__main__':
     try:

@@ -1,0 +1,12 @@
+<launch>
+
+    <!-- Load gantry playback node -->
+    <node pkg="gantry_controller" type="x_playback.py" name="x_playback" output="screen" />
+
+    <!-- Load gantry playback node -->
+    <node pkg="gantry_controller" type="y_playback.py" name="y_playback" output="screen" />
+
+    <!-- Load UDP gantry interface node -->
+    <node pkg="gantry_controller" type="gantry_controller.py" name="gantry_controller" />
+
+</launch>

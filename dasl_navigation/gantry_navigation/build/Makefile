@@ -319,6 +319,19 @@ run_tests/fast:
 .PHONY : run_tests/fast
 
 #=============================================================================
+# Target rules for targets named target_mocap_odom
+
+# Build rule for target.
+target_mocap_odom: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 target_mocap_odom
+.PHONY : target_mocap_odom
+
+# fast build rule for target.
+target_mocap_odom/fast:
+	$(MAKE) -f CMakeFiles/target_mocap_odom.dir/build.make CMakeFiles/target_mocap_odom.dir/build
+.PHONY : target_mocap_odom/fast
+
+#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -457,6 +470,30 @@ src/gantry_mocap_odom.cpp.s:
 	$(MAKE) -f CMakeFiles/gantry_mocap_odom.dir/build.make CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.s
 .PHONY : src/gantry_mocap_odom.cpp.s
 
+src/target_mocap_odom.o: src/target_mocap_odom.cpp.o
+.PHONY : src/target_mocap_odom.o
+
+# target to build an object file
+src/target_mocap_odom.cpp.o:
+	$(MAKE) -f CMakeFiles/target_mocap_odom.dir/build.make CMakeFiles/target_mocap_odom.dir/src/target_mocap_odom.cpp.o
+.PHONY : src/target_mocap_odom.cpp.o
+
+src/target_mocap_odom.i: src/target_mocap_odom.cpp.i
+.PHONY : src/target_mocap_odom.i
+
+# target to preprocess a source file
+src/target_mocap_odom.cpp.i:
+	$(MAKE) -f CMakeFiles/target_mocap_odom.dir/build.make CMakeFiles/target_mocap_odom.dir/src/target_mocap_odom.cpp.i
+.PHONY : src/target_mocap_odom.cpp.i
+
+src/target_mocap_odom.s: src/target_mocap_odom.cpp.s
+.PHONY : src/target_mocap_odom.s
+
+# target to generate assembly for a file
+src/target_mocap_odom.cpp.s:
+	$(MAKE) -f CMakeFiles/target_mocap_odom.dir/build.make CMakeFiles/target_mocap_odom.dir/src/target_mocap_odom.cpp.s
+.PHONY : src/target_mocap_odom.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -483,6 +520,7 @@ help:
 	@echo "... rospack_genmsg_libexe"
 	@echo "... rospack_gensrv"
 	@echo "... run_tests"
+	@echo "... target_mocap_odom"
 	@echo "... test"
 	@echo "... test-future"
 	@echo "... test-results"
@@ -496,6 +534,9 @@ help:
 	@echo "... src/gantry_mocap_odom.o"
 	@echo "... src/gantry_mocap_odom.i"
 	@echo "... src/gantry_mocap_odom.s"
+	@echo "... src/target_mocap_odom.o"
+	@echo "... src/target_mocap_odom.i"
+	@echo "... src/target_mocap_odom.s"
 .PHONY : help
 
 

@@ -1,0 +1,19 @@
+<launch>
+
+    <!-- Start the joystick node -->
+    <node respawn="true" pkg="joy" type="joy_node" name="joy" >
+        <param name="dev" type="string" value="/dev/input/js0" />
+        <param name="deadzone" value="0.12" />
+        <!-- <remap from="joy" to="logitech" /> -->
+    </node>
+
+    <!-- Load UDP gantry interface node -->
+    <node pkg="gantry_controller" type="gantry_controller.py" name="gantry_controller" />
+
+    <!-- Load gantry PID controllers
+    <node pkg="gantry_controller" type="x_pid.py" name="x_pid" output="screen">
+        <param name="file" textfile="$(find gantry_controller)/nodes/log.txt"/>
+    </node>
+    -->
+
+</launch>

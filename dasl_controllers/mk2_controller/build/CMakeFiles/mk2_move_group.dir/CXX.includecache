@@ -27,6 +27,8 @@ moveit/robot_state/robot_state.h
 -
 moveit/robot_state/conversions.h
 -
+visualization_msgs/Marker.h
+-
 
 /opt/ros/groovy/include/XmlRpcDecl.h
 ros/macros.h

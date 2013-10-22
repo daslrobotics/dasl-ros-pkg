@@ -1,0 +1,15 @@
+<package>
+  <description brief="arm_controller">
+
+     arm_controller
+
+  </description>
+  <author>dasl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/arm_controller</url>
+  <depend package="dynamixel_controllers"/>
+
+</package>
+
+

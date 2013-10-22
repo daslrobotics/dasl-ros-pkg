@@ -1,0 +1,119 @@
+#!/usr/bin/env python
+
+import roslib
+import rospy
+import os
+import time
+roslib.load_manifest('gantry_controller')
+from threading import Thread
+
+from std_msgs.msg import String, Header, Int32
+from datetime import datetime
+from geometry_msgs.msg import Twist, Pose
+from sensor_msgs.msg import Joy
+
+class PID:
+
+	def __init__(self):
+
+		f = open('log.txt', 'r')
+		self.time = []
+		self.y_des = []
+		self.f_len = 0
+		self.i = 0
+		for self.f_len, line in enumerate(f,1):
+			current_line = line.split()
+			self.time.append(float(current_line[0]))
+			self.y_des.append(float(current_line[2]))
+		f.close()
+
+		self.is_running = True
+		self.gantry_cmd_vel_pub = rospy.Publisher('/cmd_vel', Twist)
+		rospy.init_node('y_pid')
+
+		self.Kp = 0.001
+		self.Ki = 0.0#02
+		self.Kd = 0.0#3
+		self.Integrator = 0.0
+		self.Integrator_max = 5000
+		self.Integrator_min = -5000
+		self.Derivator = 0.0
+		
+		self.trigger = True
+		self.offset = 0.0
+		self.current_value = 0.0
+		self.error = 0.0
+		self.gantry_cmd_vel = Twist()
+
+		self.sub_pos = rospy.Subscriber("/Optitrack/RB0", Pose, self.pos_call)
+		self.sub_joy = rospy.Subscriber("/joy", Joy, self.joy_call)
+
+	def pos_call(self,data):
+		# Switch x and y in mocap
+		self.current_value = data.position.y
+
+	def joy_call(self,data):
+		if data.buttons[10]==1:
+			self.trigger = False
+			self.Derivator = self.current_value
+
+	def next_pos(self,event):
+		if not self.trigger:		
+			self.i += 1
+
+	def update_gantry_velocity(self):
+
+		r = rospy.Rate(20)
+
+		rospy.Timer(rospy.Duration(0.05), self.next_pos)
+
+		while self.is_running and (self.i < self.f_len):
+
+			if self.trigger:
+				self.offset = self.current_value
+
+			self.set_point = self.offset + (self.y_des[self.i+1] - self.y_des[self.i])
+
+			self.error = (self.set_point - self.current_value)
+			self.P_value = self.Kp * self.error
+			self.D_value = self.Kd * (self.current_value - self.Derivator)
+			self.Derivator = self.current_value
+			self.Integrator = self.Integrator + self.error
+	
+			if self.Integrator > self.Integrator_max:
+				self.Integrator = self.Integrator_max
+			elif self.Integrator < self.Integrator_min:
+				self.Integrator = self.Integrator_min
+
+			self.I_value = self.Integrator * self.Ki
+
+			if self.D_value > 50:
+				self.D_value = 50
+			elif self.D_value < -50:
+				self.D_value = -50
+
+			self.gantry_cmd_vel.linear.y = self.P_value + self.I_value + self.D_value
+
+			if (self.gantry_cmd_vel.linear.y > 0.25):
+				self.gantry_cmd_vel.linear.y = 0.25
+			elif (self.gantry_cmd_vel.linear.y < -0.25):
+				self.gantry_cmd_vel.linear.y = -0.25
+
+			#print self.error
+
+			self.gantry_cmd_vel.linear.y = (self.y_des[self.i+1] - self.y_des[self.i]) * 0.03937
+
+			self.gantry_cmd_vel_pub.publish(self.gantry_cmd_vel)
+	
+			r.sleep()
+
+
+if __name__ == '__main__':
+    	try:
+        	move_gantry = PID()
+	        t = Thread(target=move_gantry.update_gantry_velocity)
+	        t.start()
+	        rospy.spin()
+	        move_gantry.is_running = False
+	        t.join()
+	except rospy.ROSInterruptException: pass

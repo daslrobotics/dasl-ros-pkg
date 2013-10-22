@@ -42,9 +42,9 @@ int main(int argc, char** argv){
     odom_trans.header.frame_id = "odom";
     odom_trans.child_frame_id = "torso_base_link";
 
-    odom_trans.transform.translation.x = transform.getOrigin().x() - 0.076;
-    odom_trans.transform.translation.y = transform.getOrigin().y(); - 0.05;  // account for placement of marker
-    odom_trans.transform.translation.z = transform.getOrigin().z() + 0.1;  // account for placement of marker
+    odom_trans.transform.translation.x = transform.getOrigin().x();
+    odom_trans.transform.translation.y = transform.getOrigin().y();  // account for placement of marker
+    odom_trans.transform.translation.z = transform.getOrigin().z();  // account for placement of marker
     odom_trans.transform.rotation.x = transform.getRotation().x();
     odom_trans.transform.rotation.y = transform.getRotation().y();
     odom_trans.transform.rotation.z = transform.getRotation().z();
@@ -59,9 +59,9 @@ int main(int argc, char** argv){
     odom.header.frame_id = "odom";
 
     //set the position
-    odom.pose.pose.position.x = transform.getOrigin().x() - 0.076;
-    odom.pose.pose.position.y = transform.getOrigin().y(); - 0.05;  // account for placement of marker
-    odom.pose.pose.position.z = transform.getOrigin().z(); + 0.1;  // account for placement of marker
+    odom.pose.pose.position.x = transform.getOrigin().x(); // - 0.076;
+    odom.pose.pose.position.y = transform.getOrigin().y(); //- 0.05;  // account for placement of marker
+    odom.pose.pose.position.z = transform.getOrigin().z(); //+ 0.1;  // account for placement of marker
     odom.pose.pose.orientation.x = transform.getRotation().x();
     odom.pose.pose.orientation.y = transform.getRotation().y();
     odom.pose.pose.orientation.z = transform.getRotation().z();

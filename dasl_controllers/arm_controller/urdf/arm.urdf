@@ -1,0 +1,217 @@
+<robot
+  name="arm">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0069692 0.0024965 0.021728"
+        rpy="0 0 0" />
+      <mass
+        value="0.058383" />
+      <inertia
+        ixx="2.0959E-05"
+        ixy="-3.4143E-13"
+        ixz="-2.3486E-06"
+        iyy="2.7152E-05"
+        iyz="6.1954E-12"
+        izz="2.6581E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_controller/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_controller/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="yaw_link">
+    <inertial>
+      <origin
+        xyz="-1.5247E-05 0.029378 -3.0754E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.044717" />
+      <inertia
+        ixx="1.3528E-05"
+        ixy="1.622E-08"
+        ixz="-2.5182E-11"
+        iyy="7.7818E-06"
+        iyz="1.8148E-07"
+        izz="1.1528E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_controller/meshes/yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.20784 0.20784 0.20784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_controller/meshes/yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0.0015632 -0.047581 0.0024965"
+      rpy="2.347E-16 1.301E-16 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="yaw_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="2" />
+  </joint>
+  <link
+    name="pitch_link">
+    <inertial>
+      <origin
+        xyz="0.057679 0.00039312 0.0099973"
+        rpy="0 0 0" />
+      <mass
+        value="0.050127" />
+      <inertia
+        ixx="1.3377E-05"
+        ixy="-6.8563E-07"
+        ixz="1.9119E-06"
+        iyy="2.1057E-05"
+        iyz="-1.4684E-07"
+        izz="1.725E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_controller/meshes/pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_controller/meshes/pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.030809 0"
+      rpy="1.5708 1.7347E-16 1.5708" />
+    <parent
+      link="yaw_link" />
+    <child
+      link="pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="2" />
+  </joint>
+  <link
+    name="roll_link">
+    <inertial>
+      <origin
+        xyz="-0.00024897 0.0063463 0.0001"
+        rpy="0 0 0" />
+      <mass
+        value="0.0027304" />
+      <inertia
+        ixx="2.582E-07"
+        ixy="-2.9795E-09"
+        ixz="-4.4686E-14"
+        iyy="3.4198E-07"
+        iyz="-2.1096E-13"
+        izz="1.2028E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_controller/meshes/roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_controller/meshes/roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.07745 0 0"
+      rpy="3.1416 -1.5645 1.5708" />
+    <parent
+      link="pitch_link" />
+    <child
+      link="roll_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="2" />
+  </joint>
+</robot>

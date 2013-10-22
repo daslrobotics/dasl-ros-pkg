@@ -1,8 +1,0 @@
-moveit_setup_assistant_config:
-  URDF:
-    package: ""
-    relative_path: /home/dasl/rosbuild_ws/dasl-ros-pkg/hdt/hdt_common/urdf/mk2_arm.URDF
-  SRDF:
-    relative_path: config/mk2_arm.srdf
-  CONFIG:
-    generated_timestamp: 1368508386

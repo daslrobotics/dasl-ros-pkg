@@ -47,10 +47,27 @@
         <joint name="joint_6" value="-0.785" />
         <joint name="joint_7" value="0" />
     </group_state>
+    <group_state name="vertical" group="manipulator">
+        <joint name="joint_1" value="0.2" />
+        <joint name="joint_2" value="0" />
+        <joint name="joint_3" value="0" />
+        <joint name="joint_4" value="0.8" />
+        <joint name="joint_5" value="0" />
+        <joint name="joint_6" value="0.5821" />
+        <joint name="joint_7" value="0" />
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper" parent_link="link_7" group="gripper" parent_group="manipulator" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <virtual_joint name="world_joint" type="floating" parent_frame="odom" child_link="torso_base_link" />
+    <virtual_joint name="FixedBase" type="fixed" parent_frame="world" child_link="torso_base_link" />
+    <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
+    <passive_joint name="torso_yaw_joint" />
+    <passive_joint name="torso_pitch_joint" />
+    <passive_joint name="torso_roll_joint" />
+    <passive_joint name="right_thumb_roll_joint" />
+    <passive_joint name="right_thumb_pitch_joint" />
+    <passive_joint name="right_index_yaw_joint" />
+    <passive_joint name="right_ring_yaw_joint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="link_1" link2="link_2" reason="Adjacent" />
     <disable_collisions link1="link_1" link2="link_4" reason="Never" />
