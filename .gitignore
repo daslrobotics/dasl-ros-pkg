@@ -36,9 +36,10 @@
 ehthumbs.db
 Thumbs.db
 
-# Others
+# ROS
 ######################
-*.0
-*._3
-
-
+build/
+bin/
+lib/
+msg_gen/
+srv_gen/

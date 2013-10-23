@@ -6,7 +6,11 @@
 # Supported command line options:
 # --extend: skips the undoing of changes from a previously sourced setup file
 
-_SETUP_UTIL="/usr/local/_setup_util.py"
+# since this file is sourced either use the provided _CATKIN_SETUP_DIR
+# or fall back to the destination set at configure time
+: ${_CATKIN_SETUP_DIR:=/usr/local}
+_SETUP_UTIL="$_CATKIN_SETUP_DIR/_setup_util.py"
+unset _CATKIN_SETUP_DIR
 
 if [ ! -f "$_SETUP_UTIL" ]; then
   echo "Missing Python script: $_SETUP_UTIL"
@@ -19,6 +23,7 @@ _IS_DARWIN=0
 if [ "$_UNAME" = "Darwin" ]; then
   _IS_DARWIN=1
 fi
+unset _UNAME
 
 # make sure to export all environment variables
 export CMAKE_PREFIX_PATH
@@ -28,6 +33,7 @@ if [ $_IS_DARWIN -eq 0 ]; then
 else
   export DYLD_LIBRARY_PATH
 fi
+unset _IS_DARWIN
 export PATH
 export PKG_CONFIG_PATH
 export PYTHONPATH
@@ -44,33 +50,24 @@ if [ $? -ne 0 -o ! -f "$_SETUP_TMP" ]; then
   return 1
 fi
 CATKIN_SHELL=$CATKIN_SHELL "$_SETUP_UTIL" $@ > $_SETUP_TMP
+unset _SETUP_UTIL
 . $_SETUP_TMP
 rm -f $_SETUP_TMP
-
-# save value of IFS, including if it was unset
-# the "+x" syntax helps differentiate unset from empty
-_IFS=$IFS
-if [ -z ${IFS+x} ]; then
-  _IFS_WAS_UNSET=1
-fi
+unset _SETUP_TMP
 
 # source all environment hooks
-IFS=":"
-for _envfile in $_CATKIN_ENVIRONMENT_HOOKS; do
-  # restore value of IFS, including if it was unset
-  IFS=$_IFS
-  if [ $_IFS_WAS_UNSET ]; then
-    unset IFS
-  fi
+_i=0
+while [ $_i -lt $_CATKIN_ENVIRONMENT_HOOKS_COUNT ]; do
+  eval _envfile=\$_CATKIN_ENVIRONMENT_HOOKS_$_i
+  unset _CATKIN_ENVIRONMENT_HOOKS_$_i
+  eval _envfile_workspace=\$_CATKIN_ENVIRONMENT_HOOKS_${_i}_WORKSPACE
+  unset _CATKIN_ENVIRONMENT_HOOKS_${_i}_WORKSPACE
+  # set workspace for environment hook
+  CATKIN_ENV_HOOK_WORKSPACE=$_envfile_workspace
   . "$_envfile"
+  unset CATKIN_ENV_HOOK_WORKSPACE
+  _i=$((_i + 1))
 done
+unset _i
 
-# restore value of IFS, including if it was unset
-IFS=$_IFS
-if [ $_IFS_WAS_UNSET ]; then
-  unset IFS
-  unset _IFS_WAS_UNSET
-fi
-unset _IFS
-
-unset _CATKIN_ENVIRONMENT_HOOKS
+unset _CATKIN_ENVIRONMENT_HOOKS_COUNT

@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/roscopter
+CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/roscopter/build
+CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/build
 
 # Utility rule file for tests.
 
@@ -57,6 +57,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/dasl/rosbuild_ws/roscopter/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/rosbuild_ws/roscopter /home/dasl/rosbuild_ws/roscopter /home/dasl/rosbuild_ws/roscopter/build /home/dasl/rosbuild_ws/roscopter/build /home/dasl/rosbuild_ws/roscopter/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

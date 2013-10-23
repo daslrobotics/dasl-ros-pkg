@@ -1,4 +1,4 @@
-# Install script for directory: /home/dasl/rosbuild_ws/roscopter/mavlink
+# Install script for directory: /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,27 +33,27 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/mavlink" TYPE FILE FILES "/home/dasl/rosbuild_ws/roscopter/mavlink/build/config.h")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/mavlink" TYPE FILE FILES "/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/build/config.h")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/mavlink" TYPE DIRECTORY FILES "/home/dasl/rosbuild_ws/roscopter/mavlink/build/include/" FILES_MATCHING REGEX "/[^/]*\\.h[^/]*$")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/mavlink" TYPE DIRECTORY FILES "/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/build/include/" FILES_MATCHING REGEX "/[^/]*\\.h[^/]*$")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mavlink" TYPE DIRECTORY FILES "/home/dasl/rosbuild_ws/roscopter/mavlink/build/src/" FILES_MATCHING REGEX "/[^/]*\\.c[^/]*$")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mavlink" TYPE DIRECTORY FILES "/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/build/src/" FILES_MATCHING REGEX "/[^/]*\\.c[^/]*$")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share" TYPE DIRECTORY FILES "/home/dasl/rosbuild_ws/roscopter/mavlink/share/mavlink" FILES_MATCHING REGEX "/[^/]*\\.c[^/]*$")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share" TYPE DIRECTORY FILES "/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/share/mavlink" FILES_MATCHING REGEX "/[^/]*\\.c[^/]*$")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pyshared" TYPE DIRECTORY FILES "/home/dasl/rosbuild_ws/roscopter/mavlink/pymavlink")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pyshared" TYPE DIRECTORY FILES "/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/pymavlink")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/dasl/rosbuild_ws/roscopter/mavlink/build/mavlink.pc")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/build/mavlink.pc")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
 
 IF(CMAKE_INSTALL_COMPONENT)
@@ -62,7 +62,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/dasl/rosbuild_ws/roscopter/mavlink/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/dasl/rosbuild_ws/roscopter/mavlink/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

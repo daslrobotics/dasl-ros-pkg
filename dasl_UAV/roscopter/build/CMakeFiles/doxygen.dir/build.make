@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/roscopter
+CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/roscopter/build
+CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/build
 
 # Utility rule file for doxygen.
 
@@ -43,7 +43,7 @@ CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/roscopter/build
 include CMakeFiles/doxygen.dir/progress.make
 
 CMakeFiles/doxygen:
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/roscopter/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "doxygen found"
 
 doxygen: CMakeFiles/doxygen
@@ -59,6 +59,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/dasl/rosbuild_ws/roscopter/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/rosbuild_ws/roscopter /home/dasl/rosbuild_ws/roscopter /home/dasl/rosbuild_ws/roscopter/build /home/dasl/rosbuild_ws/roscopter/build /home/dasl/rosbuild_ws/roscopter/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

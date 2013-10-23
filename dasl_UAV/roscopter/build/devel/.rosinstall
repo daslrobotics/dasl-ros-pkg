@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/dasl/rosbuild_ws/roscopter/build/devel/setup.sh
+    local-name: /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/build/devel/setup.sh

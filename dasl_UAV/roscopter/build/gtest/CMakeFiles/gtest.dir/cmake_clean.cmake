@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/gtest.dir/src/gtest-all.cc.o"
-  "/home/dasl/rosbuild_ws/roscopter/lib/libgtest.pdb"
-  "/home/dasl/rosbuild_ws/roscopter/lib/libgtest.so"
+  "/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/lib/libgtest.pdb"
+  "/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/lib/libgtest.so"
 )
 
 # Per-language clean rules from dependency scanning.

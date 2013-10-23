@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/roscopter/mavlink
+CMAKE_SOURCE_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/roscopter/mavlink/build
+CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/build
 
 # Utility rule file for common.xml-v1.0.
 
@@ -46,9 +46,9 @@ CMakeFiles/common.xml-v1.0: common.xml-v1.0-stamp
 
 common.xml-v1.0-stamp: ../message_definitions/v1.0/common.xml
 common.xml-v1.0-stamp: ../pymavlink/generator/mavgen.py
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/roscopter/mavlink/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating common.xml-v1.0-stamp"
-	/usr/bin/python /home/dasl/rosbuild_ws/roscopter/mavlink/pymavlink/generator/mavgen.py --lang=C --wire-protocol=1.0 --output=include/v1.0 /home/dasl/rosbuild_ws/roscopter/mavlink/message_definitions/v1.0/common.xml
+	/usr/bin/python /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/pymavlink/generator/mavgen.py --lang=C --wire-protocol=1.0 --output=include/v1.0 /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/message_definitions/v1.0/common.xml
 	touch common.xml-v1.0-stamp
 
 common.xml-v1.0: CMakeFiles/common.xml-v1.0
@@ -65,6 +65,6 @@ CMakeFiles/common.xml-v1.0.dir/clean:
 .PHONY : CMakeFiles/common.xml-v1.0.dir/clean
 
 CMakeFiles/common.xml-v1.0.dir/depend:
-	cd /home/dasl/rosbuild_ws/roscopter/mavlink/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/rosbuild_ws/roscopter/mavlink /home/dasl/rosbuild_ws/roscopter/mavlink /home/dasl/rosbuild_ws/roscopter/mavlink/build /home/dasl/rosbuild_ws/roscopter/mavlink/build /home/dasl/rosbuild_ws/roscopter/mavlink/build/CMakeFiles/common.xml-v1.0.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/build /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_UAV/roscopter/mavlink/build/CMakeFiles/common.xml-v1.0.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/common.xml-v1.0.dir/depend
 
