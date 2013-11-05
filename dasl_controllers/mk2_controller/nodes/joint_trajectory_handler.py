@@ -124,12 +124,12 @@ class MotionControllerSimulator():
 		self.joint_velocities = point.velocities[:]
 
                 msg.name = ['joint_1',
-                            'joint_2',
-                            'joint_3',
+                            #'joint_2',
+                            #'joint_3',
                             'joint_4',
-                            'joint_5',
-                            'joint_6',
-                            'joint_7']
+                            #'joint_5',
+                            'joint_6']
+                            #'joint_7']
 		#msg.name = self.joint_names
 		msg.position = self.joint_positions
 		msg.velocity = self.joint_velocities #[0.2]*7

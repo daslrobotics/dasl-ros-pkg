@@ -267,6 +267,32 @@ ik_track/fast:
 .PHONY : ik_track/fast
 
 #=============================================================================
+# Target rules for targets named ik_track_orig
+
+# Build rule for target.
+ik_track_orig: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ik_track_orig
+.PHONY : ik_track_orig
+
+# fast build rule for target.
+ik_track_orig/fast:
+	$(MAKE) -f CMakeFiles/ik_track_orig.dir/build.make CMakeFiles/ik_track_orig.dir/build
+.PHONY : ik_track_orig/fast
+
+#=============================================================================
+# Target rules for targets named joy_teleop
+
+# Build rule for target.
+joy_teleop: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 joy_teleop
+.PHONY : joy_teleop
+
+# fast build rule for target.
+joy_teleop/fast:
+	$(MAKE) -f CMakeFiles/joy_teleop.dir/build.make CMakeFiles/joy_teleop.dir/build
+.PHONY : joy_teleop/fast
+
+#=============================================================================
 # Target rules for targets named kinematic_model_tutorial
 
 # Build rule for target.
@@ -770,6 +796,54 @@ src/ik_track.cpp.s:
 	$(MAKE) -f CMakeFiles/ik_track.dir/build.make CMakeFiles/ik_track.dir/src/ik_track.cpp.s
 .PHONY : src/ik_track.cpp.s
 
+src/ik_track_orig.o: src/ik_track_orig.cpp.o
+.PHONY : src/ik_track_orig.o
+
+# target to build an object file
+src/ik_track_orig.cpp.o:
+	$(MAKE) -f CMakeFiles/ik_track_orig.dir/build.make CMakeFiles/ik_track_orig.dir/src/ik_track_orig.cpp.o
+.PHONY : src/ik_track_orig.cpp.o
+
+src/ik_track_orig.i: src/ik_track_orig.cpp.i
+.PHONY : src/ik_track_orig.i
+
+# target to preprocess a source file
+src/ik_track_orig.cpp.i:
+	$(MAKE) -f CMakeFiles/ik_track_orig.dir/build.make CMakeFiles/ik_track_orig.dir/src/ik_track_orig.cpp.i
+.PHONY : src/ik_track_orig.cpp.i
+
+src/ik_track_orig.s: src/ik_track_orig.cpp.s
+.PHONY : src/ik_track_orig.s
+
+# target to generate assembly for a file
+src/ik_track_orig.cpp.s:
+	$(MAKE) -f CMakeFiles/ik_track_orig.dir/build.make CMakeFiles/ik_track_orig.dir/src/ik_track_orig.cpp.s
+.PHONY : src/ik_track_orig.cpp.s
+
+src/joy_teleop.o: src/joy_teleop.cpp.o
+.PHONY : src/joy_teleop.o
+
+# target to build an object file
+src/joy_teleop.cpp.o:
+	$(MAKE) -f CMakeFiles/joy_teleop.dir/build.make CMakeFiles/joy_teleop.dir/src/joy_teleop.cpp.o
+.PHONY : src/joy_teleop.cpp.o
+
+src/joy_teleop.i: src/joy_teleop.cpp.i
+.PHONY : src/joy_teleop.i
+
+# target to preprocess a source file
+src/joy_teleop.cpp.i:
+	$(MAKE) -f CMakeFiles/joy_teleop.dir/build.make CMakeFiles/joy_teleop.dir/src/joy_teleop.cpp.i
+.PHONY : src/joy_teleop.cpp.i
+
+src/joy_teleop.s: src/joy_teleop.cpp.s
+.PHONY : src/joy_teleop.s
+
+# target to generate assembly for a file
+src/joy_teleop.cpp.s:
+	$(MAKE) -f CMakeFiles/joy_teleop.dir/build.make CMakeFiles/joy_teleop.dir/src/joy_teleop.cpp.s
+.PHONY : src/joy_teleop.cpp.s
+
 src/kinematic_model_tutorial.o: src/kinematic_model_tutorial.cpp.o
 .PHONY : src/kinematic_model_tutorial.o
 
@@ -979,9 +1053,11 @@ help:
 	@echo "... follow_marker"
 	@echo "... ik_ar"
 	@echo "... ik_track"
+	@echo "... ik_track_orig"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... joy_teleop"
 	@echo "... kinematic_model_tutorial"
 	@echo "... list_install_components"
 	@echo "... marker_ar"
@@ -1032,6 +1108,12 @@ help:
 	@echo "... src/ik_track.o"
 	@echo "... src/ik_track.i"
 	@echo "... src/ik_track.s"
+	@echo "... src/ik_track_orig.o"
+	@echo "... src/ik_track_orig.i"
+	@echo "... src/ik_track_orig.s"
+	@echo "... src/joy_teleop.o"
+	@echo "... src/joy_teleop.i"
+	@echo "... src/joy_teleop.s"
 	@echo "... src/kinematic_model_tutorial.o"
 	@echo "... src/kinematic_model_tutorial.i"
 	@echo "... src/kinematic_model_tutorial.s"

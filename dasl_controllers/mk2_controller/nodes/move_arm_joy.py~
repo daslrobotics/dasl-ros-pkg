@@ -27,10 +27,10 @@ class MoveArmPS3():
                              'right_wrist_roll_joint',
                              'right_wrist_pitch_joint',
                              'right_wrist_yaw_joint',
-                             'right_thumb_yaw_joint',
                              'right_thumb_roll_joint',
-                             'right_index_finger_roll_joint',
-                             'right_ring_finger_roll_joint'}
+                             'right_thumb_pitch_joint',
+                             'right_index_yaw_joint',
+                             'right_ring_yaw_joint'}
 
         rospy.Subscriber('/joy', Joy, self.read_joystick_data)#'/joy_mk2_arm',
         #rospy.Subscriber('/joy_arm', Joy, self.read_joystick_data)#'/joy_mk2_arm',
@@ -143,7 +143,7 @@ class MoveArmPS3():
                         msg.position.append(self.position[8])
                         msg.velocity.append(0.2)
 
-                    elif joint == 'right_index_finger_roll_joint':
+                    elif joint == 'right_index_yaw_joint':
                         if self.joy_data.buttons[4]:
                             self.position[9] += -1 * self.step_size
                         elif self.joy_data.buttons[5]:
@@ -151,7 +151,7 @@ class MoveArmPS3():
                         msg.position.append(self.position[9])
                         msg.velocity.append(0.2)
 
-                    elif joint == 'right_ring_finger_roll_joint':
+                    elif joint == 'right_ring_yaw_joint':
                         if self.joy_data.buttons[4]:
                             self.position[10] += -1 * self.step_size
                         elif self.joy_data.buttons[5]:

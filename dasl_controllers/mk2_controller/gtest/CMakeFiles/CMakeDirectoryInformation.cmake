@@ -11,6 +11,16 @@ SET(CMAKE_FORCE_UNIX_PATHS 1)
 # The C and CXX include file search paths:
 SET(CMAKE_C_INCLUDE_PATH
   "include"
+  "/opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/cpp/include"
+  "/opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/cpp/include"
+  "/home/dasl/rosbuild_ws/gt-ros-pkg.humans/actuator_array/actuator_array_driver/include"
+  "/opt/ros/groovy/stacks/industrial_core/industrial_robot_client/include"
+  "/opt/ros/groovy/stacks/industrial_core/simple_message/include"
+  "/opt/ros/groovy/stacks/industrial_core/industrial_msgs/msg_gen/cpp/include"
+  "/opt/ros/groovy/stacks/industrial_core/industrial_msgs/srv_gen/cpp/include"
+  "/opt/ros/groovy/stacks/industrial_core/industrial_utils/include"
+  "/opt/ros/groovy/include"
+  "/usr/include/eigen3"
   "/usr/src/gtest/include"
   "/usr/src/gtest"
   )

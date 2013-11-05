@@ -42,3 +42,6 @@ build/
 bin/
 msg_gen/
 srv_gen/
+*.0
+*.1
+*.2

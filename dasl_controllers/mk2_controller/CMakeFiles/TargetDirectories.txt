@@ -10,6 +10,8 @@
 /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/gtest/CMakeFiles/gtest_main.dir
 /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/CMakeFiles/ik_ar.dir
 /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/CMakeFiles/ik_track.dir
+/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/CMakeFiles/ik_track_orig.dir
+/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/CMakeFiles/joy_teleop.dir
 /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/CMakeFiles/kinematic_model_tutorial.dir
 /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/CMakeFiles/marker_ar.dir
 /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_controllers/mk2_controller/CMakeFiles/mk2_controller.dir

@@ -4,7 +4,7 @@
     <param name="robot_description" command="$(find xacro)/xacro.py '$(find hdt_common)/urdf/mk2.URDF'" />
 
     <!-- Launch Rviz -->
-    <node pkg="rviz" type="rviz" name="rviz" />
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hdt_common)/launch/rviz.rviz" />
 
     <!-- Provide simulated control of the robot joint angles -->
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />

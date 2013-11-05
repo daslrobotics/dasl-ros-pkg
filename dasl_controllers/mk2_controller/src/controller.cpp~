@@ -448,7 +448,7 @@ bool MK2Driver::home_()
       Drives[channel].control.position = 0;
 
     if ((channel >= 49 && channel <= 52) || (channel >= 10 && channel <= 13))
-      Drives[channel].control.velocity = 0.2;
+      Drives[channel].control.velocity = 0.5;
     else
       Drives[channel].control.velocity = 0.2;
   }
@@ -609,7 +609,7 @@ int main(int argc, char** argv)
 
     int i=1;
 
-    Drives[i].impedance.inertia = 0.35;//1;
+    Drives[i].impedance.inertia = 0;//0.35;//1;
     Drives[i].impedance.damping = 7.79; //13.44;//3;
     Drives[i].impedance.stiffness = 30; //10;
 
@@ -629,9 +629,9 @@ int main(int argc, char** argv)
 
     i=6;
 
-    Drives[i].impedance.inertia = 0.2;//1;
+    Drives[i].impedance.inertia = 0.2; //0.2;//1;
     Drives[i].impedance.damping = 4.164;//4.5;
-    Drives[i].impedance.stiffness = 30;//10;
+    Drives[i].impedance.stiffness = 10; // 30;//10;
 
     MK2::send_impedance_cmd(i, &Drives[i].impedance);
 

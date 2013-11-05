@@ -4,9 +4,7 @@
     <arg name="load_robot_description" value="true"/>
   </include>
 
- <!-- <node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster" args="0.395 -0.385 2.161 0 0 0 odom torso_base_link 100" />-->
-
-  <rosparam command="load" file="$(find mk2_arm_moveit_config)/config/kinematics.yaml"/>
+  
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="/use_gui" value="false"/>
@@ -23,11 +21,5 @@
   </include>
 
   <include file="$(find mk2_arm_moveit_config)/launch/default_warehouse_db.launch" />
-
-  <!--<node pkg="dasl_mocap" type="MOCAPnode" name="MOCAPnode" respawn="false" required="true">
-    <rosparam file="$(find dasl_mocap)/config/mocap.yaml" command="load" />
-  </node>-->
-
-  <!--<node pkg="gantry_navigation" type="gantry_mocap_odom" name="gantry_mocap_odom" />-->
 
 </launch>
