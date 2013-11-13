@@ -15,4 +15,5 @@ export LD_LIBRARY_PATH="/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gant
 export PATH="/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build/devel/bin:$PATH"
 export PKG_CONFIG_PATH="/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PYTHONPATH="/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build/devel/share/common-lisp"
 export ROS_PACKAGE_PATH="/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation:/opt/ros/groovy/share:/opt/ros/groovy/stacks"

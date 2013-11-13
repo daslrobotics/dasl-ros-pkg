@@ -2,4 +2,7 @@
 # generated from catkin/cmake/templates/setup.bash.in
 
 CATKIN_SHELL=bash
-. "/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build/devel/setup.sh"
+
+# source setup.sh from same directory as this file
+_CATKIN_SETUP_DIR=$(cd "`dirname "${BASH_SOURCE[0]}"`" && pwd)
+. "$_CATKIN_SETUP_DIR/setup.sh"

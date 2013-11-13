@@ -58,6 +58,10 @@ CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/sh
 CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/message_runtime/package.xml
 CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/std_msgs/package.xml
 CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/geometry_msgs/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/gencpp/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/genlisp/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/message_generation/package.xml
+CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/actionlib_msgs/package.xml
 CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/nav_msgs/package.xml
 CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/rosconsole/package.xml
 CMakeFiles/gantry_mocap_odom.dir/src/gantry_mocap_odom.cpp.o: /opt/ros/groovy/share/rosgraph_msgs/package.xml

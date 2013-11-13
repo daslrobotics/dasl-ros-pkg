@@ -5,7 +5,7 @@ int main( int argc, char** argv )
 {
   ros::init(argc, argv, "basic_shapes");
   ros::NodeHandle n;
-  ros::Rate r(1);
+  ros::Rate r(50);
   ros::Publisher marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
 
   // Set our initial shape type to be a cube
@@ -15,7 +15,7 @@ int main( int argc, char** argv )
   {
     visualization_msgs::Marker marker;
     // Set the frame ID and timestamp.  See the TF tutorials for information on these.
-    marker.header.frame_id = "/target";
+    marker.header.frame_id = "/Kanji";
     marker.header.stamp = ros::Time::now();
 
     // Set the namespace and id for this marker.  This serves to create a unique ID
@@ -53,6 +53,8 @@ int main( int argc, char** argv )
 
     // Publish the marker
     marker_pub.publish(marker);
+
+    shape = visualization_msgs::Marker::CUBE;
 
     // Cycle between different shapes
     //switch (shape)

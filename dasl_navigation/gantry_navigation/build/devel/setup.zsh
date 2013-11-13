@@ -2,6 +2,7 @@
 # generated from catkin/cmake/templates/setup.zsh.in
 
 CATKIN_SHELL=zsh
+_CATKIN_SETUP_DIR=$(cd "`dirname "$0"`" && pwd)
 emulate sh # emulate POSIX
-. "/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/build/devel/setup.sh"
+. "$_CATKIN_SETUP_DIR/setup.sh"
 emulate zsh # back to zsh mode

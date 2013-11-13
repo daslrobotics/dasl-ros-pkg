@@ -43,7 +43,7 @@ CMAKE_BINARY_DIR = /home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_na
 include CMakeFiles/test-results.dir/progress.make
 
 CMakeFiles/test-results:
-	/opt/ros/groovy/share/rosunit/scripts/summarize_results.py --nodeps gantry_navigation
+	/opt/ros/groovy/share/rosunit/cmake/../scripts/summarize_results.py --nodeps gantry_navigation
 
 test-results: CMakeFiles/test-results
 test-results: CMakeFiles/test-results.dir/build.make

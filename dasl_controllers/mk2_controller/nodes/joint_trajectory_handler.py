@@ -124,12 +124,12 @@ class MotionControllerSimulator():
 		self.joint_velocities = point.velocities[:]
 
                 msg.name = ['joint_1',
-                            #'joint_2',
-                            #'joint_3',
+                            'joint_2',
+                            'joint_3',
                             'joint_4',
-                            #'joint_5',
-                            'joint_6']
-                            #'joint_7']
+                            'joint_5',
+                            'joint_6',
+                            'joint_7']
 		#msg.name = self.joint_names
 		msg.position = self.joint_positions
 		msg.velocity = self.joint_velocities #[0.2]*7
@@ -223,7 +223,7 @@ class IndustrialRobotSimulatorNode():
         rospy.loginfo("Setting publish rate(hz) based on parameter: %f", self.pub_rate)
         
         # Joint names
-        def_joint_names = ["joint_1", "joint_2", "joint_3", "joint_4", "joint_5", "joint_6"] 
+        def_joint_names = ["joint_1", "joint_2", "joint_3", "joint_4", "joint_5", "joint_6", "joint_7"] 
         self.joint_names = rospy.get_param('controller_joint_names', def_joint_names)
         if len(self.joint_names) == 0:
             rospy.logwarn("Joint list is empty, did you set controller_joint_name?")

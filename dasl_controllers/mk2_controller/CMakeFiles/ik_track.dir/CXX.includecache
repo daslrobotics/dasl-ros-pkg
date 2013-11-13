@@ -31,7 +31,7 @@ sensor_msgs/Joy.h
 -
 stdio.h
 -
-iostream.h
+iostream
 -
 
 /opt/ros/groovy/include/XmlRpcDecl.h

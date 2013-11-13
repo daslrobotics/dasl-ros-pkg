@@ -16,7 +16,7 @@ int main(int argc, char** argv){
   while (node.ok()){
     tf::StampedTransform transform;
     try{
-      listener.lookupTransform("/odom", "/Office_Tomek",  
+      listener.lookupTransform("/torso_base_link", "/grasp_point",  
                                ros::Time(0), transform);
     }
     catch (tf::TransformException ex){

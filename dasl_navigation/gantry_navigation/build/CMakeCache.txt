@@ -17,8 +17,14 @@
 //Build shared libraries (DLLs).
 BUILD_SHARED_LIBS:BOOL=ON
 
+//Catkin enable testing
+CATKIN_ENABLE_TESTING:BOOL=ON
+
 //Prefix to apply to package generated via gendebian
 CATKIN_PACKAGE_PREFIX:STRING=
+
+//Catkin skip testing
+CATKIN_SKIP_TESTING:BOOL=OFF
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
@@ -227,7 +233,7 @@ ROSUNIT_EXE:FILEPATH=/opt/ros/groovy/bin/rosunit
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 
-//ON for debian style python packages layout
+//Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
 //Path to a file.
@@ -249,7 +255,7 @@ _CATKIN_GTEST_INCLUDE:FILEPATH=_CATKIN_GTEST_INCLUDE-NOTFOUND
 _CATKIN_GTEST_SRC:FILEPATH=/usr/src/gtest/src/gtest.cc
 
 //Path to a file.
-_file_name:FILEPATH=/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/src/target_mocap_odom.cpp
+_file_name:FILEPATH=/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/src/marker_tutorial.cpp
 
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/groovy/share/catkin/cmake
@@ -468,9 +474,9 @@ PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 // it will install things.
 PYTHON_INSTALL_DIR:INTERNAL=lib/python2.7/dist-packages
 _rosbuild_EXPORTS:INTERNAL=
-_rosbuild_cached_flag_time:INTERNAL=1369199547.63
-_roslang_LANGS:INTERNAL=
-_rospack_deps_manifests_invoke_result:INTERNAL=/opt/ros/groovy/share/cpp_common/package.xml;/opt/ros/groovy/share/rostime/package.xml;/opt/ros/groovy/share/roscpp_traits/package.xml;/opt/ros/groovy/share/roscpp_serialization/package.xml;/opt/ros/groovy/share/genmsg/package.xml;/opt/ros/groovy/share/genpy/package.xml;/opt/ros/groovy/share/message_runtime/package.xml;/opt/ros/groovy/share/std_msgs/package.xml;/opt/ros/groovy/share/geometry_msgs/package.xml;/opt/ros/groovy/share/nav_msgs/package.xml;/opt/ros/groovy/share/rosconsole/package.xml;/opt/ros/groovy/share/rosgraph_msgs/package.xml;/opt/ros/groovy/share/xmlrpcpp/package.xml;/opt/ros/groovy/share/roscpp/package.xml;/opt/ros/groovy/share/message_filters/package.xml;/opt/ros/groovy/share/sensor_msgs/package.xml;/opt/ros/groovy/share/tf/package.xml;/opt/ros/groovy/share/rosgraph/package.xml;/opt/ros/groovy/share/catkin/package.xml;/opt/ros/groovy/share/rospack/package.xml;/opt/ros/groovy/share/roslib/package.xml;/opt/ros/groovy/share/rospy/package.xml
+_rosbuild_cached_flag_time:INTERNAL=1384232089.05
+_roslang_LANGS:INTERNAL=roslisp
+_rospack_deps_manifests_invoke_result:INTERNAL=/opt/ros/groovy/share/cpp_common/package.xml;/opt/ros/groovy/share/rostime/package.xml;/opt/ros/groovy/share/roscpp_traits/package.xml;/opt/ros/groovy/share/roscpp_serialization/package.xml;/opt/ros/groovy/share/genmsg/package.xml;/opt/ros/groovy/share/genpy/package.xml;/opt/ros/groovy/share/message_runtime/package.xml;/opt/ros/groovy/share/std_msgs/package.xml;/opt/ros/groovy/share/geometry_msgs/package.xml;/opt/ros/groovy/share/gencpp/package.xml;/opt/ros/groovy/share/genlisp/package.xml;/opt/ros/groovy/share/message_generation/package.xml;/opt/ros/groovy/share/actionlib_msgs/package.xml;/opt/ros/groovy/share/nav_msgs/package.xml;/opt/ros/groovy/share/rosconsole/package.xml;/opt/ros/groovy/share/rosgraph_msgs/package.xml;/opt/ros/groovy/share/xmlrpcpp/package.xml;/opt/ros/groovy/share/roscpp/package.xml;/opt/ros/groovy/share/message_filters/package.xml;/opt/ros/groovy/share/sensor_msgs/package.xml;/opt/ros/groovy/share/tf/package.xml;/opt/ros/groovy/share/rosgraph/package.xml;/opt/ros/groovy/share/catkin/package.xml;/opt/ros/groovy/share/rospack/package.xml;/opt/ros/groovy/share/roslib/package.xml;/opt/ros/groovy/share/rospy/package.xml
 _rospack_msgsrv_gen_invoke_result:INTERNAL=
 gantry_navigation_CFLAGS_OTHER:INTERNAL=
 gantry_navigation_INCLUDEDIR:INTERNAL=
@@ -478,7 +484,8 @@ gantry_navigation_INCLUDE_DIRS:INTERNAL=/opt/ros/groovy/include
 gantry_navigation_LDFLAGS_OTHER:INTERNAL=
 gantry_navigation_LIBRARIES:INTERNAL=tf;message_filters;roscpp;:/usr/lib/libboost_signals-mt.so;:/usr/lib/libboost_filesystem-mt.so;rosconsole;:/usr/lib/libboost_regex-mt.so;:/usr/lib/liblog4cxx.so;xmlrpcpp;roscpp_serialization;rostime;:/usr/lib/libboost_date_time-mt.so;:/usr/lib/libboost_system-mt.so;:/usr/lib/libboost_thread-mt.so;pthread;cpp_common
 gantry_navigation_LIBRARY_DIRS:INTERNAL=/opt/ros/groovy/lib
-gantry_navigation_cached_manifest_list:INTERNAL=/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/manifest.xml;/opt/ros/groovy/share/cpp_common/package.xml;/opt/ros/groovy/share/rostime/package.xml;/opt/ros/groovy/share/roscpp_traits/package.xml;/opt/ros/groovy/share/roscpp_serialization/package.xml;/opt/ros/groovy/share/genmsg/package.xml;/opt/ros/groovy/share/genpy/package.xml;/opt/ros/groovy/share/message_runtime/package.xml;/opt/ros/groovy/share/std_msgs/package.xml;/opt/ros/groovy/share/geometry_msgs/package.xml;/opt/ros/groovy/share/nav_msgs/package.xml;/opt/ros/groovy/share/rosconsole/package.xml;/opt/ros/groovy/share/rosgraph_msgs/package.xml;/opt/ros/groovy/share/xmlrpcpp/package.xml;/opt/ros/groovy/share/roscpp/package.xml;/opt/ros/groovy/share/message_filters/package.xml;/opt/ros/groovy/share/sensor_msgs/package.xml;/opt/ros/groovy/share/tf/package.xml;/opt/ros/groovy/share/rosgraph/package.xml;/opt/ros/groovy/share/catkin/package.xml;/opt/ros/groovy/share/rospack/package.xml;/opt/ros/groovy/share/roslib/package.xml;/opt/ros/groovy/share/rospy/package.xml
+gantry_navigation_cached_manifest_list:INTERNAL=/home/dasl/rosbuild_ws/dasl-ros-pkg/dasl_navigation/gantry_navigation/manifest.xml;/opt/ros/groovy/share/cpp_common/package.xml;/opt/ros/groovy/share/rostime/package.xml;/opt/ros/groovy/share/roscpp_traits/package.xml;/opt/ros/groovy/share/roscpp_serialization/package.xml;/opt/ros/groovy/share/genmsg/package.xml;/opt/ros/groovy/share/genpy/package.xml;/opt/ros/groovy/share/message_runtime/package.xml;/opt/ros/groovy/share/std_msgs/package.xml;/opt/ros/groovy/share/geometry_msgs/package.xml;/opt/ros/groovy/share/gencpp/package.xml;/opt/ros/groovy/share/genlisp/package.xml;/opt/ros/groovy/share/message_generation/package.xml;/opt/ros/groovy/share/actionlib_msgs/package.xml;/opt/ros/groovy/share/nav_msgs/package.xml;/opt/ros/groovy/share/rosconsole/package.xml;/opt/ros/groovy/share/rosgraph_msgs/package.xml;/opt/ros/groovy/share/xmlrpcpp/package.xml;/opt/ros/groovy/share/roscpp/package.xml;/opt/ros/groovy/share/message_filters/package.xml;/opt/ros/groovy/share/sensor_msgs/package.xml;/opt/ros/groovy/share/tf/package.xml;/opt/ros/groovy/share/rosgraph/package.xml;/opt/ros/groovy/share/catkin/package.xml;/opt/ros/groovy/share/rospack/package.xml;/opt/ros/groovy/share/roslib/package.xml;/opt/ros/groovy/share/rospy/package.xml
 gantry_navigation_temp:INTERNAL=
 roslib_path:INTERNAL=/opt/ros/groovy/share/roslib
+roslisp_CMAKE:INTERNAL=/opt/ros/groovy/share/roslisp/rosbuild/roslisp.cmake
 

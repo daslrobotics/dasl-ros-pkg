@@ -347,6 +347,10 @@ common.h
 /opt/ros/groovy/include/ros/common.h
 XmlRpcValue.h
 /opt/ros/groovy/include/ros/XmlRpcValue.h
+vector
+-
+map
+-
 
 /opt/ros/groovy/include/ros/parameter_adapter.h
 ros/forwards.h
