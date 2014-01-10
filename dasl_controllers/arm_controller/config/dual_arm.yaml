@@ -1,0 +1,51 @@
+right_shoulder_roll_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: right_shoulder_roll_joint
+    joint_speed: 0.2
+    motor:
+        id: 75
+        init: 512
+        min: 0
+        max: 1023
+
+right_wrist_roll_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: right_wrist_roll_joint
+    joint_speed: 0.2
+    motor:
+        id: 91
+        init: 512
+        min: 0
+        max: 1023
+
+left_shoulder_roll_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: left_shoulder_roll_joint
+    joint_speed: 0.2
+    motor:
+        id: 69
+        init: 512
+        min: 0
+        max: 1023
+
+left_wrist_roll_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: left_wrist_roll_joint
+    joint_speed: 0.2
+    motor:
+        id: 98
+        init: 512
+        min: 0
+        max: 1023
