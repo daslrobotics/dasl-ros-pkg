@@ -7,6 +7,6 @@
 		right_shoulder_pitch_controller
 		right_wrist_pitch_controller
 		left_shoulder_pitch_controller
-		left_wrist_pitch_controller
+		left_wrist_pitch_controller"
           output="screen"/>
 </launch>
