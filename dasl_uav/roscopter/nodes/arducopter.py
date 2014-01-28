@@ -46,7 +46,7 @@ class MCN():
         self.reg_z = 1200
         self.x = 1500.0
         self.y = 1500.0
-        self.z = 1200.0
+        self.z = 1100.0
         self.yaw = 1500
 	self.gripper = 1500
 
@@ -86,7 +86,7 @@ class MCN():
 
         self.x = 1500-self.axes[0]*250
         self.y = 1500-self.axes[1]*250
-        self.z = 1200+((self.axes[3]+1)/2)*800 #600
+        self.z = 1100+((self.axes[3]+1)/2)*800 #600
 	self.yaw = 1500-self.axes[2]*300
 
         self.fly()
@@ -109,7 +109,7 @@ class MCN():
                 self.control=1
                 self.pub_mode.publish('s')
                 print 'Stabilize'
-            elif (self.control==0) and (self.z == 1200):
+            elif (self.control==0) and (self.z == 1100):
                 self.control=1
                 self.pub_mode.publish('s')
                 print 'Stabilize'

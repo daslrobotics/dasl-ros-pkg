@@ -6,6 +6,6 @@
         <param name="deadzone" value="0.12" />
     </node> 
 
-    <node name="move_gantry_dual_arm_joy" pkg="arm_controller" type="move_gantry_dual_arm_joy.py" output="screen" />
+    <node name="gantry_arm_joy" pkg="arm_controller" type="move_gantry_arm_joy.py" output="screen" />
 
 </launch>

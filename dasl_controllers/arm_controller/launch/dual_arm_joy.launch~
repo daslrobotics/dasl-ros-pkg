@@ -6,6 +6,8 @@
         <param name="deadzone" value="0.12" />
     </node> 
 
+<!--
     <node name="dual_arm_joy" pkg="arm_controller" type="dual_arm_joy.py" output="screen" />
+-->
 
 </launch>

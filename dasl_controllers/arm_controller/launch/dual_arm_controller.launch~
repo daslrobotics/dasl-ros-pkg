@@ -3,10 +3,10 @@
     <rosparam file="$(find arm_controller)/config/dual_arm.yaml" command="load"/>
     <node name="arm_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
           args="--manager=dxl_manager
-                --port arm_port
-		right_shoulder_pitch_controller
-		right_wrist_pitch_controller
-		left_shoulder_pitch_controller
-		left_wrist_pitch_controller"
+                --port dual_arm_port
+		right_shoulder_roll_controller
+		right_wrist_roll_controller
+		left_shoulder_roll_controller
+		left_wrist_roll_controller"
           output="screen"/>
 </launch>

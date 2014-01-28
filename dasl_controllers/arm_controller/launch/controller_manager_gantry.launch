@@ -5,12 +5,12 @@
         <rosparam>
             namespace: dxl_manager
             serial_ports:
-                arm_port:
-                    port_name: "/dev/ttyUSB0"
+                gantry_port:
+                    port_name: "/dev/ttyUSB1"
                     baud_rate: 2000000
                     min_motor_id: 1
-                    max_motor_id: 230
-                    update_rate: 20
+                    max_motor_id: 225
+                    update_rate: 30
         </rosparam>
     </node>
 </launch>

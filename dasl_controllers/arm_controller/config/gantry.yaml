@@ -1,0 +1,91 @@
+x_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: x_joint
+    joint_speed: 0.0
+    motor:
+        id: 201
+        init: 2046
+        min: 0
+        max: 4091
+
+x1_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: x1_joint
+    joint_speed: 0.0
+    motor:
+        id: 221
+        init: 2046
+        min: 0
+        max: 4091
+
+y_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: y_joint
+    joint_speed: 0.0
+    motor:
+        id: 202
+        init: 2046
+        min: 0
+        max: 4091
+
+z_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: z_joint
+    joint_speed: 0.0
+    motor:
+        id: 203
+        init: 2046
+        min: 0
+        max: 4091
+
+yaw_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: yaw_joint
+    joint_speed: 0.2
+    motor:
+        id: 206
+        init: 2046
+        min: 0
+        max: 4091
+
+pitch_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pitch_joint
+    joint_speed: 0.2
+    motor:
+        id: 205
+        init: 2046
+        min: 0
+        max: 4091
+
+roll_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: roll_joint
+    joint_speed: 0.2
+    motor:
+        id: 204
+        init: 2046
+        min: 0
+        max: 4091
+

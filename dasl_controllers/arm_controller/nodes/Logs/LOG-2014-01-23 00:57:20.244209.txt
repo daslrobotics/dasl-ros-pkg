@@ -1,0 +1,2 @@
+Time           Gimbal Pitch     Elbow Pitch     Wrist Pitch
+

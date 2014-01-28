@@ -1,0 +1,19 @@
+<launch>
+    <!-- Start gantry joint controller -->
+    <rosparam file="$(find arm_controller)/config/gantry_arm.yaml" command="load"/>
+    <node name="gantry_arm_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port gantry_arm_port
+		x_controller
+		y_controller
+		z_controller
+		yaw_controller
+		pitch_controller
+		roll_controller
+                shoulder_pitch_controller
+                elbow_pitch_controller
+                wrist_pitch_controller
+                wrist_roll_controller
+		gripper_controller"
+          output="screen"/>
+</launch>
