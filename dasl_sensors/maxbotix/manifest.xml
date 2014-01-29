@@ -1,0 +1,19 @@
+<package>
+  <description brief="maxbotix">
+
+     maxbotix
+
+  </description>
+  <author>Christopher Korpela</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/maxbotix</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="sensor_msgs"/>
+  <depend package="std_msgs"/>
+  <depend package="cereal_port" />
+
+</package>
+
+

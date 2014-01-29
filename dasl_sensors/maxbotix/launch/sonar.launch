@@ -1,0 +1,9 @@
+<launch> 
+  <node pkg="maxbotix" 
+	type="sonar" 
+	name="sonar" 
+	respawn="false"
+        output="screen"
+	required="true">
+  </node>
+</launch>
