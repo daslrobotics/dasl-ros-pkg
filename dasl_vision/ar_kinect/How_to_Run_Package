@@ -1,0 +1,25 @@
+1. Install OpenNI-Compliant Sensor Driver v5.1.6.6
+
+http://www.openni.org/openni-sdk/openni-sdk-history-2/
+http://www.openni.org/wp-content/uploads/2013/11/Sensor-Bin-Linux-x64-v5.1.6.6.tar.zip
+
+2. Launch the OpenNi driver
+
+$ roslaunch openni_launch openni.launch
+
+Note: if the driver does not load properly, unplug the camera, run the driver, plug in the camera.
+
+3. Check to make sure the camera is working:
+
+$ rosrun image_view image_view image:=/camera/rgb/image_color
+
+4. Launch ar_kinect
+
+$ roslaunch ar_kinect ar_kinect.launch
+
+5. Run rviz
+
+$ rosrun rviz rviz
+
+Load the ar_kinect.rviz configuration
+
