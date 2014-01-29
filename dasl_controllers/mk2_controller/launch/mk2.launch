@@ -2,7 +2,7 @@
 
     <!-- Load the URDF/Xacro model of our robot -->
     <param name="robot_description" command="$(find xacro)/xacro.py '$(find hdt_common)/urdf/mk2.URDF'" />
-	
+
     <!-- Launch Rviz -->
     <node pkg="rviz" type="rviz" name="rviz" args="-d $(find mk2_controller)/launch/mk2.rviz" />
 
@@ -25,12 +25,7 @@
         <param name="publish_frequency" value="20.0"/>
     </node> 
     
-<!--    <node pkg="gantry_navigation" type="add_cylinder" name="add_cylinder" /> -->
-    <node pkg="gantry_navigation" type="marker_tutorial" name="marker_tutorial" />
-
     <!-- Publish a static transform between the robot base and the world frame -->
     <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_base_link 100" />
-    <node pkg="tf" type="static_transform_publisher" name="mk2_camera_broadcaster" args="0 0 -0.43 0 0 0 /torso_roll_link /camera_link 100" />
-    <node pkg="tf" type="static_transform_publisher" name="mk2_grasp_point" args="0.0 0.034 0 0 -0.4 0.0 /Kanji /grasp_point 100" />
   
 </launch>
