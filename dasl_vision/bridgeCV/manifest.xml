@@ -1,0 +1,20 @@
+<package>
+  <description brief="bridgeCV">
+
+     bridgeCV
+
+  </description>
+  <author>morsag</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/bridgeCV</url>
+  <depend package="sensor_msgs"/>
+  <depend package="opencv2"/>
+  <depend package="cv_bridge"/>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="image_transport"/>
+  <depend package="uvc_camera"/>
+</package>
+
+
