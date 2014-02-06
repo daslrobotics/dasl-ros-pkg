@@ -52,7 +52,7 @@ class PID:
 
 	def reg_main(self):
 		self.sub_pos = rospy.Subscriber("/Optitrack/RB0", Pose, self.pos_call)
-		self.sub_joy = rospy.Subscriber("/joy", Joy, self.joy_call)
+		self.sub_joy = rospy.Subscriber("/quad_joy", Joy, self.joy_call)
 		self.sub_mod = rospy.Subscriber('mode', String, self.set_mode)
 		self.sub_int = rospy.Subscriber('send_rc', roscopter.msg.RC, self.integrator_set)
 		rospy.spin()
@@ -111,7 +111,6 @@ class PID:
 			self.D_value = 50
 		elif self.D_value < -50:
 			self.D_value = -50
-
 
 		PID_reg = self.P_value + self.I_value + self.D_value + self.y
 
