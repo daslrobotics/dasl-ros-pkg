@@ -71,10 +71,19 @@ class MoveGantryPS3():
         self.servo_speed_y = rospy.ServiceProxy('/y_controller/set_speed', SetSpeed, persistent=True)
         rospy.wait_for_service('/z_controller/set_speed')
         self.servo_speed_z = rospy.ServiceProxy('/z_controller/set_speed', SetSpeed, persistent=True)
+        rospy.wait_for_service('/yaw_controller/set_speed')
+        self.servo_speed_yaw = rospy.ServiceProxy('/yaw_controller/set_speed', SetSpeed, persistent=True)
+        rospy.wait_for_service('/pitch_controller/set_speed')
+        self.servo_speed_pitch = rospy.ServiceProxy('/pitch_controller/set_speed', SetSpeed, persistent=True)
+        rospy.wait_for_service('/roll_controller/set_speed')
+        self.servo_speed_roll = rospy.ServiceProxy('/roll_controller/set_speed', SetSpeed, persistent=True)
 	
-	self.servo_speed_x(1.0)
-	self.servo_speed_y(1.0)
-	self.servo_speed_z(1.0)
+	self.servo_speed_x(0.3)
+	self.servo_speed_y(0.3)
+	self.servo_speed_z(0.2)
+	self.servo_speed_yaw(0.1)
+	self.servo_speed_pitch(0.1)
+	self.servo_speed_roll(0.1)
 
     def read_joystick_data(self, data):
         self.joy_data = data
@@ -82,12 +91,29 @@ class MoveGantryPS3():
     def update_gantry_velocity(self):
         while self.is_running:
             if self.joy_data:
-		self.x_joint += 1 * self.joy_data.axes[0] * self.step_size
-		self.y_joint += -1 * self.joy_data.axes[1] * self.step_size
+		self.x_joint += 1 * self.joy_data.axes[1] * self.step_size
+		if self.x_joint > 3.134:
+			self.x_joint = 3.134
+		elif self.x_joint < -3.134:
+			self.x_joint = -3.134
+		self.y_joint += 1 * self.joy_data.axes[0] * self.step_size
+		if self.y_joint > 3.134:
+			self.y_joint = 3.134
+		elif self.y_joint < -3.134:
+			self.y_joint = -3.134
 		self.z_joint += -1 * self.joy_data.axes[3] * self.step_size
+		if self.z_joint > 1.6:
+			self.z_joint = 1.6
+		elif self.z_joint < -3.134:
+			self.z_joint = -3.134
+		self.yaw_joint += -1 * self.joy_data.axes[2] * self.step_size
+		self.pitch_joint = self.joy_data.axes[4]*0.15
+		self.roll_joint = self.joy_data.axes[5]*0.15
+
+
 	    self.servo_position_x.publish(self.x_joint)
 	    self.servo_position_y.publish(self.y_joint)
-	    #self.servo_position_z.publish(self.z_joint)
+	    self.servo_position_z.publish(self.z_joint)
 	    self.servo_position_yaw.publish(self.yaw_joint)
 	    self.servo_position_pitch.publish(self.pitch_joint)
 	    self.servo_position_roll.publish(self.roll_joint)

@@ -6,7 +6,7 @@
             namespace: dxl_manager
             serial_ports:
                 gantry_port:
-                    port_name: "/dev/ttyUSB1"
+                    port_name: "/dev/ttyUSB0"
                     baud_rate: 2000000
                     min_motor_id: 1
                     max_motor_id: 225
