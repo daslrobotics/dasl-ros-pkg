@@ -110,18 +110,20 @@ class GantryControl():
 			print "...Done"
 
 		for actuator in self.myActuators:
+			actuator.synchronized = True
+			actuator.torque_enable = True
+			actuator.torque_limit = 1023
+			actuator.max_torque = 1023
 			if (actuator.id in self.position_dyns or actuator.id == self.orientation_dyns[0]):
 				actuator.moving_speed = 0 # always set start velocity to 0 for the position dynamixels
 				actuator.cw_angle_limit = 0 # both cw and ccw angle limits must be set to 0 for wheel mode
 				actuator.ccw_angle_limit= 0 # this double checks this fact
 			elif actuator.id in self.orientation_dyns: # this is for roll and pitch
+				actuator.torque_enabled = False # comment out when you want it to be active
 				actuator.moving_speed = 0
 				actuator.cw_angle_limit = 0
 				actuator.cw_angle_limit  = 4096 # this may need to be double checked if it's 4096 or 4095
-			actuator.synchronized = True
-			actuator.torque_enable = True
-			actuator.torque_limit = 1023
-			actuator.max_torque = 1023
+			time.sleep(0.1)
 	
 
 		# Startup the subscriber and publisher services
@@ -164,10 +166,10 @@ class GantryControl():
 						actuator.moving_speed = self.radToDynVel(self.velocity_data.linear.z)
 					elif actuator.id == self.orientation_dyns[2]: # yaw
 						actuator.moving_speed = self.radToDynVel(self.velocity_data.angular.z)
-					elif actuator.id == self.orientation_dyns[0]: # roll based on y
-						actuator.goal_position = self.radToDynPos(0)#self.radToDynPos(0.1 * self.velocity_data.linear.y)
-					elif actuator.id == self.orientation_dyns[1]: # pitch based on x
-						actuator.goal_position = self.radToDynPos(0)#self.radToDynPos(0.1 * self.velocity_data.linear.x)
+					#elif actuator.id == self.orientation_dyns[0]: # roll based on y
+						#actuator.goal_position = self.radToDynPos(0)#self.radToDynPos(0.1 * self.velocity_data.linear.y)
+					#elif actuator.id == self.orientation_dyns[1]: # pitch based on x
+						#actuator.goal_position = self.radToDynPos(0)#self.radToDynPos(0.1 * self.velocity_data.linear.x)
 					time.sleep(0.01)
 				self.net.synchronize()
 				for actuator in self.myActuators:
