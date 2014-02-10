@@ -1,0 +1,14 @@
+<package>
+  <description brief="mini_gantry_controller">
+
+     mini_gantry_controller
+
+  </description>
+  <author>Kenneth Chaney</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/mini_gantry_controller</url>
+
+</package>
+
+
