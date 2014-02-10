@@ -18,7 +18,7 @@ class MoveArmJoy():
         self.joy_data = None
         self.one_time = True
 
-        self.position = [0,0,0,0,0,0,0]
+        self.position = [0,0,0,0,0,0,0,0,0,0,0]
 
         self.joint_states = {'joint_1',
                              'joint_2',
@@ -26,7 +26,11 @@ class MoveArmJoy():
                              'joint_4',
                              'joint_5',
                              'joint_6',
-                             'joint_7'}
+                             'joint_7',
+			     'right_thumb_roll_joint',
+                             'right_thumb_pitch_joint',
+                             'right_index_yaw_joint',
+                             'right_ring_yaw_joint'}
 
         rospy.Subscriber('/joy', Joy, self.read_joystick_data)
         self.joint_states_pub = rospy.Publisher('/command', JointState)
@@ -56,6 +60,11 @@ class MoveArmJoy():
             self.position[4] = msg.position[4]
             self.position[5] = msg.position[5]
             self.position[6] = msg.position[6]
+            self.position[7] = msg.position[7]
+            self.position[8] = msg.position[8]
+            self.position[9] = msg.position[9]
+            self.position[10] = msg.position[10]
+	    self.velocity = [0,0,0,0,0,0,0,0,0,0,0]
 
     def publish_joint_states(self):
         # Construct message & publish joint states
@@ -66,7 +75,7 @@ class MoveArmJoy():
                 rospy.wait_for_service('home')
                 resp = self.srv_home()
                 self.joy_data = None
-                self.position = [0,0,0,0,0,0,0]
+                self.position = [0,0,0,0,0,0,0,0,0,0,0]
 
             elif self.joy_data.buttons[1]:
                 rospy.wait_for_service('stop')
@@ -117,6 +126,67 @@ class MoveArmJoy():
                         self.position[6] += -1 * self.joy_data.axes[4] * self.step_size
                         msg.position.append(self.position[6])
                         msg.velocity.append(0.2)
+
+                    elif joint == 'right_thumb_roll_joint':
+                        if self.joy_data.buttons[2]:
+                            self.position[7] += -1 * self.step_size
+                            self.velocity[7] = 0.5
+                        elif self.joy_data.buttons[3]:
+                            self.position[7] += 1 * self.step_size
+                            self.velocity[7] = 0.5
+                        elif self.joy_data.buttons[11]:
+			    self.position[7] = -1.57
+                            self.velocity[7] = 0.5
+                        msg.position.append(self.position[7])
+			msg.velocity.append(self.velocity[7])
+
+                    elif joint == 'right_thumb_pitch_joint':
+                        if self.joy_data.buttons[4]:
+                            self.position[8] += -1 * self.step_size
+                            self.velocity[8] = 0.5
+                        elif self.joy_data.buttons[5]:
+                            self.position[8] += 1 * self.step_size
+                            self.velocity[8] = 0.5
+                        elif self.joy_data.buttons[9]:
+			    self.position[8] = 1.3
+                            self.velocity[8] = 0.5
+                        elif self.joy_data.buttons[7]:
+			    self.position[8] = 0.0
+                            self.velocity[8] = 0.75
+                        msg.position.append(self.position[8])
+			msg.velocity.append(self.velocity[8])
+
+                    elif joint == 'right_index_yaw_joint':
+                        if self.joy_data.buttons[4]:
+                            self.position[9] += -1 * self.step_size
+                            self.velocity[9] = 0.5
+                        elif self.joy_data.buttons[5]:
+                            self.position[9] += 1 * self.step_size
+                            self.velocity[9] = 0.5
+                        elif self.joy_data.buttons[9]:
+			    self.position[9] = 1.31
+                            self.velocity[9] = 0.5
+                        elif self.joy_data.buttons[7]:
+			    self.position[9] = 0.0
+                            self.velocity[9] = 0.75
+                        msg.position.append(self.position[9])
+			msg.velocity.append(self.velocity[9])
+
+                    elif joint == 'right_ring_yaw_joint':
+                        if self.joy_data.buttons[4]:
+                            self.position[10] += -1 * self.step_size
+                            self.velocity[10] = 0.5
+                        elif self.joy_data.buttons[5]:
+                            self.position[10] += 1 * self.step_size
+                            self.velocity[10] = 0.5
+                        elif self.joy_data.buttons[9]:
+			    self.position[10] = 1.42
+                            self.velocity[10] = 0.5
+                        elif self.joy_data.buttons[7]:
+			    self.position[10] = 0.0
+                            self.velocity[10] = 0.75
+                        msg.position.append(self.position[10])
+			msg.velocity.append(self.velocity[10])
 
                     else:
                         msg.position.append(0.0)

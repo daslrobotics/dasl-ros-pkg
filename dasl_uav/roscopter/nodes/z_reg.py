@@ -31,15 +31,15 @@ class PID:
 		self.pub_reg = rospy.Publisher('reg_z', Int32)
 		rospy.init_node('z_regulator')
 
-		self.Kp = 0.25 #60.0
-		self.Ki = 0.002 #1.0
-		self.Kd = 2.0 #2000.0
-		self.Integrator = 0
+		self.Kp = 0.5 #0.25 #60.0  .110 
+		self.Ki = 0.002 #1.0  .010 
+		self.Kd = 2.0 #2000.0 .080
+		self.Integrator = 0.0
 		self.Integrator_max = 5000 #600
 		self.Integrator_min = -5000 #-600
 		self.Derivator = 0.0
 		
-		self.z = 1000
+		self.z = 1100
 		self.current_value = 0.0
 		self.set_point = 0.0
 		self.error = 0.0
@@ -52,7 +52,7 @@ class PID:
 
 	def reg_main(self):
 		self.sub_pos = rospy.Subscriber("/Optitrack/RB0", Pose, self.pos_call)
-		self.sub_joy = rospy.Subscriber("/joy", Joy, self.joy_call)
+		self.sub_joy = rospy.Subscriber("/quad_joy", Joy, self.joy_call)
 		self.sub_mod = rospy.Subscriber('mode', String, self.set_mode)
 		self.sub_int = rospy.Subscriber('send_rc', roscopter.msg.RC, self.integrator_set)
 		rospy.spin()
@@ -111,14 +111,15 @@ class PID:
 		
 		if PID_reg > 2000:
 			PID_reg = 2000
-		elif PID_reg < 1000:
-			PID_reg = 1000
+		elif PID_reg < 1100:
+			PID_reg = 1100
 
 		self.pub_reg.publish(Int32(int(PID_reg)))
 
 		self.make_log.data = str(int(PID_reg))+' '+str(self.P_value)+' '+str(self.I_value)+' '+str(self.D_value)+' '+str(self.error)
 		self.pub_log.publish(self.make_log)
 
+		print str(int(PID_reg))+' '+str(self.P_value)+' '+str(self.I_value)+' '+str(self.D_value)+' '+str(self.error)
 
 if __name__ == '__main__':
 

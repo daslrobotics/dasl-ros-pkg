@@ -30,10 +30,6 @@ class MCN():
     def __init__(self):
         self.pub_rc = rospy.Publisher('send_rc', roscopter.msg.RC)
         self.pub_mode = rospy.Publisher('mode',String)
-        self.arm_shoulder_pitch_pub = rospy.Publisher('shoulder_pitch_controller/command', Float64)
-        self.arm_elbow_pitch_pub = rospy.Publisher('elbow_pitch_controller/command', Float64)
-        self.arm_wrist_pitch_pub = rospy.Publisher('wrist_pitch_controller/command', Float64)
-        self.arm_gripper_pub = rospy.Publisher('gripper_controller/command', Float64)
 
         rospy.init_node('main_control_node')
         self.pub_mode.publish('o')
@@ -48,13 +44,6 @@ class MCN():
         self.y = 1500.0
         self.z = 1100.0
         self.yaw = 1500
-	self.gripper = 1500
-
-	self.arm_shoulder_pitch_joint = -1.57
-	self.arm_elbow_pitch_joint = -1.20
-	self.arm_wrist_pitch_joint = 0.0
-	self.arm_gripper_joint = 0.0
-        self.step_size = 0.5 * 3.14 / 180.0
 
     def inf_main(self):
         self.sub_joy = rospy.Subscriber("/quad_joy", Joy, self.joy_callback)
@@ -84,8 +73,8 @@ class MCN():
         self.axes = data.axes
         self.buttons = data.buttons
 
-        self.x = 1470-self.axes[1]*250
-        self.y = 1492-self.axes[0]*250
+        self.x = 1480-self.axes[1]*250
+        self.y = 1494-self.axes[0]*250
         self.z = 1100+((self.axes[3]+1)/2)*1000 #800 #600
 	self.yaw = 1490-self.axes[2]*300
 
@@ -124,40 +113,17 @@ class MCN():
             self.pub_mode.publish('p')
             print 'PosHold'
 
-        if self.buttons[4]==1:
-	    self.arm_shoulder_pitch_joint = 0.0
-	    self.arm_elbow_pitch_joint = 0.0
-	    self.arm_wrist_pitch_joint = 0.0
-	    self.arm_gripper_joint = 0.0
-
-        if self.buttons[5]==1:
-	    self.arm_shoulder_pitch_joint = -1.57
-	    self.arm_elbow_pitch_joint = -1.20
-	    self.arm_wrist_pitch_joint = 0.0
-	    self.arm_gripper_joint = 0.0
-
-        #self.arm_shoulder_pitch_joint += -1 * self.axes[0] * self.step_size
-        #self.arm_elbow_pitch_joint += -1 * self.axes[1] * self.step_size
-        #self.arm_wrist_pitch_joint += -1 * self.axes[2] * self.step_size
-        #self.arm_gripper_joint += -1 * self.axes[3] * self.step_size
-
-	#self.arm_shoulder_pitch_pub.publish(self.arm_shoulder_pitch_joint)
-	#self.arm_elbow_pitch_pub.publish(self.arm_elbow_pitch_joint)
-	#self.arm_wrist_pitch_pub.publish(self.arm_wrist_pitch_joint)
-	#self.arm_gripper_pub.publish(self.arm_gripper_joint)
-
         # RC Channels: [0]-pitch [1]-roll [2]-throttle [3]-yaw
 
         if self.control==0:
-            (self.twist[0], self.twist[1], self.twist[2], self.twist[3]) = (1500, 1500, 1000, int(self.yaw))
+            (self.twist[0], self.twist[1], self.twist[2], self.twist[3]) = (1500, 1500, 1100, int(self.yaw))
         elif self.control==1:
             (self.twist[0], self.twist[1], self.twist[2], self.twist[3]) = (int(self.y), int(self.x), int(self.z), int(self.yaw))
         elif self.control==2:
-            (self.twist[0], self.twist[1], self.twist[2], self.twist[3]) = (int(self.y), int(self.x), self.reg_z, self.reg_yaw)
+            #(self.twist[0], self.twist[1], self.twist[2], self.twist[3]) = (int(self.y), int.reg_x, int(self.z), int(self.yaw))
+            (self.twist[0], self.twist[1], self.twist[2], self.twist[3]) = (int(self.y), int(self.x), self.reg_z, int(self.yaw))
         elif self.control==3:
             (self.twist[0], self.twist[1], self.twist[2], self.twist[3]) = (self.reg_y, self.reg_x, self.reg_z, self.reg_yaw)
-
-	#self.twist[5] = self.gripper
 
         self.pub_rc.publish(self.twist)
         print
