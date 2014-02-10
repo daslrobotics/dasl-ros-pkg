@@ -73,7 +73,7 @@ class GantryControl():
 				else:
 					baudRate = int(brTest) if 9600 <= int(brTest) <= 1000000 else None
 			settings['baudrate'] = baudRate
-			settings['highestServoID']=233
+			settings['highestServoID']=255
 		# setup dynamixel network
 		self.serial = dynamixel.SerialStream(port=settings['port'],baudrate=settings['baudrate'],timeout=1)
 		self.net = dynamixel.DynamixelNetwork(self.serial)
