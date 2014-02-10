@@ -17,7 +17,7 @@ from geometry_msgs.msg import Vector3
 class MoveGantryPS3():
     def __init__(self):
         self.is_running = True
-        self.step_size = 5.0 * 3.14 / 180.0
+        self.step_size = 1
         self.joy_data = None
 
         self.gantry_publisher = rospy.Publisher('/gantry/velocity', Twist)
@@ -29,7 +29,7 @@ class MoveGantryPS3():
 	self.gantry_vel.x = 0.0
 	self.gantry_vel.y = 0.0
 	self.gantry_vel.z = 0.0
-	self.gantry_pose.linear = self.gantry_point
+	self.gantry_pose.linear = self.gantry_vel
 	self.gantry_rpy.x = 0.0 # roll
 	self.gantry_rpy.y = 0.0 # pitch
 	self.gantry_rpy.z = 0.0 # yaw

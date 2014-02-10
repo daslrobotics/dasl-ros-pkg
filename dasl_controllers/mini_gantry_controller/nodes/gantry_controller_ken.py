@@ -87,7 +87,7 @@ class GantryControl():
 			self.myActuators.append(self.net[dyn.id])
 		print "Scanned..."
 		if options.clean or not os.path.exists(settingsFile):
-			axes = ['x','y','z','r','p','y'] # defines the axis that we are using
+			axes = ['x','y','z','r','p','yaw'] # defines the axis that we are using
 			dynamixels_used = []
 			for axis in axes:
 				number = None
@@ -101,7 +101,7 @@ class GantryControl():
 				yaml.dump(settings,fh)
 				print("Settings have been saved")
 		self.position_dyns = [ settings['x'] , settings['y'] , settings['z'] ]
-		self.orientation_dyns = [ settings['r'] , settings['p'] ,settings['y'] ]
+		self.orientation_dyns = [ settings['r'] , settings['p'] ,settings['yaw'] ]
 
 		if not self.myActuators:
 			print 'No Dynamixels Found!'
@@ -115,13 +115,13 @@ class GantryControl():
 				actuator.cw_angle_limit = 0 # both cw and ccw angle limits must be set to 0 for wheel mode
 				actuator.ccw_angle_limit= 0 # this double checks this fact
 			elif actuator.id in self.orientation_dyns: # this is for roll and pitch
-				actuator.moving_speed = 512 
+				actuator.moving_speed = 0
 				actuator.cw_angle_limit = 0
 				actuator.cw_angle_limit  = 4096 # this may need to be double checked if it's 4096 or 4095
 			actuator.synchronized = True
 			actuator.torque_enable = True
-			actuator.torque_limit = 800
-			actuator.max_torque = 800
+			actuator.torque_limit = 1023
+			actuator.max_torque = 1023
 	
 
 		# Startup the subscriber and publisher services
@@ -135,7 +135,7 @@ class GantryControl():
 		return int(4096*rad)+2048
 
 	def radToDynVel(self,rad):
-		if(rad>=0):
+		if(rad>0):
 			return int(rad * 1023)
 		else:
 			return 1024+int(-1 * rad * 1023)
@@ -157,7 +157,7 @@ class GantryControl():
 		while self.is_running:
 			if self.velocity_data:
 				for actuator in self.myActuators:
-					if actuator.id == self.position_dyns[0]: # x
+					if actuator.id == self.position_dyns[0]: # x	
 						actuator.moving_speed = self.radToDynVel(self.velocity_data.linear.x)
 					elif actuator.id == self.position_dyns[1]: # y
 						actuator.moving_speed = self.radToDynVel(self.velocity_data.linear.y)
@@ -166,11 +166,15 @@ class GantryControl():
 					elif actuator.id == self.orientation_dyns[2]: # yaw
 						actuator.moving_speed = self.radToDynVel(self.velocity_data.angular.z)
 					elif actuator.id == self.orientation_dyns[0]: # roll based on y
-						actuator.goal_position = self.radToDynPos(0.1 * self.velocity_data.linear.y)
+						actuator.goal_position = self.radToDynPos(0)#self.radToDynPos(0.1 * self.velocity_data.linear.y)
 					elif actuator.id == self.orientation_dyns[1]: # pitch based on x
-						actuator.goal_position = self.radToDynPos(0.1 * self.velocity_data.linear.x)
+						actuator.goal_position = self.radToDynPos(0)#self.radToDynPos(0.1 * self.velocity_data.linear.x)
+					time.sleep(0.01)
 				self.net.synchronize()
-			time.sleep(0.1)
+				for actuator in self.myActuators:
+					actuator.read_all()
+					print actuator.id, "-s-", actuator.current_speed, "-p-" , actuator.current_position
+				time.sleep(0.1)
 # startup stuffs
 
 if __name__ == '__main__':
