@@ -1,0 +1,6 @@
+<launch>
+
+
+    <node name="gantry_joy" pkg="mini_gantry_controller" type="gantry_controller_ken.py" output="screen" />
+
+</launch>
