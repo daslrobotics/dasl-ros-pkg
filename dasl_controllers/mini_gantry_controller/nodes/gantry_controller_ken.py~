@@ -131,19 +131,19 @@ class GantryControl():
 		rospy.init_node('gantry_controller', anonymous=True)
 		rospy.Subscriber('/gantry/velocity',Twist,self.update_velocities)
 
-	def radToDynPos(rad):
+	def radToDynPos(self,rad):
 		return (4096*rad)+2048
 
-	def radToDynVel(rad):
+	def radToDynVel(self,rad):
 		if(rad>=0):
 			return rad * 1023
 		else:
 			return 1024+(-1 * rad * 1023)
 	
-	def dynToRadPos(dyn):
+	def dynToRadPos(self,dyn):
 		return (dyn-2048)/4096
 
-	def dynToRadVel(dyn):
+	def dynToRadVel(self,dyn):
 		if(dyn > 1024):
 			return -1*(dyn-1024)/1023
 		else:
@@ -158,19 +158,19 @@ class GantryControl():
 			if self.velocity_data:
 				for actuator in self.myActuators:
 					if actuator.id == self.position_dyns[0]: # x
-						actuator.moving_speed = radToDynVel(self.velocity_data.linear.x)
+						actuator.moving_speed = self.radToDynVel(self.velocity_data.linear.x)
 					elif actuator.id == self.position_dyns[1]: # y
-						actuator.moving_speed = radToDynVel(self.velocity_data.linear.y)
+						actuator.moving_speed = self.radToDynVel(self.velocity_data.linear.y)
 					elif actuator.id == self.position_dyns[2]: # z
-						actuator.moving_speed = radToDynVel(self.velocity_data.linear.z)
+						actuator.moving_speed = self.radToDynVel(self.velocity_data.linear.z)
 					elif actuator.id == self.orientation_dyns[2]: # yaw
-						actuator.moving_speed = radToDynVel(self.velocity_data.angular.z)
+						actuator.moving_speed = self.radToDynVel(self.velocity_data.angular.z)
 					elif actuator.id == self.orientation_dyns[0]: # roll based on y
-						actuator.goal_position = radToDynPos(0.1 * self.velocity_data.linear.y)
+						actuator.goal_position = self.radToDynPos(0.1 * self.velocity_data.linear.y)
 					elif actuator.id == self.orientation_dyns[1]: # pitch based on x
-						actuator.goal_position = radToDynPos(0.1 * self.velocity_data.linear.x)
+						actuator.goal_position = self.radToDynPos(0.1 * self.velocity_data.linear.x)
 				self.net.synchronize()
-			time.sleep(0.01)
+			time.sleep(0.1)
 # startup stuffs
 
 if __name__ == '__main__':
