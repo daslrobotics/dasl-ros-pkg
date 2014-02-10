@@ -103,7 +103,7 @@ class GantryControl():
 		self.position_dyns = [ settings['x'] , settings['y'] , settings['z'] ]
 		self.orientation_dyns = [ settings['r'] , settings['p'] ,settings['y'] ]
 
-		if not myActuators:
+		if not self.myActuators:
 			print 'No Dynamixels Found!'
 			sys.exit(0)
 		else:
@@ -140,7 +140,7 @@ class GantryControl():
 		else:
 			return 1024+(-1 * rad * 1023)
 	
-	def dynToRad(dyn):
+	def dynToRadPos(dyn):
 		return (dyn-2048)/4096
 
 	def dynToRadVel(dyn):
@@ -156,19 +156,19 @@ class GantryControl():
 		# main control loop to run gantry and update rostopics
 		while self.is_running:
 			if self.velocity_data:
-				for actuator in self.myActuator:
-					if actuator.id == position_dyns[0]: # x
+				for actuator in self.myActuators:
+					if actuator.id == self.position_dyns[0]: # x
 						actuator.moving_speed = radToDynVel(self.velocity_data.linear.x)
-					elif actuator.id == position_dyns[1]: # y
+					elif actuator.id == self.position_dyns[1]: # y
 						actuator.moving_speed = radToDynVel(self.velocity_data.linear.y)
-					elif actuator.id == position_dyns[2]: # z
+					elif actuator.id == self.position_dyns[2]: # z
 						actuator.moving_speed = radToDynVel(self.velocity_data.linear.z)
-					elif actuator.id == orientation_dyns[2]: # yaw
+					elif actuator.id == self.orientation_dyns[2]: # yaw
 						actuator.moving_speed = radToDynVel(self.velocity_data.angular.z)
-					elif actuator.id == orientation_dyns[0]: # roll based on y
-						actuator.goal_position = radToDyn(0.1 * self.velocity_data.linear.y)
-					elif actuator.id == orientation_dyns[1]: # pitch based on x
-						actuator.goal_position = radToDyn(0.1 * self.velocity_data.linear.x)
+					elif actuator.id == self.orientation_dyns[0]: # roll based on y
+						actuator.goal_position = radToDynPos(0.1 * self.velocity_data.linear.y)
+					elif actuator.id == self.orientation_dyns[1]: # pitch based on x
+						actuator.goal_position = radToDynPos(0.1 * self.velocity_data.linear.x)
 				self.net.synchronize()
 			time.sleep(0.01)
 # startup stuffs
