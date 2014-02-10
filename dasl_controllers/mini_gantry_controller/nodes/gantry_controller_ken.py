@@ -127,7 +127,6 @@ class GantryControl():
 		# Startup the subscriber and publisher services
 		self.is_running = True
 		self.velocity_data = None
-		
 		rospy.init_node('gantry_controller', anonymous=True)
 		rospy.Subscriber('/gantry/velocity',Twist,self.update_velocities)
 

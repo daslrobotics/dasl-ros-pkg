@@ -34,7 +34,6 @@ class MoveGantryPS3():
 	self.gantry_rpy.y = 0.0 # pitch
 	self.gantry_rpy.z = 0.0 # yaw
 	self.gantry_pose.angular = self.gantry_rpy
-
         rospy.init_node('gantry_joy', anonymous=True)
         rospy.Subscriber('/joy', Joy, self.read_joystick_data)
 

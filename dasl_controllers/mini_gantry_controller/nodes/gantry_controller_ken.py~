@@ -115,7 +115,7 @@ class GantryControl():
 				actuator.cw_angle_limit = 0 # both cw and ccw angle limits must be set to 0 for wheel mode
 				actuator.ccw_angle_limit= 0 # this double checks this fact
 			elif actuator.id in self.orientation_dyns: # this is for roll and pitch
-				actuator.moving_speed = 100
+				actuator.moving_speed = 0
 				actuator.cw_angle_limit = 0
 				actuator.cw_angle_limit  = 4096 # this may need to be double checked if it's 4096 or 4095
 			actuator.synchronized = True
