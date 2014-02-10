@@ -73,25 +73,27 @@ class GantryControl():
 				else:
 					baudRate = int(brTest) if 9600 <= int(brTest) <= 1000000 else None
 			settings['baudrate'] = baudRate
-			settings['highestServoID']=255
+			settings['lowestServoID']=200
+			settings['highestServoID']=233
 		# setup dynamixel network
 		self.serial = dynamixel.SerialStream(port=settings['port'],baudrate=settings['baudrate'],timeout=1)
 		self.net = dynamixel.DynamixelNetwork(self.serial)
 		print "Scanning for Dynamixels..."
-		self.net.scan(1,settings['highestServoID'])
+		self.net.scan(settings['lowestServoID'],settings['highestServoID'])
 		self.myActuators = []
 
 		for dyn in self.net.get_dynamixels():
 			print dyn.id
-			self.myActuators.append(net[dyn.id])
-		if options.clean and not os.pth.exists(settingsFile):
+			self.myActuators.append(self.net[dyn.id])
+		print "Scanned..."
+		if options.clean or not os.path.exists(settingsFile):
 			axes = ['x','y','z','r','p','y'] # defines the axis that we are using
 			dynamixels_used = []
 			for axis in axes:
 				number = None
 				while not number:
 					numTest = raw_input("Please enter dynamixel number for the "+ axis)
-					number = numTest if (0<numTest<=255 and (not numTest in dynamixels_used)) else None
+					number = int(numTest) if (0<int(numTest)<=255 and (not int(numTest) in dynamixels_used)) else None
 				dynamixels_used.append(number)
 				settings[axis] = number
 
