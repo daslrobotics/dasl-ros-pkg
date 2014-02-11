@@ -114,13 +114,13 @@ class GantryControl():
 			actuator.torque_enable = True
 			actuator.torque_limit = 1023
 			actuator.max_torque = 1023
-			if (actuator.id in self.position_dyns or actuator.id == self.orientation_dyns[0]):
+			if (actuator.id in self.position_dyns or actuator.id == self.orientation_dyns[2]):
 				actuator.moving_speed = 0 # always set start velocity to 0 for the position dynamixels
 				actuator.cw_angle_limit = 0 # both cw and ccw angle limits must be set to 0 for wheel mode
 				actuator.ccw_angle_limit= 0 # this double checks this fact
 			elif actuator.id in self.orientation_dyns: # this is for roll and pitch
-				actuator.torque_enabled = False # comment out when you want it to be active
-				actuator.moving_speed = 0
+				#actuator.torque_enabled = False # comment out when you want it to be active
+				actuator.moving_speed = 128
 				actuator.cw_angle_limit = 0
 				actuator.cw_angle_limit  = 4096 # this may need to be double checked if it's 4096 or 4095
 			time.sleep(0.1)
@@ -158,23 +158,29 @@ class GantryControl():
 		while self.is_running:
 			if self.velocity_data:
 				for actuator in self.myActuators:
+				    if (not actuator.id == 221):
 					if actuator.id == self.position_dyns[0]: # x	
 						actuator.moving_speed = self.radToDynVel(self.velocity_data.linear.x)
 					elif actuator.id == self.position_dyns[1]: # y
 						actuator.moving_speed = self.radToDynVel(self.velocity_data.linear.y)
 					elif actuator.id == self.position_dyns[2]: # z
-						actuator.moving_speed = self.radToDynVel(self.velocity_data.linear.z)
+						actuator.moving_speed = self.radToDynVel(-1*self.velocity_data.linear.z)
 					elif actuator.id == self.orientation_dyns[2]: # yaw
 						actuator.moving_speed = self.radToDynVel(self.velocity_data.angular.z)
-					#elif actuator.id == self.orientation_dyns[0]: # roll based on y
-						#actuator.goal_position = self.radToDynPos(0)#self.radToDynPos(0.1 * self.velocity_data.linear.y)
-					#elif actuator.id == self.orientation_dyns[1]: # pitch based on x
-						#actuator.goal_position = self.radToDynPos(0)#self.radToDynPos(0.1 * self.velocity_data.linear.x)
+					elif actuator.id == self.orientation_dyns[0]: # roll based on y
+						actuator.goal_position = self.radToDynPos(-0.1* self.velocity_data.linear.y)
+					elif actuator.id == self.orientation_dyns[1]: # pitch based on x
+						actuator.goal_position = self.radToDynPos(0.1*self.velocity_data.linear.x)
 					time.sleep(0.01)
 				self.net.synchronize()
+				print_statement = "---------------------"
+				print_statement = print_statement +"\n" + "---------------------"
+				print_statement = print_statement + "\n" + "---------------------"
 				for actuator in self.myActuators:
+				    if (not actuator.id == 221):
 					actuator.read_all()
-					print actuator.id, "-s-", actuator.current_speed, "-p-" , actuator.current_position
+					print_statement = print_statement+"\n"+str( actuator.id) + "-s-"+str( actuator.current_speed) + "-p-" + str( actuator.current_position)
+				print print_statement
 				time.sleep(0.1)
 # startup stuffs
 

@@ -45,7 +45,7 @@ class MoveGantryPS3():
             if self.joy_data:
 			self.gantry_pose.linear.x = 1 * self.joy_data.axes[1] * self.step_size
 			self.gantry_pose.linear.y = 1 * self.joy_data.axes[0] * self.step_size
-			self.gantry_pose.linear.z = -1 * self.joy_data.axes[3] * self.step_size
+			self.gantry_pose.linear.z = 1 * self.joy_data.axes[3] * self.step_size
 			self.gantry_pose.angular.z = -1 * self.joy_data.axes[2] * self.step_size
 			self.gantry_pose.angular.y = self.joy_data.axes[4]*0.15
 			self.gantry_pose.angular.x = self.joy_data.axes[5]*0.15
