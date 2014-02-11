@@ -9,6 +9,7 @@ Panels:
         - /Marker1
         - /Marker1/Namespaces1
         - /Image1
+        - /Camera1
       Splitter Ratio: 0.5
     Tree Height: 595
   - Class: rviz/Selection
@@ -123,7 +124,8 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
-        All Links Enabled: true
+        All Links Enabled:
+          {}
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
@@ -132,82 +134,66 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         link_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         link_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         link_4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         link_5:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         link_6:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         link_7:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         right_index_yaw_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         right_palm_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         right_ring_yaw_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         right_thumb_pitch_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         right_thumb_roll_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         torso_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         torso_pitch_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         torso_roll_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         torso_yaw_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -302,17 +288,17 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.45188
+      Distance: 3.82961
       Focal Point:
         X: -0.127541
         Y: -0.160673
         Z: 0.977827
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.114797
+      Pitch: 0.194797
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.0117858
+      Yaw: 1.75679
     Saved: ~
 Window Geometry:
   Camera:
@@ -334,5 +320,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1535
-  X: 58
+  X: 51
   Y: 24
