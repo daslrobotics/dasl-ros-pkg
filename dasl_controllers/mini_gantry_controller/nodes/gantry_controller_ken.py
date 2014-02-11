@@ -158,7 +158,6 @@ class GantryControl():
 		while self.is_running:
 			if self.velocity_data:
 				for actuator in self.myActuators:
-				    if (not actuator.id == 221):
 					if actuator.id == self.position_dyns[0]: # x	
 						actuator.moving_speed = self.radToDynVel(self.velocity_data.linear.x)
 					elif actuator.id == self.position_dyns[1]: # y
@@ -166,7 +165,7 @@ class GantryControl():
 					elif actuator.id == self.position_dyns[2]: # z
 						actuator.moving_speed = self.radToDynVel(-1*self.velocity_data.linear.z)
 					elif actuator.id == self.orientation_dyns[2]: # yaw
-						actuator.moving_speed = self.radToDynVel(self.velocity_data.angular.z)
+						actuator.moving_speed = self.radToDynVel(0.5*self.velocity_data.angular.z)
 					elif actuator.id == self.orientation_dyns[0]: # roll based on y
 						actuator.goal_position = self.radToDynPos(-0.1* self.velocity_data.linear.y)
 					elif actuator.id == self.orientation_dyns[1]: # pitch based on x
@@ -177,11 +176,9 @@ class GantryControl():
 				print_statement = print_statement +"\n" + "---------------------"
 				print_statement = print_statement + "\n" + "---------------------"
 				for actuator in self.myActuators:
-				    if (not actuator.id == 221):
 					actuator.read_all()
 					print_statement = print_statement+"\n"+str( actuator.id) + "-s-"+str( actuator.current_speed) + "-p-" + str( actuator.current_position)
 				print print_statement
-				time.sleep(0.1)
 # startup stuffs
 
 if __name__ == '__main__':
