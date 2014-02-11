@@ -1,0 +1,18 @@
+\subsubsection usage Usage
+\verbatim
+<node name="dynamic_reconfigure_node" pkg="flyer_interface" type="dynamic_reconfigure_node">
+  <param name="imu_period" type="int" value="10" />
+  <param name="imu_phase" type="int" value="0" />
+  <param name="pose_period" type="int" value="10" />
+  <param name="pose_phase" type="int" value="5" />
+  <param name="flight_state_period" type="int" value="50" />
+  <param name="flight_state_phase" type="int" value="13" />
+  <param name="status_period" type="int" value="50" />
+  <param name="status_phase" type="int" value="31" />
+  <param name="rcdata_period" type="int" value="100" />
+  <param name="rcdata_phase" type="int" value="7" />
+  <param name="debug_period" type="int" value="100" />
+  <param name="debug_phase" type="int" value="0" />
+</node>
+\endverbatim
+

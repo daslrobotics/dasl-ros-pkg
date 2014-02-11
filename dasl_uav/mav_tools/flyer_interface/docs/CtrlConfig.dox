@@ -1,0 +1,13 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~cmd_roll_limit" : \b [double] Roll command limit [rad] min: 0.0, default: 0.15, max: 0.89
+- \b "~cmd_roll_delta_limit" : \b [double] Roll command max delta [rad/ms] min: 0.0, default: 0.01, max: 0.89
+- \b "~cmd_pitch_limit" : \b [double] Pitch command limit [rad] min: 0.0, default: 0.15, max: 0.89
+- \b "~cmd_pitch_delta_limit" : \b [double] Pitch command max delta [rad/ms] min: 0.0, default: 0.1, max: 0.89
+- \b "~cmd_yaw_rate_limit" : \b [double] Yaw rate command limit [rad/s] min: 0.0, default: 1.0, max: 4.0
+- \b "~cmd_yaw_rate_delta_limit" : \b [double] Yaw rate command max delta [rad/s/ms] min: 0.0, default: 0.1, max: 1.0
+- \b "~cmd_thrust_limit" : \b [double] Thrust command limit [%] min: 0.0, default: 70.0, max: 100.0
+- \b "~cmd_thrust_delta_limit" : \b [double] Thrust command max delta [%/ms] min: 0.0, default: 0.5, max: 100.0
+

@@ -1,0 +1,14 @@
+\subsubsection usage Usage
+\verbatim
+<node name="dynamic_reconfigure_node" pkg="flyer_interface" type="dynamic_reconfigure_node">
+  <param name="cmd_roll_limit" type="double" value="0.15" />
+  <param name="cmd_roll_delta_limit" type="double" value="0.01" />
+  <param name="cmd_pitch_limit" type="double" value="0.15" />
+  <param name="cmd_pitch_delta_limit" type="double" value="0.1" />
+  <param name="cmd_yaw_rate_limit" type="double" value="1.0" />
+  <param name="cmd_yaw_rate_delta_limit" type="double" value="0.1" />
+  <param name="cmd_thrust_limit" type="double" value="70.0" />
+  <param name="cmd_thrust_delta_limit" type="double" value="0.5" />
+</node>
+\endverbatim
+

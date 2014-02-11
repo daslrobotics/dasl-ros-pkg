@@ -1,0 +1,11 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~k_p" : \b [double] Kp  min: 0.0, default: 0.0, max: 10.0
+- \b "~k_i" : \b [double] Ki  min: 0.0, default: 0.0, max: 10.0
+- \b "~k_d" : \b [double] Kd  min: 0.0, default: 0.0, max: 10.0
+- \b "~bias" : \b [double] Bias [rad/s] min: -5.0, default: 0.0, max: 5.0
+- \b "~max_i" : \b [double] Max integral [rad/s] min: 0.0, default: 1.0, max: 10.0
+- \b "~max_err" : \b [double] Max error [rad] min: 0.0, default: 1.0, max: 2.0
+
