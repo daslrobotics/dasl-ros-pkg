@@ -12,6 +12,7 @@ import rospy
 from std_msgs.msg import Float64
 from geometry_msgs.msg import Twist
 from geometry_msgs.msg import Vector3
+from dynamixel_msgs.msg import JointState
 
 # dyanamixel stuffs
 
