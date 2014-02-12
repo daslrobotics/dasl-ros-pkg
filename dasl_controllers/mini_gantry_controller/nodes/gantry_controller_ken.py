@@ -10,9 +10,10 @@ from threading import Thread
 
 import rospy
 from std_msgs.msg import Float64
-from geometry_msgs.msg import Twist
-from geometry_msgs.msg import Vector3
-from dynamixel_msgs.msg import JointState
+from std_msgs.msg import Bool
+from std_msgs.msg import Int32
+from geometry_msgs.msg import Twist, Pose, Vector3
+from sensor_msgs.msg import JointState
 
 # dyanamixel stuffs
 
@@ -38,9 +39,9 @@ class GantryControl():
 		settingsFile = 'settings.yaml'
 		if not options.clean and os.path.exists(settingsFile):
 			with open(settingsFile,'r') as fh:
-				settings = yaml.load(fh)
+				self.settings = yaml.load(fh)
 		else:
-			settings = {}
+			self.settings = {}
 			if os.name == "posix":
 				portPrompt = "Which port corresponds to USB2Dynamixel? \n"
 				try:
@@ -64,7 +65,7 @@ class GantryControl():
 			else:
 				portPrompt = "Plese enter the port name for the USB2Dynamixel: "
 				portChoice = raw_input(portPrompt)
-			settings['port'] = portChoice
+			self.settings['port'] = portChoice
 			# Baud rate
 			baudRate = None
 			while not baudRate:
@@ -73,22 +74,22 @@ class GantryControl():
 					baudRate = 1000000
 				else:
 					baudRate = int(brTest) if 9600 <= int(brTest) <= 1000000 else None
-			settings['baudrate'] = baudRate
-			settings['lowestServoID']=200
-			settings['highestServoID']=233
+			self.settings['baudrate'] = baudRate
+			self.settings['lowestServoID']=200
+			self.settings['highestServoID']=233
 		# setup dynamixel network
-		self.serial = dynamixel.SerialStream(port=settings['port'],baudrate=settings['baudrate'],timeout=1)
+		self.serial = dynamixel.SerialStream(port=self.settings['port'],baudrate=self.settings['baudrate'],timeout=1)
 		self.net = dynamixel.DynamixelNetwork(self.serial)
 		print "Scanning for Dynamixels..."
-		self.net.scan(settings['lowestServoID'],settings['highestServoID'])
+		self.net.scan(self.settings['lowestServoID'],self.settings['highestServoID'])
 		self.myActuators = []
 
 		for dyn in self.net.get_dynamixels():
 			print dyn.id
 			self.myActuators.append(self.net[dyn.id])
+		self.axes = ['xm','xs','y','z','r','p','yaw'] # defines the axes that we are using for the gantry
 		print "Scanned..."
 		if options.clean or not os.path.exists(settingsFile):
-			axes = ['x','y','z','r','p','yaw'] # defines the axis that we are using
 			dynamixels_used = []
 			for axis in axes:
 				number = None
@@ -96,13 +97,18 @@ class GantryControl():
 					numTest = raw_input("Please enter dynamixel number for the "+ axis)
 					number = int(numTest) if (0<int(numTest)<=255 and (not int(numTest) in dynamixels_used)) else None
 				dynamixels_used.append(number)
-				settings[axis] = number
+				self.settings[axis] = number
 
 			with open(settingsFile, 'w') as fh:
 				yaml.dump(settings,fh)
 				print("Settings have been saved")
-		self.position_dyns = [ settings['x'] , settings['y'] , settings['z'] ]
-		self.orientation_dyns = [ settings['r'] , settings['p'] ,settings['yaw'] ]
+		self.position_dyns = [ self.settings['xm'], self.settings['y'] , self.settings['z'] ]
+		self.pos_slaves = [self.settings['xs']]
+		self.orientation_dyns = [ self.settings['r'] , self.settings['p'] ,self.settings['yaw'] ]
+		self.id_to_name = {}
+		for axis in self.axes:
+			self.id_to_name[self.settings[axis]]=axis
+		self.name_to_pose = {'xm':'x','y':'y','z':'z','r':'x','p':'y','yaw':'z'}
 
 		if not self.myActuators:
 			print 'No Dynamixels Found!'
@@ -111,10 +117,11 @@ class GantryControl():
 			print "...Done"
 
 		for actuator in self.myActuators:
+			print actuator.id
 			actuator.synchronized = True
 			actuator.torque_enable = True
-			actuator.torque_limit = 1023
-			actuator.max_torque = 1023
+			actuator.torque_limit = 800
+			actuator.max_torque = 800
 			if (actuator.id in self.position_dyns or actuator.id == self.orientation_dyns[2]):
 				actuator.moving_speed = 0 # always set start velocity to 0 for the position dynamixels
 				actuator.cw_angle_limit = 0 # both cw and ccw angle limits must be set to 0 for wheel mode
@@ -132,6 +139,24 @@ class GantryControl():
 		self.velocity_data = None
 		rospy.init_node('gantry_controller', anonymous=True)
 		rospy.Subscriber('/gantry/velocity',Twist,self.update_velocities)
+		self.joint_state_publisher = rospy.Publisher('gantry/joint_states',JointState)
+		self.pose_publisher = rospy.Publisher('gantry/pose',Pose)#from starting position
+		self.id_to_array={}
+		self.curEncoders = []
+		self.oldEncoders = []
+		i=0
+		for actuator in self.myActuators:
+			actuator.read_all()
+			self.curEncoders.append(actuator.current_position)
+			self.id_to_array[actuator.id]=i
+			i+=1
+		self.oldEncoders=self.curEncoders
+		self.gantry_pose = Pose()
+
+
+
+	def metersToDynVel(self,meters): # meters/second
+		return self.radToDynVel(meters/0.24284) # meters/second/(meters/rad)
 
 	def radToDynPos(self,rad):
 		return int(4096*rad)+2048
@@ -143,13 +168,27 @@ class GantryControl():
 			return 1024+int(-1 * rad * 1023)
 	
 	def dynToRadPos(self,dyn):
-		return (dyn-2048)/4096
+		return (float(dyn)-2048)/4096
 
 	def dynToRadVel(self,dyn):
 		if(dyn > 1024):
-			return -1*(dyn-1024)/1023
+			return -1*(float(dyn)-1024)/1023
 		else:
-			return dyn/1023
+			return float(dyn)/1023
+
+	def dynToMetersVel(self,dyn):
+		return 0.24284 * self.dynToRadVel(dyn)
+	
+	def dynToMetersPos(self,dyn):
+		return 0.24284 * self.dynToRadPos(dyn)
+
+	def deltaEncoders(self,old,new): # spits out rads
+		delta=new-old
+		if (delta>2048):
+			delta = delta-4095
+		elif (delta<-2048):
+			delta = delta+4095
+		return float(delta) * 2 * 3.1415926535 / 4096.0
 
 	def update_velocities(self,data):
 		self.velocity_data = data
@@ -160,11 +199,11 @@ class GantryControl():
 			if self.velocity_data:
 				for actuator in self.myActuators:
 					if actuator.id == self.position_dyns[0]: # x	
-						actuator.moving_speed = self.radToDynVel(self.velocity_data.linear.x)
+						actuator.moving_speed = self.metersToDynVel(self.velocity_data.linear.x)
 					elif actuator.id == self.position_dyns[1]: # y
-						actuator.moving_speed = self.radToDynVel(self.velocity_data.linear.y)
+						actuator.moving_speed = self.metersToDynVel(self.velocity_data.linear.y)
 					elif actuator.id == self.position_dyns[2]: # z
-						actuator.moving_speed = self.radToDynVel(-1*self.velocity_data.linear.z)
+						actuator.moving_speed = self.metersToDynVel(-1*self.velocity_data.linear.z)
 					elif actuator.id == self.orientation_dyns[2]: # yaw
 						actuator.moving_speed = self.radToDynVel(0.5*self.velocity_data.angular.z)
 					elif actuator.id == self.orientation_dyns[0]: # roll based on y
@@ -176,10 +215,33 @@ class GantryControl():
 				print_statement = "---------------------"
 				print_statement = print_statement +"\n" + "---------------------"
 				print_statement = print_statement + "\n" + "---------------------"
+				joint_msg = JointState()
 				for actuator in self.myActuators:
 					actuator.read_all()
-					print_statement = print_statement+"\n"+str( actuator.id) + "-s-"+str( actuator.current_speed) + "-p-" + str( actuator.current_position)
+					print_statement = print_statement+"\n"+str(actuator.id) + "-s-"+str(actuator.current_speed) + "-p-" + str(actuator.current_position)
+					joint_msg.name.append(self.id_to_name[actuator.id])
+					joint_msg.position.append(self.dynToRadPos(actuator.current_position))
+					self.curEncoders[self.id_to_array[actuator.id]]=actuator.current_position
+					if (actuator.id in self.orientation_dyns):
+						joint_msg.velocity.append(self.dynToRadVel(actuator.current_speed))
+					elif (actuator.id in self.position_dyns or actuator.id in self.pos_slaves):
+						joint_msg.velocity.append(self.dynToMetersVel(actuator.current_speed))
+					joint_msg.effort.append(actuator.current_load)
+# calculates the pose based on the encoders and the previous pose
+				self.gantry_pose.position.x+=self.deltaEncoders(self.curEncoders[self.id_to_array[self.settings['xm']]],self.oldEncoders[self.id_to_array[self.settings['xm']]])*0.24284 # xm for x master
+				self.gantry_pose.position.y+=self.deltaEncoders(self.curEncoders[self.id_to_array[self.settings['y']]],self.oldEncoders[self.id_to_array[self.settings['y']]])*0.24284
+				self.gantry_pose.position.z+=self.deltaEncoders(self.curEncoders[self.id_to_array[self.settings['z']]],self.oldEncoders[self.id_to_array[self.settings['z']]])*0.24284
+# orientation is directly obtainable by looking at the joint angles themselves
+				self.gantry_pose.orientation.x=self.dynToRadPos(self.curEncoders[self.id_to_array[self.settings['r']]])
+				self.gantry_pose.orientation.y=self.dynToRadPos(self.curEncoders[self.id_to_array[self.settings['p']]])
+				self.gantry_pose.orientation.z=self.dynToRadPos(self.curEncoders[self.id_to_array[self.settings['yaw']]])
+# prints the display
 				print print_statement
+# publishes everything
+				self.joint_state_publisher.publish(joint_msg)
+				self.pose_publisher.publish(self.gantry_pose)
+# sets old encoders to current encoders for use in the next loop
+				self.oldEncoders=self.curEncoders[:]
 # startup stuffs
 
 if __name__ == '__main__':
