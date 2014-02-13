@@ -5,6 +5,8 @@
 #include <sensor_msgs/Joy.h>
 #include <std_msgs/Bool.h>
 
+#include <std_msgs/Float64.h>
+
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/TwistStamped.h>
 
@@ -20,6 +22,9 @@
 #include <mav_srvs/ESTOP.h>
 #include <mav_srvs/PositionHold.h>
 #include <mav_srvs/VelocityHold.h>
+
+#include <mav_srvs/SetMotorsOnOff.h>
+#include <mav_srvs/GetMotorsOnOff.h>
 
 class QuadJoyTeleop
 {

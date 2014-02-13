@@ -31,14 +31,14 @@ QuadJoyTeleop::QuadJoyTeleop(ros::NodeHandle nh, ros::NodeHandle nh_private):
 
   // TODO: have all cmd_joy all here?
 
-  cmd_roll_publisher_ = nh_mav.advertise<std_msgs::Float64>(
-    "cmd_roll", 1);
-  cmd_pitch_publisher_ = nh_mav.advertise<std_msgs::Float64>(
-    "cmd_pitch", 1);
-  cmd_yaw_rate_publisher_ = nh_mav.advertise<std_msgs::Float64>(
-    "cmd_yaw", 1);
-  cmd_thrust_publisher_ = nh_mav.advertise<std_msgs::Float64>(
-    "cmd_thrust", 1);
+  cmd_roll_publisher_ = nh_mav.advertise<mav_msgs::Roll>(
+    "cmd/roll", 1);
+  cmd_pitch_publisher_ = nh_mav.advertise<mav_msgs::Pitch>(
+    "cmd/pitch", 1);
+  cmd_yaw_rate_publisher_ = nh_mav.advertise<mav_msgs::YawRate>(
+    "cmd/yaw_rate", 1);
+  cmd_thrust_publisher_ = nh_mav.advertise<mav_msgs::Thrust>(
+    "cmd/thrust", 1);
   cmd_vel_publisher_ = nh_mav.advertise<geometry_msgs::TwistStamped>(
     "cmd_joy/vel", 1);
 
@@ -57,8 +57,8 @@ QuadJoyTeleop::QuadJoyTeleop(ros::NodeHandle nh, ros::NodeHandle nh_private):
     "land");
   change_des_pose_client_ = nh_mav.serviceClient<mav_srvs::ChangeDesPose>(
     "changeDesPose");
-  toggle_engage_client_ = nh_mav.serviceClient<mav_srvs::SetMotorsOnOff>(
-    "setMotorsOnOff");
+  toggle_engage_client_ = nh_mav.serviceClient<mav_srvs::ToggleEngage>(
+    "toggleEngage");
   pos_hold_client_ = nh_mav.serviceClient<mav_srvs::PositionHold>(
     "positionHold");
   vel_hold_client_ = nh_mav.serviceClient<mav_srvs::VelocityHold>(
@@ -83,27 +83,27 @@ void QuadJoyTeleop::initParams()
   cmd_vel_angular_scale_ = 1.0; // rad
   
   // for direct commands
-  cmd_roll_scale_     = 0.4;       
-  cmd_pitch_scale_    = 0.4;
+  cmd_roll_scale_     = 0.5;       
+  cmd_pitch_scale_    = 0.5;
   cmd_yaw_rate_scale_ = 1.0;   
-  cmd_thrust_scale_   = 0.7;
+  cmd_thrust_scale_   = 100.0;  
 
   estop_button_    = 999;   
-  takeoff_button_  = 11;    // triangle (12)
+  takeoff_button_  = 3;    // triangle (12)
   land_button_     = 1;    // X (14)
   engage_button_   = 0;    // square (15)
-  pos_hold_button_ = 9;    // R1 (right trigger)
-  vel_hold_button_ = 7;    // L1 (left trigger)
+  pos_hold_button_ = 11;    // R1 (right trigger)
+  vel_hold_button_ = 10;    // L1 (left trigger)
 
-  roll_axis_   = 0;
-  pitch_axis_  = 1;
-  yaw_axis_    = 2;
-  thrust_axis_ = 3;
+  roll_axis_   = 2;
+  pitch_axis_  = 3;
+  yaw_axis_    = 0;
+  thrust_axis_ = 1;
 
-  vy_axis_   = 0;
-  vx_axis_   = 1;
-  vz_axis_   = 2;
-  vyaw_axis_ = 3;
+  vy_axis_   = 2;
+  vx_axis_   = 3;
+  vz_axis_   = 1;
+  vyaw_axis_ = 0;
 }
 
 void QuadJoyTeleop::joyCallback (const sensor_msgs::JoyPtr& joy_msg)
@@ -157,8 +157,7 @@ void QuadJoyTeleop::joyCallback (const sensor_msgs::JoyPtr& joy_msg)
     {
       ROS_INFO("Toggle-Engage button pressed.");
 
-      mav_srvs::SetMotorsOnOff toggle_engage_srv;
-      toggle_engage_srv.request.on = true;
+      mav_srvs::ToggleEngage toggle_engage_srv; 
       toggle_engage_client_.call(toggle_engage_srv);
 
       engage_btn_pressed_ = true;
@@ -228,24 +227,26 @@ void QuadJoyTeleop::joyCallback (const sensor_msgs::JoyPtr& joy_msg)
 
   // **** direct yaw/pitch/roll/thrust commands
 
-  std_msgs::Float64 cmd_roll_msg;
-  std_msgs::Float64 cmd_pitch_msg;
-  std_msgs::Float64 cmd_yaw_rate_msg;
-  std_msgs::Float64 cmd_thrust_msg;
+  mav_msgs::Roll    cmd_roll_msg;
+  mav_msgs::Pitch   cmd_pitch_msg;
+  mav_msgs::YawRate cmd_yaw_rate_msg;
+  mav_msgs::Thrust  cmd_thrust_msg;
 
-  cmd_roll_msg.data = joy_msg->axes[roll_axis_] * cmd_roll_scale_ * (1);
-  cmd_pitch_msg.data = joy_msg->axes[pitch_axis_] * cmd_pitch_scale_;
-  cmd_yaw_rate_msg.data = joy_msg->axes[yaw_axis_] * cmd_yaw_rate_scale_;
-  cmd_thrust_msg.data = ((joy_msg->axes[thrust_axis_] + 1)/2) * cmd_thrust_scale_;
+  cmd_roll_msg.roll = 
+    joy_msg->axes[roll_axis_]   * cmd_roll_scale_ * (-1);
+  cmd_pitch_msg.pitch = 
+    joy_msg->axes[pitch_axis_]  * cmd_pitch_scale_;
+  cmd_yaw_rate_msg.yaw_rate = 
+    joy_msg->axes[yaw_axis_]    * cmd_yaw_rate_scale_;
+  cmd_thrust_msg.thrust = 
+    joy_msg->axes[thrust_axis_] * cmd_thrust_scale_;
 
-  cmd_thrust_msg.data = std::max(cmd_thrust_msg.data, 0.0);
+  cmd_thrust_msg.thrust = std::max(cmd_thrust_msg.thrust, 0.0);
 
   cmd_roll_publisher_.publish(cmd_roll_msg);
   cmd_pitch_publisher_.publish(cmd_pitch_msg);
   cmd_yaw_rate_publisher_.publish(cmd_yaw_rate_msg);
   cmd_thrust_publisher_.publish(cmd_thrust_msg);
-
-  ROS_INFO("Thrust: %f", cmd_thrust_msg.data);
 
   // **** velocity commands
 
