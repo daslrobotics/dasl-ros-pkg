@@ -54,24 +54,10 @@
     <arg name="publish_monitored_planning_scene" value="true" />
   </include>
 
-  <!-- 
   <include file="$(find mk2_moveit_config)/launch/moveit_rviz.launch">
     <arg name="config" value="true"/>
   </include>
-  -->
   
   <include file="$(find mk2_moveit_config)/launch/default_warehouse_db.launch" />
-
-  <!-- Start the joystick node -->
-  <node respawn="true" pkg="joy" type="joy_node" name="joy" >
-    <param name="dev" type="string" value="/dev/input/js0" />
-    <param name="deadzone" value="0.12" />
-  </node> 
-
-<!--
-  <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_base_link 100" />
--->
-  <node pkg="tf" type="static_transform_publisher" name="mk2_camera_broadcaster" args="0 0 -0.43 0 0 0 /torso_roll_link /camera_link 100" />
-  <node pkg="tf" type="static_transform_publisher" name="mk2_grasp_point" args="0.0 0.034 0 0 -0.4 0.0 /Kanji /grasp_point 100" />
 
 </launch>
