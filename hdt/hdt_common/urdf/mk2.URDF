@@ -22,7 +22,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/torso_base_link.STL" />
+          filename="package://hdt_common/meshes/torso_base_link.STL" />
       </geometry>
       <material
         name="">
@@ -36,7 +36,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/torso_base_link.STL" />
+          filename="package://hdt_common/meshes/torso_base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -62,7 +62,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/torso_yaw_link.STL" />
+          filename="package://hdt_common/meshes/torso_yaw_link.STL" />
       </geometry>
       <material
         name="">
@@ -76,7 +76,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/torso_yaw_link.STL" />
+          filename="package://hdt_common/meshes/torso_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -120,7 +120,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/torso_pitch_link.STL" />
+          filename="package://hdt_common/meshes/torso_pitch_link.STL" />
       </geometry>
       <material
         name="">
@@ -134,7 +134,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/torso_pitch_link.STL" />
+          filename="package://hdt_common/meshes/torso_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -178,7 +178,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/torso_roll_link.STL" />
+          filename="package://hdt_common/meshes/torso_roll_link.STL" />
       </geometry>
       <material
         name="">
@@ -192,7 +192,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/torso_roll_link.STL" />
+          filename="package://hdt_common/meshes/torso_roll_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -236,7 +236,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_1.STL" />
+          filename="package://hdt_common/meshes/link_1.STL" />
       </geometry>
       <material
         name="">
@@ -250,7 +250,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_1.STL" />
+          filename="package://hdt_common/meshes/link_1.STL" />
       </geometry>
     </collision>
   </link>
@@ -294,7 +294,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_2.STL" />
+          filename="package://hdt_common/meshes/link_2.STL" />
       </geometry>
       <material
         name="">
@@ -308,7 +308,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_2.STL" />
+          filename="package://hdt_common/meshes/link_2.STL" />
       </geometry>
     </collision>
   </link>
@@ -352,7 +352,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_3.STL" />
+          filename="package://hdt_common/meshes/link_3.STL" />
       </geometry>
       <material
         name="">
@@ -366,7 +366,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_3.STL" />
+          filename="package://hdt_common/meshes/link_3.STL" />
       </geometry>
     </collision>
   </link>
@@ -410,7 +410,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_4.STL" />
+          filename="package://hdt_common/meshes/link_4.STL" />
       </geometry>
       <material
         name="">
@@ -424,7 +424,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_4.STL" />
+          filename="package://hdt_common/meshes/link_4.STL" />
       </geometry>
     </collision>
   </link>
@@ -468,7 +468,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_5.STL" />
+          filename="package://hdt_common/meshes/link_5.STL" />
       </geometry>
       <material
         name="">
@@ -482,7 +482,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_5.STL" />
+          filename="package://hdt_common/meshes/link_5.STL" />
       </geometry>
     </collision>
   </link>
@@ -526,7 +526,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_6.STL" />
+          filename="package://hdt_common/meshes/link_6.STL" />
       </geometry>
       <material
         name="">
@@ -540,7 +540,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_6.STL" />
+          filename="package://hdt_common/meshes/link_6.STL" />
       </geometry>
     </collision>
   </link>
@@ -584,7 +584,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_7.STL" />
+          filename="package://hdt_common/meshes/link_7.STL" />
       </geometry>
       <material
         name="">
@@ -598,7 +598,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/link_7.STL" />
+          filename="package://hdt_common/meshes/link_7.STL" />
       </geometry>
     </collision>
   </link>
@@ -642,7 +642,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/right_palm_link.STL" />
+          filename="package://hdt_common/meshes/right_palm_link.STL" />
       </geometry>
       <material
         name="">
@@ -656,7 +656,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/right_palm_link.STL" />
+          filename="package://hdt_common/meshes/right_palm_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -695,7 +695,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/right_thumb_roll_link.STL" />
+          filename="package://hdt_common/meshes/right_thumb_roll_link.STL" />
       </geometry>
       <material
         name="">
@@ -709,7 +709,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/right_thumb_roll_link.STL" />
+          filename="package://hdt_common/meshes/right_thumb_roll_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -753,7 +753,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/right_thumb_pitch_link.STL" />
+          filename="package://hdt_common/meshes/right_thumb_pitch_link.STL" />
       </geometry>
       <material
         name="">
@@ -767,7 +767,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/right_thumb_pitch_link.STL" />
+          filename="package://hdt_common/meshes/right_thumb_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -811,7 +811,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/right_index_yaw_link.STL" />
+          filename="package://hdt_common/meshes/right_index_yaw_link.STL" />
       </geometry>
       <material
         name="">
@@ -825,7 +825,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/right_index_yaw_link.STL" />
+          filename="package://hdt_common/meshes/right_index_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -869,7 +869,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/right_ring_yaw_link.STL" />
+          filename="package://hdt_common/meshes/right_ring_yaw_link.STL" />
       </geometry>
       <material
         name="">
@@ -883,7 +883,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mk2/meshes/right_ring_yaw_link.STL" />
+          filename="package://hdt_common/meshes/right_ring_yaw_link.STL" />
       </geometry>
     </collision>
   </link>

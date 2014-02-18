@@ -15,25 +15,10 @@
   <depend package="geometry_msgs"/>
   <depend package="std_msgs"/>
   <depend package="urdf"/>
-  <depend package="pr2_controllers_msgs"/>
-  <depend package="diagnostic_updater"/>
-  <depend package="diagnostic_msgs"/>
-  <depend package="xacro"/>
   <depend package="robot_state_publisher"/>
+  <depend package="pr2_controllers_msgs"/>
   <depend package="actuator_array_driver"/>
-  <depend package="control_msgs"/>
-  <depend package="actionlib"/>
-  <depend package="trajectory_msgs"/>
-  <depend package="industrial_robot_client"/>
-  <depend package="moveit_core"/>
-  <depend package="interactive_markers"/>
-  <depend package="moveit_ros_perception"/>
-  <depend package="moveit_ros_planning_interface"/>
-  <depend package="pluginlib"/>
-  <depend package="moveit_ros_move_group"/>
-  <depend package="moveit_ros_planning"/>
   <depend package="tf"/> 
- 
 
 </package>
 

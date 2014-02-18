@@ -5,9 +5,8 @@
 
     <!-- Launch Rviz  -->
     <node pkg="rviz" type="rviz" name="rviz" args="-d $(find mk2_controller)/launch/mk2.rviz" />
-   
 
-    <!-- Start the Example Driver -->
+    <!-- Start the MK2 Driver -->
     <node pkg="mk2_controller" type="mk2_controller" name="mk2_controller" output="screen" >
         <rosparam command="load" file="$(find mk2_controller)/config/mk2.yaml" />
     </node>
@@ -19,7 +18,7 @@
     </node> 
 
     <!-- Load arm control node -->
-    <node pkg="mk2_controller" type="move_arm_joy.py" name="move_arm_joy" output="screen" />
+    <node pkg="mk2_controller" type="move_mk2_joy.py" name="move_mk2_joy" output="screen" />
    
     <!-- Publish the robot state -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
@@ -28,5 +27,5 @@
     
     <!-- Publish a static transform between the robot base and the world frame -->
     <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_base_link 100" />
-    <node pkg="tf" type="static_transform_publisher" name="camera_base_broadcaster" args="0 0 1.5 0 0 0 /world /camera_link 100" />
+
 </launch>
