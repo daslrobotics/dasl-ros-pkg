@@ -45,28 +45,21 @@ from dynamixel_controllers.srv import *
 class MoveGantryPS3():
     def __init__(self):
         self.is_running = True
-        self.step_size = 5.0 * 3.14 / 180.0
+        self.step_size = 2.0 * 3.14 / 180.0
         self.joy_data = None
         
-        rospy.init_node('move_gantry_dual_joy', anonymous=True)
+        rospy.init_node('move_dual_arm_joy', anonymous=True)
         rospy.Subscriber('/arm_joy', Joy, self.read_joystick_data)
-
-        self.servo_position_x = rospy.Publisher('/x_controller/command', Float64)
-        self.servo_position_y = rospy.Publisher('/y_controller/command', Float64)
-        self.servo_position_z = rospy.Publisher('/z_controller/command', Float64)
-        self.servo_position_yaw = rospy.Publisher('/yaw_controller/command', Float64)
-        self.servo_position_pitch = rospy.Publisher('/pitch_controller/command', Float64)
-        self.servo_position_roll = rospy.Publisher('/roll_controller/command', Float64)
 
         self.right_shoulder_roll_pub = rospy.Publisher('right_shoulder_roll_controller/command', Float64)
         self.right_wrist_roll_pub = rospy.Publisher('right_wrist_roll_controller/command', Float64)
         self.left_shoulder_roll_pub = rospy.Publisher('left_shoulder_roll_controller/command', Float64)
         self.left_wrist_roll_pub = rospy.Publisher('left_wrist_roll_controller/command', Float64)
 
-        self.right_shoulder_roll_joint = -0.88
-	self.right_wrist_roll_joint = -2.47
-	self.left_shoulder_roll_joint = 0.88
-	self.left_wrist_roll_joint = 2.47
+        self.right_shoulder_roll_joint = 0.0 #-0.88
+	self.right_wrist_roll_joint = 0.0 #-2.47
+	self.left_shoulder_roll_joint = 0.0 #0.88
+	self.left_wrist_roll_joint = 0.0 #2.47
 
         rospy.wait_for_service('/right_shoulder_roll_controller/set_speed')
         self.servo_speed_rsr = rospy.ServiceProxy('/right_shoulder_roll_controller/set_speed', SetSpeed, persistent=True)
@@ -77,10 +70,10 @@ class MoveGantryPS3():
         rospy.wait_for_service('/left_wrist_roll_controller/set_speed')
         self.servo_speed_lwr = rospy.ServiceProxy('/left_wrist_roll_controller/set_speed', SetSpeed, persistent=True)
 	
-	self.servo_speed_rsr(1.0)
-	self.servo_speed_rwr(1.0)
-	self.servo_speed_lsr(1.0)
-	self.servo_speed_lwr(1.0)
+	self.servo_speed_rsr(0.5)
+	self.servo_speed_rwr(0.5)
+	self.servo_speed_lsr(0.5)
+	self.servo_speed_lwr(0.5)
 
     def read_joystick_data(self, data):
         self.joy_data = data
@@ -90,10 +83,10 @@ class MoveGantryPS3():
             if self.joy_data:
 
 		if self.joy_data.buttons[0] == 1:
-		    self.right_shoulder_roll_joint = -0.88
-		    self.right_wrist_roll_joint = -2.47
-		    self.left_shoulder_roll_joint = 0.88
-		    self.left_wrist_roll_joint = 2.47
+		    self.right_shoulder_roll_joint = -1.4
+		    self.right_wrist_roll_joint = -2.64
+		    self.left_shoulder_roll_joint = 1.4
+		    self.left_wrist_roll_joint = 2.64
 
 		if self.joy_data.buttons[1] == 1:
 		    self.right_shoulder_roll_joint = 0.0
@@ -102,9 +95,9 @@ class MoveGantryPS3():
 		    self.left_wrist_roll_joint = 0.0
 
 		self.right_shoulder_roll_joint += -1 * self.joy_data.axes[0] * self.step_size
-		self.right_wrist_roll_joint += -1 * self.joy_data.axes[2] * self.step_size
+		self.right_wrist_roll_joint += -1 * self.joy_data.axes[0] * self.step_size
 		self.left_shoulder_roll_joint += 1 * self.joy_data.axes[0] * self.step_size
-		self.left_wrist_roll_joint += 1 * self.joy_data.axes[2] * self.step_size
+		self.left_wrist_roll_joint += 1 * self.joy_data.axes[0] * self.step_size
 
             self.right_shoulder_roll_pub.publish(self.right_shoulder_roll_joint)
             self.right_wrist_roll_pub.publish(self.right_wrist_roll_joint)

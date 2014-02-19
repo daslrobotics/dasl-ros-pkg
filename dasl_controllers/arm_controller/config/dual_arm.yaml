@@ -6,10 +6,10 @@ right_shoulder_roll_controller:
     joint_name: right_shoulder_roll_joint
     joint_speed: 0.2
     motor:
-        id: 75
-        init: 512
+        id: 51
+        init: 2046
         min: 0
-        max: 1023
+        max: 4091
 
 right_wrist_roll_controller:
     controller:
@@ -19,10 +19,10 @@ right_wrist_roll_controller:
     joint_name: right_wrist_roll_joint
     joint_speed: 0.2
     motor:
-        id: 91
-        init: 512
+        id: 50
+        init: 2046
         min: 0
-        max: 1023
+        max: 4091
 
 left_shoulder_roll_controller:
     controller:
@@ -32,10 +32,10 @@ left_shoulder_roll_controller:
     joint_name: left_shoulder_roll_joint
     joint_speed: 0.2
     motor:
-        id: 69
-        init: 512
+        id: 52
+        init: 2046
         min: 0
-        max: 1023
+        max: 4091
 
 left_wrist_roll_controller:
     controller:
@@ -45,7 +45,7 @@ left_wrist_roll_controller:
     joint_name: left_wrist_roll_joint
     joint_speed: 0.2
     motor:
-        id: 98
-        init: 512
+        id: 53
+        init: 2046
         min: 0
-        max: 1023
+        max: 4091

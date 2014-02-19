@@ -1,0 +1,11 @@
+<launch>
+
+    <!-- Start the joystick node -->
+    <node respawn="true" pkg="joy" type="joy_node" name="joy" >
+        <param name="dev" type="string" value="/dev/input/js0" />
+        <param name="deadzone" value="0.12" />
+    </node> 
+
+    <node name="servo_joy" pkg="mini_gantry_controller" type="servo_joy.py" output="screen" />
+
+</launch>

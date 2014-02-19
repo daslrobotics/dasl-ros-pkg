@@ -1,0 +1,6 @@
+<launch>
+
+
+    <node name="servo_controller" pkg="mini_gantry_controller" type="servo_controller.py" output="screen" />
+
+</launch>
