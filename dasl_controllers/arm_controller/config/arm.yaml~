@@ -1,25 +1,52 @@
-j1_controller:
+shoulder_pitch_controller:
     controller:
         package: dynamixel_controllers
         module: joint_position_controller
         type: JointPositionController
-    joint_name: yaw_joint
-    joint_speed: 0.2
+    joint_name: shoulder_pitch_joint
+    joint_speed: 0.5
+    motor:
+        id: 10
+        init: 512
+        min: 0
+        max: 1023
+
+elbow_pitch_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: elbow_pitch_joint
+    joint_speed: 0.5
     motor:
         id: 11
-        init: 2047
+        init: 512
         min: 0
-        max: 4095
+        max: 1023
 
-j2_controller:
+wrist_pitch_controller:
     controller:
         package: dynamixel_controllers
         module: joint_position_controller
         type: JointPositionController
-    joint_name: pitch_joint
-    joint_speed: 0.2
+    joint_name: wrist_pitch_joint
+    joint_speed: 0.5
     motor:
         id: 12
-        init: 2047
+        init: 512
         min: 0
-        max: 4095
+        max: 1023
+
+gripper_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: gripper_joint
+    joint_speed: 0.5
+    motor:
+        id: 13
+        init: 512
+        min: 0
+        max: 1023
+

@@ -9,6 +9,12 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/arm_controller</url>
   <depend package="dynamixel_controllers"/>
+  <depend package="dynamixel_msgs"/>
+
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="geometry_msgs"/>
+  <depend package="sensor_msgs"/>
 
 </package>
 
