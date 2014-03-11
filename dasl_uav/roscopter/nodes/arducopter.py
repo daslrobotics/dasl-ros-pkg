@@ -39,10 +39,10 @@ class MCN():
         self.twist = [0, 0, 0, 0, 1500, 1500, 1500, 1500]
         self.reg_x = 1500
         self.reg_y = 1500
-        self.reg_z = 1200
-        self.x = 1500.0
-        self.y = 1500.0
-        self.z = 1100.0
+        self.reg_z = 1100
+        self.x = 1500
+        self.y = 1500
+        self.z = 1100
         self.yaw = 1500
 
     def inf_main(self):
@@ -73,10 +73,10 @@ class MCN():
         self.axes = data.axes
         self.buttons = data.buttons
 
-        self.x = 1480-self.axes[1]*250
-        self.y = 1494-self.axes[0]*250
-        self.z = 1100+((self.axes[3]+1)/2)*1000 #800 #600
-	self.yaw = 1490-self.axes[2]*300
+        self.x = 1500-self.axes[1]*250
+        self.y = 1500-self.axes[0]*250
+        self.z = 1100+((self.axes[3]+1)/2)*800 #800 #600
+	self.yaw = 1500-self.axes[2]*300
 
         self.fly()
 
@@ -108,7 +108,7 @@ class MCN():
             self.pub_mode.publish('a')
             print 'AltHold'
 
-        if self.buttons[9]==1 and self.control==2: #dodati ispravnu orijentaciju kao uvijet!
+        if self.buttons[9]==1 and self.control==2:
             self.control=3
             self.pub_mode.publish('p')
             print 'PosHold'

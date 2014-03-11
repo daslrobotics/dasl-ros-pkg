@@ -1,0 +1,15 @@
+<launch>
+
+    <!-- Load IK control node -->
+    <node pkg="mk2_controller" type="mk2_ik_joy" name="mk2_ik_joy" output="screen" />
+
+    <!-- Publish a static transform between the robot base and the world frame -->
+    <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_base_link 100" />
+
+    <!-- Start the joystick node -->
+    <node respawn="true" pkg="joy" type="joy_node" name="joy" >
+        <param name="dev" type="string" value="/dev/input/js0" />
+        <param name="deadzone" value="0.12" />
+    </node> 
+ 
+</launch>

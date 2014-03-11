@@ -241,6 +241,19 @@ mk2_controller/fast:
 .PHONY : mk2_controller/fast
 
 #=============================================================================
+# Target rules for targets named mk2_ik_joy
+
+# Build rule for target.
+mk2_ik_joy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mk2_ik_joy
+.PHONY : mk2_ik_joy
+
+# fast build rule for target.
+mk2_ik_joy/fast:
+	$(MAKE) -f CMakeFiles/mk2_ik_joy.dir/build.make CMakeFiles/mk2_ik_joy.dir/build
+.PHONY : mk2_ik_joy/fast
+
+#=============================================================================
 # Target rules for targets named rosbuild_clean-test-results
 
 # Build rule for target.
@@ -592,6 +605,30 @@ src/messages.cpp.s:
 	$(MAKE) -f CMakeFiles/mk2_controller.dir/build.make CMakeFiles/mk2_controller.dir/src/messages.cpp.s
 .PHONY : src/messages.cpp.s
 
+src/mk2_ik_joy.o: src/mk2_ik_joy.cpp.o
+.PHONY : src/mk2_ik_joy.o
+
+# target to build an object file
+src/mk2_ik_joy.cpp.o:
+	$(MAKE) -f CMakeFiles/mk2_ik_joy.dir/build.make CMakeFiles/mk2_ik_joy.dir/src/mk2_ik_joy.cpp.o
+.PHONY : src/mk2_ik_joy.cpp.o
+
+src/mk2_ik_joy.i: src/mk2_ik_joy.cpp.i
+.PHONY : src/mk2_ik_joy.i
+
+# target to preprocess a source file
+src/mk2_ik_joy.cpp.i:
+	$(MAKE) -f CMakeFiles/mk2_ik_joy.dir/build.make CMakeFiles/mk2_ik_joy.dir/src/mk2_ik_joy.cpp.i
+.PHONY : src/mk2_ik_joy.cpp.i
+
+src/mk2_ik_joy.s: src/mk2_ik_joy.cpp.s
+.PHONY : src/mk2_ik_joy.s
+
+# target to generate assembly for a file
+src/mk2_ik_joy.cpp.s:
+	$(MAKE) -f CMakeFiles/mk2_ik_joy.dir/build.make CMakeFiles/mk2_ik_joy.dir/src/mk2_ik_joy.cpp.s
+.PHONY : src/mk2_ik_joy.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -611,6 +648,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... mk2_controller"
+	@echo "... mk2_ik_joy"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_clean-test-results"
 	@echo "... rosbuild_precompile"
@@ -646,6 +684,9 @@ help:
 	@echo "... src/messages.o"
 	@echo "... src/messages.i"
 	@echo "... src/messages.s"
+	@echo "... src/mk2_ik_joy.o"
+	@echo "... src/mk2_ik_joy.i"
+	@echo "... src/mk2_ik_joy.s"
 .PHONY : help
 
 

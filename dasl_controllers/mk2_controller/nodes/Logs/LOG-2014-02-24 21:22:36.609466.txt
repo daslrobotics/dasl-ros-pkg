@@ -1,0 +1,2 @@
+Time Yaw_torque Pitch_torque Roll_torque Shoulder_pitch_torque Elbow_pitch_torque Wrist_pitch_torque shoulder_vel elbow_vel wrist_vel 
+

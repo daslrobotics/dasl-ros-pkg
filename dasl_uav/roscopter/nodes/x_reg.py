@@ -31,12 +31,12 @@ class PID:
 		self.pub_reg = rospy.Publisher('reg_x', Int32)
 		rospy.init_node('x_regulator')
 
-		self.Kp = 0.1
-		self.Ki = 0.002
-		self.Kd = 3.0
+		self.Kp = 600
+		self.Ki = 10
+		self.Kd = 650
 		self.Integrator = 0.0
-		self.Integrator_max = 5000
-		self.Integrator_min = -5000
+		self.Integrator_max = 500
+		self.Integrator_min = -500
 		self.Derivator = 0.0
 		
 		self.x = 1500
@@ -71,13 +71,18 @@ class PID:
 		elif self.mode=='o' or self.mode=='s' or self.mode=='a':
 			self.trigger = True
 			self.Integrator = 0.0
-		elif self.mode=='p' and self.press > 20 and data.buttons[9]==1:
+		elif self.mode=='p': #and self.press > 20 and data.buttons[9]==1:
 			if data.buttons[2]==1:
-				self.set_point -= 0.2
+				self.Kp = self.Kp + 0.001
+				print "x : " + str(self.Kp)
+				#self.set_point -= 0.2
 				self.press = 0
 			elif data.buttons[3]==1:
-				self.set_point += 0.2
+				self.Kp = self.Kp - 0.001
+				print "x : " + str(self.Kp)
+				#self.set_point += 0.2
 				self.press = 0
+			
 
 	def integrator_set(self,data):
 		if self.trigger:
@@ -123,6 +128,7 @@ class PID:
 
 		self.make_log.data = str(int(PID_reg))+' '+str(self.P_value)+' '+str(self.I_value)+' '+str(self.D_value)+' '+str(self.error)
 		self.pub_log.publish(self.make_log)
+
 
 if __name__ == '__main__':
 

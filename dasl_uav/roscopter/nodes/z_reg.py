@@ -18,7 +18,8 @@ import threading
 pygtk.require('2.0')
 
 from std_msgs.msg import String, Header, Int32
-from geometry_msgs.msg import Twist, Pose
+from geometry_msgs.msg import Twist
+from geometry_msgs.msg import Pose
 from std_msgs.msg import Empty
 from sensor_msgs.msg import Joy, Imu, NavSatStatus, NavSatFix
 from datetime import datetime
@@ -31,12 +32,12 @@ class PID:
 		self.pub_reg = rospy.Publisher('reg_z', Int32)
 		rospy.init_node('z_regulator')
 
-		self.Kp = 0.5 #0.25 #60.0  .110 
-		self.Ki = 0.002 #1.0  .010 
-		self.Kd = 2.0 #2000.0 .080
+		self.Kp = 10 #0.5 #0.25 #60.0  .110 
+		self.Ki = 0 #0.002 #1.0  .010 
+		self.Kd = 0 #2.0 #2000.0 .080
 		self.Integrator = 0.0
-		self.Integrator_max = 5000 #600
-		self.Integrator_min = -5000 #-600
+		self.Integrator_max = 500 #600
+		self.Integrator_min = -500 #-600
 		self.Derivator = 0.0
 		
 		self.z = 1100
@@ -70,13 +71,13 @@ class PID:
 		elif self.mode=='o' or self.mode=='s':
 			self.trigger = True
 			self.Integrator = 0.0
-		elif (self.mode=='a' or self.mode=='p') and self.press > 20 and data.buttons[9]==0:
-			if data.buttons[4]==1:
-				self.set_point += 0.1
-				self.press = 0
-			elif data.buttons[5]==1:
-				self.set_point -= 0.1
-				self.press = 0
+		#elif (self.mode=='a' or self.mode=='p') and self.press > 20 and data.buttons[9]==0:
+			#if data.buttons[3]==1:
+			#	self.set_point += 0.1
+			#	self.press = 0
+			#elif data.buttons[4]==1:
+			#	self.set_point -= 0.1
+			#	self.press = 0
 
 	def integrator_set(self,data):
 		if self.trigger:
@@ -109,8 +110,8 @@ class PID:
 		
 		PID_reg = self.P_value + self.I_value + self.D_value + self.z
 		
-		if PID_reg > 2000:
-			PID_reg = 2000
+		if PID_reg > 1700:
+			PID_reg = 1700
 		elif PID_reg < 1100:
 			PID_reg = 1100
 

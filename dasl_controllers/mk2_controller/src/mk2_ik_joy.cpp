@@ -67,7 +67,7 @@ TeleopMK2::TeleopMK2()
   Eigen::Affine3d new_end_effector_state;
 
   std::vector<double> vel;
-  double p[] = {0.5,0.5,0.5,0.5,0.5,0.5,0.5};
+  double p[] = {0.4,0.4,0.4,0.4,0.6,0.6,0.6};
   std::vector<double> a(p, p+7);
   sensor_msgs::JointState msg; 
 
@@ -104,9 +104,60 @@ TeleopMK2::TeleopMK2()
 
 void TeleopMK2::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 {
-  actual_end_effector_.position.x += 0.01 * joy->axes[1];
-  actual_end_effector_.position.y += 0.01 * joy->axes[0];
-  actual_end_effector_.position.z = -0.88 + 0.3 * joy->axes[3];
+
+  if (joy->buttons[0])
+  {
+    //TeleopMK2::kinematic_state->setToDefaultValues();  
+    actual_end_effector_.position.x = 0.29855;
+    actual_end_effector_.position.y = -0.24952;
+    actual_end_effector_.position.z = -0.88; 
+  }
+
+  else if (joy->buttons[10])
+  {
+    actual_end_effector_.position.x = 0.3;
+    actual_end_effector_.position.y = 0.0;
+    actual_end_effector_.position.z = -0.88; 
+  }
+
+  else if (joy->buttons[8])
+  {
+    actual_end_effector_.position.x = 0.3;
+    actual_end_effector_.position.y = -0.25;
+    actual_end_effector_.position.z = -0.75;
+  }
+
+  else if (joy->buttons[6])
+  {
+    actual_end_effector_.position.x = 0.3;
+    actual_end_effector_.position.y = -0.5;
+    actual_end_effector_.position.z = -0.88;
+  }
+
+  else if (joy->buttons[11])
+  {
+    //actual_end_effector_.position.x =
+    //actual_end_effector_.position.y = 
+    //actual_end_effector_.position.z =
+  }
+
+  else if (joy->buttons[9])
+  {
+    //actual_end_effector_.position.x =
+    //actual_end_effector_.position.y = 
+    //actual_end_effector_.position.z =
+  }
+
+  else if (joy->buttons[7])
+  {
+    //actual_end_effector_.position.x =
+    //actual_end_effector_.position.y = 
+    //actual_end_effector_.position.z =
+  }
+
+  actual_end_effector_.position.x += 0.005 * joy->axes[1];
+  actual_end_effector_.position.y += 0.005 * joy->axes[0];
+  actual_end_effector_.position.z += 0.005 * joy->axes[2]; //-0.88 + 0.3 * joy->axes[3];
 
   actual_end_effector_.orientation.w = 1.0;
   actual_end_effector_.orientation.x = 0.0;
@@ -115,11 +166,11 @@ void TeleopMK2::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 
   ROS_INFO_STREAM ("Pos: " << actual_end_effector_.position.x << "  " << actual_end_effector_.position.y << "  " << actual_end_effector_.position.z);
 
-  if (joy->buttons[0])
-  {
+  //if (joy->buttons[0])
+  //{
     //robot_state::RobotStatePtr kinematic_state(new robot_state::RobotState(kinematic_model));
     //kinematic_state->setToDefaultValues();  
-  }
+  //}
   
 }
 

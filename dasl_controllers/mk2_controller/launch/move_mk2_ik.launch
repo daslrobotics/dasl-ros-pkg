@@ -1,7 +1,7 @@
 <launch>
 
     <!-- Load IK control node -->
-    <node pkg="mk2_ik" type="move_mk2_ik.py" name="move_mk2_ik" output="screen" />
+    <node pkg="mk2_controller" type="move_mk2_ik.py" name="move_mk2_ik" output="screen" />
 
     <!-- Publish a static transform between the robot base and the world frame -->
     <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_base_link 100" />

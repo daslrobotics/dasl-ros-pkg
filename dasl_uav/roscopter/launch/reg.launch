@@ -1,6 +1,6 @@
 <launch>
 <node name="x_regulator" pkg="roscopter" type="x_reg.py" output="screen" />
-<node name="y_regulator" pkg="roscopter" type="y_reg.py" output="screen" />
 <node name="z_regulator" pkg="roscopter" type="z_reg.py" output="screen" />
 <node name="yaw_regulator" pkg="roscopter" type="yaw_reg.py" output="screen" />
+<node name="y_regulator" pkg="roscopter" type="y_reg.py" output="screen" />
 </launch>

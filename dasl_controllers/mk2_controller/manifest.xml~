@@ -18,7 +18,10 @@
   <depend package="robot_state_publisher"/>
   <depend package="pr2_controllers_msgs"/>
   <depend package="actuator_array_driver"/>
+  <depend package="control_msgs"/>
+  <depend package="trajectory_msgs"/>
   <depend package="tf"/> 
+  <depend package="moveit_core"/>
 
 </package>
 

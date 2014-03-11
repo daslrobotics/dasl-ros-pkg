@@ -31,12 +31,12 @@ class PID:
 		self.pub_reg = rospy.Publisher('reg_y', Int32)
 		rospy.init_node('y_regulator')
 
-		self.Kp = 0.1
-		self.Ki = 0.002
-		self.Kd = 3.0
+		self.Kp = 600
+		self.Ki = 10
+		self.Kd = 650
 		self.Integrator = 0.0
-		self.Integrator_max = 5000
-		self.Integrator_min = -5000
+		self.Integrator_max = 500
+		self.Integrator_min = -500
 		self.Derivator = 0.0
 		
 		self.y = 1500
@@ -71,12 +71,16 @@ class PID:
 		elif self.mode=='o' or self.mode=='s' or self.mode=='a':
 			self.trigger = True
 			self.Integrator = 0.0
-		elif self.mode=='p' and self.press > 20 and data.buttons[9]==1:
-			if data.buttons[4]==1:
-				self.set_point += 0.2
+		elif self.mode=='p': #and self.press > 20 and data.buttons[9]==1:
+			if data.buttons[2]==1:
+				self.Kp = self.Kp + 0.001
+				print "y : " + str(self.Kp)
+				#self.set_point -= 0.2
 				self.press = 0
-			elif data.buttons[5]==1:
-				self.set_point -= 0.2
+			elif data.buttons[3]==1:
+				self.Kp = self.Kp - 0.001
+				print "y : " + str(self.Kp)
+				#self.set_point += 0.2
 				self.press = 0
 
 	def integrator_set(self,data):

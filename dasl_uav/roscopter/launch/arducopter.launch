@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="roscopter" type="arducopter.py" name="arducopter_node" output="screen"/>
+</launch>

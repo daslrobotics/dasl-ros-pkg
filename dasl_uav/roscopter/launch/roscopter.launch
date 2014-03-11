@@ -1,0 +1,7 @@
+<launch>
+    <arg name="device" default="/dev/ttyACM0"/>
+    <arg name="baudrate" default="115200"/>
+    <arg name="namespace" default="3DRArduCopter"/>
+    <arg name="rate" default="30"/>
+    <node pkg="roscopter" type="roscopter.py" name="roscopter_node" args="--device=$(arg device) --rate=$(arg rate) --baudrate=$(arg baudrate) --enable-control=true" output="screen"/>
+</launch>

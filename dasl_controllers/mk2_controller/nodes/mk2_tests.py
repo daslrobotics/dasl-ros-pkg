@@ -45,11 +45,11 @@ class MoveMK2Joy():
         rospy.sleep(3)
         self.one_time = False 
 
-        r = rospy.Rate(50)
+        #r = rospy.Rate(50)
 
         while not rospy.is_shutdown():
             self.publish_joint_states()
-            r.sleep()
+            #r.sleep()
 
     def read_joystick_data(self, data):
         self.joy_data = data

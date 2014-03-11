@@ -21,6 +21,11 @@
   <depend package="control_msgs"/>
   <depend package="trajectory_msgs"/>
   <depend package="tf"/> 
+  <depend package="moveit_core"/>
+  <depend package="moveit_ros_perception"/>
+  <depend package="moveit_ros_planning_interface"/>
+  <depend package="moveit_ros_move_group"/>
+  <depend package="moveit_ros_planning"/>
 
 </package>
 

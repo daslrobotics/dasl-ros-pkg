@@ -30,11 +30,25 @@ class Log():
 
         rospy.init_node('log')
 
+        self.gimbal_yaw_torque = 0
+        self.gimbal_pitch_torque = 0
+        self.gimbal_roll_torque = 0
+        self.right_shoulder_pitch_torque = 0
+        self.right_shoulder_pitch_position = 0
+
         self.file.write("Time Yaw_torque Pitch_torque Roll_torque Shoulder_Pitch_torque Shoulder_Pitch_position\r\n\n")
 
-    def main(self):
-            self.sub_joint_state = rospy.Subscriber('/joint_states', JointState, self.read_joint_state_data)
-            rospy.spin()
+        rospy.Subscriber('/joint_states', JointState, self.read_joint_state_data)
+
+        r = rospy.Rate(20)
+
+        while not rospy.is_shutdown():
+            self.log_it()
+            r.sleep()
+
+    #def main(self):
+            #self.sub_joint_state = rospy.Subscriber('/joint_states', JointState, self.read_joint_state_data)
+            #rospy.spin()
 
     def read_joint_state_data(self, msg):
         self.gimbal_yaw_torque = msg.effort[0]
@@ -42,18 +56,23 @@ class Log():
         self.gimbal_roll_torque = msg.effort[2]
         self.right_shoulder_pitch_torque = msg.effort[3]
         self.right_shoulder_pitch_position = msg.position[3]
-        self.log_it()
+        #self.log_it()
 
     def log_it(self):
-        r = rospy.Rate(30) # 10hz
+        #r = rospy.Rate(10) # 10hz
         self.file.write(str(time.time()-self.ts)+' '+
                         str(self.gimbal_yaw_torque)+' '+
                         str(self.gimbal_pitch_torque)+' '+
                         str(self.gimbal_roll_torque)+' '+
                         str(self.right_shoulder_pitch_torque)+' '+
                         str(self.right_shoulder_pitch_position)+'\r\n')
-        r.sleep()
+	if ((time.time()-self.ts) > 60):
+	    rospy.signal_shutdown("elapsed time")
+        #r.sleep()
       
 if __name__ == '__main__':
-    log = Log()
-    log.main()
+    try:
+        log = Log()
+        rospy.spin()
+    except rospy.ROSInterruptException: pass
+    #log.main()

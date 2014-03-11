@@ -66,6 +66,7 @@ class MoveArmPS3():
 	self.elbow_pitch_joint = -2.18
 	self.wrist_pitch_joint = -1.58
 	self.gripper_joint = 0
+	self.testing = False
 
     def read_joystick_data(self, data):
         self.joy_data = data
@@ -90,19 +91,19 @@ class MoveArmPS3():
 		    self.shoulder_pitch_joint = 2.17
 		    self.elbow_pitch_joint = -2.18
 		    self.wrist_pitch_joint = -1.58
-		    self.gripper_joint = 0
+		    #self.gripper_joint = 0
 		# Grab posture
 		if self.joy_data.buttons[8] == 1:
 		    self.shoulder_pitch_joint = 0.690
 		    self.elbow_pitch_joint = -1.51
 		    self.wrist_pitch_joint = -0.798
-		    self.gripper_joint = 0
+		    #self.gripper_joint = 0
 		# Straight down
 		if self.joy_data.buttons[6] == 1:
 		    self.shoulder_pitch_joint = 0
 		    self.elbow_pitch_joint = 0
 		    self.wrist_pitch_joint = 0
-		    self.gripper_joint = 0
+		    #self.gripper_joint = 0
 
 		if self.joy_data.buttons[11] == 1:
 
@@ -110,7 +111,9 @@ class MoveArmPS3():
                     des_pos = 0.785
                     dev = 0.05
 
-		    while not rospy.is_shutdown():
+		    self.testing = True
+
+		    while self.testing and not rospy.is_shutdown():
 
 		        self.shoulder_pitch_joint = alt * des_pos
 
@@ -118,6 +121,8 @@ class MoveArmPS3():
                 
                         while ((self.joint_data.current_pos < (alt * des_pos - dev)) or 
                                (self.joint_data.current_pos > (alt * des_pos + dev))):
+			    if self.joy_data.buttons[9] == 1:
+			       self.testing = False
                             print self.joint_data.current_pos
 		        alt *= -1
 

@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find ACROSS_Optitrack)/launch/mocap.launch"/>
+    <include file="$(find roscopter)/launch/joy.launch"/>
+    <include file="$(find roscopter)/launch/roscop.launch"/>
+    <include file="$(find roscopter)/launch/arducopter.launch"/>
+    <include file="$(find roscopter)/launch/reg.launch"/>
+</launch>
