@@ -11,11 +11,10 @@ SET(CMAKE_FORCE_UNIX_PATHS 1)
 # The C and CXX include file search paths:
 SET(CMAKE_C_INCLUDE_PATH
   "../include"
-  "/opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/cpp/include"
-  "/opt/ros/groovy/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/cpp/include"
   "/home/dasl/rosbuild_ws/gt-ros-pkg.humans/actuator_array/actuator_array_driver/include"
-  "/opt/ros/groovy/include"
+  "/opt/ros/hydro/include"
   "/usr/include/eigen3"
+  "/usr/include/pcl-1.7"
   "../msg_gen/cpp/include"
   "../srv_gen/cpp/include"
   )

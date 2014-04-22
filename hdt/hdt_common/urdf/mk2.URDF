@@ -91,7 +91,7 @@
     <child
       link="torso_yaw_link" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
       lower="-1.57"
       upper="1.57"
@@ -149,7 +149,7 @@
     <child
       link="torso_pitch_link" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 -1 0" />
     <limit
       lower="-1.57"
       upper="1.57"

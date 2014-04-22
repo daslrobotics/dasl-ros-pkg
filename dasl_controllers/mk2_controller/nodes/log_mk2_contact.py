@@ -33,6 +33,9 @@ class Log():
         self.gimbal_yaw_torque = 0
         self.gimbal_pitch_torque = 0
         self.gimbal_roll_torque = 0
+        self.gimbal_yaw_pos = 0
+        self.gimbal_pitch_pos = 0
+        self.gimbal_roll_pos = 0
         self.right_shoulder_pitch_torque = 0
         self.right_elbow_pitch_torque = 0
         self.right_wrist_pitch_torque = 0
@@ -40,11 +43,11 @@ class Log():
         self.right_elbow_pitch_vel = 0
         self.right_wrist_pitch_vel = 0
 
-        self.file.write("Time Yaw_torque Pitch_torque Roll_torque Shoulder_pitch_torque Elbow_pitch_torque Wrist_pitch_torque shoulder_vel elbow_vel wrist_vel \r\n\n")
+        #self.file.write("Time Yaw_torque Pitch_torque Roll_torque Shoulder_pitch_torque Elbow_pitch_torque Wrist_pitch_torque shoulder_vel elbow_vel wrist_vel \r\n\n")
 
         rospy.Subscriber('/joint_states', JointState, self.read_joint_state_data)
 
-        r = rospy.Rate(20)
+        r = rospy.Rate(30)
 
         while not rospy.is_shutdown():
             self.log_it()
@@ -58,6 +61,9 @@ class Log():
         self.gimbal_yaw_torque = msg.effort[0]
         self.gimbal_pitch_torque = msg.effort[1]
         self.gimbal_roll_torque = msg.effort[2]
+        self.gimbal_yaw_pos = msg.position[0]
+        self.gimbal_pitch_pos = msg.position[1]
+        self.gimbal_roll_pos = msg.position[2]
         self.right_shoulder_pitch_torque = msg.effort[3]
         self.right_elbow_pitch_torque = msg.effort[6]
         self.right_wrist_pitch_torque = msg.effort[8]
@@ -72,14 +78,17 @@ class Log():
                         str(self.gimbal_yaw_torque)+' '+
                         str(self.gimbal_pitch_torque)+' '+
                         str(self.gimbal_roll_torque)+' '+
+                        str(self.gimbal_yaw_pos)+' '+
+                        str(self.gimbal_pitch_pos)+' '+
+                        str(self.gimbal_roll_pos)+' '+
                         str(self.right_shoulder_pitch_torque)+' '+
                         str(self.right_elbow_pitch_torque)+' '+
                         str(self.right_wrist_pitch_torque)+' '+
                         str(self.right_shoulder_pitch_vel)+' '+
                         str(self.right_elbow_pitch_vel)+' '+
                         str(self.right_wrist_pitch_vel)+'\r\n')
-	if ((time.time()-self.ts) > 60):
-	    rospy.signal_shutdown("elapsed time")
+	#if ((time.time()-self.ts) > 60):
+	#    rospy.signal_shutdown("elapsed time")
         #r.sleep()
       
 if __name__ == '__main__':

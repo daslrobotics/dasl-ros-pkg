@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: hdt_common
+    relative_path: urdf/mk2.URDF
+  SRDF:
+    relative_path: config/mk2.srdf
+  CONFIG:
+    generated_timestamp: 1382493013

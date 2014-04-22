@@ -87,7 +87,7 @@ class MoveMK2ik():
         moveit_result = self.moveit_ac.get_result()
 
         # Goto position 2
-        goal_point = Point(0.298, -0.0, -1.0)
+        goal_point = Point(0.305, -0.249, -1.05)
         goal_pose.position = goal_point
         quat = quaternion_from_euler(0.0, 0.0, 0.0) # roll, pitch, yaw
         goal_pose.orientation = Quaternion(*quat.tolist())

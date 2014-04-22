@@ -629,7 +629,7 @@ int main(int argc, char** argv)
 
     i=6;
 
-    Drives[i].impedance.inertia = 0.2; //0.2;//1;
+    Drives[i].impedance.inertia = 1.0; //0.2; //0.2;//1;
     Drives[i].impedance.damping = 4.164;//4.5;
     Drives[i].impedance.stiffness = 30; // 30;//10;
 

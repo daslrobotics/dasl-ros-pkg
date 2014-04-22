@@ -1,10 +1,36 @@
 <launch>
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find hdt_common)/urdf/mk2.URDF'" />
+
+<!-- The semantic description that corresponds to the URDF -->
+<param name="robot_description_semantic" textfile="$(find mk2_full_body_moveit_config)/config/mk2.srdf"/>
+
+    <!-- Launch Rviz  -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find mk2_controller)/launch/mk2.rviz" />
+
+
+    <!-- Start the MK2 Driver -->
+    <node pkg="mk2_controller" type="mk2_controller" name="mk2_controller" output="screen" >
+        <rosparam command="load" file="$(find mk2_controller)/config/mk2.yaml" />
+    </node>
+
+    <!-- Publish the robot state -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+        <param name="publish_frequency" value="20.0"/>
+    </node>
+
+
 
     <!-- Load IK control node -->
-    <node pkg="mk2_controller" type="mk2_ik_joy" name="mk2_ik_joy" output="screen" />
+    <node pkg="mk2_controller" type="mk2_ik_joy" name="mk2_ik_joy" output="screen">
+	 <rosparam command="load" file="$(find mk2_full_body_moveit_config)/config/kinematics.yaml"/>
+    </node>
+
 
     <!-- Publish a static transform between the robot base and the world frame -->
     <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 1.5 0 0 0 /world /torso_base_link 100" />
+
+    <node pkg="tf" type="static_transform_publisher" name="camera_base_broadcaster" args="0.19 -0.13 1.44 0 1.41 3.14 /world /camera_link 100" />
+
 
     <!-- Start the joystick node -->
     <node respawn="true" pkg="joy" type="joy_node" name="joy" >

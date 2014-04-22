@@ -2,7 +2,7 @@
 
 PKG = 'mk2_controller'
 
-import roslib; roslib.load_manifest(PKG)
+import roslib#; roslib.load_manifest(PKG)
 
 import time
 import copy
