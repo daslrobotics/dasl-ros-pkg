@@ -1,0 +1,18 @@
+<package>
+  <description brief="hokuyo_controller">
+
+     hokuyo_controller
+
+  </description>
+  <author>dasl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/hokuyo_controller</url>
+  <depend package="hokuyo_node"/>
+  <depend package="dynamixel_controllers"/>
+  <depend package="dynamixel_msgs"/>
+  <depend package="laser_assembler"/>
+
+</package>
+
+

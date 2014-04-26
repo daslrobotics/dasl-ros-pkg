@@ -1,0 +1,3 @@
+digraph G {
+"laser_base" -> "laser_yaw"[label="Broadcaster: /hokuyo_tf_broadcaster\nAverage rate: 40.199 Hz\nMost recent transform: 1398470019.492 \nBuffer length: 4.950 sec\n"];
+}

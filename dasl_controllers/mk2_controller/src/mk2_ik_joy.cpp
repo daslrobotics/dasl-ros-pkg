@@ -36,6 +36,7 @@ private:
   geometry_msgs::Pose desired_end_effector_;
   geometry_msgs::PoseStamped temp_box_pose;
   geometry_msgs::PoseStamped box_pose;
+  std::vector<std::string> joint_names_global;
 };
 
 TeleopMK2::TeleopMK2()
@@ -50,8 +51,7 @@ TeleopMK2::TeleopMK2()
   kinematic_model = robot_model_loader.getModel();
 
   /* Get and print the name of the coordinate frame in which the transforms for this model are computed */
-  ROS_INFO("Model frame: %s", kinematic_model->getModelFrame().c_str());
-  
+
   /* WORKING WITH THE KINEMATIC STATE */
   /* Create a kinematic state - this represents the configuration for the robot represented by kinematic_model */
   robot_state::RobotStatePtr kinematic_state(new robot_state::RobotState(kinematic_model));
@@ -64,9 +64,10 @@ TeleopMK2::TeleopMK2()
 
   /* Get the names of the joints in the right_arm*/
   const std::vector<std::string> &joint_names = joint_state_group->getJointModelNames();
- for (int i=0; i<10; i++)
+ for (int i=0; i<joint_names.size(); i++)
  { 
 	std::cout << joint_names.at(i) << std::endl;
+	joint_names_global.push_back(joint_names.at(i));
  }
 // Get Joint Values
   // ^^^^^^^^^^^^^^^^
@@ -76,7 +77,7 @@ TeleopMK2::TeleopMK2()
 
 
   std::vector<double> vel;
-  double p[] = {0.2,0.2,0.2,0.4,0.4,0.4,0.4,0.6,0.6,0.6};
+  double p[] = {0.3,0.3,0.3,0.4,0.4,0.4,0.4,0.6,0.6,0.6};
   std::vector<double> a(p, p+10);
   sensor_msgs::JointState msg; 
 
@@ -120,21 +121,34 @@ void TeleopMK2::poseCallback(const geometry_msgs::PoseStamped box)
 void TeleopMK2::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 {
 
-  actual_end_effector_.orientation.w = 1.0;
-//  actual_end_effector_.orientation.x = 0.0;
-//  actual_end_effector_.orientation.y = 0.0;
-//  actual_end_effector_.orientation.z = 0.0;
-
 
   if (joy->buttons[0])
   {
-    //TeleopMK2::kinematic_state->setToDefaultValues();  
-    actual_end_effector_.position.x = 0.29855;
-    actual_end_effector_.position.y = -0.24952;
-    actual_end_effector_.position.z = -0.88; 
+ // TeleopMK2::kinematic_state->setToDefaultValues();  
+  actual_end_effector_.position.x = 0.29855;
+  actual_end_effector_.position.y = -0.24952;
+  actual_end_effector_.orientation.x = 0.0;
+  actual_end_effector_.orientation.z = 0;
+
+//  actual_end_effector_.orientation.w = 1.0;
+//  actual_end_effector_.position.z = -0.88;
+//  double p[] = {0.3,0.3,0.3,0.4,0.4,0.4,0.4,0.6,0.6,0.6};
+//  std::vector<double> a(p, p+10);
+//  sensor_msgs::JointState msg;
+//  std::vector<double> joint_values; 
+//  for(int i =0;i<joint_names_global.size();i++)
+//  {
+//	joint_values.push_back(0);	
+//  }
+ 
+//      msg.header.stamp = ros::Time::now();  
+//      msg.name = joint_names_global; 
+//      msg.position = joint_values;
+//      msg.velocity = a;
+//      joint_pub_.publish(msg);
   }
 
-  else if (joy->buttons[10])
+   if (joy->buttons[10])
   {// 	pick up box UP pose  Pos: 0.29855  -0.0208635  -0.37089 | 0.29855  -0.0208635  -0.552698
 
 
@@ -155,11 +169,15 @@ z=-z+0.1
 */
     actual_end_effector_.position.x = box_pose.pose.position.y+0.2;
     actual_end_effector_.position.y = box_pose.pose.position.x-0.1;
-    actual_end_effector_.position.z = -box_pose.pose.position.z+0.1;
-    actual_end_effector_.orientation.x = box_pose.pose.orientation.x;
-    actual_end_effector_.orientation.y = box_pose.pose.orientation.y;
-    actual_end_effector_.orientation.z = box_pose.pose.orientation.z;
-  }
+    actual_end_effector_.position.z = -box_pose.pose.position.z+0.15;
+    actual_end_effector_.orientation.x = box_pose.pose.orientation.x/2;
+    actual_end_effector_.orientation.y = 0;
+//   actual_end_effector_.orientation.z = 1;
+//   actual_end_effector_.orientation.w = 1;
+//    actual_end_effector_.orientation.z = 0;
+//    actual_end_effector_.orientation.y = 1;
+//     actual_end_effector_.orientation.x = 0;
+ }
 
   else if (joy->buttons[8])
   {//	ABOVE ALL BOXES
@@ -168,9 +186,15 @@ z=-z+0.1
     //actual_end_effector_.position.x = 0.3;
     //actual_end_effector_.position.y = -0.25;
     //actual_end_effector_.position.z = -0.75;
-    	actual_end_effector_.position.x = 0.43;
-	actual_end_effector_.position.y = -0.061;
-	actual_end_effector_.position.z = -0.488;
+//	  actual_end_effector_.orientation.x = box_pose.pose.orientation.y;
+  actual_end_effector_.orientation.y = 0;
+//  actual_end_effector_.orientation.z = 0;
+
+  //actual_end_effector_.orientation.w = 1.0;
+    actual_end_effector_.position.x = box_pose.pose.position.y+0.2;
+    actual_end_effector_.position.y = box_pose.pose.position.x-0.1;
+    actual_end_effector_.position.z = -box_pose.pose.position.z+0.3;
+
   }
 
   else if (joy->buttons[6])
@@ -179,17 +203,26 @@ z=-z+0.1
     //actual_end_effector_.position.x = 0.3;
     //actual_end_effector_.position.y = -0.5;
     //actual_end_effector_.position.z = -0.88;
-	actual_end_effector_.position.x = 0;
-	actual_end_effector_.position.y = -0.65;
-	actual_end_effector_.position.z = -0.78;
+	actual_end_effector_.position.x = -0.303442;
+	actual_end_effector_.position.y = -0.748252;
+	actual_end_effector_.position.z = -0.58816;
+
+  actual_end_effector_.orientation.x = 0.0;
+  actual_end_effector_.orientation.y = 0.0;
+  actual_end_effector_.orientation.z = 0;
+  actual_end_effector_.orientation.w = 1.0;
   }
 
   else if (joy->buttons[11])
   {///put down box UP pose : Pos: 0.285059  -0.506483  -0.451006
+        actual_end_effector_.position.x = 0.285;
+        actual_end_effector_.position.y = -0.506;
+        actual_end_effector_.position.z = -0.191924;
 
-    actual_end_effector_.position.x =0.285;
-    actual_end_effector_.position.y = -0.506;
-    actual_end_effector_.position.z =-0.451;
+    actual_end_effector_.orientation.x = 0.0;
+  actual_end_effector_.orientation.z = 0;
+
+  actual_end_effector_.orientation.w = 1.0;
   }
 
   else if (joy->buttons[9])
@@ -203,12 +236,13 @@ z=-z+0.1
     //actual_end_effector_.position.x =
     //actual_end_effector_.position.y = 
     //actual_end_effector_.position.z =
+    actual_end_effector_.orientation.y = 0;
   }
 
   actual_end_effector_.position.x += 0.005 * joy->axes[1];
   actual_end_effector_.position.y += 0.005 * joy->axes[0];
   actual_end_effector_.position.z += 0.005 * joy->axes[2]; //-0.88 + 0.3 * joy->axes[3];
-  ROS_INFO_STREAM ("Pos: " << actual_end_effector_.position.x << "  " << actual_end_effector_.position.y << "  " << actual_end_effector_.position.z);
+  ROS_INFO_STREAM ("Pos: " << actual_end_effector_.position.x << "  " << actual_end_effector_.position.y << "  " <<  actual_end_effector_.position.z<< " "  << actual_end_effector_.orientation.x << " "  << actual_end_effector_.orientation.y << " "  << actual_end_effector_.orientation.z  );
 
   if (joy->buttons[0])
   {

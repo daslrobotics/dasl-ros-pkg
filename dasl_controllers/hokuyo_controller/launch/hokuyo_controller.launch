@@ -1,0 +1,9 @@
+<launch>
+    <!-- Start gantry joint controller -->
+    <rosparam file="$(find hokuyo_controller)/config/spin.yaml" command="load"/>
+    <node name="arm_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port arm_port
+		hokuyo_spin_controller"
+          output="screen"/>
+</launch>

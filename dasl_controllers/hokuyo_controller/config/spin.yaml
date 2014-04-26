@@ -1,0 +1,13 @@
+hokuyo_spin_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: hokuyo_spinner
+    joint_speed: 0.1
+    motor:
+        id: 14
+        init: 2048
+        min: 0
+        max: 4096
+

@@ -1,0 +1,7 @@
+<launch>
+
+	<node name="hokuyo_tf_broadcaster" pkg="hokuyo_controller" type="tf_publisher.py" respawn="false" output="screen" /> 
+
+	<node pkg="tf" type="static_transform_publisher" name="camera_base_broadcaster" args="0 0 0 0 1.57 0 /laser_yaw /laser 100" />
+
+</launch>
