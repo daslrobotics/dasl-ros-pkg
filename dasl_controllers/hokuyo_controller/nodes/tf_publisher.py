@@ -10,7 +10,6 @@ import tf
 
 def handle_dyn_pose(msg):
     br = tf.TransformBroadcaster()
-    print -msg.current_pos
     br.sendTransform((0, 0, 0),
                      tf.transformations.quaternion_from_euler(0, 0, -msg.current_pos),
                      rospy.Time.now(),

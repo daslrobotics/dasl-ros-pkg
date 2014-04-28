@@ -1,0 +1,10 @@
+<launch>
+	<include file="$(find hokuyo_controller)/launch/hokuyo_controller_manager.launch"/>
+	<include file="$(find hokuyo_controller)/launch/hokuyo_controller.launch"/>
+	<!-- node pkg="hokuyo_controller" name="dynamixel_spinner" type="dyn_spin.py" respawn="false" output="screen" / -->
+	<node type="urg_node" pkg="urg_node" name="urg_node">
+	</node>
+	<include file="$(find hokuyo_controller)/launch/hokuyo_tf.launch" />
+	<include file="$(find hokuyo_controller)/launch/hokuyo_assembler.launch" />
+	<node pkg="hokuyo_controller" name="hokuyo_cloud" type="cloud_service_publisher.py" respawn="false" output="screen" />
+</launch>
